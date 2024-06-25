@@ -5,6 +5,7 @@ using namespace std;
 #include "../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp"
 
 int main() {
+  cin.tie(0)->sync_with_stdio(0);
   unsigned n, q;
   cin >> n >> q;
   vector<unsigned> v(n);
