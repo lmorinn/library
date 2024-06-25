@@ -120,9 +120,4 @@ jobs:
         working-directory: main
         run: git pull
 
-      - name: Generate documentation
-        working-directory: main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: rm -r /home/runner/work/_temp/
+     
