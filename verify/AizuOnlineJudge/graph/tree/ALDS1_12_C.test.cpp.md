@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/Dijkstra.hpp
     title: graph/shortest-path/Dijkstra.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C
@@ -29,26 +29,24 @@ data:
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  cin >> n;\n \
     \ vector<vector<pair<long long, long long>>> g(n);\n  for (int i = 0; i < n; i++)\
     \ {\n    int u, k, c, v;\n    cin >> u >> k;\n    for (int j = 0; j < k; j++)\
-    \ {\n      cin >> v >> c;\n      g[u].push_back({c, v});\n      g[v].push_back({c,\
-    \ u});\n    }\n  }\n  vector<long long> res = shortest_dijkstra<long long>(g);\n\
-    \  for (int i = 0; i < n; i++) {\n    cout << i << \" \" << res[i] << endl;\n\
-    \  }\n}\n"
+    \ {\n      cin >> v >> c;\n      g[u].push_back({c, v});\n    }\n  }\n  vector<long\
+    \ long> res = shortest_dijkstra<long long>(g);\n  for (int i = 0; i < n; i++)\
+    \ {\n    cout << i << \" \" << res[i] << endl;\n  }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C\"\
     \n#include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../graph/shortest-path/Dijkstra.hpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  cin >> n;\n \
     \ vector<vector<pair<long long, long long>>> g(n);\n  for (int i = 0; i < n; i++)\
     \ {\n    int u, k, c, v;\n    cin >> u >> k;\n    for (int j = 0; j < k; j++)\
-    \ {\n      cin >> v >> c;\n      g[u].push_back({c, v});\n      g[v].push_back({c,\
-    \ u});\n    }\n  }\n  vector<long long> res = shortest_dijkstra<long long>(g);\n\
-    \  for (int i = 0; i < n; i++) {\n    cout << i << \" \" << res[i] << endl;\n\
-    \  }\n}"
+    \ {\n      cin >> v >> c;\n      g[u].push_back({c, v});\n    }\n  }\n  vector<long\
+    \ long> res = shortest_dijkstra<long long>(g);\n  for (int i = 0; i < n; i++)\
+    \ {\n    cout << i << \" \" << res[i] << endl;\n  }\n}"
   dependsOn:
   - graph/shortest-path/Dijkstra.hpp
   isVerificationFile: true
   path: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 19:49:09+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-25 20:04:45+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
 layout: document
