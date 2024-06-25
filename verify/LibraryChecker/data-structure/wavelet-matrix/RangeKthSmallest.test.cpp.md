@@ -97,24 +97,22 @@ data:
     \ r, unsigned val) {\n    int num = range_freq(l, r, 0, val);\n    if (num ==\
     \ r - l) {\n      return UINT32_MAX;\n    } else {\n      return kth_smallest(l,\
     \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
-    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
-    \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ endl;\n  }\n}\n"
+    \n\nint main() {\n  unsigned n, q;\n  cin >> n >> q;\n  vector<unsigned> v(n);\n\
+    \  for (int i = 0; i < n; i++) {\n    cin >> v[i];\n  }\n  WaveletMatrix w(v);\n\
+    \  for (int i = 0; i < q; i++) {\n    unsigned l, r, k;\n    cin >> l >> r >>\
+    \ k;\n    cout << w.kth_smallest(l, r, k + 1) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\
     #include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
-    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
-    \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ endl;\n  }\n}"
+    \n\nint main() {\n  unsigned n, q;\n  cin >> n >> q;\n  vector<unsigned> v(n);\n\
+    \  for (int i = 0; i < n; i++) {\n    cin >> v[i];\n  }\n  WaveletMatrix w(v);\n\
+    \  for (int i = 0; i < q; i++) {\n    unsigned l, r, k;\n    cin >> l >> r >>\
+    \ k;\n    cout << w.kth_smallest(l, r, k + 1) << \"\\n\";\n  }\n}"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrix.hpp
   isVerificationFile: true
   path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 21:33:12+09:00'
+  timestamp: '2024-06-25 23:59:21+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
