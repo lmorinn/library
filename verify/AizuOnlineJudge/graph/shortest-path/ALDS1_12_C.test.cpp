@@ -5,7 +5,6 @@ using namespace std;
 #include "../../../../graph/shortest-path/Dijkstra.hpp"
 
 int main() {
-  cin.tie(0)->sync_with_stdio(0);
   int n;
   cin >> n;
   vector<vector<pair<long long, long long>>> g(n);
@@ -19,6 +18,6 @@ int main() {
   }
   vector<long long> res = shortest_dijkstra<long long>(g);
   for (int i = 0; i < n; i++) {
-    cout << i << " " << res[i] << endl;
+    cout << i << " " << res[i] << "\n";
   }
 }
