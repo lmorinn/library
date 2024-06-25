@@ -1,18 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: data-structure/wavelet-matrix/WaveletMatrix.hpp
     title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
-  bundledCode: "#line 1 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp\"\
+  bundledCode: "#line 1 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n#include\
     \ <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
     \nclass BitVector {\n private:\n  unsigned n, cur, p;\n  vector<unsigned> acc,\
@@ -94,7 +96,7 @@ data:
     \u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  unsigned next_value(unsigned l, unsigned\
     \ r, unsigned val) {\n    int num = range_freq(l, r, 0, val);\n    if (num ==\
     \ r - l) {\n      return UINT32_MAX;\n    } else {\n      return kth_smallest(l,\
-    \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp\"\
+    \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
     \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
@@ -109,16 +111,16 @@ data:
     \ \"\\n\";\n  }\n}"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrix.hpp
-  isVerificationFile: false
-  path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 21:18:31+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-06-25 21:22:08+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp
+documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
 layout: document
 redirect_from:
-- /library/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp
-- /library/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp.html
-title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp.html
+title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
 ---
