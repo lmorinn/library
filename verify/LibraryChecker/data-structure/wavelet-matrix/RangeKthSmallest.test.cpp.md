@@ -101,20 +101,20 @@ data:
     \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
     \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}\n"
+    \ endl;\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\
     #include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
     \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
     \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
     \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}"
+    \ endl;\n  }\n}"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrix.hpp
   isVerificationFile: true
   path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 21:22:08+09:00'
+  timestamp: '2024-06-25 21:33:12+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
