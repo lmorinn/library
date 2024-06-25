@@ -1,4 +1,4 @@
-
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C"
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -16,7 +16,6 @@ int main() {
       cin >> v >> c;
       g[u].push_back({c, v});
       g[v].push_back({c, u});
-      
     }
   }
   vector<long long> res = shortest_dijkstra<long long>(g);
