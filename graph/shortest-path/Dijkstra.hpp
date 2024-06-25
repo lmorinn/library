@@ -1,5 +1,4 @@
 #pragma once
-#include <bits/stdc++.h>
 
 template <class T>
 vector<T> shortest_dijkstra(vector<vector<pair<T, T>>> &g, T start = 0) {
