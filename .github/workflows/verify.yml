@@ -78,17 +78,9 @@ jobs:
     - name: Install oj-verify
       run: pip3 install -U online-judge-verify-helper
 
-    - name: Clone AC-Library
-      uses: actions/checkout@v3
-      with:
-        repository: atcoder/ac-library
-        path: ac-library
-        sparse-checkout: atcoder
 
     - name: Assign test files
       working-directory: main
-      env:
-        CPLUS_INCLUDE_PATH: ${{ github.workspace }}/ac-library
       run: |
         TEST_FILES=$(
           find verify -type f -name '*.test.cpp' | \
