@@ -11,12 +11,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
     links:
-    - https://judge.yosupo.jp/problem/range_kth_smallest
-  bundledCode: "#line 1 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n#include\
-    \ <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
+    - https://judge.yosupo.jp/problem/static_range_frequency
+  bundledCode: "#line 1 \"verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\n\
+    #include <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
     \nclass BitVector {\n private:\n  unsigned n, cur, p;\n  vector<unsigned> acc,\
     \ bit;\n\n public:\n  BitVector() {\n  }\n\n  BitVector(vector<bool> &b, vector<unsigned>\
     \ &v) {\n    cur = 0;\n    n = b.size();\n    acc.resize(n / 32 + 2, 0);\n   \
@@ -96,31 +96,31 @@ data:
     \u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  unsigned next_value(unsigned l, unsigned\
     \ r, unsigned val) {\n    int num = range_freq(l, r, 0, val);\n    if (num ==\
     \ r - l) {\n      return UINT32_MAX;\n    } else {\n      return kth_smallest(l,\
-    \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
+    \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
-    \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\
-    #include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
+    \ n >> q;\n  vector<unsigned> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
+    \ >> a[i];\n  }\n  WaveletMatrix w(a);\n  for (int i = 0; i < q; i++) {\n    unsigned\
+    \ l, r, x;\n    cin >> l >> r >> x;\n    cout << w.range_freq(l, r, x, x + 1)\
+    \ << \"\\n\";\n  }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
-    \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}"
+    \ n >> q;\n  vector<unsigned> a(n);\n  for (int i = 0; i < n; i++) {\n    cin\
+    \ >> a[i];\n  }\n  WaveletMatrix w(a);\n  for (int i = 0; i < q; i++) {\n    unsigned\
+    \ l, r, x;\n    cin >> l >> r >> x;\n    cout << w.range_freq(l, r, x, x + 1)\
+    \ << \"\\n\";\n  }\n}"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrix.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+  path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
   requiredBy: []
-  timestamp: '2024-06-26 00:34:11+09:00'
+  timestamp: '2024-06-26 00:47:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
-- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp.html
-title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp.html
+title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
 ---

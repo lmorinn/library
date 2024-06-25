@@ -3,12 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/wavelet-matrix/WaveletMatrix.hpp\"\nclass\
@@ -178,8 +181,9 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrix.hpp
   requiredBy: []
   timestamp: '2024-06-25 21:18:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrix.hpp
 layout: document
