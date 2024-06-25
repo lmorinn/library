@@ -17,6 +17,7 @@ jobs:
   pre-run:
     runs-on: ${{ vars.RUNNER_IMAGE }}
 
+
     outputs:
       node_ids: ${{ steps.preapre.outputs.node_ids }}
 
