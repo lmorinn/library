@@ -16,6 +16,7 @@ int main() {
       cin >> v >> c;
       g[u].push_back({c, v});
       g[v].push_back({c, u});
+      
     }
   }
   vector<long long> res = shortest_dijkstra<long long>(g);
