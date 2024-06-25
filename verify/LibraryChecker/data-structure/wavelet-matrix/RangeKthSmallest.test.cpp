@@ -16,6 +16,6 @@ int main() {
   for (int i = 0; i < q; i++) {
     unsigned l, r, k;
     cin >> l >> r >> k;
-    cout << w.kth_smallest(l, r, k + 1) << "\n";
+    cout << w.kth_smallest(l, r, k + 1) << endl;
   }
 }
