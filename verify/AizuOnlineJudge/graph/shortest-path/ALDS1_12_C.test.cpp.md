@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/shortest-path/Dijkstra.hpp
-    title: graph/shortest-path/Dijkstra.hpp
+    title: Dijkstra
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,8 +14,8 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C
-  bundledCode: "#line 1 \"verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp\"\n\
-    #define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C\"\
+  bundledCode: "#line 1 \"verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp\"\
+    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C\"\
     \n#include <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"graph/shortest-path/Dijkstra.hpp\"\
     \n\ntemplate <class T>\nvector<T> shortest_dijkstra(vector<vector<pair<T, T>>>\
     \ &g, T start = 0) {\n  int n = g.size();\n  vector<T> dist(n, numeric_limits<T>::max());\n\
@@ -25,7 +25,7 @@ data:
     \ continue;\n    fin[cur] = true;\n    for (auto p : g[cur]) {\n      T nex =\
     \ p.second;\n      T weight = p.first;\n      if (dist[nex] > dist[cur] + weight)\
     \ {\n        dist[nex] = dist[cur] + weight;\n        q.push({dist[nex], nex});\n\
-    \      }\n    }\n  }\n  return dist;\n}\n#line 6 \"verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp\"\
+    \      }\n    }\n  }\n  return dist;\n}\n#line 6 \"verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  cin >> n;\n \
     \ vector<vector<pair<long long, long long>>> g(n);\n  for (int i = 0; i < n; i++)\
     \ {\n    int u, k, c, v;\n    cin >> u >> k;\n    for (int j = 0; j < k; j++)\
@@ -43,15 +43,15 @@ data:
   dependsOn:
   - graph/shortest-path/Dijkstra.hpp
   isVerificationFile: true
-  path: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+  path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 20:19:11+09:00'
+  timestamp: '2024-06-25 20:26:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+documentation_of: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
-- /verify/verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp.html
-title: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+- /verify/verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+- /verify/verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp.html
+title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
 ---

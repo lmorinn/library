@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
-    title: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+    path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+    title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,11 +37,15 @@ data:
   timestamp: '2024-06-25 20:19:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+  - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
 documentation_of: graph/shortest-path/Dijkstra.hpp
 layout: document
-redirect_from:
-- /library/graph/shortest-path/Dijkstra.hpp
-- /library/graph/shortest-path/Dijkstra.hpp.html
-title: graph/shortest-path/Dijkstra.hpp
+title: Dijkstra
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo

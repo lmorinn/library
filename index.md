@@ -5,12 +5,12 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/shortest-path/Dijkstra.hpp
-      title: graph/shortest-path/Dijkstra.hpp
+      title: Dijkstra
   verificationCategories:
-  - name: verify/AizuOnlineJudge/graph/tree
+  - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
-      title: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
+      path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+      title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
 layout: toppage
 ---
