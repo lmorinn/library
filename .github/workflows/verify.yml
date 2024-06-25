@@ -1,187 +1,193 @@
-name: library-verification
-run-name: ${{ github.workflow }} (${{ github.ref_name }})
-
+name: verify
 on:
+  push:
+    branches:
+      - "main"
+  pull_request:
   workflow_dispatch:
-  workflow_call:
-    secrets:
-      YUKICODER_TOKEN:
-      GH_PAT:
-        required: true
+    inputs:
+      ignore_prev_result:
+        type: boolean
+        default: false
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
 concurrency:
-  group: verify-${{ github.ref }}
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
-  pre-run:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
-
-
-    outputs:
-      node_ids: ${{ steps.preapre.outputs.node_ids }}
-
+  setup:
+    runs-on: ubuntu-latest
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v3
-      with:
-        sparse-checkout: verify
+      - uses: actions/checkout@v4
 
-    - name: Prepare
-      id: preapre
-      run: |
-        PARALLEL=$(nproc)
+      - name: Set up competitive-verifier
+        uses: competitive-verifier/actions/setup@v2
+        with:
+          cache-pip: true
 
-        TARGETS=$(find verify -type f -name '*.test.cpp' | wc -l)
-        NODES=$(((TARGETS + PARALLEL - 1) / PARALLEL))
+      # Initialize your own environment for resolving.
+      - name: oj-resolve
+        uses: competitive-verifier/actions/oj-resolve@v2
+        with:
+          output-path: verify_files.json
+      - name: parse-doxygen
+        uses: competitive-verifier/actions/parse-doxygen@v2
+        with:
+          verify-files: verify_files.json
 
-        if [ $NODES -lt 20 ]; then
-          NODES=20
-        fi
+      - name: Upload verify_files.json
+        uses: competitive-verifier/actions/upload-verify-artifact@v2
+        with:
+          file: verify_files.json
 
-        echo "Nodes: ${NODES}"
+      - name: Check bundled
+        id: test-bundled
+        run: |
+          echo "count=$(find .competitive-verifier/bundled/ -type f | wc -l)" >> $GITHUB_OUTPUT
+      - name: Upload bundled
+        uses: actions/upload-artifact@v4
+        if: steps.test-bundled.outputs.count > 0
+        with:
+          name: Bundled-${{ runner.os }}
+          path: .competitive-verifier/bundled
+          retention-days: 1
 
-        IDS='['
-        for ((i=0; i < NODES; i++)); do
-            IDS+=$(printf '"%02d"' "${i}")
-            if [ $i -lt $((NODES-1)) ]; then
-                IDS+=','
-            fi
-        done
-        IDS+=']'
-
-        echo ${IDS}
-        echo "node_ids=$(echo "${IDS}" | jq -c)" >> ${GITHUB_OUTPUT}
-
-
-  run:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
-    needs: pre-run
-
+  verify:
+    runs-on: ubuntu-latest
+    needs: [setup]
+    env:
+      SPLIT_SIZE: "20"
     strategy:
-      fail-fast: false
       matrix:
-        id: ${{ fromJSON(needs.pre-run.outputs.node_ids) }}
-
+        # prettier-ignore
+        index:
+          ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
+           "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"]
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v3
-      with:
-        path: main
-        fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2147483647
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.12.0
+      - name: Restore cached results
+        if: ${{ ! inputs.ignore_prev_result }}
+        uses: actions/cache/restore@v3
+        id: restore-cached-results
+        with:
+          path: ${{github.workspace}}/merged-result.json
+          key: ${{ runner.os }}-verify-result-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-verify-result-
 
-    - name: Install oj-verify
-      run: pip3 install -U online-judge-verify-helper
+      - name: Download verify_files.json
+        uses: competitive-verifier/actions/download-verify-artifact@v2
 
+      - name: Set up competitive-verifier
+        uses: competitive-verifier/actions/setup@v2
+        with:
+          cache-pip: true
 
-    - name: Assign test files
-      working-directory: main
-      run: |
-        TEST_FILES=$(
-          find verify -type f -name '*.test.cpp' | \
-          sort | \
-          awk -v n=${{ strategy.job-total }} \
-              -v i=${{ strategy.job-index }} \
-              '{
-                if((NR - 1) % n == i) {
-                  print $0
-                }
-              }' \
-          )
+      - name: Verify
+        uses: competitive-verifier/actions/verify@v2
+        with:
+          destination: ${{runner.temp}}/result.json
+          split-size: ${{ env.SPLIT_SIZE }}
+          split-index: ${{ matrix.index }}
+          timeout: 1800
+          prev-result: ${{ steps.restore-cached-results.outputs.cache-hit && 'merged-result.json' || ''}}
+        env:
+          YUKICODER_TOKEN: ${{secrets.YUKICODER_TOKEN}}
 
-        echo ${TEST_FILES} > .verify-helper/targets.txt
-        cat .verify-helper/targets.txt
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Result-${{ runner.os }}-${{ matrix.index }}
+          path: ${{runner.temp}}/result.json
+          retention-days: 1
 
-    - name: Cache judge data
-      if: ${{ !cancelled() && github.ref_name == github.event.repository.default_branch }}
-      id: cache-judge
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cache/online-judge-tools/library-checker-problems/
-          main/.verify-helper/cache/
-        key: verify-${{ hashFiles('main/verify/**/*.test.cpp', 'main/.verify-helper/targets.txt') }}
-
-    - name: Run tests
-      working-directory: main
-      env:
-        CACHE_HIT: ${{ steps.cache-judge.outputs.cache-hit }}
-        YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
-      run: |
-        set -eu
-
-        echo '{}' > ./.verify-helper/timestamps.json
-
-        if [ ! -f ./.verify-helper/timestamps.remote.json ] || [ "${CACHE_HIT}" != 'true' ]; then
-          echo '{}' > ./.verify-helper/timestamps.remote.json
-        fi
-
-        oj d https://judge.yosupo.jp/problem/aplusb &> /dev/null
-
-        PARALLEL=$(nproc)
-        echo "Parallel execution: ${PARALLEL}"
-
-        head -c -1 ./.verify-helper/targets.txt | \
-        xargs -P ${PARALLEL} -d ' ' -I {} bash ./.github/workflows/run-test.sh {}
-
-        jq --slurp --sort-keys 'reduce .[] as $item ({}; . * $item)' \
-        ./.verify-helper/timestamps.json > "./.verify-helper/timestamps-${{ matrix.id }}.json"
-        cat "./.verify-helper/timestamps-${{ matrix.id }}.json"
-
-    - name: Save timestamps
-      uses: actions/upload-artifact@v3
-      if: ${{ !cancelled() }}
-      with:
-        name: timestamps
-        path: main/.verify-helper/timestamps-${{ matrix.id }}.json
-
-  post-run:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
-    needs: run
-    if: ${{ !cancelled() && github.ref_name == github.event.repository.default_branch }}
-
+  docs-and-check:
+    runs-on: ubuntu-latest
+    needs: [verify]
+    outputs:
+      upload-pages: ${{steps.upload-pages.outcome == 'success'}}
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        sparse-checkout: .verify-helper
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2147483647
 
-    - name: Load timestamps
-      uses: actions/download-artifact@v3
-      with:
-        name: timestamps
-        path: .verify-helper/timestamps
+      - name: Download verify_files.json and all artifacts
+        id: all-artifacts
+        uses: competitive-verifier/actions/download-verify-artifact@v2
+        with:
+          download-all: true
+          artifact-root: .artifacts/
 
-    - name: Merge timestamps
-      working-directory: .verify-helper
-      run: |
-        touch ./timestamps.remote.json
+      - name: Extract bundled
+        shell: bash
+        run: |
+          rm -rf .competitive-verifier/bundled
+          if test -d "$SRCDIR"; then
+            mkdir -p .competitive-verifier/
+            mv "$SRCDIR" .competitive-verifier/bundled
+          else
+            echo "$SRCDIR does not exist."
+          fi
+        env:
+          SRCDIR: .artifacts/Bundled-${{ runner.os }}
 
-        jq --slurp --sort-keys 'reduce .[] as $item ({}; . * $item)' \
-        ./timestamps.remote.json timestamps/* > ./merged-timestamps.json
+      - name: Set up competitive-verifier
+        uses: competitive-verifier/actions/setup@v2
+        with:
+          cache-pip: true
 
-        cp -f ./merged-timestamps.json ./timestamps.remote.json
-        cat ./timestamps.remote.json
+      - name: Merge results
+        uses: competitive-verifier/actions/merge-result@v2
+        with:
+          result-files: ${{ steps.all-artifacts.outputs.artifacts-root }}/Result-*/result.json
+          output-path: ${{github.workspace}}/merged-result.json
+      - name: Docs
+        uses: competitive-verifier/actions/docs@v2
+        with:
+          verify-result: ${{github.workspace}}/merged-result.json
+          destination: _jekyll
+          write-summary: true
+      - name: Save result
+        uses: actions/cache/save@v3
+        with:
+          path: ${{github.workspace}}/merged-result.json
+          key: ${{ runner.os }}-verify-result-${{ github.sha }}
 
-    - name: Push merged timestamps
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: _jekyll
+          destination: _site
+      - name: Upload artifact
+        id: upload-pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
-        git config --global user.name "GitHub"
-        git config --global user.email "noreply@github.com"
-        git add .verify-helper/timestamps.remote.json
-
-        if (git diff --cached --shortstat | grep '[0-9]'); then
-          git commit -m "[auto-verifier] verify commit ${GITHUB_SHA}"
-          git push origin HEAD:${GITHUB_REF}
-        else
-          echo "No updated timestamps."
-        fi
+      - name: Check
+        uses: competitive-verifier/actions/check@v2
+        with:
+          verify-result: ${{ steps.all-artifacts.outputs.artifacts-root }}/Result-*/result.json
+  deploy:
+    if: (success() || failure()) && github.ref == 'refs/heads/master' && needs.docs-and-check.outputs.upload-pages == 'true'
+    needs: docs-and-check
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
