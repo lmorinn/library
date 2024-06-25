@@ -16,7 +16,7 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C
   bundledCode: "#line 1 \"verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp\"\n\
     #define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/12/ALDS1_12_C\"\
-    \n#include <bits/stdc++.h>\n\nusing namespace std;\n#line 3 \"graph/shortest-path/Dijkstra.hpp\"\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"graph/shortest-path/Dijkstra.hpp\"\
     \n\ntemplate <class T>\nvector<T> shortest_dijkstra(vector<vector<pair<T, T>>>\
     \ &g, T start = 0) {\n  int n = g.size();\n  vector<T> dist(n, numeric_limits<T>::max());\n\
     \  vector<bool> fin(n, false);\n  priority_queue<pair<T, T>, vector<pair<T, T>>,\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
   requiredBy: []
-  timestamp: '2024-06-25 20:04:45+09:00'
+  timestamp: '2024-06-25 20:19:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/graph/tree/ALDS1_12_C.test.cpp
