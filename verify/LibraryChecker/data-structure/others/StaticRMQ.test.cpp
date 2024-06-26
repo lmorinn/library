@@ -11,7 +11,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> a[i];
   }
-  SparseTable s(a, f);
+  SparseTable<int, f> s(a);
 
   for (int i = 0; i < q; i++) {
     int l, r;
