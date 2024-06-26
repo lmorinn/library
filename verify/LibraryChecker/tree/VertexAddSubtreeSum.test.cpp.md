@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/others/SparseTable.hpp
     title: Sparse Table
   - icon: ':heavy_check_mark:'

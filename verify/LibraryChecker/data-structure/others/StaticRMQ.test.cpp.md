@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/others/SparseTable.hpp
     title: Sparse Table
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -30,23 +30,23 @@ data:
     \ 5 \"verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp\"\nint main()\
     \ {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  cin >> n >> q;\n  auto\
     \ f = [=](const int &x, const int &y) { return min(x, y); };\n  vector<int> a(n);\n\
-    \  for (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  SparseTable s(a, f);\n\
-    \n  for (int i = 0; i < q; i++) {\n    int l, r;\n    cin >> l >> r;\n    cout\
-    \ << s.query(l, r) << \"\\n\";\n  }\n}\n"
+    \  for (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  SparseTable<int, f>\
+    \ s(a);\n\n  for (int i = 0; i < q; i++) {\n    int l, r;\n    cin >> l >> r;\n\
+    \    cout << s.query(l, r) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n#include \"../../../../data-structure/others/SparseTable.hpp\"\
     \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  cin >> n >>\
     \ q;\n  auto f = [=](const int &x, const int &y) { return min(x, y); };\n  vector<int>\
-    \ a(n);\n  for (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  SparseTable\
-    \ s(a, f);\n\n  for (int i = 0; i < q; i++) {\n    int l, r;\n    cin >> l >>\
+    \ a(n);\n  for (int i = 0; i < n; i++) {\n    cin >> a[i];\n  }\n  SparseTable<int,\
+    \ f> s(a);\n\n  for (int i = 0; i < q; i++) {\n    int l, r;\n    cin >> l >>\
     \ r;\n    cout << s.query(l, r) << \"\\n\";\n  }\n}\n"
   dependsOn:
   - data-structure/others/SparseTable.hpp
   isVerificationFile: true
   path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
   requiredBy: []
-  timestamp: '2024-06-26 20:58:27+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-26 21:07:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
 layout: document

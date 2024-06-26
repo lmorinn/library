@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data-structure/others
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
   - name: data-structure/segment-tree
@@ -92,7 +92,7 @@ data:
       title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
