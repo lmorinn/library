@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: data-structure/others
+    pages:
+    - icon: ':question:'
+      path: data-structure/others/SparseTable.hpp
+      title: Sparse Table
   - name: data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -26,6 +31,14 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
       title: Wavelet Matrix (Toggle)
+  - name: dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: dp/CumulativeSum.hpp
+      title: Cumulative Sum
+    - icon: ':heavy_check_mark:'
+      path: dp/LongestIncreasingSubsequence.hpp
+      title: Longest Increasing Subsequence
   - name: graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -36,6 +49,9 @@ data:
       title: Warshall Floyd
   - name: graph/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/tree/EulerTour.hpp
+      title: Euler Tour
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
@@ -48,6 +64,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
       title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
+  - name: verify/AizuOnlineJudge/dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+      title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -69,6 +90,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
+  - name: verify/LibraryChecker/data-structure/others
+    pages:
+    - icon: ':x:'
+      path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
+      title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -80,6 +106,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+  - name: verify/LibraryChecker/dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
+      title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
+  - name: verify/LibraryChecker/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+      title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
+      title: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
 layout: toppage
 ---
 [![lmori](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Flmori)](https://atcoder.jp/users/lmori)

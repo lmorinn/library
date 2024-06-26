@@ -1,11 +1,26 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: dp/LongestIncreasingSubsequence.hpp
+    title: Longest Increasing Subsequence
+  - icon: ':heavy_check_mark:'
+    path: graph/tree/EulerTour.hpp
+    title: Euler Tour
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
     title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+    title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+    title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
+    title: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -89,11 +104,16 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree/SegmentTree.hpp
-  requiredBy: []
+  requiredBy:
+  - dp/LongestIncreasingSubsequence.hpp
+  - graph/tree/EulerTour.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+  - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
+  - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
 documentation_of: data-structure/segment-tree/SegmentTree.hpp
 layout: document
 title: Segment Tree
