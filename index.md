@@ -6,6 +6,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrix.hpp
       title: Wavelet Matrix
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
+      title: Wavelet Matrix (Hash)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
+      title: Wavelet Matrix (Rectangle)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
+      title: Wavelet Matrix (Sum)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
+      title: Wavelet Matrix (Toggle)
   - name: graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -22,6 +34,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
