@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
     - icon: ':warning:'
