@@ -1,6 +1,14 @@
 ---
 data:
   libraryCategories:
+  - name: data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree/LazySegmentTree.hpp
+      title: Lazy Segment Tree
+    - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree/SegmentTree.hpp
+      title: Segment Tree
   - name: data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -27,6 +35,14 @@ data:
       path: graph/shortest-path/WarshallFloyd.hpp
       title: Warshall Floyd
   verificationCategories:
+  - name: verify/AizuOnlineJudge/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
