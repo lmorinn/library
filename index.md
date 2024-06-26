@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
       title: Wavelet Matrix (Sum)
     - icon: ':warning:'
@@ -29,6 +29,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
       title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+  - name: verify/AtCoder/data-structure/wavelet-matrix
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
+      title: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
