@@ -34,6 +34,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/shortest-path/WarshallFloyd.hpp
       title: Warshall Floyd
+  - name: graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/tree/HeavyLightDecomposition.hpp
+      title: Heavy Light Decomposition
   verificationCategories:
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
@@ -51,6 +56,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
       title: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
+  - name: verify/AizuOnlineJudge/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
+      title: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
   - name: verify/AtCoder/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
