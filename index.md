@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrix.hpp
       title: Wavelet Matrix
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':heavy_check_mark:'
@@ -34,6 +34,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
+      title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
