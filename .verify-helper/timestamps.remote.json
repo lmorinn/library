@@ -1,6 +1,7 @@
 {
   "verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp": "2024-06-26 17:49:07 +0900",
   "verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp": "2024-06-26 17:50:58 +0900",
+  "verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp": "2024-06-26 20:58:27 +0900",
   "verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp": "2024-06-26 00:34:11 +0900",
   "verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp": "2024-06-26 17:11:19 +0900",
   "verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp": "2024-06-26 18:54:08 +0900",
@@ -8,5 +9,8 @@
   "verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp": "2024-06-26 15:54:48 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp": "2024-06-26 00:34:11 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp": "2024-06-26 12:52:56 +0900",
-  "verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp": "2024-06-26 00:47:47 +0900"
+  "verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp": "2024-06-26 00:47:47 +0900",
+  "verify/LibraryChecker/dp/StaticRangeSum.test.cpp": "2024-06-26 20:58:27 +0900",
+  "verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp": "2024-06-26 20:58:27 +0900",
+  "verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp": "2024-06-26 20:58:27 +0900"
 }
