@@ -55,6 +55,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
+  - name: math/number-theory
+    pages:
+    - icon: ':warning:'
+      path: math/number-theory/SieveofEratosthenes.hpp
+      title: Sieve of Eratosthenes
   verificationCategories:
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
