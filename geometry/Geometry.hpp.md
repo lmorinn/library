@@ -18,13 +18,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   _isVerificationFailed: true

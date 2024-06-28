@@ -11,18 +11,19 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    ERROR: 1e-8
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A
   bundledCode: "#line 1 \"verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp\"\n#define\
     \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n#line 2 \"geometry/Geometry.hpp\"\
-    \n#define EPS (1e-10)\n#define equals(a, b) (fabsl((a) - (b)) < EPS)\n\nstatic\
-    \ const int COUNTER_CLOCKWISE = 1;\nstatic const int CLOCKWISE = -1;\nstatic const\
-    \ int ONLINE_BACK = 2;\nstatic const int ONLINE_FRONT = -2;\nstatic const int\
-    \ ON_SEGMENT = 0;\nstatic const int CONTAIN = 2;\nstatic const int CONTAIN_LINE\
-    \ = 1;\nstatic const int NOT_CONTAIN = 0;\nstatic const int CIRCUMSCRIPTION =\
-    \ 3;\nstatic const int INSCRIPTION = 1;\nstatic const int INTERSECT = 2;\nstatic\
+    \n#define ERROR 1e-8\n#include <bits/stdc++.h>\nusing namespace std;\n#line 2\
+    \ \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n#define equals(a, b) (fabsl((a)\
+    \ - (b)) < EPS)\n\nstatic const int COUNTER_CLOCKWISE = 1;\nstatic const int CLOCKWISE\
+    \ = -1;\nstatic const int ONLINE_BACK = 2;\nstatic const int ONLINE_FRONT = -2;\n\
+    static const int ON_SEGMENT = 0;\nstatic const int CONTAIN = 2;\nstatic const\
+    \ int CONTAIN_LINE = 1;\nstatic const int NOT_CONTAIN = 0;\nstatic const int CIRCUMSCRIPTION\
+    \ = 3;\nstatic const int INSCRIPTION = 1;\nstatic const int INTERSECT = 2;\nstatic\
     \ const int CONNOTATION = 0;\nstatic const int NOT_CONNOTATION = 4;\n\nstruct\
     \ Point {\n public:\n  long double x, y;\n  Point(long double x = 0, long double\
     \ y = 0) : x(x), y(y) {}\n\n  Point operator+(Point p) { return Point(x + p.x,\
@@ -162,23 +163,23 @@ data:
     \ {\n      for (int n = l.size(); n >= 2 and ccw(l[n - 2], l[n - 1], s[i]) !=\
     \ CLOCKWISE; n--) {\n        l.pop_back();\n      }\n      l.push_back(s[i]);\n\
     \    }\n    reverse(l.begin(), l.end());\n    for (int i = u.size() - 2; i >=\
-    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 5 \"verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp\"\
+    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 6 \"verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp\"\
     \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int x1, y1, x2, y2;\n  cin\
     \ >> x1 >> y1 >> x2 >> y2;\n  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n\
     \  cin >> q;\n  for (int i = 0; i < q; i++) {\n    int x, y;\n    cin >> x >>\
-    \ y;\n    outf(project(l, Point(x,y)));\n  }\n}\n"
+    \ y;\n    outf(project(l, Point(x, y)));\n  }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n#include \"../../../geometry/Geometry.hpp\"\
-    \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int x1, y1, x2, y2;\n  cin\
-    \ >> x1 >> y1 >> x2 >> y2;\n  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n\
-    \  cin >> q;\n  for (int i = 0; i < q; i++) {\n    int x, y;\n    cin >> x >>\
-    \ y;\n    outf(project(l, Point(x,y)));\n  }\n}\n"
+    \n#define ERROR 1e-8\n#include <bits/stdc++.h>\nusing namespace std;\n#include\
+    \ \"../../../geometry/Geometry.hpp\"\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int x1, y1, x2, y2;\n  cin >> x1 >> y1 >> x2 >> y2;\n  Line l(Point(x1, y1),\
+    \ Point(x2, y2));\n  int q;\n  cin >> q;\n  for (int i = 0; i < q; i++) {\n  \
+    \  int x, y;\n    cin >> x >> y;\n    outf(project(l, Point(x, y)));\n  }\n}\n"
   dependsOn:
   - geometry/Geometry.hpp
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:21:42+09:00'
+  timestamp: '2024-06-28 14:42:38+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp

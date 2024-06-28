@@ -184,7 +184,7 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:21:42+09:00'
+  timestamp: '2024-06-28 14:47:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_1_C.test.cpp

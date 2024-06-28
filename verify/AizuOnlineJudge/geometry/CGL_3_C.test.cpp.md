@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geometry/Geometry.hpp
     title: Geometry
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
@@ -14,6 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    ERROR: 1e-8
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_C
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_C
@@ -53,7 +54,7 @@ data:
     \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
     \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
     \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
-    \ setprecision(11) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    \ setprecision(16) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
     n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
     \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
     \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
@@ -65,22 +66,22 @@ data:
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
     \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp\"\
     \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_C\"\
-    \n#line 2 \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n#define equals(a, b)\
-    \ (fabsl((a) - (b)) < EPS)\n\nstatic const int COUNTER_CLOCKWISE = 1;\nstatic\
-    \ const int CLOCKWISE = -1;\nstatic const int ONLINE_BACK = 2;\nstatic const int\
-    \ ONLINE_FRONT = -2;\nstatic const int ON_SEGMENT = 0;\nstatic const int CONTAIN\
-    \ = 2;\nstatic const int CONTAIN_LINE = 1;\nstatic const int NOT_CONTAIN = 0;\n\
-    static const int CIRCUMSCRIPTION = 3;\nstatic const int INSCRIPTION = 1;\nstatic\
-    \ const int INTERSECT = 2;\nstatic const int CONNOTATION = 0;\nstatic const int\
-    \ NOT_CONNOTATION = 4;\n\nstruct Point {\n public:\n  long double x, y;\n  Point(long\
-    \ double x = 0, long double y = 0) : x(x), y(y) {}\n\n  Point operator+(Point\
-    \ p) { return Point(x + p.x, y + p.y); }\n  Point operator-(Point p) { return\
-    \ Point(x - p.x, y - p.y); }\n  Point operator*(long double a) { return Point(a\
-    \ * x, a * y); }\n  Point operator/(long double a) { return Point(x / a, y / a);\
-    \ }\n  bool operator<(const Point &p) const { return x != p.x ? x < p.x : y <\
-    \ p.y; }\n  bool operator>(const Point &p) const { return x != p.x ? x > p.x :\
-    \ y > p.y; }\n  bool operator==(const Point &p) const { return fabsl(x - p.x)\
-    \ < EPS and fabsl(y - p.y) < EPS; }\n\n  long double abs() { return sqrtl(norm());\
+    \n#define ERROR 1e-8\n#line 2 \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n\
+    #define equals(a, b) (fabsl((a) - (b)) < EPS)\n\nstatic const int COUNTER_CLOCKWISE\
+    \ = 1;\nstatic const int CLOCKWISE = -1;\nstatic const int ONLINE_BACK = 2;\n\
+    static const int ONLINE_FRONT = -2;\nstatic const int ON_SEGMENT = 0;\nstatic\
+    \ const int CONTAIN = 2;\nstatic const int CONTAIN_LINE = 1;\nstatic const int\
+    \ NOT_CONTAIN = 0;\nstatic const int CIRCUMSCRIPTION = 3;\nstatic const int INSCRIPTION\
+    \ = 1;\nstatic const int INTERSECT = 2;\nstatic const int CONNOTATION = 0;\nstatic\
+    \ const int NOT_CONNOTATION = 4;\n\nstruct Point {\n public:\n  long double x,\
+    \ y;\n  Point(long double x = 0, long double y = 0) : x(x), y(y) {}\n\n  Point\
+    \ operator+(Point p) { return Point(x + p.x, y + p.y); }\n  Point operator-(Point\
+    \ p) { return Point(x - p.x, y - p.y); }\n  Point operator*(long double a) { return\
+    \ Point(a * x, a * y); }\n  Point operator/(long double a) { return Point(x /\
+    \ a, y / a); }\n  bool operator<(const Point &p) const { return x != p.x ? x <\
+    \ p.x : y < p.y; }\n  bool operator>(const Point &p) const { return x != p.x ?\
+    \ x > p.x : y > p.y; }\n  bool operator==(const Point &p) const { return fabsl(x\
+    \ - p.x) < EPS and fabsl(y - p.y) < EPS; }\n\n  long double abs() { return sqrtl(norm());\
     \ }\n  long double norm() { return x * x + y * y; }\n};\n\n\nostream &operator<<(ostream\
     \ &os, const Point &p) {\n  os <<  p.x << \" \" << p.y;\n  return os;\n}\n\n\n\
     \n\n\nusing Vector = Point;\n\nlong double norm(Vector a) {\n  return a.x * a.x\
@@ -210,23 +211,24 @@ data:
     \ {\n      for (int n = l.size(); n >= 2 and ccw(l[n - 2], l[n - 1], s[i]) !=\
     \ CLOCKWISE; n--) {\n        l.pop_back();\n      }\n      l.push_back(s[i]);\n\
     \    }\n    reverse(l.begin(), l.end());\n    for (int i = u.size() - 2; i >=\
-    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 4 \"verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp\"\
+    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 5 \"verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  in(n);\n  Polygon\
     \ p(n);\n  rep(i, n) {\n    int x, y;\n    in(x, y);\n    p[i] = Point(x, y);\n\
     \  }\n  int q;\n  in(q);\n  rep(i, q) {\n    int x, y;\n    in(x, y);\n    out(contains(p,\
     \ Point(x, y)));\n  }\n}\n"
   code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_C\"\
-    \n#include \"../../../geometry/Geometry.hpp\"\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int n;\n  in(n);\n  Polygon p(n);\n  rep(i, n) {\n    int x, y;\n    in(x,\
-    \ y);\n    p[i] = Point(x, y);\n  }\n  int q;\n  in(q);\n  rep(i, q) {\n    int\
-    \ x, y;\n    in(x, y);\n    out(contains(p, Point(x, y)));\n  }\n}\n"
+    \n#define ERROR 1e-8\n#include \"../../../geometry/Geometry.hpp\"\n\nint main()\
+    \ {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  in(n);\n  Polygon p(n);\n\
+    \  rep(i, n) {\n    int x, y;\n    in(x, y);\n    p[i] = Point(x, y);\n  }\n \
+    \ int q;\n  in(q);\n  rep(i, q) {\n    int x, y;\n    in(x, y);\n    out(contains(p,\
+    \ Point(x, y)));\n  }\n}\n"
   dependsOn:
   - template/template.hpp
   - geometry/Geometry.hpp
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:21:42+09:00'
+  timestamp: '2024-06-28 14:47:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
