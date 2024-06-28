@@ -39,6 +39,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence
+  - name: geometry
+    pages:
+    - icon: ':question:'
+      path: geometry/Geometry.hpp
+      title: Geometry
   - name: graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -60,6 +65,11 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
+  - name: template
+    pages:
+    - icon: ':question:'
+      path: template/template.hpp
+      title: Template
   verificationCategories:
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
@@ -74,6 +84,47 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+  - name: verify/AizuOnlineJudge/geometry
+    pages:
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_1_C.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_3_B.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_3_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/geometry/CGL_7_D.test.cpp
+      title: verify/AizuOnlineJudge/geometry/CGL_7_D.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
