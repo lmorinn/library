@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n#define equals(a,\
@@ -341,7 +341,7 @@ data:
   path: geometry/Geometry.hpp
   requiredBy: []
   timestamp: '2024-06-28 14:21:42+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp

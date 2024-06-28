@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/Geometry.hpp
     title: Geometry
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-8
@@ -54,7 +54,7 @@ data:
     \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
     \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
     \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
-    \ setprecision(16) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
     n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
     \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
     \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
@@ -213,14 +213,14 @@ data:
     \    }\n    reverse(l.begin(), l.end());\n    for (int i = u.size() - 2; i >=\
     \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 5 \"verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp\"\
     \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int a, b, c, d;\n  in(a,\
-    \ b, c, d);\n  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n  in(q);\n  for\
-    \ (int i = 0; i < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l,\
-    \ Point(x, y)));\n  }\n}\n"
+    \ b, c, d);\n  Line l(Point(a, b), Point(c, d));\n  int q;\n  in(q);\n  for (int\
+    \ i = 0; i < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l, Point(x,\
+    \ y)));\n  }\n}\n"
   code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
     \n#define ERROR 1e-8\n#include \"../../../geometry/Geometry.hpp\"\nint main()\
     \ {\n  cin.tie(0)->sync_with_stdio(0);\n  int a, b, c, d;\n  in(a, b, c, d);\n\
-    \  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n  in(q);\n  for (int i = 0;\
-    \ i < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l, Point(x, y)));\n\
+    \  Line l(Point(a, b), Point(c, d));\n  int q;\n  in(q);\n  for (int i = 0; i\
+    \ < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l, Point(x, y)));\n\
     \  }\n}\n"
   dependsOn:
   - template/template.hpp
@@ -228,8 +228,8 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:54:32+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-28 15:04:24+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
 layout: document

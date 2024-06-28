@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometry/Geometry.hpp
     title: Geometry
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
@@ -54,7 +54,7 @@ data:
     \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
     \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
     \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
-    \ setprecision(16) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
     n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
     \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
     \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
@@ -226,7 +226,7 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:47:49+09:00'
+  timestamp: '2024-06-28 15:04:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp

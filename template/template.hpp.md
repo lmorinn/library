@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -77,7 +77,7 @@ data:
     \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
     \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
     \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
-    \ setprecision(16) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
     n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
     \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
     \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
@@ -123,7 +123,7 @@ data:
     \ }\ntemplate <class T, class... Ts>\nvoid out(const T &a, const Ts &...b) {\n\
     \  cout << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\nvoid\
     \ outf() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid outf(const\
-    \ T &a, const Ts &...b) {\n  cout << fixed << setprecision(16) << a;\n  (cout\
+    \ T &a, const Ts &...b) {\n  cout << fixed << setprecision(14) << a;\n  (cout\
     \ << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\ntemplate <typename T>\n\
     istream &operator>>(istream &is, vector<T> &v) {\n  for (T &in : v) is >> in;\n\
     \  return is;\n}\n\ninline void in(void) { return; }\ntemplate <typename First,\
@@ -139,8 +139,8 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-06-28 14:47:49+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-06-28 15:04:24+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
