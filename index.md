@@ -67,7 +67,7 @@ data:
       title: Sieve of Eratosthenes
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -86,7 +86,7 @@ data:
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - name: verify/AizuOnlineJudge/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
       title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
     - icon: ':x:'
@@ -122,9 +122,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
       title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
-    - icon: ':x:'
-      path: verify/AizuOnlineJudge/geometry/CGL_7_D.test.cpp
-      title: verify/AizuOnlineJudge/geometry/CGL_7_D.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'

@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
+    title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
+  - icon: ':x:'
+    path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
+    title: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -30,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -134,14 +140,16 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 14:47:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp

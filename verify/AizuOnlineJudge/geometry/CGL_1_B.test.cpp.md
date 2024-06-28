@@ -4,6 +4,9 @@ data:
   - icon: ':question:'
     path: geometry/Geometry.hpp
     title: Geometry
+  - icon: ':question:'
+    path: template/template.hpp
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
@@ -15,47 +18,92 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B
-  bundledCode: "#line 1 \"verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp\"\n#define\
-    \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
-    \n#define ERROR 1e-8\n#include <bits/stdc++.h>\nusing namespace std;\n#line 2\
-    \ \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n#define equals(a, b) (fabsl((a)\
-    \ - (b)) < EPS)\n\nstatic const int COUNTER_CLOCKWISE = 1;\nstatic const int CLOCKWISE\
-    \ = -1;\nstatic const int ONLINE_BACK = 2;\nstatic const int ONLINE_FRONT = -2;\n\
-    static const int ON_SEGMENT = 0;\nstatic const int CONTAIN = 2;\nstatic const\
-    \ int CONTAIN_LINE = 1;\nstatic const int NOT_CONTAIN = 0;\nstatic const int CIRCUMSCRIPTION\
-    \ = 3;\nstatic const int INSCRIPTION = 1;\nstatic const int INTERSECT = 2;\nstatic\
-    \ const int CONNOTATION = 0;\nstatic const int NOT_CONNOTATION = 4;\n\nstruct\
-    \ Point {\n public:\n  long double x, y;\n  Point(long double x = 0, long double\
-    \ y = 0) : x(x), y(y) {}\n\n  Point operator+(Point p) { return Point(x + p.x,\
-    \ y + p.y); }\n  Point operator-(Point p) { return Point(x - p.x, y - p.y); }\n\
-    \  Point operator*(long double a) { return Point(a * x, a * y); }\n  Point operator/(long\
-    \ double a) { return Point(x / a, y / a); }\n  bool operator<(const Point &p)\
-    \ const { return x != p.x ? x < p.x : y < p.y; }\n  bool operator>(const Point\
-    \ &p) const { return x != p.x ? x > p.x : y > p.y; }\n  bool operator==(const\
-    \ Point &p) const { return fabsl(x - p.x) < EPS and fabsl(y - p.y) < EPS; }\n\n\
-    \  long double abs() { return sqrtl(norm()); }\n  long double norm() { return\
-    \ x * x + y * y; }\n};\n\n\nostream &operator<<(ostream &os, const Point &p) {\n\
-    \  os <<  p.x << \" \" << p.y;\n  return os;\n}\n\n\n\n\n\nusing Vector = Point;\n\
-    \nlong double norm(Vector a) {\n  return a.x * a.x + a.y * a.y;\n}\n\nlong double\
-    \ abs(Vector a) {\n  return sqrtl(norm(a));\n}\n\nstruct Segment {\n  Point p1,\
-    \ p2;\n  Segment(Point x, Point y) {\n    p1 = x;\n    p2 = y;\n  }\n};\n\nusing\
-    \ Line = Segment;\n\nclass Circle {\n public:\n  Point c;\n  long double r;\n\
-    \  Circle(Point c = Point(), long double r = 0.0) : c(c), r(r) {}\n};\n\nusing\
-    \ Polygon = vector<Point>;\n\n// \u30D9\u30AF\u30C8\u30EB a\u3068b\u306E\u5185\
-    \u7A4D\u3092\u8FD4\u3059\nlong double dot(Vector a, Vector b) {\n  return a.x\
-    \ * b.x + a.y * b.y;\n}\n\n// \u30D9\u30AF\u30C8\u30EB a\u3068b\u306E\u5916\u7A4D\
-    \u3092\u8FD4\u3059\nlong double cross(Vector a, Vector b) {\n  return a.x * b.y\
-    \ - a.y * b.x;\n}\n\n// \u30D9\u30AF\u30C8\u30EB a\u3068b\u304C\u76F4\u4EA4\u304B\
-    \u3069\u3046\u304B\u3092\u8FD4\u3059\nbool isOrthogonal(Vector a, Vector b) {\n\
-    \  return equals(dot(a, b), 0.0);\n}\n\n// \u70B9\u3000a1,a2\u304B\u3089\u306A\
-    \u308B\u30D9\u30AF\u30C8\u30EB\u3068 b1,b2\u304B\u3089\u306A\u308B\u30D9\u30AF\
-    \u30C8\u30EB\u304C\u76F4\u4EA4\u304B\u3069\u3046\u304B\u3092\u8FD4\u3059\nbool\
-    \ isOrthogonal(Point a1, Point a2, Point b1, Point b2) {\n  return isOrthogonal(a1\
-    \ - a2, b1 - b2);\n}\n\n// \u7DDA\u5206 a\u3068b\u304C\u76F4\u4EA4\u304B\u3069\
-    \u3046\u304B\u3092\u8FD4\u3059\nbool isOrthogonal(Segment s1, Segment s2) {\n\
-    \  return equals(dot(s1.p2 - s1.p1, s2.p2 - s2.p1), 0.0);\n}\n\n// \u30D9\u30AF\
-    \u30C8\u30EB a\u3068b\u304C\u5E73\u884C\u304B\u3069\u3046\u304B\u3092\u8FD4\u3059\
-    \nbool isParallel(Vector a, Vector b) {\n  return equals(cross(a, b), 0.0);\n\
+  bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
+    \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
+    \ all(x) (x).begin(), (x).end()\n#define uniqv(v) v.erase(unique(all(v)), v.end())\n\
+    #define OVERLOAD_REP(_1, _2, _3, name, ...) name\n#define REP1(i, n) for (auto\
+    \ i = std::decay_t<decltype(n)>{}; (i) != (n); ++(i))\n#define REP2(i, l, r) for\
+    \ (auto i = (l); (i) != (r); ++(i))\n#define rep(...) OVERLOAD_REP(__VA_ARGS__,\
+    \ REP2, REP1)(__VA_ARGS__)\n#define logfixed(x) cout << fixed << setprecision(10)\
+    \ << x << endl;\n\nostream &operator<<(ostream &dest, __int128_t value) {\n  ostream::sentry\
+    \ s(dest);\n  if (s) {\n    __uint128_t tmp = value < 0 ? -value : value;\n  \
+    \  char buffer[128];\n    char *d = end(buffer);\n    do {\n      --d;\n     \
+    \ *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n    } while (tmp != 0);\n\
+    \    if (value < 0) {\n      --d;\n      *d = '-';\n    }\n    int len = end(buffer)\
+    \ - d;\n    if (dest.rdbuf()->sputn(d, len) != len) {\n      dest.setstate(ios_base::badbit);\n\
+    \    }\n  }\n  return dest;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream\
+    \ &os, const vector<T> &v) {\n  for (int i = 0; i < (int)v.size(); i++) {\n  \
+    \  os << v[i] << (i + 1 != (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const set<T> &set_var)\
+    \ {\n  for (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os\
+    \ << *itr;\n    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n\
+    \  }\n  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os,\
+    \ const unordered_set<T> &set_var) {\n  for (auto itr = set_var.begin(); itr !=\
+    \ set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr != set_var.end())\
+    \ os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename T, typename\
+    \ U>\nostream &operator<<(ostream &os, const map<T, U> &map_var) {\n  for (auto\
+    \ itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os << itr->first\
+    \ << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T, typename U>\nostream &operator<<(ostream &os, const unordered_map<T, U> &map_var)\
+    \ {\n  for (auto itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os\
+    \ << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\
+    \ntemplate <typename T, typename U>\nostream &operator<<(ostream &os, const pair<T,\
+    \ U> &pair_var) {\n  os << pair_var.first << \" \" << pair_var.second;\n  return\
+    \ os;\n}\n\nvoid out() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid\
+    \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
+    \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
+    \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
+    \ setprecision(16) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
+    \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
+    \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
+    \ {\n  cin >> first;\n  in(rest...);\n  return;\n}\n\ntemplate <typename T>\n\
+    bool chmax(T &a, const T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n\
+    \  }\n  return false;\n}\ntemplate <typename T>\nbool chmin(T &a, const T &b)\
+    \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
+    vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
+    \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp\"\
+    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
+    \n#define ERROR 1e-8\n#line 2 \"geometry/Geometry.hpp\"\n#define EPS (1e-10)\n\
+    #define equals(a, b) (fabsl((a) - (b)) < EPS)\n\nstatic const int COUNTER_CLOCKWISE\
+    \ = 1;\nstatic const int CLOCKWISE = -1;\nstatic const int ONLINE_BACK = 2;\n\
+    static const int ONLINE_FRONT = -2;\nstatic const int ON_SEGMENT = 0;\nstatic\
+    \ const int CONTAIN = 2;\nstatic const int CONTAIN_LINE = 1;\nstatic const int\
+    \ NOT_CONTAIN = 0;\nstatic const int CIRCUMSCRIPTION = 3;\nstatic const int INSCRIPTION\
+    \ = 1;\nstatic const int INTERSECT = 2;\nstatic const int CONNOTATION = 0;\nstatic\
+    \ const int NOT_CONNOTATION = 4;\n\nstruct Point {\n public:\n  long double x,\
+    \ y;\n  Point(long double x = 0, long double y = 0) : x(x), y(y) {}\n\n  Point\
+    \ operator+(Point p) { return Point(x + p.x, y + p.y); }\n  Point operator-(Point\
+    \ p) { return Point(x - p.x, y - p.y); }\n  Point operator*(long double a) { return\
+    \ Point(a * x, a * y); }\n  Point operator/(long double a) { return Point(x /\
+    \ a, y / a); }\n  bool operator<(const Point &p) const { return x != p.x ? x <\
+    \ p.x : y < p.y; }\n  bool operator>(const Point &p) const { return x != p.x ?\
+    \ x > p.x : y > p.y; }\n  bool operator==(const Point &p) const { return fabsl(x\
+    \ - p.x) < EPS and fabsl(y - p.y) < EPS; }\n\n  long double abs() { return sqrtl(norm());\
+    \ }\n  long double norm() { return x * x + y * y; }\n};\n\n\nostream &operator<<(ostream\
+    \ &os, const Point &p) {\n  os <<  p.x << \" \" << p.y;\n  return os;\n}\n\n\n\
+    \n\n\nusing Vector = Point;\n\nlong double norm(Vector a) {\n  return a.x * a.x\
+    \ + a.y * a.y;\n}\n\nlong double abs(Vector a) {\n  return sqrtl(norm(a));\n}\n\
+    \nstruct Segment {\n  Point p1, p2;\n  Segment(Point x, Point y) {\n    p1 = x;\n\
+    \    p2 = y;\n  }\n};\n\nusing Line = Segment;\n\nclass Circle {\n public:\n \
+    \ Point c;\n  long double r;\n  Circle(Point c = Point(), long double r = 0.0)\
+    \ : c(c), r(r) {}\n};\n\nusing Polygon = vector<Point>;\n\n// \u30D9\u30AF\u30C8\
+    \u30EB a\u3068b\u306E\u5185\u7A4D\u3092\u8FD4\u3059\nlong double dot(Vector a,\
+    \ Vector b) {\n  return a.x * b.x + a.y * b.y;\n}\n\n// \u30D9\u30AF\u30C8\u30EB\
+    \ a\u3068b\u306E\u5916\u7A4D\u3092\u8FD4\u3059\nlong double cross(Vector a, Vector\
+    \ b) {\n  return a.x * b.y - a.y * b.x;\n}\n\n// \u30D9\u30AF\u30C8\u30EB a\u3068\
+    b\u304C\u76F4\u4EA4\u304B\u3069\u3046\u304B\u3092\u8FD4\u3059\nbool isOrthogonal(Vector\
+    \ a, Vector b) {\n  return equals(dot(a, b), 0.0);\n}\n\n// \u70B9\u3000a1,a2\u304B\
+    \u3089\u306A\u308B\u30D9\u30AF\u30C8\u30EB\u3068 b1,b2\u304B\u3089\u306A\u308B\
+    \u30D9\u30AF\u30C8\u30EB\u304C\u76F4\u4EA4\u304B\u3069\u3046\u304B\u3092\u8FD4\
+    \u3059\nbool isOrthogonal(Point a1, Point a2, Point b1, Point b2) {\n  return\
+    \ isOrthogonal(a1 - a2, b1 - b2);\n}\n\n// \u7DDA\u5206 a\u3068b\u304C\u76F4\u4EA4\
+    \u304B\u3069\u3046\u304B\u3092\u8FD4\u3059\nbool isOrthogonal(Segment s1, Segment\
+    \ s2) {\n  return equals(dot(s1.p2 - s1.p1, s2.p2 - s2.p1), 0.0);\n}\n\n// \u30D9\
+    \u30AF\u30C8\u30EB a\u3068b\u304C\u5E73\u884C\u304B\u3069\u3046\u304B\u3092\u8FD4\
+    \u3059\nbool isParallel(Vector a, Vector b) {\n  return equals(cross(a, b), 0.0);\n\
     }\n\n// \u70B9\u3000a1,a2\u304B\u3089\u306A\u308B\u30D9\u30AF\u30C8\u30EB\u3068\
     \ b1,b2\u304B\u3089\u306A\u308B\u30D9\u30AF\u30C8\u30EB\u304C\u5E73\u884C\u304B\
     \u3069\u3046\u304B\u3092\u8FD4\u3059\nbool isParallel(Point a1, Point a2, Point\
@@ -163,23 +211,24 @@ data:
     \ {\n      for (int n = l.size(); n >= 2 and ccw(l[n - 2], l[n - 1], s[i]) !=\
     \ CLOCKWISE; n--) {\n        l.pop_back();\n      }\n      l.push_back(s[i]);\n\
     \    }\n    reverse(l.begin(), l.end());\n    for (int i = u.size() - 2; i >=\
-    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 6 \"verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp\"\
-    \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int x1, y1, x2, y2;\n  cin\
-    \ >> x1 >> y1 >> x2 >> y2;\n  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n\
-    \  cin >> q;\n  for (int i = 0; i < q; i++) {\n    int x, y;\n    cin >> x >>\
-    \ y;\n    outf(reflect(l, Point(x, y)));\n  }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
-    \n#define ERROR 1e-8\n#include <bits/stdc++.h>\nusing namespace std;\n#include\
-    \ \"../../../geometry/Geometry.hpp\"\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int x1, y1, x2, y2;\n  cin >> x1 >> y1 >> x2 >> y2;\n  Line l(Point(x1, y1),\
-    \ Point(x2, y2));\n  int q;\n  cin >> q;\n  for (int i = 0; i < q; i++) {\n  \
-    \  int x, y;\n    cin >> x >> y;\n    outf(reflect(l, Point(x, y)));\n  }\n}\n"
+    \ 1; i--) l.push_back(u[i]);\n  }\n  return l;\n}\n#line 5 \"verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp\"\
+    \nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int a, b, c, d;\n  in(a,\
+    \ b, c, d);\n  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n  in(q);\n  for\
+    \ (int i = 0; i < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l,\
+    \ Point(x, y)));\n  }\n}\n"
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_B\"\
+    \n#define ERROR 1e-8\n#include \"../../../geometry/Geometry.hpp\"\nint main()\
+    \ {\n  cin.tie(0)->sync_with_stdio(0);\n  int a, b, c, d;\n  in(a, b, c, d);\n\
+    \  Line l(Point(x1, y1), Point(x2, y2));\n  int q;\n  in(q);\n  for (int i = 0;\
+    \ i < q; i++) {\n    int x, y;\n    in(x, y);\n    outf(reflect(l, Point(x, y)));\n\
+    \  }\n}\n"
   dependsOn:
+  - template/template.hpp
   - geometry/Geometry.hpp
   isVerificationFile: true
   path: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-06-28 14:42:38+09:00'
+  timestamp: '2024-06-28 14:54:32+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
