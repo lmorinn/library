@@ -100,7 +100,7 @@ void out(const T &a, const Ts &...b) {
 void outf() { cout << '\n'; }
 template <class T, class... Ts>
 void outf(const T &a, const Ts &...b) {
-  cout << fixed << setprecision(11) << a;
+  cout << fixed << setprecision(12) << a;
   (cout << ... << (cout << ' ', b));
   cout << '\n';
 }

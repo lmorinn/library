@@ -1,5 +1,6 @@
 #include "../../../template/template.hpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_C"
+#define ERROR 1e-8
 #include "../../../geometry/Geometry.hpp"
 
 int main() {

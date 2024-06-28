@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_A"
+#define ERROR 1e-8
 #include <bits/stdc++.h>
 using namespace std;
 #include "../../../geometry/Geometry.hpp"
@@ -12,6 +13,6 @@ int main() {
   for (int i = 0; i < q; i++) {
     int x, y;
     cin >> x >> y;
-    outf(project(l, Point(x,y)));
+    outf(project(l, Point(x, y)));
   }
 }
