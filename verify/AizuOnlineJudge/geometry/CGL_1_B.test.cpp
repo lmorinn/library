@@ -6,7 +6,7 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int a, b, c, d;
   in(a, b, c, d);
-  Line l(Point(x1, y1), Point(x2, y2));
+  Line l(Point(a, b), Point(c, d));
   int q;
   in(q);
   for (int i = 0; i < q; i++) {
