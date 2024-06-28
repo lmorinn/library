@@ -9,5 +9,5 @@ int main() {
   in(a, b, c, d, e, f);
   Circle c1(Point(a, b), c);
   Circle c2(Point(d, e), f);
-  out(intersect(c1, c2));
+  outf(intersect(c1, c2));
 }
