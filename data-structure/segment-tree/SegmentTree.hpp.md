@@ -105,8 +105,8 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/SegmentTree.hpp
   requiredBy:
-  - dp/LongestIncreasingSubsequence.hpp
   - graph/tree/EulerTour.hpp
+  - dp/LongestIncreasingSubsequence.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
