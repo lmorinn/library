@@ -1,8 +1,16 @@
 ---
 data:
   libraryCategories:
+  - name: data-structure/balanced-binary-search-tree
+    pages:
+    - icon: ':warning:'
+      path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
+      title: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
   - name: data-structure/others
     pages:
+    - icon: ':warning:'
+      path: data-structure/others/BinaryTrie.hpp
+      title: Binary Trie
     - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
@@ -45,11 +53,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence
+    - icon: ':warning:'
+      path: dp/TravelingSalesmanProblem.hpp
+      title: Traveling Salesman Problem
   - name: geometry
     pages:
     - icon: ':heavy_check_mark:'
       path: geometry/Geometry.hpp
       title: Geometry
+  - name: graph/dynamic-tree
+    pages:
+    - icon: ':warning:'
+      path: graph/dynamic-tree/LinkCutTreeEdge.hpp
+      title: Link Cut Tree (Edge)
+    - icon: ':warning:'
+      path: graph/dynamic-tree/LinkCutTreeVertex.hpp
+      title: Link Cut Tree (Vertex)
   - name: graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -66,11 +85,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
+  - name: math
+    pages:
+    - icon: ':warning:'
+      path: math/NthTermOfLinearRecurrenceMatPow.hpp
+      title: Nth term of linear recurrence (Matrix Power)
   - name: math/number-theory
     pages:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
+  - name: string
+    pages:
+    - icon: ':warning:'
+      path: string/Trie.hpp
+      title: Trie
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
