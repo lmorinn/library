@@ -1,9 +1,9 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/DualSegmentTree.hpp
-    title: data-structure/segment-tree/DualSegmentTree.hpp
+    title: Dual Segment Tree
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -11,8 +11,10 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/range_affine_point_get
     links:
     - https://judge.yosupo.jp/problem/range_affine_point_get
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -61,7 +63,7 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp\"\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\n\
     #line 2 \"data-structure/segment-tree/DualSegmentTree.hpp\"\ntemplate <class S,\
     \ class F, auto mapping, auto composition, auto id>\nstruct DualSegmentTree {\n\
@@ -86,7 +88,7 @@ data:
     \            f = composition(node[p], f);\n        }\n        return mapping(f,\
     \ ret);\n    }\n\n    F getf(int p) {\n        p += (n - 1);\n        F f = node[p];\n\
     \        while (p > 0) {\n            p = (p - 1) / 2;\n            f = composition(node[p],\
-    \ f);\n        }\n        return f;\n    }\n};\n#line 4 \"verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp\"\
+    \ f);\n        }\n        return f;\n    }\n};\n#line 4 \"verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp\"\
     \n\n#define MOD 998244353\nusing S = lint;\n\nstruct F {\n    lint a;\n    lint\
     \ b;\n};\n\nS mapping(F f, S x) {\n    return ((x * f.a) % MOD + f.b) % MOD;\n\
     }\n\nF composition(F f, F g) {\n    return {(f.a * g.a) % MOD, ((f.a * g.b) %\
@@ -112,16 +114,16 @@ data:
   dependsOn:
   - template/template.hpp
   - data-structure/segment-tree/DualSegmentTree.hpp
-  isVerificationFile: false
-  path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   requiredBy: []
-  timestamp: '2024-08-24 12:35:16+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-08-24 15:47:14+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+documentation_of: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
 layout: document
 redirect_from:
-- /library/verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
-- /library/verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp.html
-title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+- /verify/verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+- /verify/verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp.html
+title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
 ---

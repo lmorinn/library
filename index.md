@@ -8,12 +8,12 @@ data:
       title: Sparse Table
   - name: data-structure/segment-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/DualSegmentTree.hpp
-      title: data-structure/segment-tree/DualSegmentTree.hpp
+      title: Dual Segment Tree
     - icon: ':warning:'
       path: data-structure/segment-tree/DualSegmentTree2D.hpp
-      title: data-structure/segment-tree/DualSegmentTree2D.hpp
+      title: Dual Segment Tree (2D)
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/LazySegmentTree.hpp
       title: Lazy Segment Tree
@@ -76,11 +76,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
-  - name: verify/LibraryChecker/data-structure/segment-tree
-    pages:
-    - icon: ':warning:'
-      path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
-      title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
   verificationCategories:
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
@@ -159,6 +154,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
+  - name: verify/LibraryChecker/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+      title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'

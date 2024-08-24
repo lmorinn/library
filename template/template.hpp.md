@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
@@ -39,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -141,8 +141,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy:
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+  requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -157,6 +156,7 @@ data:
   - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

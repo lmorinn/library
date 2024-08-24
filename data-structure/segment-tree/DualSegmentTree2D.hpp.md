@@ -52,8 +52,12 @@ data:
   verifiedWith: []
 documentation_of: data-structure/segment-tree/DualSegmentTree2D.hpp
 layout: document
-redirect_from:
-- /library/data-structure/segment-tree/DualSegmentTree2D.hpp
-- /library/data-structure/segment-tree/DualSegmentTree2D.hpp.html
-title: data-structure/segment-tree/DualSegmentTree2D.hpp
+title: Dual Segment Tree (2D)
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo

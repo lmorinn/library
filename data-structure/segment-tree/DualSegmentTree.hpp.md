@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/segment-tree/DualSegmentTree.hpp\"\ntemplate\
@@ -62,15 +62,19 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree/DualSegmentTree.hpp
-  requiredBy:
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.cpp
+  requiredBy: []
   timestamp: '2024-08-24 12:35:16+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
 documentation_of: data-structure/segment-tree/DualSegmentTree.hpp
 layout: document
-redirect_from:
-- /library/data-structure/segment-tree/DualSegmentTree.hpp
-- /library/data-structure/segment-tree/DualSegmentTree.hpp.html
-title: data-structure/segment-tree/DualSegmentTree.hpp
+title: Dual Segment Tree
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo
