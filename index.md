@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
-      title: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
+      title: Reversible Lazy Splay Tree
   - name: data-structure/others
     pages:
     - icon: ':warning:'

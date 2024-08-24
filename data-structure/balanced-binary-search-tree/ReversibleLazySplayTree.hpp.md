@@ -182,8 +182,12 @@ data:
   verifiedWith: []
 documentation_of: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
 layout: document
-redirect_from:
-- /library/data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
-- /library/data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp.html
-title: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
+title: Reversible Lazy Splay Tree
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo
