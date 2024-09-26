@@ -37,8 +37,17 @@ data:
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+    title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AtCoder/string/CountSubstringQuery.test.cpp
+    title: verify/AtCoder/string/CountSubstringQuery.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/string/SuffixArray.test.cpp
+    title: verify/LibraryChecker/string/SuffixArray.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -145,18 +154,21 @@ data:
   timestamp: '2024-06-28 15:04:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/geometry/CGL_3_B.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - verify/LibraryChecker/string/SuffixArray.test.cpp
+  - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
-  - verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_3_B.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
+  - verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
+  - verify/AtCoder/string/CountSubstringQuery.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

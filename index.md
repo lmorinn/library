@@ -40,6 +40,9 @@ data:
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
     - icon: ':heavy_check_mark:'
+      path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
+      title: Wavelet Matrix (String)
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
       title: Wavelet Matrix (Sum)
     - icon: ':warning:'
@@ -97,6 +100,12 @@ data:
       title: Sieve of Eratosthenes
   - name: string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: string/FMindex.hpp
+      title: FM-index
+    - icon: ':heavy_check_mark:'
+      path: string/SuffixArray.hpp
+      title: Suffix Array
     - icon: ':warning:'
       path: string/Trie.hpp
       title: Trie
@@ -170,6 +179,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
       title: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
+  - name: verify/AizuOnlineJudge/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+      title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - name: verify/AtCoder/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -178,6 +192,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
+  - name: verify/AtCoder/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AtCoder/string/CountSubstringQuery.test.cpp
+      title: verify/AtCoder/string/CountSubstringQuery.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
     - icon: ':heavy_check_mark:'
@@ -204,6 +223,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
       title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
+  - name: verify/LibraryChecker/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/string/SuffixArray.test.cpp
+      title: verify/LibraryChecker/string/SuffixArray.test.cpp
   - name: verify/LibraryChecker/tree
     pages:
     - icon: ':heavy_check_mark:'

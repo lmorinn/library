@@ -148,8 +148,8 @@ data:
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
+  - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
 documentation_of: data-structure/segment-tree/LazySegmentTree.hpp
 layout: document
 title: Lazy Segment Tree
