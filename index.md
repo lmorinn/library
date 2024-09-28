@@ -66,10 +66,10 @@ data:
       title: Geometry
   - name: graph/dynamic-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/dynamic-tree/LinkCutTreeEdge.hpp
       title: Link Cut Tree (Edge)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dynamic-tree/LinkCutTreeVertex.hpp
       title: Link Cut Tree (Vertex)
   - name: graph/shortest-path
@@ -111,7 +111,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -166,6 +166,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
       title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+  - name: verify/AizuOnlineJudge/graph/dynamic-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
+      title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -192,6 +197,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
+  - name: verify/AtCoder/graph/dynamic-tree
+    pages:
+    - icon: ':x:'
+      path: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
+      title: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
   - name: verify/AtCoder/string
     pages:
     - icon: ':heavy_check_mark:'

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
+    title: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/dynamic-tree/LinkCutTreeEdge.hpp\"\nstruct S {\n \
@@ -223,8 +226,9 @@ data:
   path: graph/dynamic-tree/LinkCutTreeEdge.hpp
   requiredBy: []
   timestamp: '2024-08-24 16:53:34+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
 documentation_of: graph/dynamic-tree/LinkCutTreeEdge.hpp
 layout: document
 title: Link Cut Tree (Edge)
