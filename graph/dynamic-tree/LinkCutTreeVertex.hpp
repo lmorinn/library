@@ -1,7 +1,6 @@
 // ReverseProd: 反転の処理
 // 入力時にb2の入力を忘れない
 // 一次関数の合成なら,b1とb2をswap
-#pragma once
 template <class S, auto op, auto e, class F, auto mapping, auto composition, auto id, auto reverseprod>
 struct LinkCutTree {
    private:
@@ -238,6 +237,22 @@ struct LinkCutTree {
     // uとvを結ぶ辺を追加
     void add(int u, int v) {
         link(at(u), at(v));
+    }
+
+    void apply(int u, int v, F f) {
+        evert(at(u));
+        expose(at(v));
+        Node *path = between(at(u), at(v));
+        if (path != NIL) {
+            path->val = mapping(f, path->val);
+            path->acc = mapping(f, path->acc);
+            path->lazy = composition(f, path->lazy);
+        }
+        update(path);
+        Node *nd = at(v);
+        nd->val = mapping(f, nd->val);
+        nd->acc = mapping(f, nd->acc);
+        update(nd);
     }
 
     // uとvを結ぶ辺を削除
