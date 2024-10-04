@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/connectivity/OnlineDynamicConnectivity.hpp
     title: Online Dynamic Connectivity
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

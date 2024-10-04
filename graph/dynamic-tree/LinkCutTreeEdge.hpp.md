@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
     title: Offline Dynamic Connectivity (LCT base)
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
     title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/dynamic-tree/LinkCutTreeEdge.hpp\"\n\n// u,v,val\u3092\
@@ -191,7 +191,7 @@ data:
   requiredBy:
   - graph/connectivity/OfflineDynamicConnectivityLCT.hpp
   timestamp: '2024-10-04 22:52:59+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
 documentation_of: graph/dynamic-tree/LinkCutTreeEdge.hpp

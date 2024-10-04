@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dynamic-tree/LinkCutTreeEdge.hpp
     title: Link Cut Tree (Edge)
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
     title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/dynamic-tree/LinkCutTreeEdge.hpp\"\n\n// u,v,val\u3092\
@@ -100,15 +100,15 @@ data:
     \    evert(at(u));\n    cut(at(edidx));\n    evert(at(edidx));\n    cut(at(v));\n\
     \    edge->u = -1;\n    edge->v = -1;\n  }\n\n  bool is_connected(int u, int v)\
     \ {\n    return find_root(at(u)) == find_root(at(v));\n  }\n};\n#line 3 \"graph/connectivity/OfflineDynamicConnectivityLCT.hpp\"\
-    \n\nstruct S {\n  int u, v, val;\n};\n\nS op(S a, S b) {\n  if (a.val < b.val)\
-    \ {\n    return a;\n  } else {\n    return b;\n  }\n}\n\nS e() {\n  return {-1,\
-    \ -1, 10000000};\n}\n\nusing F = int;\nS mapping(F x, S a) {\n  return a;\n}\n\
-    \nF composition(F g, F f) {\n  return f;\n}\n\nF id() {\n  return 0;\n}\n\nS reverseprod(S\
-    \ a) {\n  return a;\n}\n\ntemplate <class R>\nclass OfflineDynamicConnectivity\
-    \ {\n private:\n  struct Query {\n    int com;\n    int u, v;\n    int pos;\n\
-    \    int finish;\n  };\n  int Q_INF = 1e8;\n  int n;\n  LinkCutTree<S, op, e,\
-    \ F, mapping, composition, id, reverseprod> t;\n  vector<map<int, int>> ed;\n\
-    \  vector<set<int>> msf;\n  int qtime;\n  vector<Query> q;\n\n public:\n  OfflineDynamicConnectivity()\
+    \n\nstruct S {\n  int val, u, v;\n};\n\nS op(S a, S b) {\n  if (a.val < b.val)\
+    \ {\n    return a;\n  } else {\n    return b;\n  }\n}\n\nS e() {\n  return {10000000,\
+    \ -1, -1};\n}\n\nusing F = int;\nS mapping(F x, S a) {\n  return a;\n}\n\nF composition(F\
+    \ g, F f) {\n  return f;\n}\n\nF id() {\n  return 0;\n}\n\nvoid reverseprod(S\
+    \ a) {\n}\n\ntemplate <class R>\nclass OfflineDynamicConnectivity {\n private:\n\
+    \  struct Query {\n    int com;\n    int u, v;\n    int pos;\n    int finish;\n\
+    \  };\n  int Q_INF = 1e8;\n  int n;\n  LinkCutTree<S, op, e, F, mapping, composition,\
+    \ id, reverseprod> t;\n  vector<map<int, int>> ed;\n  vector<set<int>> msf;\n\
+    \  int qtime;\n  vector<Query> q;\n\n public:\n  OfflineDynamicConnectivity()\
     \ {}\n\n  OfflineDynamicConnectivity(int siz) {\n    vector<S> nodew(siz, {int(1e8),\
     \ -1, -1});\n    t = LinkCutTree<S, op, e, F, mapping, composition, id, reverseprod>(nodew);\n\
     \    ed.resize(siz);\n    msf.resize(siz);\n    qtime = 0;\n  }\n\n  void link(int\
@@ -131,15 +131,15 @@ data:
     \        }\n      } else if (com == 2) {\n        res.emplace_back(t.is_connected(u,\
     \ v));\n      }\n    }\n    return res;\n  }\n};\n"
   code: "#pragma once\n#include \"../dynamic-tree/LinkCutTreeEdge.hpp\"\n\nstruct\
-    \ S {\n  int u, v, val;\n};\n\nS op(S a, S b) {\n  if (a.val < b.val) {\n    return\
-    \ a;\n  } else {\n    return b;\n  }\n}\n\nS e() {\n  return {-1, -1, 10000000};\n\
+    \ S {\n  int val, u, v;\n};\n\nS op(S a, S b) {\n  if (a.val < b.val) {\n    return\
+    \ a;\n  } else {\n    return b;\n  }\n}\n\nS e() {\n  return {10000000, -1, -1};\n\
     }\n\nusing F = int;\nS mapping(F x, S a) {\n  return a;\n}\n\nF composition(F\
-    \ g, F f) {\n  return f;\n}\n\nF id() {\n  return 0;\n}\n\nS reverseprod(S a)\
-    \ {\n  return a;\n}\n\ntemplate <class R>\nclass OfflineDynamicConnectivity {\n\
-    \ private:\n  struct Query {\n    int com;\n    int u, v;\n    int pos;\n    int\
-    \ finish;\n  };\n  int Q_INF = 1e8;\n  int n;\n  LinkCutTree<S, op, e, F, mapping,\
-    \ composition, id, reverseprod> t;\n  vector<map<int, int>> ed;\n  vector<set<int>>\
-    \ msf;\n  int qtime;\n  vector<Query> q;\n\n public:\n  OfflineDynamicConnectivity()\
+    \ g, F f) {\n  return f;\n}\n\nF id() {\n  return 0;\n}\n\nvoid reverseprod(S\
+    \ a) {\n}\n\ntemplate <class R>\nclass OfflineDynamicConnectivity {\n private:\n\
+    \  struct Query {\n    int com;\n    int u, v;\n    int pos;\n    int finish;\n\
+    \  };\n  int Q_INF = 1e8;\n  int n;\n  LinkCutTree<S, op, e, F, mapping, composition,\
+    \ id, reverseprod> t;\n  vector<map<int, int>> ed;\n  vector<set<int>> msf;\n\
+    \  int qtime;\n  vector<Query> q;\n\n public:\n  OfflineDynamicConnectivity()\
     \ {}\n\n  OfflineDynamicConnectivity(int siz) {\n    vector<S> nodew(siz, {int(1e8),\
     \ -1, -1});\n    t = LinkCutTree<S, op, e, F, mapping, composition, id, reverseprod>(nodew);\n\
     \    ed.resize(siz);\n    msf.resize(siz);\n    qtime = 0;\n  }\n\n  void link(int\
@@ -166,8 +166,8 @@ data:
   isVerificationFile: false
   path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
   requiredBy: []
-  timestamp: '2024-10-04 22:52:59+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-10-04 23:03:44+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
 documentation_of: graph/connectivity/OfflineDynamicConnectivityLCT.hpp

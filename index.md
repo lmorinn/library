@@ -74,7 +74,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
       title: Offline Dynamic Connectivity (DSU base)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
       title: Offline Dynamic Connectivity (LCT base)
     - icon: ':heavy_check_mark:'
@@ -82,7 +82,7 @@ data:
       title: Online Dynamic Connectivity
   - name: graph/dynamic-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dynamic-tree/LinkCutTreeEdge.hpp
       title: Link Cut Tree (Edge)
     - icon: ':heavy_check_mark:'
@@ -127,7 +127,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -190,7 +190,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
       title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
       title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - name: verify/AizuOnlineJudge/graph/dynamic-tree
