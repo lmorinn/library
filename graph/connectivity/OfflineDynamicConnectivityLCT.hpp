@@ -2,7 +2,7 @@
 #include "../dynamic-tree/LinkCutTreeEdge.hpp"
 
 struct S {
-  int u, v, val;
+  int val, u, v;
 };
 
 S op(S a, S b) {
@@ -14,7 +14,7 @@ S op(S a, S b) {
 }
 
 S e() {
-  return {-1, -1, 10000000};
+  return {10000000, -1, -1};
 }
 
 using F = int;
@@ -30,8 +30,7 @@ F id() {
   return 0;
 }
 
-S reverseprod(S a) {
-  return a;
+void reverseprod(S a) {
 }
 
 template <class R>
