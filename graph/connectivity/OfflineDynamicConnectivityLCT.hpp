@@ -1,8 +1,41 @@
 #pragma once
 #include "../dynamic-tree/LinkCutTreeEdge.hpp"
 
+struct S {
+  int u, v, val;
+};
+
+S op(S a, S b) {
+  if (a.val < b.val) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+S e() {
+  return {-1, -1, 10000000};
+}
+
+using F = int;
+S mapping(F x, S a) {
+  return a;
+}
+
+F composition(F g, F f) {
+  return f;
+}
+
+F id() {
+  return 0;
+}
+
+S reverseprod(S a) {
+  return a;
+}
+
 template <class R>
-class offline_dynamic_connectivity {
+class OfflineDynamicConnectivity {
  private:
   struct Query {
     int com;
@@ -12,18 +45,18 @@ class offline_dynamic_connectivity {
   };
   int Q_INF = 1e8;
   int n;
-  LinkCutTree t;
+  LinkCutTree<S, op, e, F, mapping, composition, id, reverseprod> t;
   vector<map<int, int>> ed;
   vector<set<int>> msf;
   int qtime;
   vector<Query> q;
 
  public:
-  offline_dynamic_connectivity() {}
+  OfflineDynamicConnectivity() {}
 
-  offline_dynamic_connectivity(int siz) {
+  OfflineDynamicConnectivity(int siz) {
     vector<S> nodew(siz, {int(1e8), -1, -1});
-    t = LinkCutTree(nodew);
+    t = LinkCutTree<S, op, e, F, mapping, composition, id, reverseprod>(nodew);
     ed.resize(siz);
     msf.resize(siz);
     qtime = 0;
@@ -45,7 +78,7 @@ class offline_dynamic_connectivity {
     qtime++;
   }
 
-  void is_connected(int u, int v) {
+  void same(int u, int v) {
     q.push_back({2, u, v, qtime, -1});
     qtime++;
   }

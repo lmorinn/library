@@ -141,6 +141,16 @@ struct LinkCutTree {
     update(v);
   }
 
+  Node *find_root(Node *v) {
+    expose(v);
+    while (v->l != NIL) {
+      push(v);
+      v = v->l;
+    }
+    splay(v);
+    return v;
+  }
+
   void expose(Node *v) {
     auto p = v;
     while (p != NIL) {
@@ -210,6 +220,7 @@ struct LinkCutTree {
 
  public:
   // コンストラクタ
+  LinkCutTree() {}
   LinkCutTree(vector<S> &w) {
     if (!pNIL) {
       pNIL = make_shared<Node>();
@@ -298,5 +309,9 @@ struct LinkCutTree {
     cut(at(v));
     edge->u = -1;
     edge->v = -1;
+  }
+
+  bool is_connected(int u, int v) {
+    return find_root(at(u)) == find_root(at(v));
   }
 };
