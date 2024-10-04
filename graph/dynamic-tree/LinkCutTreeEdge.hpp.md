@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
+    title: Offline Dynamic Connectivity (LCT base)
   _extendedVerifiedWith:
   - icon: ':x:'
     path: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
@@ -224,7 +227,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/dynamic-tree/LinkCutTreeEdge.hpp
-  requiredBy: []
+  requiredBy:
+  - graph/connectivity/OfflineDynamicConnectivityLCT.hpp
   timestamp: '2024-08-24 16:53:34+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:

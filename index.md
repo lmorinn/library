@@ -28,6 +28,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/SegmentTree.hpp
       title: Segment Tree
+  - name: data-structure/union-find
+    pages:
+    - icon: ':warning:'
+      path: data-structure/union-find/UndoableUnionFind.hpp
+      title: data-structure/union-find/UndoableUnionFind.hpp
   - name: data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -64,6 +69,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/Geometry.hpp
       title: Geometry
+  - name: graph/connectivity
+    pages:
+    - icon: ':warning:'
+      path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
+      title: Offline Dynamic Connectivity (DSU base)
+    - icon: ':warning:'
+      path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
+      title: Offline Dynamic Connectivity (LCT base)
+    - icon: ':warning:'
+      path: graph/connectivity/OnlineDynamicConnectivity.hpp
+      title: Online Dynamic Connectivity
   - name: graph/dynamic-tree
     pages:
     - icon: ':x:'
