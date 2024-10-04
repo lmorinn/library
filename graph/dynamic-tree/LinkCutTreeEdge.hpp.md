@@ -5,13 +5,10 @@ data:
   - icon: ':warning:'
     path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
     title: Offline Dynamic Connectivity (LCT base)
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
-    title: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/dynamic-tree/LinkCutTreeEdge.hpp\"\nstruct S {\n \
@@ -230,9 +227,8 @@ data:
   requiredBy:
   - graph/connectivity/OfflineDynamicConnectivityLCT.hpp
   timestamp: '2024-08-24 16:53:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/dynamic-tree/LinkCutTreeEdge.hpp
 layout: document
 title: Link Cut Tree (Edge)

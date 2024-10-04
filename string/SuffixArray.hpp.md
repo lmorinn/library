@@ -10,9 +10,6 @@ data:
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/AtCoder/string/CountSubstringQuery.test.cpp
-    title: verify/AtCoder/string/CountSubstringQuery.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
   _isVerificationFailed: false
@@ -148,7 +145,6 @@ data:
   verifiedWith:
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - verify/AtCoder/string/CountSubstringQuery.test.cpp
 documentation_of: string/SuffixArray.hpp
 layout: document
 title: Suffix Array

@@ -38,7 +38,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrix.hpp
       title: Wavelet Matrix
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
       title: Wavelet Matrix (Sum)
     - icon: ':warning:'
@@ -82,7 +82,7 @@ data:
       title: Online Dynamic Connectivity
   - name: graph/dynamic-tree
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: graph/dynamic-tree/LinkCutTreeEdge.hpp
       title: Link Cut Tree (Edge)
     - icon: ':heavy_check_mark:'
@@ -127,7 +127,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -205,24 +205,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - name: verify/AtCoder/data-structure/wavelet-matrix
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
-      title: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
-      title: verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp
-  - name: verify/AtCoder/graph/dynamic-tree
-    pages:
-    - icon: ':x:'
-      path: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
-      title: verify/AtCoder/graph/dynamic-tree/MSTQuery.test.cpp
-  - name: verify/AtCoder/string
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/AtCoder/string/CountSubstringQuery.test.cpp
-      title: verify/AtCoder/string/CountSubstringQuery.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
     - icon: ':heavy_check_mark:'

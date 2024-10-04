@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: graph/dynamic-tree/LinkCutTreeEdge.hpp
     title: Link Cut Tree (Edge)
   _extendedRequiredBy: []

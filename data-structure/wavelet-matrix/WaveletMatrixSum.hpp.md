@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
-    title: verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/wavelet-matrix/WaveletMatrixSum.hpp\"\nclass\
@@ -282,9 +279,8 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
   requiredBy: []
   timestamp: '2024-06-26 12:49:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/AtCoder/data-structure/wavelet-matrix/LeastElements.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
 layout: document
 title: Wavelet Matrix (Sum)

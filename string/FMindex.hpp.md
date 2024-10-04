@@ -12,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/AtCoder/string/CountSubstringQuery.test.cpp
-    title: verify/AtCoder/string/CountSubstringQuery.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -200,7 +197,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - verify/AtCoder/string/CountSubstringQuery.test.cpp
 documentation_of: string/FMindex.hpp
 layout: document
 title: FM-index
