@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
     title: Offline Dynamic Connectivity (DSU base)
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+    title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find/UndoableUnionFind.hpp\"\n\ntemplate\
@@ -55,12 +58,17 @@ data:
   requiredBy:
   - graph/connectivity/OfflineDynamicConnectivityDFS.hpp
   timestamp: '2024-10-04 18:45:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
 documentation_of: data-structure/union-find/UndoableUnionFind.hpp
 layout: document
-redirect_from:
-- /library/data-structure/union-find/UndoableUnionFind.hpp
-- /library/data-structure/union-find/UndoableUnionFind.hpp.html
-title: data-structure/union-find/UndoableUnionFind.hpp
+title: Undoable Union Find
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo

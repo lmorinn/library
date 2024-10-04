@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find/UndoableUnionFind.hpp
-    title: data-structure/union-find/UndoableUnionFind.hpp
+    title: Undoable Union Find
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+    title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/union-find/UndoableUnionFind.hpp\"\n\ntemplate\
@@ -135,8 +138,9 @@ data:
   path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
   requiredBy: []
   timestamp: '2024-10-04 18:45:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
 documentation_of: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
 layout: document
 title: Offline Dynamic Connectivity (DSU base)

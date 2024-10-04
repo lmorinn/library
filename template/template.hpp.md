@@ -37,6 +37,15 @@ data:
     path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+    title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+    title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+  - icon: ':x:'
+    path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
+    title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
     title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,9 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -152,7 +161,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
@@ -169,6 +178,9 @@ data:
   - verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
+  - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+  - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+  - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

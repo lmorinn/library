@@ -30,9 +30,9 @@ data:
       title: Segment Tree
   - name: data-structure/union-find
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find/UndoableUnionFind.hpp
-      title: data-structure/union-find/UndoableUnionFind.hpp
+      title: Undoable Union Find
   - name: data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -71,18 +71,18 @@ data:
       title: Geometry
   - name: graph/connectivity
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
       title: Offline Dynamic Connectivity (DSU base)
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/connectivity/OfflineDynamicConnectivityLCT.hpp
       title: Offline Dynamic Connectivity (LCT base)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/connectivity/OnlineDynamicConnectivity.hpp
       title: Online Dynamic Connectivity
   - name: graph/dynamic-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/dynamic-tree/LinkCutTreeEdge.hpp
       title: Link Cut Tree (Edge)
     - icon: ':heavy_check_mark:'
@@ -127,7 +127,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -182,6 +182,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
       title: verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+  - name: verify/AizuOnlineJudge/graph/connectivity
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+      title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+      title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
+      title: verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - name: verify/AizuOnlineJudge/graph/dynamic-tree
     pages:
     - icon: ':heavy_check_mark:'
