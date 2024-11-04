@@ -53,9 +53,6 @@ data:
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
     - icon: ':warning:'
-      path: data-structure/wavelet-matrix/WaveletMatrixRectanglePointAdd.hpp
-      title: data-structure/wavelet-matrix/WaveletMatrixRectanglePointAdd.hpp
-    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
       title: Wavelet Matrix (Segment Tree)
     - icon: ':heavy_check_mark:'
