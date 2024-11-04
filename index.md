@@ -6,6 +6,11 @@ data:
     - icon: ':warning:'
       path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
       title: Reversible Lazy Splay Tree
+  - name: data-structure/binary-indexed-tree
+    pages:
+    - icon: ':warning:'
+      path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+      title: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   - name: data-structure/others
     pages:
     - icon: ':warning:'
@@ -39,17 +44,32 @@ data:
       path: data-structure/wavelet-matrix/WaveletMatrix.hpp
       title: Wavelet Matrix
     - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrix3D.hpp
+      title: Wavelet Matrix (3D)
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixRectanglePointAdd.hpp
+      title: data-structure/wavelet-matrix/WaveletMatrixRectanglePointAdd.hpp
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
+      title: Wavelet Matrix (Segment Tree)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
       title: Wavelet Matrix (Sum)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
+      title: Wavelet Matrix (Template)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
+      title: Wavelet Matrix (Template Sum)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
       title: Wavelet Matrix (Toggle)

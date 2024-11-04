@@ -183,8 +183,8 @@ data:
   timestamp: '2024-06-25 21:18:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrix.hpp
 layout: document
 title: Wavelet Matrix
