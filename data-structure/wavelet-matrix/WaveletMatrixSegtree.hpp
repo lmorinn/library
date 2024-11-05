@@ -1,4 +1,3 @@
-
 template <class T, auto op, auto e>
 class BitVector {
    private:
@@ -36,6 +35,10 @@ class BitVector {
         return acc[k >> 5] + __builtin_popcount(bit[k >> 5] >> (32 - (k & 31)));
     }
 
+    inline unsigned rank0(unsigned k) {
+        return k - rank(k);
+    }
+
     inline T rank_prod(unsigned l, unsigned r) {
         return seg.prod(l, r);
     }
@@ -49,12 +52,13 @@ template <class T, auto op, auto e>
 class WaveletMatrix {
    private:
     unsigned n;
-    unsigned bitsize;
-    vector<BitVector<T>> b;
+    unsigned bitsize, logn;
+    vector<BitVector<T, op, e>> b;
     vector<unsigned> zero;
     vector<int> stInd;
     vector<unsigned> compressed;
     vector<T> cmp;
+    vector<T> arr;
     vector<T> prod_pw;
     vector<long long> sum;
     T MI, MA;
@@ -83,6 +87,10 @@ class WaveletMatrix {
         return lower_bound(cmp.begin(), cmp.end(), x) - begin(cmp);
     }
 
+    inline unsigned index(const T &x) {
+        return lower_bound(arr.begin(), arr.end(), x) - begin(arr);
+    }
+
    public:
     // コンストラクタ
     WaveletMatrix() {}
@@ -90,8 +98,11 @@ class WaveletMatrix {
         MI = numeric_limits<T>::min();
         MA = numeric_limits<T>::max();
         n = v.size();
+
+        logn = bit_width(n);
         cmp = v;
         sort(cmp.begin(), cmp.end());
+        arr = cmp;
         cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
         compressed.resize(n);
         sum.resize(n + 1);
@@ -104,8 +115,8 @@ class WaveletMatrix {
             sum[i + 1] = sum[i] + v[i];
         }
         stInd.resize(cmp.size() + 1, -1);
-        bitsize = bit_width(size_mx);
-        b.resize(bitsize);
+        bitsize = bit_width(cmp.size());
+        b.resize(bitsize + 1);
         zero.resize(bitsize, 0);
         vector<bool> bit(n, 0);
         for (unsigned i = 0; i < bitsize; i++) {
@@ -115,7 +126,8 @@ class WaveletMatrix {
                 tmp[j] = v[j];
                 tmpc[j] = compressed[j];
             }
-            b[i] = BitVector<T>(bit);
+            b[i] = BitVector<T, op, e>(bit);
+            b[i].seg_set(v);
             int cur = 0;
             for (unsigned j = 0; j < n; j++) {
                 if (!bit[j]) {
@@ -131,7 +143,7 @@ class WaveletMatrix {
                     cur++;
                 }
             }
-            b[i].seg_set(v);
+            b[i + 1].seg_set(v);
         }
 
         for (unsigned i = 0; i < n; i++) {
@@ -261,6 +273,37 @@ class WaveletMatrix {
             }
         }
         return ret;
+    }
+
+    // [L,R) x [y1,y2)
+
+    T range_prod(int L, int R, T y1, T y2) {
+        int lo = compress(y1);
+        int hi = compress(y2);
+        T t = e();
+        auto dfs = [&](auto &dfs, int d, int L, int R, int A, int B) -> void {
+            if (hi <= A || B <= lo) return;
+            if (lo <= A && B <= hi) {
+                t = op(t, b[d].rank_prod(L, R));
+                return;
+            }
+            if (d == bitsize) {
+                if (lo <= A && A < hi) {
+                    t = op(t, b[bitsize].rank_prod(L, R));
+                }
+                return;
+            }
+            int C = (A + B) / 2;
+            int l0 = L - b[d].rank(L);
+            int r0 = R - b[d].rank(R);
+            int l1 = b[d].rank(L) + zero[d];
+            int r1 = b[d].rank(R) + zero[d];
+
+            dfs(dfs, d + 1, l0, r0, A, C);
+            dfs(dfs, d + 1, l1, r1, C, B);
+        };
+        dfs(dfs, 0, L, R, 0, 1 << bitsize);
+        return t;
     }
 
     // v[l,r)の中でvalを超えない最大の値を返す
