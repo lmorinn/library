@@ -19,39 +19,31 @@ data:
     \ & 31)) & 1));\n  }\n\n  inline int rank(int k) {\n    return (sum[k >> 5] +\
     \ __builtin_popcount(bit[k >> 5] & ((1U << (k & 31)) - 1)));\n  }\n};\n\ntemplate\
     \ <class T>\nclass WaveletMatrix {\n private:\n  unsigned n;\n  unsigned bitsize;\n\
-    \  vector<BitVector> b;\n  vector<unsigned> zero;\n  vector<int> stInd;\n  vector<T>\
-    \ cmp;\n  T MI, MA;\n\n  inline unsigned compress(const T &x) {\n    return lower_bound(cmp.begin(),\
+    \  vector<BitVector> b;\n  vector<unsigned> zero;\n  vector<T> cmp;\n  T MI, MA;\n\
+    \n  inline unsigned compress(const T &x) {\n    return lower_bound(cmp.begin(),\
     \ cmp.end(), x) - begin(cmp);\n  }\n\n public:\n  // \u30B3\u30F3\u30B9\u30C8\u30E9\
     \u30AF\u30BF\n  WaveletMatrix() {}\n  WaveletMatrix(const vector<T> &v) {\n  \
     \  MI = numeric_limits<T>::min();\n    MA = numeric_limits<T>::max();\n    n =\
     \ v.size();\n    cmp = v;\n    sort(cmp.begin(), cmp.end());\n    cmp.erase(unique(cmp.begin(),\
     \ cmp.end()), cmp.end());\n    vector<unsigned> compressed(n);\n    vector<unsigned>\
     \ tmpc(n);\n    unsigned size_mx = v.size();\n    for (unsigned i = 0; i < n;\
-    \ i++) {\n      compressed[i] = compress(v[i]);\n    }\n    stInd.assign(cmp.size()\
-    \ + 1, -1);\n    bitsize = bit_width(cmp.size());\n    b.resize(bitsize);\n  \
-    \  zero.assign(bitsize, 0);\n    int cur = 0;\n\n    for (unsigned i = 0; i <\
-    \ bitsize; i++) {\n      b[i] = BitVector(n + 1);\n      cur = 0;\n      for (unsigned\
-    \ j = 0; j < n; j++) {\n        if (compressed[j] & (1U << (bitsize - i - 1)))\
-    \ {\n          b[i].set(j);\n        } else {\n          zero[i]++;\n        \
-    \  tmpc[cur] = compressed[j];\n          cur++;\n        }\n      }\n      b[i].build();\n\
-    \n      for (unsigned j = 0; j < n; j++) {\n        if (compressed[j] & (1U <<\
-    \ (bitsize - i - 1))) {\n          tmpc[cur] = compressed[j];\n          cur++;\n\
-    \        }\n      }\n      swap(tmpc, compressed);\n    }\n\n    for (unsigned\
-    \ i = 0; i < n; i++) {\n      if (stInd[compressed[i]] == -1) {\n        stInd[compressed[i]]\
-    \ = i;\n      }\n    }\n  }\n\n  // get v[k]\n  T access(unsigned k) {\n    unsigned\
+    \ i++) {\n      compressed[i] = compress(v[i]);\n    }\n    bitsize = bit_width(cmp.size());\n\
+    \    b.resize(bitsize);\n    zero.assign(bitsize, 0);\n    int cur = 0;\n\n  \
+    \  for (unsigned i = 0; i < bitsize; i++) {\n      b[i] = BitVector(n + 1);\n\
+    \      cur = 0;\n      for (unsigned j = 0; j < n; j++) {\n        if (compressed[j]\
+    \ & (1U << (bitsize - i - 1))) {\n          b[i].set(j);\n        } else {\n \
+    \         zero[i]++;\n          tmpc[cur] = compressed[j];\n          cur++;\n\
+    \        }\n      }\n      b[i].build();\n\n      for (unsigned j = 0; j < n;\
+    \ j++) {\n        if (compressed[j] & (1U << (bitsize - i - 1))) {\n         \
+    \ tmpc[cur] = compressed[j];\n          cur++;\n        }\n      }\n      swap(tmpc,\
+    \ compressed);\n    }\n  }\n\n  // get v[k]\n  T access(unsigned k) {\n    unsigned\
     \ res = 0;\n    unsigned cur = k;\n    for (unsigned i = 0; i < bitsize; i++)\
     \ {\n      if (b[i].access(cur)) {\n        res |= (1U << (bitsize - i - 1));\n\
     \        cur = zero[i] + b[i].rank(cur);\n      } else {\n        cur -= b[i].rank(cur);\n\
-    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[0,k) \u4E2D\u3067\u306Ec\u306E\
-    \u51FA\u73FE\u56DE\u6570\u3092\u8FD4\u3059\n  unsigned rank(unsigned k, T c) {\n\
-    \    c = compress(c);\n    unsigned cur = k;\n    if (stInd[c] == -1) {\n    \
-    \  return 0;\n    }\n    for (unsigned i = 0; i < bitsize; i++) {\n      if (c\
-    \ & (1U << (bitsize - i - 1))) {\n        cur = zero[i] + b[i].rank(cur);\n  \
-    \    } else {\n        cur -= b[i].rank(cur);\n      }\n    }\n    return cur\
-    \ - stInd[c];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\u76EE(1-origin)\u306B\
-    \u5C0F\u3055\u3044\u5024\u3092\u8FD4\u3059\n  T kth_smallest(unsigned l, unsigned\
-    \ r, unsigned k) {\n    unsigned res = 0;\n    unsigned rank1_l, rank1_r, num0;\n\
-    \    for (unsigned i = 0; i < bitsize; i++) {\n      rank1_l = b[i].rank(l);\n\
+    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\
+    \u76EE(1-origin)\u306B\u5C0F\u3055\u3044\u5024\u3092\u8FD4\u3059\n  T kth_smallest(unsigned\
+    \ l, unsigned r, unsigned k) {\n    unsigned res = 0;\n    unsigned rank1_l, rank1_r,\
+    \ num0;\n    for (unsigned i = 0; i < bitsize; i++) {\n      rank1_l = b[i].rank(l);\n\
     \      rank1_r = b[i].rank(r);\n      num0 = r - l - (rank1_r - rank1_l);\n  \
     \    if (num0 < k) {\n        res |= (1U << (bitsize - i - 1));\n        l = zero[i]\
     \ + rank1_l;\n        r = zero[i] + rank1_r;\n        k -= num0;\n      } else\
@@ -89,39 +81,31 @@ data:
     \ & 31)) & 1));\n  }\n\n  inline int rank(int k) {\n    return (sum[k >> 5] +\
     \ __builtin_popcount(bit[k >> 5] & ((1U << (k & 31)) - 1)));\n  }\n};\n\ntemplate\
     \ <class T>\nclass WaveletMatrix {\n private:\n  unsigned n;\n  unsigned bitsize;\n\
-    \  vector<BitVector> b;\n  vector<unsigned> zero;\n  vector<int> stInd;\n  vector<T>\
-    \ cmp;\n  T MI, MA;\n\n  inline unsigned compress(const T &x) {\n    return lower_bound(cmp.begin(),\
+    \  vector<BitVector> b;\n  vector<unsigned> zero;\n  vector<T> cmp;\n  T MI, MA;\n\
+    \n  inline unsigned compress(const T &x) {\n    return lower_bound(cmp.begin(),\
     \ cmp.end(), x) - begin(cmp);\n  }\n\n public:\n  // \u30B3\u30F3\u30B9\u30C8\u30E9\
     \u30AF\u30BF\n  WaveletMatrix() {}\n  WaveletMatrix(const vector<T> &v) {\n  \
     \  MI = numeric_limits<T>::min();\n    MA = numeric_limits<T>::max();\n    n =\
     \ v.size();\n    cmp = v;\n    sort(cmp.begin(), cmp.end());\n    cmp.erase(unique(cmp.begin(),\
     \ cmp.end()), cmp.end());\n    vector<unsigned> compressed(n);\n    vector<unsigned>\
     \ tmpc(n);\n    unsigned size_mx = v.size();\n    for (unsigned i = 0; i < n;\
-    \ i++) {\n      compressed[i] = compress(v[i]);\n    }\n    stInd.assign(cmp.size()\
-    \ + 1, -1);\n    bitsize = bit_width(cmp.size());\n    b.resize(bitsize);\n  \
-    \  zero.assign(bitsize, 0);\n    int cur = 0;\n\n    for (unsigned i = 0; i <\
-    \ bitsize; i++) {\n      b[i] = BitVector(n + 1);\n      cur = 0;\n      for (unsigned\
-    \ j = 0; j < n; j++) {\n        if (compressed[j] & (1U << (bitsize - i - 1)))\
-    \ {\n          b[i].set(j);\n        } else {\n          zero[i]++;\n        \
-    \  tmpc[cur] = compressed[j];\n          cur++;\n        }\n      }\n      b[i].build();\n\
-    \n      for (unsigned j = 0; j < n; j++) {\n        if (compressed[j] & (1U <<\
-    \ (bitsize - i - 1))) {\n          tmpc[cur] = compressed[j];\n          cur++;\n\
-    \        }\n      }\n      swap(tmpc, compressed);\n    }\n\n    for (unsigned\
-    \ i = 0; i < n; i++) {\n      if (stInd[compressed[i]] == -1) {\n        stInd[compressed[i]]\
-    \ = i;\n      }\n    }\n  }\n\n  // get v[k]\n  T access(unsigned k) {\n    unsigned\
+    \ i++) {\n      compressed[i] = compress(v[i]);\n    }\n    bitsize = bit_width(cmp.size());\n\
+    \    b.resize(bitsize);\n    zero.assign(bitsize, 0);\n    int cur = 0;\n\n  \
+    \  for (unsigned i = 0; i < bitsize; i++) {\n      b[i] = BitVector(n + 1);\n\
+    \      cur = 0;\n      for (unsigned j = 0; j < n; j++) {\n        if (compressed[j]\
+    \ & (1U << (bitsize - i - 1))) {\n          b[i].set(j);\n        } else {\n \
+    \         zero[i]++;\n          tmpc[cur] = compressed[j];\n          cur++;\n\
+    \        }\n      }\n      b[i].build();\n\n      for (unsigned j = 0; j < n;\
+    \ j++) {\n        if (compressed[j] & (1U << (bitsize - i - 1))) {\n         \
+    \ tmpc[cur] = compressed[j];\n          cur++;\n        }\n      }\n      swap(tmpc,\
+    \ compressed);\n    }\n  }\n\n  // get v[k]\n  T access(unsigned k) {\n    unsigned\
     \ res = 0;\n    unsigned cur = k;\n    for (unsigned i = 0; i < bitsize; i++)\
     \ {\n      if (b[i].access(cur)) {\n        res |= (1U << (bitsize - i - 1));\n\
     \        cur = zero[i] + b[i].rank(cur);\n      } else {\n        cur -= b[i].rank(cur);\n\
-    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[0,k) \u4E2D\u3067\u306Ec\u306E\
-    \u51FA\u73FE\u56DE\u6570\u3092\u8FD4\u3059\n  unsigned rank(unsigned k, T c) {\n\
-    \    c = compress(c);\n    unsigned cur = k;\n    if (stInd[c] == -1) {\n    \
-    \  return 0;\n    }\n    for (unsigned i = 0; i < bitsize; i++) {\n      if (c\
-    \ & (1U << (bitsize - i - 1))) {\n        cur = zero[i] + b[i].rank(cur);\n  \
-    \    } else {\n        cur -= b[i].rank(cur);\n      }\n    }\n    return cur\
-    \ - stInd[c];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\u76EE(1-origin)\u306B\
-    \u5C0F\u3055\u3044\u5024\u3092\u8FD4\u3059\n  T kth_smallest(unsigned l, unsigned\
-    \ r, unsigned k) {\n    unsigned res = 0;\n    unsigned rank1_l, rank1_r, num0;\n\
-    \    for (unsigned i = 0; i < bitsize; i++) {\n      rank1_l = b[i].rank(l);\n\
+    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\
+    \u76EE(1-origin)\u306B\u5C0F\u3055\u3044\u5024\u3092\u8FD4\u3059\n  T kth_smallest(unsigned\
+    \ l, unsigned r, unsigned k) {\n    unsigned res = 0;\n    unsigned rank1_l, rank1_r,\
+    \ num0;\n    for (unsigned i = 0; i < bitsize; i++) {\n      rank1_l = b[i].rank(l);\n\
     \      rank1_r = b[i].rank(r);\n      num0 = r - l - (rank1_r - rank1_l);\n  \
     \    if (num0 < k) {\n        res |= (1U << (bitsize - i - 1));\n        l = zero[i]\
     \ + rank1_l;\n        r = zero[i] + rank1_r;\n        k -= num0;\n      } else\
@@ -153,7 +137,7 @@ data:
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
   requiredBy: []
-  timestamp: '2024-11-09 11:24:09+09:00'
+  timestamp: '2024-11-09 12:35:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
