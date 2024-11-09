@@ -37,7 +37,6 @@ class WaveletMatrix {
   unsigned bitsize;
   vector<BitVector> b;
   vector<unsigned> zero;
-  vector<int> stInd;
   vector<T> cmp;
   T MI, MA;
 
@@ -61,7 +60,6 @@ class WaveletMatrix {
     for (unsigned i = 0; i < n; i++) {
       compressed[i] = compress(v[i]);
     }
-    stInd.assign(cmp.size() + 1, -1);
     bitsize = bit_width(cmp.size());
     b.resize(bitsize);
     zero.assign(bitsize, 0);
@@ -89,12 +87,6 @@ class WaveletMatrix {
       }
       swap(tmpc, compressed);
     }
-
-    for (unsigned i = 0; i < n; i++) {
-      if (stInd[compressed[i]] == -1) {
-        stInd[compressed[i]] = i;
-      }
-    }
   }
 
   // get v[k]
@@ -110,23 +102,6 @@ class WaveletMatrix {
       }
     }
     return cmp[res];
-  }
-
-  // v[0,k) 中でのcの出現回数を返す
-  unsigned rank(unsigned k, T c) {
-    c = compress(c);
-    unsigned cur = k;
-    if (stInd[c] == -1) {
-      return 0;
-    }
-    for (unsigned i = 0; i < bitsize; i++) {
-      if (c & (1U << (bitsize - i - 1))) {
-        cur = zero[i] + b[i].rank(cur);
-      } else {
-        cur -= b[i].rank(cur);
-      }
-    }
-    return cur - stInd[c];
   }
 
   // v[l,r) の中でk番目(1-origin)に小さい値を返す
