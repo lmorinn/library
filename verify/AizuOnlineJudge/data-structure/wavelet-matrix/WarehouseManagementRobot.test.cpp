@@ -1,7 +1,7 @@
 #include "../../../../template/template.hpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/4059"
 #include "../../../../data-structure/segment-tree/SegmentTree.hpp"
-#include "../../../../data-structure/wavelet-matrix/WaveletMatrixSegTree.hpp"
+#include "../../../data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp"
 
 using S = lint;
 
