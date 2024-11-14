@@ -55,7 +55,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
       title: Wavelet Matrix (Template)
     - icon: ':heavy_check_mark:'
@@ -138,7 +138,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -234,9 +234,6 @@ data:
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - name: verify/AtCoder/data-structure/wavelet-matrix
     pages:
-    - icon: ':x:'
-      path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
-      title: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp

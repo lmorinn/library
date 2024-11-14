@@ -54,9 +54,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - icon: ':x:'
-    path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
-    title: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
     title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
@@ -66,9 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -170,7 +167,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
@@ -192,7 +189,6 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
-  - verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

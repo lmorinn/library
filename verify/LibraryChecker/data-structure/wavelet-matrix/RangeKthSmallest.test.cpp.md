@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
     title: Wavelet Matrix (Template)
   _extendedRequiredBy: []
