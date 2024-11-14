@@ -1,9 +1,9 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/WaveletMatrix.hpp
-    title: Wavelet Matrix
+  - icon: ':question:'
+    path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
+    title: Wavelet Matrix (Template)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -16,105 +16,87 @@ data:
     - https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n#include\
-    \ <bits/stdc++.h>\n\nusing namespace std;\n#line 2 \"data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
-    \nclass BitVector {\n private:\n  unsigned n, cur, p;\n  vector<unsigned> acc,\
-    \ bit;\n\n public:\n  BitVector() {\n  }\n\n  BitVector(vector<bool> &b, vector<unsigned>\
-    \ &v) {\n    cur = 0;\n    n = b.size();\n    acc.resize(n / 32 + 2, 0);\n   \
-    \ bit.resize(n / 32 + 2, 0);\n    for (int i = 0; i < n; i++) {\n      p = i %\
-    \ 32;\n      if (p == 0) {\n        cur++;\n        acc[cur] = acc[cur - 1];\n\
-    \      }\n      if (b[i]) {\n        acc[cur] += int(b[i]);\n        bit[cur -\
-    \ 1] |= (1U << (32 - p - 1));\n      }\n    }\n  }\n\n  inline unsigned rank(unsigned\
-    \ k) {\n    if (!(k & 31)) return acc[k / 32];\n    return acc[k / 32] + __builtin_popcount(bit[k\
-    \ / 32] >> (32 - (k & 31)));\n  }\n\n  inline bool access(unsigned k) {\n    return\
-    \ (rank(k + 1) - rank(k)) == 1;\n  }\n};\n\nclass WaveletMatrix {\n private:\n\
-    \  unsigned n;\n  unsigned bitsize;\n  vector<BitVector> b;\n  vector<BitVector>\
-    \ cnt;\n  vector<unsigned> zero;\n  vector<int> stInd;\n  vector<unsigned> compressed,\
-    \ cmp;\n\n  inline unsigned compress(const unsigned &x) {\n    return lower_bound(cmp.begin(),\
+    \ <bits/stdc++.h>\n\nusing namespace std;\n#line 1 \"data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\
+    \nstruct BitVector {\n  unsigned sz;\n  unsigned blocksize;\n  vector<unsigned>\
+    \ bit, sum;\n\n  BitVector() {}\n\n  BitVector(unsigned siz) {\n    sz = siz;\n\
+    \    blocksize = (sz + 31) >> 5;\n    bit.assign(blocksize, 0U);\n    sum.assign(blocksize,\
+    \ 0U);\n  }\n\n  inline void set(int k) { bit[k >> 5] |= 1U << (k & 31); }\n\n\
+    \  inline void build() {\n    sum[0] = 0U;\n    for (int i = 1; i < blocksize;\
+    \ i++) {\n      sum[i] = sum[i - 1] + __builtin_popcount(bit[i - 1]);\n    }\n\
+    \  }\n\n  inline bool access(unsigned k) {\n    return (bool((bit[k >> 5] >> (k\
+    \ & 31)) & 1));\n  }\n\n  inline int rank(int k) {\n    return (sum[k >> 5] +\
+    \ __builtin_popcount(bit[k >> 5] & ((1U << (k & 31)) - 1)));\n  }\n};\n\ntemplate\
+    \ <class T>\nclass WaveletMatrix {\n private:\n  unsigned n;\n  unsigned bitsize;\n\
+    \  vector<BitVector> b;\n  vector<unsigned> zero;\n  vector<T> cmp;\n  T MI, MA;\n\
+    \n  inline unsigned compress(const T &x) {\n    return lower_bound(cmp.begin(),\
     \ cmp.end(), x) - begin(cmp);\n  }\n\n public:\n  // \u30B3\u30F3\u30B9\u30C8\u30E9\
-    \u30AF\u30BF\n  WaveletMatrix() {}\n  WaveletMatrix(vector<unsigned> v) {\n  \
-    \  n = v.size();\n    cmp = v;\n    sort(cmp.begin(), cmp.end());\n    cmp.erase(unique(cmp.begin(),\
-    \ cmp.end()), cmp.end());\n    compressed.resize(n);\n    vector<unsigned> tmpc(n);\n\
-    \    unsigned size_mx = v.size();\n    for (unsigned i = 0; i < n; i++) {\n  \
-    \    compressed[i] = distance(cmp.begin(), lower_bound(cmp.begin(), cmp.end(),\
-    \ v[i]));\n    }\n    stInd.resize(cmp.size() + 1, -1);\n    bitsize = bit_width(size_mx);\n\
-    \    b.resize(bitsize);\n    cnt.resize(bitsize);\n    zero.resize(bitsize, 0);\n\
-    \    vector<bool> bit(n, 0);\n    for (unsigned i = 0; i < bitsize; i++) {\n \
-    \     for (unsigned j = 0; j < n; j++) {\n        bit[j] = compressed[j] & (1U\
-    \ << (bitsize - i - 1));\n        zero[i] += unsigned(!bit[j]);\n        tmpc[j]\
-    \ = compressed[j];\n      }\n      b[i] = BitVector(bit, compressed);\n      int\
-    \ cur = 0;\n      for (unsigned j = 0; j < n; j++) {\n        if (!bit[j]) {\n\
-    \          compressed[cur] = tmpc[j];\n          cur++;\n        }\n      }\n\
-    \      for (unsigned j = 0; j < n; j++) {\n        if (bit[j]) {\n          compressed[cur]\
-    \ = tmpc[j];\n          cur++;\n        }\n      }\n    }\n\n    for (unsigned\
-    \ i = 0; i < n; i++) {\n      if (stInd[compressed[i]] == -1) {\n        stInd[compressed[i]]\
-    \ = i;\n      }\n    }\n  }\n\n  // get v[k]\n  unsigned access(unsigned k) {\n\
-    \    unsigned res = 0;\n    unsigned cur = k;\n    for (unsigned i = 0; i < bitsize;\
-    \ i++) {\n      if (b[i].access(cur)) {\n        res |= (1U << (bitsize - i -\
-    \ 1));\n        cur = zero[i] + b[i].rank(cur);\n      } else {\n        cur -=\
-    \ b[i].rank(cur);\n      }\n    }\n    return cmp[res];\n  }\n\n  // v[0,k) \u4E2D\
-    \u3067\u306Ec\u306E\u51FA\u73FE\u56DE\u6570\u3092\u8FD4\u3059\n  unsigned rank(unsigned\
-    \ k, unsigned c) {\n    c = compress(c);\n    unsigned cur = k;\n    if (stInd[c]\
-    \ == -1) {\n      return 0;\n    }\n    for (unsigned i = 0; i < bitsize; i++)\
-    \ {\n      if (c & (1U << (bitsize - i - 1))) {\n        cur = zero[i] + b[i].rank(cur);\n\
-    \      } else {\n        cur -= b[i].rank(cur);\n      }\n    }\n    return cur\
-    \ - stInd[c];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067\u5024\u304C{k\u672A\u6E80\
-    \u306E\u500B\u6570\u3001k\u306E\u500B\u6570\u3001k\u3088\u308A\u5927\u304D\u3044\
-    \u500B\u6570}\u3092\u8FD4\u3059\n  vector<unsigned> rank_less_more(unsigned l,\
-    \ unsigned r, unsigned k) {\n    unsigned range = r - l;\n    unsigned less =\
-    \ 0;\n    unsigned more = 0;\n    for (unsigned i = 0; i < bitsize and l < r;\
-    \ i++) {\n      const unsigned rank1_l = b[i].rank(l);\n      const unsigned rank1_r\
-    \ = b[i].rank(r);\n      const unsigned rank0_l = l - rank1_l;\n      const unsigned\
-    \ rank0_r = r - rank1_r;\n      if (k & (1U << (bitsize - i - 1))) {\n       \
-    \ less += (rank0_r - rank0_l);\n        l = zero[i] + rank1_l;\n        r = zero[i]\
-    \ + rank1_r;\n      } else {\n        more += (rank1_r - rank1_l);\n        l\
-    \ = rank0_l;\n        r = rank0_r;\n      }\n    }\n    unsigned rank = range\
-    \ - more - less;\n    return {less, rank, more};\n  }\n\n  // v[l,r) \u306E\u4E2D\
-    \u3067\u5024\u304Ck\u672A\u6E80\u306E\u500B\u6570\u3092\u8FD4\u3059\n  unsigned\
-    \ rank_less(unsigned l, unsigned r, unsigned k) {\n    unsigned less = 0;\n  \
-    \  for (unsigned i = 0; i < bitsize and l < r; i++) {\n      const unsigned rank1_l\
-    \ = b[i].rank(l);\n      const unsigned rank1_r = b[i].rank(r);\n      const unsigned\
-    \ rank0_l = l - rank1_l;\n      const unsigned rank0_r = r - rank1_r;\n      if\
-    \ (k & (1U << (bitsize - i - 1))) {\n        less += (rank0_r - rank0_l);\n  \
-    \      l = zero[i] + rank1_l;\n        r = zero[i] + rank1_r;\n      } else {\n\
-    \        l = rank0_l;\n        r = rank0_r;\n      }\n    }\n    return less;\n\
-    \  }\n\n  // v[l,r) \u306E\u4E2D\u3067k-1\u756A\u76EE\u306B\u5C0F\u3055\u3044\u5024\
-    \u3092\u8FD4\u3059\n  unsigned kth_smallest(unsigned l, unsigned r, unsigned k)\
-    \ {\n    unsigned res = 0;\n    for (unsigned i = 0; i < bitsize; i++) {\n   \
-    \   unsigned num1 = b[i].rank(r) - b[i].rank(l);\n      unsigned num0 = r - l\
-    \ - num1;\n      if (num0 < k) {\n        res |= (1ULL << (bitsize - i - 1));\n\
-    \        l = zero[i] + b[i].rank(l);\n        r = zero[i] + b[i].rank(r);\n  \
-    \      k -= num0;\n      } else {\n        l -= b[i].rank(l);\n        r -= b[i].rank(r);\n\
-    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067[mink,maxk)\u306B\
-    \u5165\u308B\u5024\u306E\u500B\u6570\u3092\u8FD4\u3059\n  unsigned range_freq(unsigned\
-    \ l, unsigned r, unsigned mink, unsigned maxk) {\n    mink = compress(mink);\n\
-    \    maxk = compress(maxk);\n    return rank_less(l, r, maxk) - rank_less(l, r,\
-    \ mink);\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u3092\u8D85\u3048\u306A\u3044\
-    \u6700\u5927\u306E\u5024\u3092\u8FD4\u3059\n  unsigned prev_value(unsigned l,\
-    \ unsigned r, unsigned val) {\n    int num = range_freq(l, r, 0, val);\n    if\
-    \ (num == 0) {\n      return UINT32_MAX;\n    } else {\n      return kth_smallest(l,\
-    \ r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u4EE5\u4E0A\u306E\u6700\
-    \u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  unsigned next_value(unsigned l, unsigned\
-    \ r, unsigned val) {\n    int num = range_freq(l, r, 0, val);\n    if (num ==\
-    \ r - l) {\n      return UINT32_MAX;\n    } else {\n      return kth_smallest(l,\
-    \ r, num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
+    \u30AF\u30BF\n  WaveletMatrix() {}\n  WaveletMatrix(const vector<T> &v) {\n  \
+    \  MI = numeric_limits<T>::min();\n    MA = numeric_limits<T>::max();\n    n =\
+    \ v.size();\n    cmp = v;\n    sort(cmp.begin(), cmp.end());\n    cmp.erase(unique(cmp.begin(),\
+    \ cmp.end()), cmp.end());\n    vector<unsigned> compressed(n);\n    vector<unsigned>\
+    \ tmpc(n);\n    unsigned size_mx = v.size();\n    for (unsigned i = 0; i < n;\
+    \ i++) {\n      compressed[i] = compress(v[i]);\n    }\n    bitsize = bit_width(cmp.size());\n\
+    \    b.resize(bitsize);\n    zero.assign(bitsize, 0);\n    int cur = 0;\n\n  \
+    \  for (unsigned i = 0; i < bitsize; i++) {\n      b[i] = BitVector(n + 1);\n\
+    \      cur = 0;\n      for (unsigned j = 0; j < n; j++) {\n        if (compressed[j]\
+    \ & (1U << (bitsize - i - 1))) {\n          b[i].set(j);\n        } else {\n \
+    \         zero[i]++;\n          tmpc[cur] = compressed[j];\n          cur++;\n\
+    \        }\n      }\n      b[i].build();\n\n      for (unsigned j = 0; j < n;\
+    \ j++) {\n        if (compressed[j] & (1U << (bitsize - i - 1))) {\n         \
+    \ tmpc[cur] = compressed[j];\n          cur++;\n        }\n      }\n      swap(tmpc,\
+    \ compressed);\n    }\n  }\n\n  // get v[k]\n  T access(unsigned k) {\n    unsigned\
+    \ res = 0;\n    unsigned cur = k;\n    for (unsigned i = 0; i < bitsize; i++)\
+    \ {\n      if (b[i].access(cur)) {\n        res |= (1U << (bitsize - i - 1));\n\
+    \        cur = zero[i] + b[i].rank(cur);\n      } else {\n        cur -= b[i].rank(cur);\n\
+    \      }\n    }\n    return cmp[res];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\
+    \u76EE(1-origin)\u306B\u5C0F\u3055\u3044\u5024\u3092\u8FD4\u3059\n  T kth_smallest(unsigned\
+    \ l, unsigned r, unsigned k) {\n    unsigned res = 0;\n    unsigned rank1_l, rank1_r,\
+    \ num0;\n    for (unsigned i = 0; i < bitsize; i++) {\n      rank1_l = b[i].rank(l);\n\
+    \      rank1_r = b[i].rank(r);\n      num0 = r - l - (rank1_r - rank1_l);\n  \
+    \    if (num0 < k) {\n        res |= (1U << (bitsize - i - 1));\n        l = zero[i]\
+    \ + rank1_l;\n        r = zero[i] + rank1_r;\n        k -= num0;\n      } else\
+    \ {\n        l -= rank1_l;\n        r -= rank1_r;\n      }\n    }\n    return\
+    \ cmp[res];\n  }\n\n  // v[l,r) \u306E\u4E2D\u3067k\u756A\u76EE(1-origin)\u306B\
+    \u5927\u304D\u3044\u5024\u3092\u8FD4\u3059\n  T kth_largest(unsigned l, unsigned\
+    \ r, unsigned k) {\n    return kth_smallest(l, r, r - l - k + 1);\n  }\n\n  //\
+    \ v[l,r) \u306E\u4E2D\u3067[mink,maxk)\u306B\u5165\u308B\u5024\u306E\u500B\u6570\
+    \u3092\u8FD4\u3059\n  unsigned range_freq(int vl, int vr, T mink, T maxk) {\n\
+    \    int D = compress(mink);\n    int U = compress(maxk);\n    unsigned res =\
+    \ 0;\n    auto dfs = [&](auto &rec, int d, int L, int R, int A, int B) -> void\
+    \ {\n      if (U <= A or B <= D) return;\n      if (D <= A and B <= U) {\n   \
+    \     res += (R - L);\n        return;\n      }\n      if (d == bitsize) {\n \
+    \       if (D <= A and A < U) {\n          res += (R - L);\n        }\n      \
+    \  return;\n      }\n      int C = (A + B) / 2;\n      int rank0_l = L - b[d].rank(L);\n\
+    \      int rank0_r = R - b[d].rank(R);\n      int rank1_l = b[d].rank(L) + zero[d];\n\
+    \      int rank1_r = b[d].rank(R) + zero[d];\n      rec(rec, d + 1, rank0_l, rank0_r,\
+    \ A, C);\n      rec(rec, d + 1, rank1_l, rank1_r, C, B);\n    };\n    dfs(dfs,\
+    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n  // v[l,r)\u306E\u4E2D\
+    \u3067val\u3092\u8D85\u3048\u306A\u3044\u6700\u5927\u306E\u5024\u3092\u8FD4\u3059\
+    \n  T prev_value(unsigned l, unsigned r, T val) {\n    int num = range_freq(l,\
+    \ r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else {\n      return\
+    \ kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u4EE5\
+    \u4E0A\u306E\u6700\u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned\
+    \ l, unsigned r, T val) {\n    int num = range_freq(l, r, MI, val);\n    if (num\
+    \ == r - l) {\n      return MI;\n    } else {\n      return kth_smallest(l, r,\
+    \ num + 1);\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
     \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}\n"
+    \ >> v[i];\n  }\n  WaveletMatrix<unsigned> w(v);\n  for (int i = 0; i < q; i++)\
+    \ {\n    unsigned l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l,\
+    \ r, k + 1) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\
-    #include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp\"\
+    #include <bits/stdc++.h>\n\nusing namespace std;\n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  unsigned n, q;\n  cin >>\
     \ n >> q;\n  vector<unsigned> v(n);\n  for (int i = 0; i < n; i++) {\n    cin\
-    \ >> v[i];\n  }\n  WaveletMatrix w(v);\n  for (int i = 0; i < q; i++) {\n    unsigned\
-    \ l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l, r, k + 1) <<\
-    \ \"\\n\";\n  }\n}"
+    \ >> v[i];\n  }\n  WaveletMatrix<unsigned> w(v);\n  for (int i = 0; i < q; i++)\
+    \ {\n    unsigned l, r, k;\n    cin >> l >> r >> k;\n    cout << w.kth_smallest(l,\
+    \ r, k + 1) << \"\\n\";\n  }\n}"
   dependsOn:
-  - data-structure/wavelet-matrix/WaveletMatrix.hpp
+  - data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
   isVerificationFile: true
   path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-06-26 00:34:11+09:00'
+  timestamp: '2024-11-14 18:52:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp

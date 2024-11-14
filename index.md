@@ -40,9 +40,6 @@ data:
       title: Undoable Union Find
   - name: data-structure/wavelet-matrix
     pages:
-    - icon: ':heavy_check_mark:'
-      path: data-structure/wavelet-matrix/WaveletMatrix.hpp
-      title: Wavelet Matrix
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrix3D.hpp
       title: Wavelet Matrix (3D)
@@ -58,13 +55,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
-    - icon: ':warning:'
-      path: data-structure/wavelet-matrix/WaveletMatrixSum.hpp
-      title: Wavelet Matrix (Sum)
-    - icon: ':warning:'
+    - icon: ':question:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
       title: Wavelet Matrix (Template)
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
       title: Wavelet Matrix (Template Sum)
     - icon: ':warning:'
@@ -144,7 +138,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -156,6 +150,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
       title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
+  - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
+    pages:
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - name: verify/AizuOnlineJudge/dp
     pages:
     - icon: ':heavy_check_mark:'
@@ -233,6 +232,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - name: verify/AtCoder/data-structure/wavelet-matrix
+    pages:
+    - icon: ':x:'
+      path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
+      title: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
+    - icon: ':x:'
+      path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
+      title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
     - icon: ':heavy_check_mark:'
