@@ -17,11 +17,11 @@ data:
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../../../data-structure/wavelet-matrix/WaveletMatrixSegTree.hpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../../data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp:\
     \ line -1: no such header\n"
   code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/4059\"\
     \n#include \"../../../../data-structure/segment-tree/SegmentTree.hpp\"\n#include\
-    \ \"../../../../data-structure/wavelet-matrix/WaveletMatrixSegTree.hpp\"\n\nusing\
+    \ \"../../../data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp\"\n\nusing\
     \ S = lint;\n\nS op(S a, S b) {\n  return a + b;\n}\n\nS e() {\n  return 0;\n\
     }\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  in(n, q);\n\
     \  vector Q(q, vector(6, 0LL));\n  vector<S> x, y, w;\n\n  int cur = 0;\n  rep(i,\

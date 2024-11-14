@@ -58,7 +58,7 @@ data:
     - icon: ':question:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
       title: Wavelet Matrix (Template)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
       title: Wavelet Matrix (Template Sum)
     - icon: ':warning:'
@@ -237,7 +237,7 @@ data:
     - icon: ':x:'
       path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
       title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
   - name: verify/LibraryChecker/data-structure/others

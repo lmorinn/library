@@ -54,7 +54,7 @@ data:
   - icon: ':x:'
     path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
     title: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
     title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
   - icon: ':heavy_check_mark:'

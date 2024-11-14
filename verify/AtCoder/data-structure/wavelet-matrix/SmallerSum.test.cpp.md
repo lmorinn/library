@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
     title: Wavelet Matrix (Template Sum)
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc339/tasks/abc339_g
@@ -198,7 +198,7 @@ data:
   path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
   requiredBy: []
   timestamp: '2024-11-14 18:52:01+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
 layout: document
