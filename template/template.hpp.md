@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -171,6 +174,7 @@ data:
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
+  - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp

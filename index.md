@@ -49,7 +49,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
       title: Wavelet Matrix (Segment Tree)
     - icon: ':heavy_check_mark:'
@@ -152,7 +152,7 @@ data:
       title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
       title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - name: verify/AizuOnlineJudge/dp

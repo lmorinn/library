@@ -13,6 +13,9 @@ data:
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
     title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
     title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -113,6 +116,7 @@ data:
   - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+  - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
 documentation_of: data-structure/segment-tree/SegmentTree.hpp
 layout: document

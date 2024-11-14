@@ -14,9 +14,9 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc339/tasks/abc339_g
+    PROBLEM: https://atcoder.jp/contests/abc379/tasks/abc379_f
     links:
-    - https://atcoder.jp/contests/abc339/tasks/abc339_g
+    - https://atcoder.jp/contests/abc379/tasks/abc379_f
   bundledCode: "#line 1 \"verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp\"\
     \n\n#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing lint = long long;\nusing ull = unsigned long long;\n\
@@ -65,7 +65,7 @@ data:
     \ 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1, 1, 0, -1, -1, -1};\n\
     vector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0, 1, 0, -1};\n\n#pragma\
     \ endregion\n#line 3 \"verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/abc339/tasks/abc339_g\"\n#line\
+    \n#define PROBLEM \"https://atcoder.jp/contests/abc379/tasks/abc379_f\"\n#line\
     \ 1 \"data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\nstruct BitVector\
     \ {\n  unsigned sz;\n  unsigned blocksize;\n  vector<unsigned> bit, sum;\n\n \
     \ BitVector() {}\n\n  BitVector(unsigned siz) {\n    sz = siz;\n    blocksize\
@@ -135,7 +135,7 @@ data:
     \ < h[i]) {\n      a[s.top().second] = i - 1;\n      s.pop();\n    }\n    s.push({h[i],\
     \ i});\n  }\n\n  WaveletMatrix<int> w(a);\n  rep(i, q) {\n    int l, r;\n    in(l,\
     \ r);\n    out(w.range_freq(r, n, INT_MIN, l - 1));\n  }\n}\n"
-  code: "\n#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc339/tasks/abc339_g\"\
+  code: "\n#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc379/tasks/abc379_f\"\
     \n#include \"../../../../data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  in(n, q);\n\
     \  vector<int> h(n);\n  vector<int> a(n, -1e9);\n  in(h);\n  stack<pair<int, int>>\
@@ -149,7 +149,7 @@ data:
   isVerificationFile: true
   path: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
   requiredBy: []
-  timestamp: '2024-11-14 18:52:01+09:00'
+  timestamp: '2024-11-14 22:32:55+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/AtCoder/data-structure/wavelet-matrix/Buildings2.test.cpp
