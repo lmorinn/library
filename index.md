@@ -19,6 +19,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
+    - icon: ':warning:'
+      path: data-structure/others/SqrtTree.hpp
+      title: Sqrt Tree
   - name: data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -52,6 +55,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
       title: Wavelet Matrix (Segment Tree)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixSqrtTree.hpp
+      title: Wavelet Matrix (Sqrt Tree)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
