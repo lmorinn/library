@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-#include "../../../../data-structure/wavelet-matrix/WaveletMatrix.hpp"
+#include "../../../../data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp"
 
 int main() {
   cin.tie(0)->sync_with_stdio(0);
@@ -12,7 +12,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> v[i];
   }
-  WaveletMatrix w(v);
+  WaveletMatrix<unsigned> w(v);
   for (int i = 0; i < q; i++) {
     unsigned l, r, k;
     cin >> l >> r >> k;

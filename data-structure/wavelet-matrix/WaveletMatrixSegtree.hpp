@@ -1,3 +1,4 @@
+
 template <class T, auto op, auto e>
 class BitVector {
  private:
@@ -62,32 +63,10 @@ class WaveletMatrix {
   unsigned bitsize, logn;
   vector<BitVector<T, op, e>> b;
   vector<unsigned> zero;
-  vector<int> stInd;
-  vector<unsigned> compressed, index;
+  vector<unsigned> index;
   vector<T> cmp;
-  vector<T> prod_pw;
   vector<T> px;
   T MI, MA;
-
-  // v[l,r) の中で値がk未満の個数を返す
-  unsigned rank_less(unsigned l, unsigned r, T k) {
-    unsigned less = 0;
-    for (unsigned i = 0; i < bitsize and l < r; i++) {
-      const unsigned rank1_l = b[i].rank(l);
-      const unsigned rank1_r = b[i].rank(r);
-      const unsigned rank0_l = l - rank1_l;
-      const unsigned rank0_r = r - rank1_r;
-      if (k & (1U << (bitsize - i - 1))) {
-        less += (rank0_r - rank0_l);
-        l = zero[i] + rank1_l;
-        r = zero[i] + rank1_r;
-      } else {
-        l = rank0_l;
-        r = rank0_r;
-      }
-    }
-    return less;
-  }
 
   inline unsigned compress(const T &x) {
     return lower_bound(cmp.begin(), cmp.end(), x) - begin(cmp);
@@ -106,15 +85,13 @@ class WaveletMatrix {
     cmp = v;
     sort(cmp.begin(), cmp.end());
     cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
-    compressed.resize(n);
-    prod_pw.resize(32);
+    vector<unsigned> compressed(n);
     vector<T> tmp(n);
     vector<unsigned> tmpc(n);
     unsigned size_mx = v.size();
     for (unsigned i = 0; i < n; i++) {
       compressed[i] = distance(cmp.begin(), lower_bound(cmp.begin(), cmp.end(), v[i]));
     }
-    stInd.resize(cmp.size() + 1, -1);
     bitsize = bit_width(cmp.size());
     b.resize(bitsize + 1);
     zero.resize(bitsize, 0);
@@ -145,11 +122,6 @@ class WaveletMatrix {
       }
     }
 
-    for (unsigned i = 0; i < n; i++) {
-      if (stInd[compressed[i]] == -1) {
-        stInd[compressed[i]] = i;
-      }
-    }
     b[bitsize].seg_set(v);
   }
 
@@ -168,18 +140,17 @@ class WaveletMatrix {
       w[i] = std::get<2>(v[i]);
       index[std::get<3>(v[i])] = i;
     }
+    vector<unsigned> compressed(n);
     cmp.resize(y.size());
     cmp = y;
     sort(cmp.begin(), cmp.end());
     cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
-    compressed.resize(n);
     vector<unsigned> tmpc(n);
     vector<T> tmp(n);
     unsigned size_mx = y.size();
     for (unsigned i = 0; i < n; i++) {
       compressed[i] = distance(cmp.begin(), lower_bound(cmp.begin(), cmp.end(), y[i]));
     }
-    stInd.resize(cmp.size() + 1, -1);
     bitsize = bit_width(cmp.size());
     b.resize(bitsize + 1);
     zero.resize(bitsize, 0);
@@ -209,11 +180,7 @@ class WaveletMatrix {
         }
       }
     }
-    for (unsigned i = 0; i < n; i++) {
-      if (stInd[compressed[i]] == -1) {
-        stInd[compressed[i]] = i;
-      }
-    }
+
     b[bitsize].seg_set(w);
   }
 
@@ -250,23 +217,6 @@ class WaveletMatrix {
     return b[0];
   }
 
-  // v[0,k) 中でのcの出現回数を返す
-  unsigned rank(unsigned k, T c) {
-    c = compress(c);
-    unsigned cur = k;
-    if (stInd[c] == -1) {
-      return 0;
-    }
-    for (unsigned i = 0; i < bitsize; i++) {
-      if (c & (1U << (bitsize - i - 1))) {
-        cur = zero[i] + b[i].rank(cur);
-      } else {
-        cur -= b[i].rank(cur);
-      }
-    }
-    return cur - stInd[c];
-  }
-
   // v[l,r) の中でk番目(1-origin)に小さい値を返す
   T kth_smallest(unsigned l, unsigned r, unsigned k) {
     unsigned res = 0;
@@ -289,16 +239,6 @@ class WaveletMatrix {
   // v[l,r) の中でk番目(1-origin)に大きい値を返す
   T kth_largest(unsigned l, unsigned r, unsigned k) {
     return kth_smallest(l, r, r - l - k + 1);
-  }
-
-  // v[l,r) の中で[mink,maxk)に入る値の個数を返す
-  unsigned range_freq(unsigned l, unsigned r, T mink, T maxk) {
-    mink = compress(mink);
-    maxk = compress(maxk);
-    if (mink == 0) {
-      return rank_less(l, r, maxk);
-    }
-    return rank_less(l, r, maxk) - rank_less(l, r, mink);
   }
 
   // v[l,r) の中で[mink,maxk)に入る値の総積を返す
@@ -356,5 +296,36 @@ class WaveletMatrix {
     unsigned cl = distance(px.begin(), lower_bound(px.begin(), px.end(), l));
     unsigned cr = distance(px.begin(), lower_bound(px.begin(), px.end(), r));
     return range_prod(cl, cr, d, u);
+  }
+
+  template <typename F>
+  T max_y(T xl, T xr, F check) {
+    unsigned L = distance(px.begin(), lower_bound(px.begin(), px.end(), xl));
+    unsigned R = distance(px.begin(), lower_bound(px.begin(), px.end(), xr));
+    int cnt = 0;
+    T prod = e();
+    unsigned yidx = 0;
+    if (check(R - L, b[0].rank_prod(L, R))) {
+      return cmp.back();
+    }
+    for (int i = 0; i < bitsize; i++) {
+      int l0 = L - b[i].rank(L);
+      int r0 = R - b[i].rank(R);
+      int l1 = L + zero[i] - l0;
+      int r1 = R + zero[i] - r0;
+      int cnt1 = cnt + r0 - l0;
+      T tmp = op(prod, b[i + 1].rank_prod(l0, r0));
+      if (check(cnt1, tmp)) {
+        cnt = cnt1;
+        prod = tmp;
+        L = l1;
+        R = r1;
+        yidx |= 1U << (bitsize - i - 1);
+      } else {
+        L = l0;
+        R = r0;
+      }
+    }
+    return cmp[yidx];
   }
 };
