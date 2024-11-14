@@ -1,6 +1,6 @@
 
 #include "../../../../template/template.hpp"
-#define PROBLEM "https://atcoder.jp/contests/abc339/tasks/abc339_g"
+#define PROBLEM "https://atcoder.jp/contests/abc379/tasks/abc379_f"
 #include "../../../../data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp"
 
 int main() {
