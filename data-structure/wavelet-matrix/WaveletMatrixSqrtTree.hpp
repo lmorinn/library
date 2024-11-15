@@ -1,55 +1,12 @@
 #include "../others/SqrtTree.hpp"
-template <class T, auto op>
-struct BitVector {
-    unsigned sz;
-    unsigned blocksize;
-    vector<unsigned long long> bit;
-    vector<unsigned> sum;
-    SqrtTree<T, op> t;
 
-    BitVector() {}
-
-    BitVector(unsigned siz) {
-        sz = siz;
-        blocksize = (sz + 63) >> 6;
-        bit.assign(blocksize, 0ULL);
-        sum.assign(blocksize, 0U);
-    }
-
-    inline void set(int k) { bit[k >> 6] |= 1ULL << (k & 63ULL); }
-
-    inline void build() {
-        sum[0] = 0ULL;
-        for (int i = 1; i < blocksize; i++) {
-            sum[i] = sum[i - 1] + __builtin_popcountll(bit[i - 1]);
-        }
-    }
-
-    inline bool access(unsigned k) {
-        return (bool((bit[k >> 6] >> (k & 63)) & 1));
-    }
-
-    inline int rank(int k) {
-        return (sum[k >> 6] + __builtin_popcountll(bit[k >> 6] & ((1ULL << (k & 63)) - 1)));
-    }
-
-    inline void sqrt_set(vector<T> &v) {
-        t = SqrtTree<T, op>(v);
-    }
-
-    inline T rank_prod(int l, int r) {
-        return t.prod(l, r);
-    }
-};
-
-template <class T, auto op, class S>
+template <class T, auto op, auto e>
 class WaveletMatrix {
    private:
     unsigned n;
-    unsigned bitsize, logn;
-    vector<BitVector<T, op>> b;
+    unsigned bitsize;
+    vector<BitVector<T, op, e>> b;
     vector<unsigned> zero;
-    vector<unsigned> index;
     vector<T> cmp;
     vector<T> px;
     T MI, MA;
@@ -79,7 +36,7 @@ class WaveletMatrix {
         zero.resize(bitsize, 0);
         int cur = 0;
         for (unsigned i = 0; i < bitsize; i++) {
-            b[i] = BitVector<T, op>(n + 1);
+            b[i] = BitVector<T, op, e>(n + 1);
             b[i].sqrt_set(v);
             cur = 0;
             for (unsigned j = 0; j < n; j++) {
@@ -103,54 +60,8 @@ class WaveletMatrix {
             swap(tmpc, compressed);
             swap(tmp, v);
         }
-
+        b[bitsize] = BitVector<T, op, e>(n + 1);
         b[bitsize].sqrt_set(v);
-    }
-
-    WaveletMatrix(vector<T> v, vector<S> w) {
-        MI = numeric_limits<T>::min();
-        MA = numeric_limits<T>::max();
-        n = v.size();
-        cmp = v;
-        sort(cmp.begin(), cmp.end());
-        cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
-        vector<S> tmp(n);
-        vector<T> tmpc(n);
-        vector<T> compressed(n);
-        for (unsigned i = 0; i < n; i++) {
-            compressed[i] = distance(cmp.begin(), lower_bound(cmp.begin(), cmp.end(), v[i]));
-        }
-        bitsize = bit_width(cmp.size());
-        b.resize(bitsize + 1);
-        zero.resize(bitsize, 0);
-        int cur = 0;
-        for (unsigned i = 0; i < bitsize; i++) {
-            b[i] = BitVector<S>(n + 1);
-            b[i].sqrt_set(w);
-            cur = 0;
-            for (unsigned j = 0; j < n; j++) {
-                if (compressed[j] & (1U << (bitsize - i - 1))) {
-                    b[i].set(j);
-                } else {
-                    zero[i]++;
-                    tmpc[cur] = compressed[j];
-                    tmp[cur] = w[j];
-                    cur++;
-                }
-            }
-            b[i].build();
-            for (int j = 0; j < n; j++) {
-                if (compressed[j] & (1U << (bitsize - i - 1))) {
-                    tmpc[cur] = compressed[j];
-                    tmp[cur] = w[j];
-                    cur++;
-                }
-            }
-            swap(tmpc, compressed);
-            swap(tmp, w);
-        }
-        b[bitsize] = BitVector<S>(n + 1);
-        b[bitsize].sqrt_set(w);
     }
 
     WaveletMatrix(vector<T> x, vector<T> y, vector<T> w) {
@@ -183,7 +94,7 @@ class WaveletMatrix {
         vector<bool> bit(n, 0);
         int cur = 0;
         for (unsigned i = 0; i < bitsize; i++) {
-            b[i] = BitVector<T, op>(bit);
+            b[i] = BitVector<T, op, e>(bit);
             b[i].sqrt_set(w);
             int cur = 0;
             for (unsigned j = 0; j < n; j++) {
@@ -208,6 +119,7 @@ class WaveletMatrix {
             swap(tmpc, compressed);
             swap(tmp, w);
         }
+        b[bitsize] = BitVector<T, op, e>(n + 1);
         b[bitsize].sqrt_set(w);
     }
 
