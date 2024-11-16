@@ -1,72 +1,56 @@
-
 template <class T>
-class BitVector {
-   private:
-    unsigned n, cur, p;
-    vector<unsigned> acc, bit;
+struct BitVector {
+    unsigned sz;
+    unsigned blocksize;
+    vector<unsigned long long> bit;
+    vector<unsigned> sum;
     fenwick_tree<T> seg;
-    vector<bool> wnonzero;
 
-   public:
-    BitVector() {
+    BitVector() {}
+
+    BitVector(unsigned siz) {
+        sz = siz;
+        blocksize = (sz + 63) >> 6;
+        bit.assign(blocksize, 0ULL);
+        sum.assign(blocksize, 0U);
     }
 
-    BitVector(vector<bool> &b) {
-        cur = 0;
-        n = b.size();
-        acc.resize((n >> 5) + 2, 0);
-        bit.resize((n >> 5) + 2, 0);
-        for (int i = 0; i < n; i++) {
-            if (!(i & 31)) {
-                cur++;
-                acc[cur] = acc[cur - 1];
-            }
-            if (b[i]) {
-                acc[cur] += int(b[i]);
-                bit[cur - 1] |= (1U << (32 - (i & 31) - 1));
-            }
+    inline void set(int k) { bit[k >> 6] |= 1ULL << (k & 63ULL); }
+
+    inline void build() {
+        sum[0] = 0ULL;
+        for (int i = 1; i < blocksize; i++) {
+            sum[i] = sum[i - 1] + __builtin_popcountll(bit[i - 1]);
         }
+    }
+
+    inline bool access(unsigned k) {
+        return (bool((bit[k >> 6] >> (k & 63)) & 1));
+    }
+
+    inline int rank(int k) {
+        return (sum[k >> 6] + __builtin_popcountll(bit[k >> 6] & ((1ULL << (k & 63)) - 1)));
     }
 
     inline void ft_set(const vector<T> &v) {
         seg = fenwick_tree<T>(v.size());
-        wnonzero.assign(v.size(), 0);
         for (int i = 0; i < v.size(); i++) {
             if (v[i] != 0) {
                 seg.add(i, v[i]);
-                wnonzero[i] = 1;
             }
         }
     }
 
-    inline void val_set(unsigned pos, T x) {
-        if (wnonzero[pos]) {
-            seg.add(pos, x - val_get(pos));
-        } else {
-            seg.add(pos, x);
-            wnonzero[pos] = 1;
-        }
+    inline void val_add(unsigned pos, T x) {
+        seg.add(pos, x);
     }
 
     inline T val_get(unsigned pos) {
         return seg.sum(pos, pos + 1);
     }
 
-    inline unsigned rank(unsigned k) {
-        if (!(k & 31)) return acc[k >> 5];
-        return acc[k >> 5] + __builtin_popcount(bit[k >> 5] >> (32 - (k & 31)));
-    }
-
-    inline unsigned rank0(unsigned k) {
-        return k - rank(k);
-    }
-
     inline T rank_sum(unsigned l, unsigned r) {
         return seg.sum(l, r);
-    }
-
-    inline bool access(unsigned k) {
-        return (rank(k + 1) - rank(k)) == 1;
     }
 };
 
@@ -93,49 +77,45 @@ class WaveletMatrix {
         MI = numeric_limits<T>::min();
         MA = numeric_limits<T>::max();
         n = v.size();
-        index.resize(n);
-        iota(index.begin(), index.end(), 0);
-        logn = bit_width(n);
         cmp = v;
         sort(cmp.begin(), cmp.end());
         cmp.erase(unique(cmp.begin(), cmp.end()), cmp.end());
-        vector<unsigned> compressed(n);
         vector<T> tmp(n);
-        vector<unsigned> tmpc(n);
-        unsigned size_mx = v.size();
+        vector<T> tmpc(n);
+        vector<T> compressed(n);
         for (unsigned i = 0; i < n; i++) {
             compressed[i] = distance(cmp.begin(), lower_bound(cmp.begin(), cmp.end(), v[i]));
         }
         bitsize = bit_width(cmp.size());
         b.resize(bitsize + 1);
         zero.resize(bitsize, 0);
-        vector<bool> bit(n, 0);
+        int cur = 0;
         for (unsigned i = 0; i < bitsize; i++) {
-            for (unsigned j = 0; j < n; j++) {
-                bit[j] = compressed[j] & (1U << (bitsize - i - 1));
-                zero[i] += unsigned(!bit[j]);
-                tmp[j] = v[j];
-                tmpc[j] = compressed[j];
-            }
-            b[i] = BitVector<T>(bit);
+            b[i] = BitVector<T>(n + 1);
             b[i].ft_set(v);
-            int cur = 0;
+            cur = 0;
             for (unsigned j = 0; j < n; j++) {
-                if (!bit[j]) {
-                    v[cur] = tmp[j];
-                    compressed[cur] = tmpc[j];
+                if (compressed[j] & (1U << (bitsize - i - 1))) {
+                    b[i].set(j);
+                } else {
+                    zero[i]++;
+                    tmpc[cur] = compressed[j];
+                    tmp[cur] = v[j];
                     cur++;
                 }
             }
-            for (unsigned j = 0; j < n; j++) {
-                if (bit[j]) {
-                    v[cur] = tmp[j];
-                    compressed[cur] = tmpc[j];
+            b[i].build();
+            for (int j = 0; j < n; j++) {
+                if (compressed[j] & (1U << (bitsize - i - 1))) {
+                    tmpc[cur] = compressed[j];
+                    tmp[cur] = v[j];
                     cur++;
                 }
             }
+            swap(tmpc, compressed);
+            swap(tmp, v);
         }
-
+        b[bitsize] = BitVector<T>(n + 1);
         b[bitsize].ft_set(v);
     }
 
@@ -147,7 +127,9 @@ class WaveletMatrix {
         for (int i = 0; i < n; i++) {
             v[i] = {x[i], y[i], w[i], i};
         }
-        sort(v.begin(), v.end());
+        sort(v.begin(), v.end(), [](const tuple<T, T, T, int> &l, const tuple<T, T, T, int> &r) {
+            return std::get<0>(l) < std::get<0>(r);
+        });
         for (int i = 0; i < n; i++) {
             px[i] = std::get<0>(v[i]);
             y[i] = std::get<1>(v[i]);
@@ -168,31 +150,32 @@ class WaveletMatrix {
         bitsize = bit_width(cmp.size());
         b.resize(bitsize + 1);
         zero.resize(bitsize, 0);
-        vector<bool> bit(n, 0);
+        int cur = 0;
         for (unsigned i = 0; i < bitsize; i++) {
-            for (unsigned j = 0; j < n; j++) {
-                bit[j] = compressed[j] & (1U << (bitsize - i - 1));
-                zero[i] += unsigned(!bit[j]);
-                tmp[j] = w[j];
-                tmpc[j] = compressed[j];
-            }
-            b[i] = BitVector<T>(bit);
+            b[i] = BitVector<T>(n + 1);
             b[i].ft_set(w);
-            int cur = 0;
+            cur = 0;
             for (unsigned j = 0; j < n; j++) {
-                if (!bit[j]) {
-                    w[cur] = tmp[j];
-                    compressed[cur] = tmpc[j];
+                if (compressed[j] & (1U << (bitsize - i - 1))) {
+                    b[i].set(j);
+                } else {
+                    zero[i]++;
+                    tmpc[cur] = compressed[j];
+                    tmp[cur] = w[j];
                     cur++;
                 }
             }
-            for (unsigned j = 0; j < n; j++) {
-                if (bit[j]) {
-                    w[cur] = tmp[j];
-                    compressed[cur] = tmpc[j];
+
+            b[i].build();
+            for (int j = 0; j < n; j++) {
+                if (compressed[j] & (1U << (bitsize - i - 1))) {
+                    tmpc[cur] = compressed[j];
+                    tmp[cur] = w[j];
                     cur++;
                 }
             }
+            swap(tmpc, compressed);
+            swap(tmp, w);
         }
 
         b[bitsize].ft_set(w);
@@ -215,20 +198,16 @@ class WaveletMatrix {
 
     void set(int p, T x) {
         unsigned cur = index[p];
+        T before = b[0].val_get(cur);
         for (unsigned i = 0; i < bitsize; i++) {
-            b[i].val_set(cur, x);
+            b[i].val_add(cur, x - before);
             if (b[i].access(cur)) {
                 cur = zero[i] + b[i].rank(cur);
             } else {
                 cur -= b[i].rank(cur);
             }
         }
-        b[bitsize].val_set(cur, x);
-    }
-
-    T get(int p) {
-        unsigned cur = index[p];
-        return b[0];
+        b[bitsize].val_add(cur, x - before);
     }
 
     // v[l,r) の中でk番目(1-origin)に小さい値を返す
@@ -272,7 +251,7 @@ class WaveletMatrix {
                 }
                 return;
             }
-            int C = (A + B) / 2;
+            int C = (A + B) >> 1;
             int rank0_l = L - b[d].rank(L);
             int rank0_r = R - b[d].rank(R);
             int rank1_l = b[d].rank(L) + zero[d];
