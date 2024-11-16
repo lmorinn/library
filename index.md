@@ -44,8 +44,14 @@ data:
   - name: data-structure/wavelet-matrix
     pages:
     - icon: ':warning:'
+      path: data-structure/wavelet-matrix/PointAddRectangleSum.hpp
+      title: Point Add Rectangle Sum
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrix3D.hpp
       title: Wavelet Matrix (3D)
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
+      title: Wavelet Matrix (Binary Indexed Tree)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
