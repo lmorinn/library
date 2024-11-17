@@ -1,29 +1,32 @@
 
-template <typename T>
-struct BinaryIndexedTree {
-    int N;
+template <class T>
+struct fenwick_tree {
+   public:
+    fenwick_tree() : _n(0) {}
+    explicit fenwick_tree(int n) : _n(n), data(n) {}
+
+    void add(int p, T x) {
+        p++;
+        while (p <= _n) {
+            data[p - 1] += x;
+            p += p & -p;
+        }
+    }
+
+    T sum(int l, int r) {
+        return sum(r) - sum(l);
+    }
+
+   private:
+    int _n;
     vector<T> data;
 
-    BinaryIndexedTree() = default;
-
-    BinaryIndexedTree(int size) { init(size); }
-
-    void init(int size) {
-        N = size + 2;
-        data.assign(N + 1, {});
-    }
-
-    T sum(int k) const {
-        if (k < 0) return T{};
-        T ret{};
-        for (++k; k > 0; k -= k & -k) ret += data[k];
-        return ret;
-    }
-    inline T sum(int l, int r) const { return sum(r) - sum(l - 1); }
-
-    inline T operator[](int k) const { return sum(k) - sum(k - 1); }
-
-    void add(int k, T x) {
-        for (++k; k < N; k += k & -k) data[k] += x;
+    T sum(int r) {
+        T s = 0;
+        while (r > 0) {
+            s += data[r - 1];
+            r -= r & -r;
+        }
+        return s;
     }
 };

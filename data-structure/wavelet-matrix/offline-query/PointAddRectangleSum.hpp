@@ -1,4 +1,4 @@
-#include "WaveletMatrixBinaryIndexedTree.hpp"
+#include "../WaveletMatrixBinaryIndexedTree.hpp"
 template <class S>
 class PointAddRectangleSum {
    private:
@@ -74,4 +74,4 @@ class PointAddRectangleSum {
         }
         return ret;
     }
-};
+};https://judge.yosupo.jp/problem/point_add_rectangle_sum

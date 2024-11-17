@@ -1,3 +1,4 @@
+#include "../binary-indexed-tree/BinaryIndexedTree.hpp"
 template <class T>
 struct BitVector {
     unsigned sz;
