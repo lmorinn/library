@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp
+    title: Point Set Range Frequency
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
@@ -9,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -142,10 +148,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp
   timestamp: '2024-11-09 12:35:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp

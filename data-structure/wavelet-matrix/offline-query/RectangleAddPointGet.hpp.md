@@ -1,17 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
+    path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+    title: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+  - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
     title: Wavelet Matrix (Binary Indexed Tree)
+  - icon: ':heavy_check_mark:'
+    path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+    title: Point Add Rectangle Sum
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp\"\
+  bundledCode: "#line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
+    \n\ntemplate <class T>\nstruct fenwick_tree {\n   public:\n    fenwick_tree()\
+    \ : _n(0) {}\n    explicit fenwick_tree(int n) : _n(n), data(n) {}\n\n    void\
+    \ add(int p, T x) {\n        p++;\n        while (p <= _n) {\n            data[p\
+    \ - 1] += x;\n            p += p & -p;\n        }\n    }\n\n    T sum(int l, int\
+    \ r) {\n        return sum(r) - sum(l);\n    }\n\n   private:\n    int _n;\n \
+    \   vector<T> data;\n\n    T sum(int r) {\n        T s = 0;\n        while (r\
+    \ > 0) {\n            s += data[r - 1];\n            r -= r & -r;\n        }\n\
+    \        return s;\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp\"\
     \ntemplate <class T>\nstruct BitVector {\n    unsigned sz;\n    unsigned blocksize;\n\
     \    vector<unsigned long long> bit;\n    vector<unsigned> sum;\n    fenwick_tree<T>\
     \ seg;\n\n    BitVector() {}\n\n    BitVector(unsigned siz) {\n        sz = siz;\n\
@@ -129,7 +146,7 @@ data:
     \u7DCF\u7A4D\u3092\u8FD4\u3059\n    T rectangle_sum(T l, T r, T d, T u) {\n  \
     \      unsigned cl = distance(px.begin(), lower_bound(px.begin(), px.end(), l));\n\
     \        unsigned cr = distance(px.begin(), lower_bound(px.begin(), px.end(),\
-    \ r));\n        return range_sum(cl, cr, d, u);\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/PointAddRectangleSum.hpp\"\
+    \ r));\n        return range_sum(cl, cr, d, u);\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp\"\
     \ntemplate <class S>\nclass PointAddRectangleSum {\n   private:\n    const int\
     \ RESERVE = 700000;\n    const int QSIZE = 700000;\n    WaveletMatrix<S> wm;\n\
     \    vector<S> x, y, w;\n    vector<vector<S>> q;\n    int add_query = 0;\n  \
@@ -154,44 +171,85 @@ data:
     \ {\n            S com = q[i][0];\n            if (com == 0) {\n             \
     \   wm.set(q[i][4], q[i][3]);\n            } else {\n                ret[idx]\
     \ = (wm.rectangle_sum(q[i][1], q[i][3], q[i][2], q[i][4]));\n                idx++;\n\
-    \            }\n        }\n        return ret;\n    }\n};\n"
-  code: "#include \"WaveletMatrixBinaryIndexedTree.hpp\"\ntemplate <class S>\nclass\
-    \ PointAddRectangleSum {\n   private:\n    const int RESERVE = 700000;\n    const\
-    \ int QSIZE = 700000;\n    WaveletMatrix<S> wm;\n    vector<S> x, y, w;\n    vector<vector<S>>\
-    \ q;\n    int add_query = 0;\n    int output_query = 0;\n    int setidx;\n\n \
-    \  public:\n    PointAddRectangleSum() {\n        x.reserve(RESERVE);\n      \
-    \  y.reserve(RESERVE);\n        w.reserve(RESERVE);\n        q.resize(QSIZE);\n\
-    \        for (int i = 0; i < QSIZE; i++) {\n            q[i].assign(5, 0);\n \
-    \       }\n        setidx = 0;\n    }\n\n    PointAddRectangleSum(int query) {\n\
-    \        q = vector<vector<S>>(query, vector<S>(5));\n        setidx = 0;\n  \
-    \  }\n\n    PointAddRectangleSum(const vector<S> &vx, const vector<S> &vy, const\
-    \ vector<S> &vw, int query) {\n        q = vector<vector<S>>(query, vector<S>(5));\n\
-    \        x = vx;\n        y = vy;\n        w = vw;\n        setidx = x.size();\n\
-    \    }\n\n    void add(S px, S py, S weight) {\n        int cur = add_query +\
-    \ output_query;\n        q[cur][0] = 0;\n        q[cur][1] = px;\n        q[cur][2]\
-    \ = py;\n        q[cur][3] = weight;\n        q[cur][4] = setidx++;\n        x.emplace_back(px);\n\
-    \        y.emplace_back(py);\n        w.emplace_back(0);\n        add_query++;\n\
-    \    }\n\n    void rectangle_sum(S x1, S y1, S x2, S y2) {\n        int cur =\
-    \ add_query + output_query;\n        q[cur][0] = 1;\n        q[cur][1] = x1;\n\
-    \        q[cur][2] = y1;\n        q[cur][3] = x2;\n        q[cur][4] = y2;\n \
-    \       output_query++;\n    }\n\n    vector<S> build() {\n        wm = WaveletMatrix<S>(x,\
-    \ y, w);\n        vector<S> ret(output_query);\n        int idx = 0;\n       \
-    \ for (int i = 0; i < output_query + add_query; i++) {\n            S com = q[i][0];\n\
-    \            if (com == 0) {\n                wm.set(q[i][4], q[i][3]);\n    \
-    \        } else {\n                ret[idx] = (wm.rectangle_sum(q[i][1], q[i][3],\
-    \ q[i][2], q[i][4]));\n                idx++;\n            }\n        }\n    \
-    \    return ret;\n    }\n};"
+    \            }\n        }\n        return ret;\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp\"\
+    \n\ntemplate <class S>\nclass RectangleAddPointGet {\n   private:\n    vector<S>\
+    \ x1, y1, x2, y2, w;\n    vector<vector<S>> q;\n    int add_query = 0;\n    int\
+    \ output_query = 0;\n    int dft;\n\n   public:\n    RectangleAddPointGet() {}\n\
+    \n    RectangleAddPointGet(int query) {\n        q = vector<vector<S>>(query,\
+    \ vector<S>(3));\n    }\n\n    RectangleAddPointGet(const vector<S> &lx, const\
+    \ vector<S> &ly, const vector<S> &rx, const vector<S> &ry, const vector<S> &vw,\
+    \ int query) {\n        q = vector<vector<S>>(query, vector<S>(3));\n        int\
+    \ n = lx.size();\n        dft = n;\n        x1.assign(n * 4, 0);\n        y1.assign(n\
+    \ * 4, 0);\n        w.assign(n * 4, 0);\n        for (int i = 0; i < n; i++) {\n\
+    \            x1[i * 4] = lx[i];\n            y1[i * 4] = ly[i];\n\n          \
+    \  x1[i * 4 + 1] = rx[i];\n            y1[i * 4 + 1] = ly[i];\n\n            x1[i\
+    \ * 4 + 2] = lx[i];\n            y1[i * 4 + 2] = ry[i];\n\n            x1[i *\
+    \ 4 + 3] = rx[i];\n            y1[i * 4 + 3] = ry[i];\n\n            w[i * 4]\
+    \ = vw[i];\n            w[i * 4 + 1] = -vw[i];\n            w[i * 4 + 2] = -vw[i];\n\
+    \            w[i * 4 + 3] = vw[i];\n        }\n    }\n\n    void rectangle_add(S\
+    \ lx, S ly, S rx, S ry, S weight) {\n        int cur = add_query + output_query;\n\
+    \        q[cur][0] = 0;\n        q[cur][1] = weight;\n        x1.emplace_back(lx);\n\
+    \        y1.emplace_back(ly);\n        x1.emplace_back(rx);\n        y1.emplace_back(ly);\n\
+    \        x1.emplace_back(lx);\n        y1.emplace_back(ry);\n        x1.emplace_back(rx);\n\
+    \        y1.emplace_back(ry);\n        for (int i = 0; i < 4; i++) {\n       \
+    \     w.emplace_back(0);\n        }\n        add_query++;\n    }\n\n    void get(S\
+    \ x, S y) {\n        int cur = add_query + output_query;\n        q[cur][0] =\
+    \ 1;\n        q[cur][1] = x + 1;\n        q[cur][2] = y + 1;\n        output_query++;\n\
+    \    }\n\n    vector<S> build() {\n        PointAddRectangleSum<S> wm(x1, y1,\
+    \ w, add_query * 4 + output_query);\n        int cnt = dft * 4;\n        for (int\
+    \ i = 0; i < output_query + add_query; i++) {\n            S com = q[i][0];\n\
+    \            if (com == 0) {\n                wm.add(x1[cnt], y1[cnt], q[i][1]);\n\
+    \                wm.add(x1[cnt + 1], y1[cnt + 1], -q[i][1]);\n               \
+    \ wm.add(x1[cnt + 2], y1[cnt + 2], -q[i][1]);\n                wm.add(x1[cnt +\
+    \ 3], y1[cnt + 3], q[i][1]);\n                cnt += 4;\n            } else {\n\
+    \                wm.rectangle_sum(0, 0, q[i][1], q[i][2]);\n            }\n  \
+    \      }\n        return wm.build();\n    }\n};\n"
+  code: "#include \"./PointAddRectangleSum.hpp\"\n\ntemplate <class S>\nclass RectangleAddPointGet\
+    \ {\n   private:\n    vector<S> x1, y1, x2, y2, w;\n    vector<vector<S>> q;\n\
+    \    int add_query = 0;\n    int output_query = 0;\n    int dft;\n\n   public:\n\
+    \    RectangleAddPointGet() {}\n\n    RectangleAddPointGet(int query) {\n    \
+    \    q = vector<vector<S>>(query, vector<S>(3));\n    }\n\n    RectangleAddPointGet(const\
+    \ vector<S> &lx, const vector<S> &ly, const vector<S> &rx, const vector<S> &ry,\
+    \ const vector<S> &vw, int query) {\n        q = vector<vector<S>>(query, vector<S>(3));\n\
+    \        int n = lx.size();\n        dft = n;\n        x1.assign(n * 4, 0);\n\
+    \        y1.assign(n * 4, 0);\n        w.assign(n * 4, 0);\n        for (int i\
+    \ = 0; i < n; i++) {\n            x1[i * 4] = lx[i];\n            y1[i * 4] =\
+    \ ly[i];\n\n            x1[i * 4 + 1] = rx[i];\n            y1[i * 4 + 1] = ly[i];\n\
+    \n            x1[i * 4 + 2] = lx[i];\n            y1[i * 4 + 2] = ry[i];\n\n \
+    \           x1[i * 4 + 3] = rx[i];\n            y1[i * 4 + 3] = ry[i];\n\n   \
+    \         w[i * 4] = vw[i];\n            w[i * 4 + 1] = -vw[i];\n            w[i\
+    \ * 4 + 2] = -vw[i];\n            w[i * 4 + 3] = vw[i];\n        }\n    }\n\n\
+    \    void rectangle_add(S lx, S ly, S rx, S ry, S weight) {\n        int cur =\
+    \ add_query + output_query;\n        q[cur][0] = 0;\n        q[cur][1] = weight;\n\
+    \        x1.emplace_back(lx);\n        y1.emplace_back(ly);\n        x1.emplace_back(rx);\n\
+    \        y1.emplace_back(ly);\n        x1.emplace_back(lx);\n        y1.emplace_back(ry);\n\
+    \        x1.emplace_back(rx);\n        y1.emplace_back(ry);\n        for (int\
+    \ i = 0; i < 4; i++) {\n            w.emplace_back(0);\n        }\n        add_query++;\n\
+    \    }\n\n    void get(S x, S y) {\n        int cur = add_query + output_query;\n\
+    \        q[cur][0] = 1;\n        q[cur][1] = x + 1;\n        q[cur][2] = y + 1;\n\
+    \        output_query++;\n    }\n\n    vector<S> build() {\n        PointAddRectangleSum<S>\
+    \ wm(x1, y1, w, add_query * 4 + output_query);\n        int cnt = dft * 4;\n \
+    \       for (int i = 0; i < output_query + add_query; i++) {\n            S com\
+    \ = q[i][0];\n            if (com == 0) {\n                wm.add(x1[cnt], y1[cnt],\
+    \ q[i][1]);\n                wm.add(x1[cnt + 1], y1[cnt + 1], -q[i][1]);\n   \
+    \             wm.add(x1[cnt + 2], y1[cnt + 2], -q[i][1]);\n                wm.add(x1[cnt\
+    \ + 3], y1[cnt + 3], q[i][1]);\n                cnt += 4;\n            } else\
+    \ {\n                wm.rectangle_sum(0, 0, q[i][1], q[i][2]);\n            }\n\
+    \        }\n        return wm.build();\n    }\n};"
   dependsOn:
+  - data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
   - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
+  - data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   isVerificationFile: false
-  path: data-structure/wavelet-matrix/PointAddRectangleSum.hpp
+  path: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
   requiredBy: []
-  timestamp: '2024-11-17 00:51:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: data-structure/wavelet-matrix/PointAddRectangleSum.hpp
+  timestamp: '2024-11-18 02:14:19+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+documentation_of: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
 layout: document
-title: Point Add Rectangle Sum
+title: Rectangle Add Point Get
 ---
 
 ## 概要

@@ -1,39 +1,57 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
+    title: Wavelet Matrix (Binary Indexed Tree)
+  - icon: ':heavy_check_mark:'
+    path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+    title: Point Add Rectangle Sum
+  - icon: ':heavy_check_mark:'
+    path: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
+    title: Rectangle Add Point Get
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
-    \n\ntemplate <typename T>\nstruct BinaryIndexedTree {\n    int N;\n    vector<T>\
-    \ data;\n\n    BinaryIndexedTree() = default;\n\n    BinaryIndexedTree(int size)\
-    \ { init(size); }\n\n    void init(int size) {\n        N = size + 2;\n      \
-    \  data.assign(N + 1, {});\n    }\n\n    T sum(int k) const {\n        if (k <\
-    \ 0) return T{};\n        T ret{};\n        for (++k; k > 0; k -= k & -k) ret\
-    \ += data[k];\n        return ret;\n    }\n    inline T sum(int l, int r) const\
-    \ { return sum(r) - sum(l - 1); }\n\n    inline T operator[](int k) const { return\
-    \ sum(k) - sum(k - 1); }\n\n    void add(int k, T x) {\n        for (++k; k <\
-    \ N; k += k & -k) data[k] += x;\n    }\n};\n"
-  code: "\ntemplate <typename T>\nstruct BinaryIndexedTree {\n    int N;\n    vector<T>\
-    \ data;\n\n    BinaryIndexedTree() = default;\n\n    BinaryIndexedTree(int size)\
-    \ { init(size); }\n\n    void init(int size) {\n        N = size + 2;\n      \
-    \  data.assign(N + 1, {});\n    }\n\n    T sum(int k) const {\n        if (k <\
-    \ 0) return T{};\n        T ret{};\n        for (++k; k > 0; k -= k & -k) ret\
-    \ += data[k];\n        return ret;\n    }\n    inline T sum(int l, int r) const\
-    \ { return sum(r) - sum(l - 1); }\n\n    inline T operator[](int k) const { return\
-    \ sum(k) - sum(k - 1); }\n\n    void add(int k, T x) {\n        for (++k; k <\
-    \ N; k += k & -k) data[k] += x;\n    }\n};\n"
+    \n\ntemplate <class T>\nstruct fenwick_tree {\n   public:\n    fenwick_tree()\
+    \ : _n(0) {}\n    explicit fenwick_tree(int n) : _n(n), data(n) {}\n\n    void\
+    \ add(int p, T x) {\n        p++;\n        while (p <= _n) {\n            data[p\
+    \ - 1] += x;\n            p += p & -p;\n        }\n    }\n\n    T sum(int l, int\
+    \ r) {\n        return sum(r) - sum(l);\n    }\n\n   private:\n    int _n;\n \
+    \   vector<T> data;\n\n    T sum(int r) {\n        T s = 0;\n        while (r\
+    \ > 0) {\n            s += data[r - 1];\n            r -= r & -r;\n        }\n\
+    \        return s;\n    }\n};\n"
+  code: "\ntemplate <class T>\nstruct fenwick_tree {\n   public:\n    fenwick_tree()\
+    \ : _n(0) {}\n    explicit fenwick_tree(int n) : _n(n), data(n) {}\n\n    void\
+    \ add(int p, T x) {\n        p++;\n        while (p <= _n) {\n            data[p\
+    \ - 1] += x;\n            p += p & -p;\n        }\n    }\n\n    T sum(int l, int\
+    \ r) {\n        return sum(r) - sum(l);\n    }\n\n   private:\n    int _n;\n \
+    \   vector<T> data;\n\n    T sum(int r) {\n        T s = 0;\n        while (r\
+    \ > 0) {\n            s += data[r - 1];\n            r -= r & -r;\n        }\n\
+    \        return s;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
-  requiredBy: []
-  timestamp: '2024-11-04 22:20:14+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
+  - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
+  timestamp: '2024-11-18 02:13:41+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 redirect_from:
