@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
-    title: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+    title: Binary Indexed Tree
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp

@@ -10,7 +10,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
-      title: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+      title: Binary Indexed Tree
   - name: data-structure/others
     pages:
     - icon: ':warning:'

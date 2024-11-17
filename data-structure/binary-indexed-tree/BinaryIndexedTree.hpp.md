@@ -54,8 +54,12 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
-redirect_from:
-- /library/data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
-- /library/data-structure/binary-indexed-tree/BinaryIndexedTree.hpp.html
-title: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
+title: Binary Indexed Tree
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo
