@@ -27,6 +27,7 @@
   "verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp": "2024-06-26 15:54:48 +0900",
   "verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp": "2024-11-14 18:52:01 +0900",
   "verify/AtCoder/string/CountSubstringQuery.test.cpp": "2024-09-26 13:24:19 +0900",
+  "verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp": "2024-11-22 13:46:17 +0900",
   "verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp": "2024-06-26 21:07:55 +0900",
   "verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp": "2024-08-24 15:47:14 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp": "2024-11-14 18:52:01 +0900",
