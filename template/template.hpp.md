@@ -55,8 +55,8 @@ data:
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
-    title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
+    path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
+    title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
@@ -179,6 +179,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
@@ -200,7 +201,6 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
-  - verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

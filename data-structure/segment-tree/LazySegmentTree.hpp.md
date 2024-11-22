@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data-structure/others/AreaofUnionofRectangles.hpp
+    title: Area of Union of Rectangles
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
@@ -9,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
     title: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
+    title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -144,10 +150,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree/LazySegmentTree.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/others/AreaofUnionofRectangles.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
 documentation_of: data-structure/segment-tree/LazySegmentTree.hpp

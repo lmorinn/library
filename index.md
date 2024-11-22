@@ -13,6 +13,9 @@ data:
       title: Binary Indexed Tree
   - name: data-structure/others
     pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/others/AreaofUnionofRectangles.hpp
+      title: Area of Union of Rectangles
     - icon: ':warning:'
       path: data-structure/others/BinaryTrie.hpp
       title: Binary Trie
@@ -67,7 +70,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
       title: Wavelet Matrix (Template)
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
       title: Wavelet Matrix (Template Sum)
     - icon: ':warning:'
@@ -252,13 +255,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - name: verify/AtCoder/data-structure/wavelet-matrix
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
-      title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
+      title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp

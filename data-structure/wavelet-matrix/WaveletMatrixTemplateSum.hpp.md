@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
-    title: verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp\"\
@@ -241,9 +238,8 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
   requiredBy: []
   timestamp: '2024-11-14 18:13:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
 layout: document
 title: Wavelet Matrix (Template Sum)
