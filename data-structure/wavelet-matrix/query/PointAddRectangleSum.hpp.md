@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-    title: Rectangle Add Rectangle Sum
+    title: Rectangle Add Point Get
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp

@@ -249,7 +249,7 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
 documentation_of: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
 layout: document
-title: Rectangle Add Rectangle Sum
+title: Rectangle Add Point Get
 ---
 
 ## 概要

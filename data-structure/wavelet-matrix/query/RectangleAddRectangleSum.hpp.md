@@ -190,8 +190,12 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
 layout: document
-redirect_from:
-- /library/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
-- /library/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp.html
-title: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
+title: Rectangle Add Rectangle Sum
 ---
+
+## 概要
+
+todo
+
+## 計算量
+todo

@@ -12,7 +12,7 @@ data:
     title: Point Add Rectangle Sum
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-    title: Rectangle Add Rectangle Sum
+    title: Rectangle Add Point Get
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template

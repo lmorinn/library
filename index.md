@@ -89,10 +89,13 @@ data:
       title: Range Mex Query
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-      title: Rectangle Add Rectangle Sum
+      title: Rectangle Add Point Get
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
-      title: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
+      title: Rectangle Add Rectangle Sum
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/query/WaveletMatrixonHeavyLightDecomposition.hpp
+      title: Wavelet Matrix on Heavy Light Decomposition
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
