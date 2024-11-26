@@ -1,5 +1,5 @@
 ---
-title: Rectangle Add Point Get
+title: Rectangle Add Rectangle Sum
 documentation_of: //data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
 ---
 
