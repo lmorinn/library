@@ -94,6 +94,9 @@ data:
       path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
       title: Rectangle Add Rectangle Sum
     - icon: ':warning:'
+      path: data-structure/wavelet-matrix/query/UniqueProduct.hpp
+      title: Unique Product Query
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/WaveletMatrixonHeavyLightDecomposition.hpp
       title: Wavelet Matrix on Heavy Light Decomposition
   - name: dp
