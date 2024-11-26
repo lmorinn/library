@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/query/RangeMex.hpp
+    title: Range Mex Query
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
@@ -245,7 +248,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/wavelet-matrix/query/RangeMex.hpp
   timestamp: '2024-11-14 18:52:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
