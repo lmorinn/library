@@ -1,5 +1,5 @@
 
-#include "./../WaveletMatrixSegtree"
+#include "../WaveletMatrixSegtree.hpp"
 using S = int;
 S op(S a, S b) {
   return min(a, b);
