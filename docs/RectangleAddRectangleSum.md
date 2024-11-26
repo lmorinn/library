@@ -1,6 +1,6 @@
 ---
 title: Rectangle Add Rectangle Sum
-documentation_of: //data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+documentation_of: //data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
 ---
 
 ## 概要
