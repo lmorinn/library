@@ -76,17 +76,23 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
       title: Wavelet Matrix (Toggle)
-  - name: data-structure/wavelet-matrix/offline-query
+  - name: data-structure/wavelet-matrix/query
     pages:
     - icon: ':heavy_check_mark:'
-      path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+      path: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
       title: Point Add Rectangle Sum
     - icon: ':heavy_check_mark:'
-      path: data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp
+      path: data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
       title: Point Set Range Frequency
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/query/RangeMex.hpp
+      title: Range Mex Query
     - icon: ':heavy_check_mark:'
-      path: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
-      title: Rectangle Add Point Get
+      path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+      title: Rectangle Add Rectangle Sum
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
+      title: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
@@ -279,17 +285,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
-  - name: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query
+  - name: verify/LibraryChecker/data-structure/wavelet-matrix/query
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - name: verify/LibraryChecker/dp
     pages:
     - icon: ':heavy_check_mark:'

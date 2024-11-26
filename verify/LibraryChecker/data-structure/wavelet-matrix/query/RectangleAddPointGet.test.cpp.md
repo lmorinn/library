@@ -8,11 +8,11 @@ data:
     path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
     title: Wavelet Matrix (Binary Indexed Tree)
   - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+    path: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
     title: Point Add Rectangle Sum
   - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
-    title: Rectangle Add Point Get
+    path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+    title: Rectangle Add Rectangle Sum
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -72,7 +72,7 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp\"\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_add_point_get\"\n\
     #line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\n\ntemplate\
     \ <class T>\nstruct fenwick_tree {\n   public:\n    fenwick_tree() : _n(0) {}\n\
@@ -200,7 +200,7 @@ data:
     \u7DCF\u7A4D\u3092\u8FD4\u3059\n    T rectangle_sum(T l, T r, T d, T u) {\n  \
     \      unsigned cl = distance(px.begin(), lower_bound(px.begin(), px.end(), l));\n\
     \        unsigned cr = distance(px.begin(), lower_bound(px.begin(), px.end(),\
-    \ r));\n        return range_sum(cl, cr, d, u);\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp\"\
+    \ r));\n        return range_sum(cl, cr, d, u);\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp\"\
     \ntemplate <class S>\nclass PointAddRectangleSum {\n   private:\n    const int\
     \ RESERVE = 700000;\n    const int QSIZE = 700000;\n    WaveletMatrix<S> wm;\n\
     \    vector<S> x, y, w;\n    vector<vector<S>> q;\n    int add_query = 0;\n  \
@@ -225,7 +225,7 @@ data:
     \ {\n            S com = q[i][0];\n            if (com == 0) {\n             \
     \   wm.set(q[i][4], q[i][3]);\n            } else {\n                ret[idx]\
     \ = (wm.rectangle_sum(q[i][1], q[i][3], q[i][2], q[i][4]));\n                idx++;\n\
-    \            }\n        }\n        return ret;\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp\"\
+    \            }\n        }\n        return ret;\n    }\n};\n#line 2 \"data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp\"\
     \n\ntemplate <class S>\nclass RectangleAddPointGet {\n   private:\n    vector<S>\
     \ x1, y1, x2, y2, w;\n    vector<vector<S>> q;\n    int add_query = 0;\n    int\
     \ output_query = 0;\n    int dft;\n\n   public:\n    RectangleAddPointGet() {}\n\
@@ -257,43 +257,41 @@ data:
     \ wm.add(x1[cnt + 2], y1[cnt + 2], -q[i][1]);\n                wm.add(x1[cnt +\
     \ 3], y1[cnt + 3], q[i][1]);\n                cnt += 4;\n            } else {\n\
     \                wm.rectangle_sum(0, 0, q[i][1], q[i][2]);\n            }\n  \
-    \      }\n        return wm.build();\n    }\n};\n#line 4 \"verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp\"\
-    \n\nusing S = lint;\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int\
-    \ n, q;\n    in(n, q);\n    vector<S> x1(n), y1(n), x2(n), y2(n), w(n);\n    rep(i,\
-    \ n) {\n        in(x1[i], y1[i], x2[i], y2[i], w[i]);\n    }\n\n    RectangleAddPointGet<S>\
-    \ t(x1, y1, x2, y2, w, q);\n\n    rep(i, q) {\n        int com;\n        in(com);\n\
-    \        if (com == 0) {\n            S lx, ly, rx, ry, weight;\n            in(lx,\
-    \ ly, rx, ry, weight);\n            t.rectangle_add(lx, ly, rx, ry, weight);\n\
-    \        } else {\n            S x, y;\n            in(x, y);\n            t.get(x,\
-    \ y);\n        }\n    }\n\n    for (const S &res : t.build()) {\n        out(res);\n\
-    \    }\n}\n"
+    \      }\n        return wm.build();\n    }\n};\n#line 4 \"verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp\"\
+    \n\nusing S = lint;\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n,\
+    \ q;\n  in(n, q);\n  vector<S> x1(n), y1(n), x2(n), y2(n), w(n);\n  rep(i, n)\
+    \ {\n    in(x1[i], y1[i], x2[i], y2[i], w[i]);\n  }\n\n  RectangleAddPointGet<S>\
+    \ t(x1, y1, x2, y2, w, q);\n\n  rep(i, q) {\n    int com;\n    in(com);\n    if\
+    \ (com == 0) {\n      S lx, ly, rx, ry, weight;\n      in(lx, ly, rx, ry, weight);\n\
+    \      t.rectangle_add(lx, ly, rx, ry, weight);\n    } else {\n      S x, y;\n\
+    \      in(x, y);\n      t.get(x, y);\n    }\n  }\n\n  for (const S &res : t.build())\
+    \ {\n    out(res);\n  }\n}\n"
   code: "#include \"../../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_add_point_get\"\
-    \n#include \"../../../../../data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp\"\
-    \n\nusing S = lint;\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int\
-    \ n, q;\n    in(n, q);\n    vector<S> x1(n), y1(n), x2(n), y2(n), w(n);\n    rep(i,\
-    \ n) {\n        in(x1[i], y1[i], x2[i], y2[i], w[i]);\n    }\n\n    RectangleAddPointGet<S>\
-    \ t(x1, y1, x2, y2, w, q);\n\n    rep(i, q) {\n        int com;\n        in(com);\n\
-    \        if (com == 0) {\n            S lx, ly, rx, ry, weight;\n            in(lx,\
-    \ ly, rx, ry, weight);\n            t.rectangle_add(lx, ly, rx, ry, weight);\n\
-    \        } else {\n            S x, y;\n            in(x, y);\n            t.get(x,\
-    \ y);\n        }\n    }\n\n    for (const S &res : t.build()) {\n        out(res);\n\
-    \    }\n}\n"
+    \n#include \"../../../../../data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp\"\
+    \n\nusing S = lint;\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n,\
+    \ q;\n  in(n, q);\n  vector<S> x1(n), y1(n), x2(n), y2(n), w(n);\n  rep(i, n)\
+    \ {\n    in(x1[i], y1[i], x2[i], y2[i], w[i]);\n  }\n\n  RectangleAddPointGet<S>\
+    \ t(x1, y1, x2, y2, w, q);\n\n  rep(i, q) {\n    int com;\n    in(com);\n    if\
+    \ (com == 0) {\n      S lx, ly, rx, ry, weight;\n      in(lx, ly, rx, ry, weight);\n\
+    \      t.rectangle_add(lx, ly, rx, ry, weight);\n    } else {\n      S x, y;\n\
+    \      in(x, y);\n      t.get(x, y);\n    }\n  }\n\n  for (const S &res : t.build())\
+    \ {\n    out(res);\n  }\n}\n"
   dependsOn:
   - template/template.hpp
-  - data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
-  - data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+  - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
   - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   - data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+  path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   requiredBy: []
-  timestamp: '2024-11-18 02:14:19+09:00'
+  timestamp: '2024-11-26 19:17:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp.html
-title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp.html
+title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
 ---

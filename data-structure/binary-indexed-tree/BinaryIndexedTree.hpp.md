@@ -6,18 +6,18 @@ data:
     path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
     title: Wavelet Matrix (Binary Indexed Tree)
   - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
+    path: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
     title: Point Add Rectangle Sum
   - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
-    title: Rectangle Add Point Get
+    path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+    title: Rectangle Add Rectangle Sum
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -44,14 +44,14 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   requiredBy:
-  - data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.hpp
-  - data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.hpp
+  - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   timestamp: '2024-11-18 02:13:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 title: Binary Indexed Tree

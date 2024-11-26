@@ -4,20 +4,74 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
     title: Wavelet Matrix (Template)
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
+    path: data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
+    title: Point Set Range Frequency
+  - icon: ':heavy_check_mark:'
+    path: template/template.hpp
+    title: Template
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 1 \"data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\
-    \nstruct BitVector {\n  unsigned sz;\n  unsigned blocksize;\n  vector<unsigned>\
-    \ bit, sum;\n\n  BitVector() {}\n\n  BitVector(unsigned siz) {\n    sz = siz;\n\
-    \    blocksize = (sz + 31) >> 5;\n    bit.assign(blocksize, 0U);\n    sum.assign(blocksize,\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/point_set_range_frequency
+    links:
+    - https://judge.yosupo.jp/problem/point_set_range_frequency
+  bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
+    \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
+    \ all(x) (x).begin(), (x).end()\n#define uniqv(v) v.erase(unique(all(v)), v.end())\n\
+    #define OVERLOAD_REP(_1, _2, _3, name, ...) name\n#define REP1(i, n) for (auto\
+    \ i = std::decay_t<decltype(n)>{}; (i) != (n); ++(i))\n#define REP2(i, l, r) for\
+    \ (auto i = (l); (i) != (r); ++(i))\n#define rep(...) OVERLOAD_REP(__VA_ARGS__,\
+    \ REP2, REP1)(__VA_ARGS__)\n#define logfixed(x) cout << fixed << setprecision(10)\
+    \ << x << endl;\n\nostream &operator<<(ostream &dest, __int128_t value) {\n  ostream::sentry\
+    \ s(dest);\n  if (s) {\n    __uint128_t tmp = value < 0 ? -value : value;\n  \
+    \  char buffer[128];\n    char *d = end(buffer);\n    do {\n      --d;\n     \
+    \ *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n    } while (tmp != 0);\n\
+    \    if (value < 0) {\n      --d;\n      *d = '-';\n    }\n    int len = end(buffer)\
+    \ - d;\n    if (dest.rdbuf()->sputn(d, len) != len) {\n      dest.setstate(ios_base::badbit);\n\
+    \    }\n  }\n  return dest;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream\
+    \ &os, const vector<T> &v) {\n  for (int i = 0; i < (int)v.size(); i++) {\n  \
+    \  os << v[i] << (i + 1 != (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const set<T> &set_var)\
+    \ {\n  for (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os\
+    \ << *itr;\n    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n\
+    \  }\n  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os,\
+    \ const unordered_set<T> &set_var) {\n  for (auto itr = set_var.begin(); itr !=\
+    \ set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr != set_var.end())\
+    \ os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename T, typename\
+    \ U>\nostream &operator<<(ostream &os, const map<T, U> &map_var) {\n  for (auto\
+    \ itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os << itr->first\
+    \ << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T, typename U>\nostream &operator<<(ostream &os, const unordered_map<T, U> &map_var)\
+    \ {\n  for (auto itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os\
+    \ << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\
+    \ntemplate <typename T, typename U>\nostream &operator<<(ostream &os, const pair<T,\
+    \ U> &pair_var) {\n  os << pair_var.first << \" \" << pair_var.second;\n  return\
+    \ os;\n}\n\nvoid out() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid\
+    \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
+    \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
+    \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
+    \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
+    \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
+    \ {\n  cin >> first;\n  in(rest...);\n  return;\n}\n\ntemplate <typename T>\n\
+    bool chmax(T &a, const T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n\
+    \  }\n  return false;\n}\ntemplate <typename T>\nbool chmin(T &a, const T &b)\
+    \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
+    vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
+    \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_frequency\"\
+    \n#line 1 \"data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp\"\nstruct\
+    \ BitVector {\n  unsigned sz;\n  unsigned blocksize;\n  vector<unsigned> bit,\
+    \ sum;\n\n  BitVector() {}\n\n  BitVector(unsigned siz) {\n    sz = siz;\n   \
+    \ blocksize = (sz + 31) >> 5;\n    bit.assign(blocksize, 0U);\n    sum.assign(blocksize,\
     \ 0U);\n  }\n\n  inline void set(int k) { bit[k >> 5] |= 1U << (k & 31); }\n\n\
     \  inline void build() {\n    sum[0] = 0U;\n    for (int i = 1; i < blocksize;\
     \ i++) {\n      sum[i] = sum[i - 1] + __builtin_popcount(bit[i - 1]);\n    }\n\
@@ -76,7 +130,7 @@ data:
     \u4E0A\u306E\u6700\u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned\
     \ l, unsigned r, T val) {\n    int num = range_freq(l, r, MI, val);\n    if (num\
     \ == r - l) {\n      return MI;\n    } else {\n      return kth_smallest(l, r,\
-    \ num + 1);\n    }\n  }\n};\n#line 2 \"data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp\"\
+    \ num + 1);\n    }\n  }\n};\n#line 2 \"data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp\"\
     \n\ntemplate <class S>\nclass PointSetRangeFreq {\n   private:\n    unordered_map<S,\
     \ vector<unsigned>> m;\n    unordered_map<S, unsigned> cnt;\n    vector<vector<S>>\
     \ q;\n    unordered_map<S, bool> printq;\n    unsigned n;\n\n    unsigned set_query;\n\
@@ -106,55 +160,35 @@ data:
     \               ret[idx] = wm[q[i][3]].range_freq(0, cnt[q[i][3]], q[i][1], q[i][2]);\n\
     \                ret[idx] -= wm[q[i][3]].range_freq(0, cnt[q[i][3]], n + q[i][1],\
     \ n + q[i][2]);\n                idx++;\n            }\n        }\n        return\
-    \ ret;\n    }\n};\n"
-  code: "#include \"../WaveletMatrixTemplate.hpp\"\n\ntemplate <class S>\nclass PointSetRangeFreq\
-    \ {\n   private:\n    unordered_map<S, vector<unsigned>> m;\n    unordered_map<S,\
-    \ unsigned> cnt;\n    vector<vector<S>> q;\n    unordered_map<S, bool> printq;\n\
-    \    unsigned n;\n\n    unsigned set_query;\n    unsigned output_query;\n    vector<S>\
-    \ prev;\n\n   public:\n    PointSetRangeFreq(const vector<S> &v, unsigned query)\
-    \ {\n        n = v.size();\n        prev.resize(n);\n\n        for (unsigned i\
-    \ = 0; i < n; i++) {\n            m[v[i]].emplace_back(i);\n            cnt[v[i]]++;\n\
-    \            prev[i] = v[i];\n        }\n        set_query = 0;\n        output_query\
-    \ = 0;\n\n        q = vector<vector<S>>(query, vector<S>(4));\n    }\n\n    void\
-    \ set(unsigned pos, S val) {\n        unsigned idx = set_query + output_query;\n\
-    \        q[idx][0] = 0;\n        q[idx][1] = pos;\n        q[idx][2] = prev[pos];\n\
-    \        q[idx][3] = val;\n\n        m[prev[pos]].emplace_back(pos + n);\n   \
-    \     m[val].emplace_back(pos);\n        set_query++;\n        prev[pos] = val;\n\
-    \    }\n\n    void range_freq(unsigned l, unsigned r, S val) {\n        unsigned\
-    \ idx = set_query + output_query;\n        q[idx][0] = 1;\n        q[idx][1] =\
-    \ l;\n        q[idx][2] = r;\n        q[idx][3] = val;\n        printq[val] =\
-    \ true;\n        output_query++;\n    }\n\n    vector<unsigned> build() {\n  \
-    \      for (int i = 0; i < set_query + output_query; i++) {\n            if (q[i][0]\
-    \ == 0 and printq.contains(q[i][3])) {\n                m[q[i][3]].emplace_back(q[i][1]);\n\
-    \                if (printq.contains(q[i][2])) {\n                    m[q[i][2]].emplace_back(unsigned(q[i][1])\
-    \ + n);\n                }\n            }\n        }\n        unordered_map<S,\
-    \ WaveletMatrix<unsigned>> wm;\n        for (const pair<S, vector<unsigned>> &p\
-    \ : m) {\n            if (!printq.contains(p.first)) continue;\n            wm.emplace(make_pair(p.first,\
-    \ WaveletMatrix<unsigned>(p.second)));\n        }\n        vector<unsigned> ret(output_query);\n\
-    \        int idx = 0;\n        for (int i = 0; i < set_query + output_query; i++)\
-    \ {\n            S com = q[i][0];\n            if (com == 0) {\n             \
-    \   cnt[q[i][2]]++;\n                cnt[q[i][3]]++;\n            } else {\n \
-    \               ret[idx] = wm[q[i][3]].range_freq(0, cnt[q[i][3]], q[i][1], q[i][2]);\n\
-    \                ret[idx] -= wm[q[i][3]].range_freq(0, cnt[q[i][3]], n + q[i][1],\
-    \ n + q[i][2]);\n                idx++;\n            }\n        }\n        return\
-    \ ret;\n    }\n};"
+    \ ret;\n    }\n};\n#line 4 \"verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  in(n, q);\n\
+    \  vector<int> a(n);\n  in(a);\n  PointSetRangeFreq<int> wm(a, q);\n\n  int com,\
+    \ pos, val, l, r;\n  rep(i, q) {\n    in(com);\n    if (com == 0) {\n      in(pos,\
+    \ val);\n      wm.set(pos, val);\n    } else {\n      in(l, r, val);\n      wm.range_freq(l,\
+    \ r, val);\n    }\n  }\n\n  for (const unsigned &res : wm.build()) {\n    out(res);\n\
+    \  }\n}\n"
+  code: "#include \"../../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_frequency\"\
+    \n#include \"../../../../../data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  in(n, q);\n\
+    \  vector<int> a(n);\n  in(a);\n  PointSetRangeFreq<int> wm(a, q);\n\n  int com,\
+    \ pos, val, l, r;\n  rep(i, q) {\n    in(com);\n    if (com == 0) {\n      in(pos,\
+    \ val);\n      wm.set(pos, val);\n    } else {\n      in(l, r, val);\n      wm.range_freq(l,\
+    \ r, val);\n    }\n  }\n\n  for (const unsigned &res : wm.build()) {\n    out(res);\n\
+    \  }\n}\n"
   dependsOn:
+  - template/template.hpp
+  - data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
   - data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-  isVerificationFile: false
-  path: data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   requiredBy: []
-  timestamp: '2024-11-18 02:13:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
-documentation_of: data-structure/wavelet-matrix/offline-query/PointSetRangeFreq.hpp
+  timestamp: '2024-11-26 19:17:20+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
 layout: document
-title: Point Set Range Frequency
+redirect_from:
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
+- /verify/verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp.html
+title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
 ---
-
-## 概要
-
-todo
-
-## 計算量
-todo

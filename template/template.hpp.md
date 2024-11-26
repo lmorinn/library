@@ -61,14 +61,14 @@ data:
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
@@ -180,9 +180,9 @@ data:
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/RectangleAddPointGet.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointAddRectangleSum.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/offline-query/PointSetRangeFrequency.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
