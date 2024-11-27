@@ -1,5 +1,5 @@
 #include "../../../../template/template.hpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B"
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E"
 #include "../../../../data-structure/square-root-decomposition/RangeAddPointGet.hpp"
 
 int main() {
