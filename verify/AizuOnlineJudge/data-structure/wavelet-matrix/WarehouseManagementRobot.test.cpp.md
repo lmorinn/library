@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
     title: Wavelet Matrix (Segment Tree)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

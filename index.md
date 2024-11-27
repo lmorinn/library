@@ -39,6 +39,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/SegmentTree.hpp
       title: Segment Tree
+  - name: data-structure/square-root-decomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/square-root-decomposition/PointSetRangeMin.hpp
+      title: Point Set Range Sum
+    - icon: ':heavy_check_mark:'
+      path: data-structure/square-root-decomposition/PointSetRangeSum.hpp
+      title: Point Set Range Sum
+    - icon: ':x:'
+      path: data-structure/square-root-decomposition/RangeAddPointGet.hpp
+      title: Range Add Point Get
   - name: data-structure/union-find
     pages:
     - icon: ':heavy_check_mark:'
@@ -173,7 +184,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -185,6 +196,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
       title: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
+  - name: verify/AizuOnlineJudge/data-structure/square-root-decomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
