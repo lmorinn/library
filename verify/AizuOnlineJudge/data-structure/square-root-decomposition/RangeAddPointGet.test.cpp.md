@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/square-root-decomposition/RangeAddPointGet.hpp
     title: Range Add Point Get
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -64,9 +64,9 @@ data:
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
     \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp\"\
-    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\n#line\
-    \ 1 \"data-structure/square-root-decomposition/RangeAddPointGet.hpp\"\ntemplate\
-    \ <class T>\nclass RangeAddPointGet {\n   private:\n    int n;\n    vector<T>\
+    \n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
+    \n#line 1 \"data-structure/square-root-decomposition/RangeAddPointGet.hpp\"\n\
+    template <class T>\nclass RangeAddPointGet {\n   private:\n    int n;\n    vector<T>\
     \ a, add;\n    int bsize;\n\n   public:\n    RangeAddPointGet(const vector<T>\
     \ &v) {\n        a = v;\n        n = a.size();\n        bsize = sqrt(n) + 1;\n\
     \        add.resize(bsize, 0);\n    }\n\n    T get(int p) {\n        return add[p\
@@ -89,7 +89,7 @@ data:
     \    int l, r, x;\n            in(l, r, x);\n            l--;\n            w.range_add(l,\
     \ r, x);\n        } else {\n            int p;\n            in(p);\n         \
     \   p--;\n            out(w.get(p));\n        }\n    }\n}\n"
-  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\
+  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
     \n#include \"../../../../data-structure/square-root-decomposition/RangeAddPointGet.hpp\"\
     \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q;\n    in(n,\
     \ q);\n    vector<lint> a(n);\n    RangeAddPointGet<lint> w(a);\n\n    rep(i,\
@@ -103,8 +103,8 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   requiredBy: []
-  timestamp: '2024-11-28 00:17:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-11-28 00:25:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
 layout: document

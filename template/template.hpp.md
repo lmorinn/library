@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,9 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -185,7 +185,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp

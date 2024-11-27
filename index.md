@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/square-root-decomposition/PointSetRangeSum.hpp
       title: Point Set Range Sum
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/square-root-decomposition/RangeAddPointGet.hpp
       title: Range Add Point Get
   - name: data-structure/union-find
@@ -184,7 +184,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -204,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
       title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
       title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
