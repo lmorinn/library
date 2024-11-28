@@ -13,6 +13,12 @@ data:
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
     title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - icon: ':heavy_check_mark:'
@@ -69,6 +75,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
@@ -192,11 +201,14 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
+  - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+  - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
+  - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp

@@ -50,6 +50,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/square-root-decomposition/RangeAddPointGet.hpp
       title: Range Add Point Get
+    - icon: ':heavy_check_mark:'
+      path: data-structure/square-root-decomposition/RangeAddRangeSum.hpp
+      title: Range Add Range Sum
+    - icon: ':heavy_check_mark:'
+      path: data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.hpp
+      title: Range Chmin Chmax Add Range Sum
+    - icon: ':heavy_check_mark:'
+      path: data-structure/square-root-decomposition/RangeSetRangeMin.hpp
+      title: Range Set Range Min
   - name: data-structure/union-find
     pages:
     - icon: ':heavy_check_mark:'
@@ -207,6 +216,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
       title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
@@ -302,6 +317,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - name: verify/LibraryChecker/data-structure/square-root-decomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
+      title: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
