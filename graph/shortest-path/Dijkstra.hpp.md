@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
-    title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/shortest-path/Dijkstra.hpp\"\ntemplate <class T>\n\
@@ -78,9 +75,8 @@ data:
   path: graph/shortest-path/Dijkstra.hpp
   requiredBy: []
   timestamp: '2024-11-29 03:35:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/shortest-path/Dijkstra.hpp
 layout: document
 title: Dijkstra

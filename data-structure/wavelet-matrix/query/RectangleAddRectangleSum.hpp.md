@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp\"\
@@ -186,8 +189,9 @@ data:
   path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
   requiredBy: []
   timestamp: '2024-11-26 19:17:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
 documentation_of: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
 layout: document
 title: Rectangle Add Rectangle Sum

@@ -1,6 +1,62 @@
 ---
 data:
   libraryCategories:
+  - name: atcoder
+    pages:
+    - icon: ':warning:'
+      path: atcoder/convolution.hpp
+      title: atcoder/convolution.hpp
+    - icon: ':warning:'
+      path: atcoder/dsu.hpp
+      title: atcoder/dsu.hpp
+    - icon: ':warning:'
+      path: atcoder/fenwicktree.hpp
+      title: atcoder/fenwicktree.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_bit.hpp
+      title: atcoder/internal_bit.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_csr.hpp
+      title: atcoder/internal_csr.hpp
+    - icon: ':heavy_check_mark:'
+      path: atcoder/internal_math.hpp
+      title: atcoder/internal_math.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_queue.hpp
+      title: atcoder/internal_queue.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_scc.hpp
+      title: atcoder/internal_scc.hpp
+    - icon: ':heavy_check_mark:'
+      path: atcoder/internal_type_traits.hpp
+      title: atcoder/internal_type_traits.hpp
+    - icon: ':warning:'
+      path: atcoder/lazysegtree.hpp
+      title: atcoder/lazysegtree.hpp
+    - icon: ':warning:'
+      path: atcoder/math.hpp
+      title: atcoder/math.hpp
+    - icon: ':warning:'
+      path: atcoder/maxflow.hpp
+      title: atcoder/maxflow.hpp
+    - icon: ':warning:'
+      path: atcoder/mincostflow.hpp
+      title: atcoder/mincostflow.hpp
+    - icon: ':heavy_check_mark:'
+      path: atcoder/modint.hpp
+      title: atcoder/modint.hpp
+    - icon: ':warning:'
+      path: atcoder/scc.hpp
+      title: atcoder/scc.hpp
+    - icon: ':warning:'
+      path: atcoder/segtree.hpp
+      title: atcoder/segtree.hpp
+    - icon: ':warning:'
+      path: atcoder/string.hpp
+      title: atcoder/string.hpp
+    - icon: ':warning:'
+      path: atcoder/twosat.hpp
+      title: atcoder/twosat.hpp
   - name: data-structure/balanced-binary-search-tree
     pages:
     - icon: ':warning:'
@@ -110,13 +166,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
       title: Rectangle Add Point Get
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
       title: Rectangle Add Rectangle Sum
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/UniqueProduct.hpp
       title: Unique Product Query
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/WaveletMatrixonHeavyLightDecomposition.hpp
       title: Wavelet Matrix on Heavy Light Decomposition
   - name: dp
@@ -156,7 +212,7 @@ data:
       title: Link Cut Tree (Vertex)
   - name: graph/shortest-path
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: graph/shortest-path/Dijkstra.hpp
       title: Dijkstra
     - icon: ':heavy_check_mark:'
@@ -227,6 +283,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
       title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
+  - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - name: verify/AizuOnlineJudge/dp
     pages:
     - icon: ':heavy_check_mark:'
@@ -289,9 +350,6 @@ data:
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
-      title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
       title: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
   - name: verify/AizuOnlineJudge/graph/tree
@@ -344,6 +402,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - name: verify/LibraryChecker/dp
     pages:
     - icon: ':heavy_check_mark:'
