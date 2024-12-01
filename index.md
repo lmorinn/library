@@ -191,6 +191,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/Geometry.hpp
       title: Geometry
+  - name: graph/connected-components
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/connected-components/TwoEdgeConnectedComponents.hpp
+      title: Two Edge Connected Components
   - name: graph/connectivity
     pages:
     - icon: ':heavy_check_mark:'
@@ -210,6 +215,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dynamic-tree/LinkCutTreeVertex.hpp
       title: Link Cut Tree (Vertex)
+  - name: graph/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/others/LowLink.hpp
+      title: Low Link
   - name: graph/shortest-path
     pages:
     - icon: ':warning:'
@@ -410,6 +420,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
       title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
+  - name: verify/LibraryChecker/graph/connected-components
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+      title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - name: verify/LibraryChecker/string
     pages:
     - icon: ':heavy_check_mark:'

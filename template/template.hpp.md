@@ -94,6 +94,9 @@ data:
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+    title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
   _isVerificationFailed: false
@@ -210,6 +213,7 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
+  - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
