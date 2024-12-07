@@ -1,5 +1,3 @@
-#include "../connected-components/StronglyConnectedComponents.hpp"
-
 class GraphReachability {
    private:
     vector<vector<int>> r;
@@ -62,13 +60,12 @@ class GraphReachability {
             goal[cnt] = b;
             cnt++;
             if (cnt == 64 or q.empty()) {
-                rep(i, n) {
+                for (int i = 0; i < n; i++) {
                     for (int prev : r[i]) {
                         dp[i] |= dp[prev];
                     }
                 }
-
-                rep(i, cnt) {
+                for (int i = 0; i < cnt; i++) {
                     if (dp[goal[i]] & (1ULL << i)) {
                         res[res_idx] = true;
                     } else {
@@ -77,7 +74,7 @@ class GraphReachability {
                     res_idx++;
                 }
 
-                rep(i, n) {
+                for (int i = 0; i < n; i++) {
                     dp[i] = 0;
                 }
                 cnt = 0;
