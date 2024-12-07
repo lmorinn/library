@@ -47,20 +47,20 @@ data:
     \ r[i].end()), r[i].end());\n        }\n    }\n\n    void is_reachable(int from,\
     \ int to) {\n        q.emplace(from, to);\n    }\n\n    vector<bool> build() {\n\
     \        vector<bool> res(int(q.size()));\n        int res_idx = 0;\n        int\
-    \ cnt = 0;\n        vector<unsigned long long> dp(n);\n        vector<int> goal(64);\n\
+    \ cnt = 0;\n        vector<bitset<2048>> dp(n);\n        vector<int> goal(2048);\n\
     \n        while (!q.empty()) {\n            int a = compress_id[q.front().first];\n\
     \            int b = compress_id[q.front().second];\n            q.pop();\n  \
-    \          dp[a] |= (1ULL << cnt);\n            goal[cnt] = b;\n            cnt++;\n\
-    \            if (cnt == 64 or q.empty()) {\n                for (int i = 0; i\
+    \          dp[a].set(cnt);\n            goal[cnt] = b;\n            cnt++;\n \
+    \           if (cnt == 2048 or q.empty()) {\n                for (int i = 0; i\
     \ < n; i++) {\n                    for (int prev : r[i]) {\n                 \
     \       dp[i] |= dp[prev];\n                    }\n                }\n       \
-    \         for (int i = 0; i < cnt; i++) {\n                    if (dp[goal[i]]\
-    \ & (1ULL << i)) {\n                        res[res_idx] = true;\n           \
-    \         } else {\n                        res[res_idx] = false;\n          \
-    \          }\n                    res_idx++;\n                }\n\n          \
-    \      for (int i = 0; i < n; i++) {\n                    dp[i] = 0;\n       \
-    \         }\n                cnt = 0;\n            }\n        }\n\n        return\
-    \ res;\n    }\n};\n"
+    \         for (int i = 0; i < cnt; i++) {\n                    if (dp[goal[i]][i])\
+    \ {\n                        res[res_idx] = true;\n                    } else\
+    \ {\n                        res[res_idx] = false;\n                    }\n  \
+    \                  res_idx++;\n                }\n\n                for (int i\
+    \ = 0; i < n; i++) {\n                    dp[i].reset();\n                }\n\
+    \                cnt = 0;\n            }\n        }\n\n        return res;\n \
+    \   }\n};\n"
   code: "#include \"../connected-components/StronglyConnectedComponents.hpp\"\nclass\
     \ GraphReachability {\n   private:\n    vector<vector<int>> r;\n    queue<pair<int,\
     \ int>> q;\n    vector<int> compress_id;\n    SCC s;\n    int n;\n\n   public:\n\
@@ -78,26 +78,26 @@ data:
     \ r[i].end()), r[i].end());\n        }\n    }\n\n    void is_reachable(int from,\
     \ int to) {\n        q.emplace(from, to);\n    }\n\n    vector<bool> build() {\n\
     \        vector<bool> res(int(q.size()));\n        int res_idx = 0;\n        int\
-    \ cnt = 0;\n        vector<unsigned long long> dp(n);\n        vector<int> goal(64);\n\
+    \ cnt = 0;\n        vector<bitset<2048>> dp(n);\n        vector<int> goal(2048);\n\
     \n        while (!q.empty()) {\n            int a = compress_id[q.front().first];\n\
     \            int b = compress_id[q.front().second];\n            q.pop();\n  \
-    \          dp[a] |= (1ULL << cnt);\n            goal[cnt] = b;\n            cnt++;\n\
-    \            if (cnt == 64 or q.empty()) {\n                for (int i = 0; i\
+    \          dp[a].set(cnt);\n            goal[cnt] = b;\n            cnt++;\n \
+    \           if (cnt == 2048 or q.empty()) {\n                for (int i = 0; i\
     \ < n; i++) {\n                    for (int prev : r[i]) {\n                 \
     \       dp[i] |= dp[prev];\n                    }\n                }\n       \
-    \         for (int i = 0; i < cnt; i++) {\n                    if (dp[goal[i]]\
-    \ & (1ULL << i)) {\n                        res[res_idx] = true;\n           \
-    \         } else {\n                        res[res_idx] = false;\n          \
-    \          }\n                    res_idx++;\n                }\n\n          \
-    \      for (int i = 0; i < n; i++) {\n                    dp[i] = 0;\n       \
-    \         }\n                cnt = 0;\n            }\n        }\n\n        return\
-    \ res;\n    }\n};"
+    \         for (int i = 0; i < cnt; i++) {\n                    if (dp[goal[i]][i])\
+    \ {\n                        res[res_idx] = true;\n                    } else\
+    \ {\n                        res[res_idx] = false;\n                    }\n  \
+    \                  res_idx++;\n                }\n\n                for (int i\
+    \ = 0; i < n; i++) {\n                    dp[i].reset();\n                }\n\
+    \                cnt = 0;\n            }\n        }\n\n        return res;\n \
+    \   }\n};\n"
   dependsOn:
   - graph/connected-components/StronglyConnectedComponents.hpp
   isVerificationFile: false
   path: graph/others/GraphReachability.hpp
   requiredBy: []
-  timestamp: '2024-12-07 16:32:11+09:00'
+  timestamp: '2024-12-07 20:14:42+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/others/GraphReachability.hpp
