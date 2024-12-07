@@ -184,6 +184,12 @@ data:
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence
     - icon: ':warning:'
+      path: dp/PointAddRectangleSum.hpp
+      title: Point Add Rectantgle Sum
+    - icon: ':warning:'
+      path: dp/RectangleAddPointGet.hpp
+      title: Rectangle Add Point Get
+    - icon: ':warning:'
       path: dp/TravelingSalesmanProblem.hpp
       title: Traveling Salesman Problem
   - name: geometry
@@ -193,6 +199,9 @@ data:
       title: Geometry
   - name: graph/connected-components
     pages:
+    - icon: ':warning:'
+      path: graph/connected-components/StronglyConnectedComponents.hpp
+      title: Strongly Connected Components
     - icon: ':heavy_check_mark:'
       path: graph/connected-components/TwoEdgeConnectedComponents.hpp
       title: Two Edge Connected Components
@@ -217,6 +226,9 @@ data:
       title: Link Cut Tree (Vertex)
   - name: graph/others
     pages:
+    - icon: ':warning:'
+      path: graph/others/GraphReachability.hpp
+      title: Directed Graph Reachability
     - icon: ':heavy_check_mark:'
       path: graph/others/LowLink.hpp
       title: Low Link
