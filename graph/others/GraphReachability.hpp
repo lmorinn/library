@@ -1,3 +1,4 @@
+#include "../connected-components/StronglyConnectedComponents.hpp"
 class GraphReachability {
    private:
     vector<vector<int>> r;
