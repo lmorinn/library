@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: graph/others/GraphReachability.hpp
-    title: Directed Graph Reachability
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -53,8 +50,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/connected-components/StronglyConnectedComponents.hpp
-  requiredBy:
-  - graph/others/GraphReachability.hpp
+  requiredBy: []
   timestamp: '2024-12-07 15:59:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
