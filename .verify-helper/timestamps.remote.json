@@ -36,6 +36,7 @@
   "verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp": "2024-11-22 13:46:17 +0900",
   "verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp": "2024-06-26 21:07:55 +0900",
   "verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp": "2024-08-24 15:47:14 +0900",
+  "verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp": "2024-12-12 00:16:43 +0900",
   "verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp": "2024-11-28 20:50:33 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp": "2024-11-14 18:52:01 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp": "2024-06-26 12:52:56 +0900",
