@@ -95,6 +95,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/SegmentTree.hpp
       title: Segment Tree
+    - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree/SegmentTreeBeatsChminChmax.hpp
+      title: Segment Tree Beats
   - name: data-structure/square-root-decomposition
     pages:
     - icon: ':heavy_check_mark:'
@@ -397,6 +400,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
+      title: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
   - name: verify/LibraryChecker/data-structure/square-root-decomposition
     pages:
     - icon: ':heavy_check_mark:'
