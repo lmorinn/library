@@ -76,6 +76,9 @@ data:
     path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
     title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
+    title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - icon: ':heavy_check_mark:'
@@ -211,6 +214,7 @@ data:
   - verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
+  - verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp

@@ -76,6 +76,9 @@ data:
       path: data-structure/others/BinaryTrie.hpp
       title: Binary Trie
     - icon: ':heavy_check_mark:'
+      path: data-structure/others/MergeSortTree.hpp
+      title: Merge Sort Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
     - icon: ':warning:'
@@ -395,6 +398,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
+      title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - name: verify/LibraryChecker/data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
