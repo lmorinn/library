@@ -95,6 +95,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/LazySegmentTree.hpp
       title: Lazy Segment Tree
+    - icon: ':warning:'
+      path: data-structure/segment-tree/PersistentSegmentTree.hpp
+      title: Persistent Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/SegmentTree.hpp
       title: Segment Tree
