@@ -278,7 +278,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/SuffixArray.hpp
       title: Suffix Array
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/SuffixAutomaton.hpp
       title: Suffix Automaton (Directed Acyclic Word Graph)
     - icon: ':warning:'
@@ -460,6 +460,9 @@ data:
       title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - name: verify/LibraryChecker/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
+      title: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/string/SuffixArray.test.cpp
       title: verify/LibraryChecker/string/SuffixArray.test.cpp
