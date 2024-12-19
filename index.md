@@ -279,6 +279,9 @@ data:
       path: string/SuffixArray.hpp
       title: Suffix Array
     - icon: ':warning:'
+      path: string/SuffixAutomaton.hpp
+      title: Suffix Automaton (Directed Acyclic Word Graph)
+    - icon: ':warning:'
       path: string/Trie.hpp
       title: Trie
   - name: template
