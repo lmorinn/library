@@ -141,6 +141,9 @@ data:
       path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
       title: Wavelet Matrix (Binary Indexed Tree)
     - icon: ':warning:'
+      path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
+      title: Wavelet Matrix (Dual Segment Tree)
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':heavy_check_mark:'
