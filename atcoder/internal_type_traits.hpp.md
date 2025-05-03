@@ -5,7 +5,7 @@ data:
   - icon: ':warning:'
     path: atcoder/convolution.hpp
     title: atcoder/convolution.hpp
-  - icon: ':warning:'
+  - icon: ':question:'
     path: atcoder/fenwicktree.hpp
     title: atcoder/fenwicktree.hpp
   - icon: ':heavy_check_mark:'
@@ -15,9 +15,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+    title: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+    title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/internal_type_traits.hpp\"\n\n\n\n#include <cassert>\n\
@@ -116,9 +122,11 @@ data:
   - atcoder/convolution.hpp
   - atcoder/modint.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document
 redirect_from:

@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: atcoder/dsu.hpp
       title: atcoder/dsu.hpp
-    - icon: ':warning:'
+    - icon: ':question:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -67,7 +67,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
       title: Dual Binary Indexed Tree
   - name: data-structure/others
@@ -260,10 +260,10 @@ data:
       title: Warshall Floyd
   - name: graph/tree
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/tree/CentroidDecompositionContourAdd.hpp
       title: Centroid Decomposition (Contour Add)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/CentroidDecompositionContourSum.hpp
       title: Centroid Decomposition (Contour Sum)
     - icon: ':warning:'
@@ -304,7 +304,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -490,8 +490,14 @@ data:
       path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
       title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+      title: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
       title: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+      title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
 layout: toppage
 ---
 [![lmori](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Flmori)](https://atcoder.jp/users/lmori)

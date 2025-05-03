@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+    title: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+    title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Fenwick_tree
@@ -87,8 +93,10 @@ data:
   path: atcoder/fenwicktree.hpp
   requiredBy: []
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
 documentation_of: atcoder/fenwicktree.hpp
 layout: document
 redirect_from:

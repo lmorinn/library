@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/tree/CentroidDecompositionContourAdd.hpp
     title: Centroid Decomposition (Contour Add)
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+    title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp\"\
@@ -30,8 +33,9 @@ data:
   requiredBy:
   - graph/tree/CentroidDecompositionContourAdd.hpp
   timestamp: '2025-05-03 16:54:49+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
 documentation_of: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
 layout: document
 title: Dual Binary Indexed Tree
