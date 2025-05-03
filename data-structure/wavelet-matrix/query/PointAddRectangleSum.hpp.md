@@ -211,8 +211,8 @@ data:
   timestamp: '2024-11-26 19:17:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
 documentation_of: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
 layout: document
 title: Point Add Rectangle Sum

@@ -67,6 +67,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
+    - icon: ':warning:'
+      path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
+      title: Dual Binary Indexed Tree
   - name: data-structure/others
     pages:
     - icon: ':heavy_check_mark:'
@@ -257,12 +260,24 @@ data:
       title: Warshall Floyd
   - name: graph/tree
     pages:
+    - icon: ':warning:'
+      path: graph/tree/CentroidDecompositionContourAdd.hpp
+      title: Centroid Decomposition (Contour Add)
+    - icon: ':warning:'
+      path: graph/tree/CentroidDecompositionContourSum.hpp
+      title: Centroid Decomposition (Contour Sum)
+    - icon: ':warning:'
+      path: graph/tree/CentroidEnumerate.hpp
+      title: Centroid Enumerate
     - icon: ':heavy_check_mark:'
       path: graph/tree/EulerTour.hpp
       title: Euler Tour
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
+    - icon: ':warning:'
+      path: graph/tree/TreeDistanceFreqency.hpp
+      title: Frequency Table of Tree Distance
   - name: math
     pages:
     - icon: ':warning:'

@@ -44,14 +44,14 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   requiredBy:
-  - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
   - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+  - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
   - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   timestamp: '2024-11-18 02:13:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 title: Binary Indexed Tree
