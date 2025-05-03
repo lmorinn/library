@@ -136,7 +136,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: timestamps-${{ matrix.id }}-${{ github.run_id }}
+        name: timestamps-${{ matrix.id }}
         path: main/.verify-helper/timestamps-${{ matrix.id }}.json
 
   post-run:
@@ -154,7 +154,6 @@ jobs:
     - name: Load timestamps
       uses: actions/download-artifact@v4
       with:
-        name: timestamps
         path: .verify-helper/timestamps
 
     - name: Merge timestamps
@@ -163,7 +162,8 @@ jobs:
         touch ./timestamps.remote.json
 
         jq --slurp --sort-keys 'reduce .[] as $item ({}; . * $item)' \
-        ./timestamps.remote.json timestamps/* > ./merged-timestamps.json
+        ./timestamps.remote.json $(find timestamps -type f -name '*.json' | sort) \
+        > ./merged-timestamps.json
 
         cp -f ./merged-timestamps.json ./timestamps.remote.json
         cat ./timestamps.remote.json
