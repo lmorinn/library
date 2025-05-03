@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/fenwicktree.hpp
     title: atcoder/fenwicktree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
     title: Dual Binary Indexed Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourAdd.hpp
     title: Centroid Decomposition (Contour Add)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/vertex_add_range_contour_sum_on_tree
+    PROBLEM: https://judge.yosupo.jp/problem/vertex_get_range_contour_add_on_tree
     links:
-    - https://judge.yosupo.jp/problem/vertex_add_range_contour_sum_on_tree
+    - https://judge.yosupo.jp/problem/vertex_get_range_contour_add_on_tree
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -73,7 +73,7 @@ data:
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
     \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_range_contour_sum_on_tree\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_get_range_contour_add_on_tree\"\
     \n#line 1 \"atcoder/fenwicktree.hpp\"\n\n\n\n#line 6 \"atcoder/fenwicktree.hpp\"\
     \n\n#line 1 \"atcoder/internal_type_traits.hpp\"\n\n\n\n#line 6 \"atcoder/internal_type_traits.hpp\"\
     \n#include <type_traits>\n\nnamespace atcoder {\n\nnamespace internal {\n\n#ifndef\
@@ -241,7 +241,7 @@ data:
     \            S x;\n            in(p, l, r, x);\n            t.add(p, l, r, x);\n\
     \        } else {\n            int p;\n            in(p);\n            out(t.get(p));\n\
     \        }\n    }\n}\n"
-  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_range_contour_sum_on_tree\"\
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_get_range_contour_add_on_tree\"\
     \n#include \"../../../atcoder/fenwicktree.hpp\"\nusing namespace atcoder;\n#include\
     \ \"../../../graph/tree/CentroidDecompositionContourAdd.hpp\"\n\nusing S = lint;\n\
     \nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int\
@@ -261,8 +261,8 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-03 18:57:26+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-05-03 19:06:43+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
 layout: document

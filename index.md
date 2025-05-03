@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: atcoder/dsu.hpp
       title: atcoder/dsu.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -67,7 +67,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
       title: Dual Binary Indexed Tree
   - name: data-structure/others
@@ -260,7 +260,7 @@ data:
       title: Warshall Floyd
   - name: graph/tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/CentroidDecompositionContourAdd.hpp
       title: Centroid Decomposition (Contour Add)
     - icon: ':heavy_check_mark:'
@@ -304,7 +304,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -495,7 +495,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
       title: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
       title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
 layout: toppage
