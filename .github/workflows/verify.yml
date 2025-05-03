@@ -109,7 +109,7 @@ jobs:
       working-directory: main
       env:
         CACHE_HIT: ${{ steps.cache-judge.outputs.cache-hit }}
-        DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
+        # DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
       run: |
         set -eu
@@ -133,7 +133,7 @@ jobs:
         cat "./.verify-helper/timestamps-${{ matrix.id }}.json"
 
     - name: Save timestamps
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.2
       if: ${{ !cancelled() }}
       with:
         name: timestamps
