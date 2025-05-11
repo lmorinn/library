@@ -159,7 +159,7 @@ class WaveletMatrix {
     return res;
   }
 
-  // v[l,r)の中でvalを超えない最大の値を返す
+	// v[l,r)の中でval未満の要素のうち最大の値を返す
   T prev_value(unsigned l, unsigned r, T val) {
     int num = range_freq(l, r, MI, val);
     if (num == 0) {
@@ -169,9 +169,9 @@ class WaveletMatrix {
     }
   }
 
-  // v[l,r)の中でval以上の最小の値を返す
+  // v[l,r)の中でvalより大きい要素のうち最小の値を返す
   T next_value(unsigned l, unsigned r, T val) {
-    int num = range_freq(l, r, MI, val);
+    int num = range_freq(l, r, MI, val + 1);
     if (num == r - l) {
       return MI;
     } else {
