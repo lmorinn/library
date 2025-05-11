@@ -299,7 +299,7 @@ T wm.prev_value(1, 5, 100)  // 返り値は5
 ```cpp
 T wm.next_value(unsigned l, unsigned r, T val);
 ```
-`v[l,r)` の中で`val`より大きい要素のうち最小のも
+`v[l,r)` の中で`val`より大きい要素のうち最小のもの
 を返す。
 条件を満たす値が存在しない場合は`std::numeric_limits<T>::min()`を返す。
 
