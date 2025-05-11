@@ -42,6 +42,7 @@ T wm.access(int p)
 T wm.kth_smallest(unsigned l, unsigned r, unsigned k)
 ```
 `v[l,r)` (0-origin)の中で`k`番目(1-origin)に小さい値を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -63,6 +64,7 @@ T wm.kth_smallest(1, 4, 2) // 返り値は1
 T wm.kth_largest(unsigned l, unsigned r, unsigned k);
 ```
 `v[l,r)` (0-origin)の中で`k`番目(1-origin)に大きい値を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -87,6 +89,7 @@ unsigned wm.range_freq(int l, int r, T mink, T maxk);
 ```
 
 `v[l, r)` の中で要素の値が `[mink, maxk)`に入る値の個数を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -112,6 +115,7 @@ T wm.prev_value(unsigned l, unsigned r, T val);
 ```
 `v[l,r)` の中で`val`未満の要素のうち最大のものを返す。
 条件を満たす値が存在しない場合は`std::numeric_limits<T>::max()`を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -138,6 +142,7 @@ T wm.next_value(unsigned l, unsigned r, T val);
 `v[l,r)` の中で`val`より大きい要素のうち最小のも
 を返す。
 条件を満たす値が存在しない場合は`std::numeric_limits<T>::min()`を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
