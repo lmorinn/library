@@ -74,15 +74,16 @@ data:
     \      int rank0_r = R - b[d].rank(R);\n      int rank1_l = b[d].rank(L) + zero[d];\n\
     \      int rank1_r = b[d].rank(R) + zero[d];\n      rec(rec, d + 1, rank0_l, rank0_r,\
     \ A, C);\n      rec(rec, d + 1, rank1_l, rank1_r, C, B);\n    };\n    dfs(dfs,\
-    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n  // v[l,r)\u306E\u4E2D\
-    \u3067val\u3092\u8D85\u3048\u306A\u3044\u6700\u5927\u306E\u5024\u3092\u8FD4\u3059\
-    \n  T prev_value(unsigned l, unsigned r, T val) {\n    int num = range_freq(l,\
-    \ r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else {\n      return\
-    \ kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u4EE5\
-    \u4E0A\u306E\u6700\u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned\
-    \ l, unsigned r, T val) {\n    int num = range_freq(l, r, MI, val);\n    if (num\
-    \ == r - l) {\n      return MI;\n    } else {\n      return kth_smallest(l, r,\
-    \ num + 1);\n    }\n  }\n};\n"
+    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n\t// v[l,r)\u306E\u4E2D\
+    \u3067val\u672A\u6E80\u306E\u8981\u7D20\u306E\u3046\u3061\u6700\u5927\u306E\u5024\
+    \u3092\u8FD4\u3059\n  T prev_value(unsigned l, unsigned r, T val) {\n    int num\
+    \ = range_freq(l, r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else\
+    \ {\n      return kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\
+    \u3067val\u3088\u308A\u5927\u304D\u3044\u8981\u7D20\u306E\u3046\u3061\u6700\u5C0F\
+    \u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned l, unsigned r, T val)\
+    \ {\n    int num = range_freq(l, r, MI, val + 1);\n    if (num == r - l) {\n \
+    \     return MI;\n    } else {\n      return kth_smallest(l, r, num + 1);\n  \
+    \  }\n  }\n};\n"
   code: "struct BitVector {\n  unsigned sz;\n  unsigned blocksize;\n  vector<unsigned>\
     \ bit, sum;\n\n  BitVector() {}\n\n  BitVector(unsigned siz) {\n    sz = siz;\n\
     \    blocksize = (sz + 31) >> 5;\n    bit.assign(blocksize, 0U);\n    sum.assign(blocksize,\
@@ -136,21 +137,22 @@ data:
     \      int rank0_r = R - b[d].rank(R);\n      int rank1_l = b[d].rank(L) + zero[d];\n\
     \      int rank1_r = b[d].rank(R) + zero[d];\n      rec(rec, d + 1, rank0_l, rank0_r,\
     \ A, C);\n      rec(rec, d + 1, rank1_l, rank1_r, C, B);\n    };\n    dfs(dfs,\
-    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n  // v[l,r)\u306E\u4E2D\
-    \u3067val\u3092\u8D85\u3048\u306A\u3044\u6700\u5927\u306E\u5024\u3092\u8FD4\u3059\
-    \n  T prev_value(unsigned l, unsigned r, T val) {\n    int num = range_freq(l,\
-    \ r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else {\n      return\
-    \ kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u4EE5\
-    \u4E0A\u306E\u6700\u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned\
-    \ l, unsigned r, T val) {\n    int num = range_freq(l, r, MI, val);\n    if (num\
-    \ == r - l) {\n      return MI;\n    } else {\n      return kth_smallest(l, r,\
-    \ num + 1);\n    }\n  }\n};"
+    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n\t// v[l,r)\u306E\u4E2D\
+    \u3067val\u672A\u6E80\u306E\u8981\u7D20\u306E\u3046\u3061\u6700\u5927\u306E\u5024\
+    \u3092\u8FD4\u3059\n  T prev_value(unsigned l, unsigned r, T val) {\n    int num\
+    \ = range_freq(l, r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else\
+    \ {\n      return kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\
+    \u3067val\u3088\u308A\u5927\u304D\u3044\u8981\u7D20\u306E\u3046\u3061\u6700\u5C0F\
+    \u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned l, unsigned r, T val)\
+    \ {\n    int num = range_freq(l, r, MI, val + 1);\n    if (num == r - l) {\n \
+    \     return MI;\n    } else {\n      return kth_smallest(l, r, num + 1);\n  \
+    \  }\n  }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
   requiredBy:
   - data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
-  timestamp: '2024-11-09 12:35:08+09:00'
+  timestamp: '2025-05-11 23:11:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
@@ -200,6 +202,7 @@ T wm.access(int p)
 T wm.kth_smallest(unsigned l, unsigned r, unsigned k)
 ```
 `v[l,r)` (0-origin)の中で`k`番目(1-origin)に小さい値を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -221,6 +224,7 @@ T wm.kth_smallest(1, 4, 2) // 返り値は1
 T wm.kth_largest(unsigned l, unsigned r, unsigned k);
 ```
 `v[l,r)` (0-origin)の中で`k`番目(1-origin)に大きい値を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -245,6 +249,7 @@ unsigned wm.range_freq(int l, int r, T mink, T maxk);
 ```
 
 `v[l, r)` の中で要素の値が `[mink, maxk)`に入る値の個数を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -270,6 +275,7 @@ T wm.prev_value(unsigned l, unsigned r, T val);
 ```
 `v[l,r)` の中で`val`未満の要素のうち最大のものを返す。
 条件を満たす値が存在しない場合は`std::numeric_limits<T>::max()`を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp
@@ -296,6 +302,7 @@ T wm.next_value(unsigned l, unsigned r, T val);
 `v[l,r)` の中で`val`より大きい要素のうち最小のも
 を返す。
 条件を満たす値が存在しない場合は`std::numeric_limits<T>::min()`を返す。
+
 例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
 
 ```cpp

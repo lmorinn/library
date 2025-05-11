@@ -68,15 +68,16 @@ data:
     \      int rank0_r = R - b[d].rank(R);\n      int rank1_l = b[d].rank(L) + zero[d];\n\
     \      int rank1_r = b[d].rank(R) + zero[d];\n      rec(rec, d + 1, rank0_l, rank0_r,\
     \ A, C);\n      rec(rec, d + 1, rank1_l, rank1_r, C, B);\n    };\n    dfs(dfs,\
-    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n  // v[l,r)\u306E\u4E2D\
-    \u3067val\u3092\u8D85\u3048\u306A\u3044\u6700\u5927\u306E\u5024\u3092\u8FD4\u3059\
-    \n  T prev_value(unsigned l, unsigned r, T val) {\n    int num = range_freq(l,\
-    \ r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else {\n      return\
-    \ kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\u3067val\u4EE5\
-    \u4E0A\u306E\u6700\u5C0F\u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned\
-    \ l, unsigned r, T val) {\n    int num = range_freq(l, r, MI, val);\n    if (num\
-    \ == r - l) {\n      return MI;\n    } else {\n      return kth_smallest(l, r,\
-    \ num + 1);\n    }\n  }\n};\n#line 2 \"data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp\"\
+    \ 0, vl, vr, 0, 1 << bitsize);\n    return res;\n  }\n\n\t// v[l,r)\u306E\u4E2D\
+    \u3067val\u672A\u6E80\u306E\u8981\u7D20\u306E\u3046\u3061\u6700\u5927\u306E\u5024\
+    \u3092\u8FD4\u3059\n  T prev_value(unsigned l, unsigned r, T val) {\n    int num\
+    \ = range_freq(l, r, MI, val);\n    if (num == 0) {\n      return MA;\n    } else\
+    \ {\n      return kth_smallest(l, r, num);\n    }\n  }\n\n  // v[l,r)\u306E\u4E2D\
+    \u3067val\u3088\u308A\u5927\u304D\u3044\u8981\u7D20\u306E\u3046\u3061\u6700\u5C0F\
+    \u306E\u5024\u3092\u8FD4\u3059\n  T next_value(unsigned l, unsigned r, T val)\
+    \ {\n    int num = range_freq(l, r, MI, val + 1);\n    if (num == r - l) {\n \
+    \     return MI;\n    } else {\n      return kth_smallest(l, r, num + 1);\n  \
+    \  }\n  }\n};\n#line 2 \"data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp\"\
     \n\ntemplate <class S>\nclass PointSetRangeFreq {\n   private:\n    unordered_map<S,\
     \ vector<unsigned>> m;\n    unordered_map<S, unsigned> cnt;\n    vector<vector<S>>\
     \ q;\n    unordered_map<S, bool> printq;\n    unsigned n;\n\n    unsigned set_query;\n\
@@ -143,7 +144,7 @@ data:
   isVerificationFile: false
   path: data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
   requiredBy: []
-  timestamp: '2024-11-26 19:17:20+09:00'
+  timestamp: '2025-05-11 23:11:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
