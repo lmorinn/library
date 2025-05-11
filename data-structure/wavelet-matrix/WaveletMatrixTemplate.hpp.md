@@ -163,16 +163,19 @@ title: Wavelet Matrix (Template)
 
 ## 概要
 
-長さ $n$ の静的な数列に対してオンラインでクエリを処理するデータ構造です。
-要素の値が負であってもクエリを処理できるようにしています。
+長さ $N$ の静的な数列に対して、構築 $O(N\log{N})$ の上でさまざまなクエリを $O(\log{N})$ で処理するデータ構造。
 
 ## コンストラクタ
 
 ```cpp
-WaveletMatrix<T> wm(v);
+WaveletMatrix<T> wm(vector<T> v)
 ```
 
-型 `T` の数列 `v` からWavelet Matrixを構築します。
+長さ `n = v.size()` の数列 `v` に対してWavelet Matrixを構築する。
+
+### 制約
+
+- テンプレート引数 T: データの型。
 
 ### 計算量
 - $O(n\log{n})$
@@ -180,13 +183,13 @@ WaveletMatrix<T> wm(v);
 ## access
 
 ```cpp
-T wm.access(int p);
+T wm.access(int p)
 ```
 
-`v[p]` を復元して返します。
+`v[p]` を返す。
 
 ### 制約
-- $0 \leq p < n$
+- $0 \leq p \lt n$
 
 ### 計算量
 - $O(\log{n})$
@@ -194,12 +197,19 @@ T wm.access(int p);
 ## kth_smallest
 
 ```cpp
-T wm.kth_smallest(unsigned l, unsigned r, unsigned k);
+T wm.kth_smallest(unsigned l, unsigned r, unsigned k)
 ```
-`v[l,r)` (0-origin)の中で`k`番目(1-origin)に小さい値を返します。
+`v[l,r)` (0-origin)の中で`k`番目(1-origin)に小さい値を返す。
+例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
+
+```cpp
+T wm.kth_smallest(1, 4, 2) // 返り値は1
+```
+
+のようになる。
 
 ### 制約
-- $0 \leq l < r \leq n$
+- $0 \leq l \lt r \leq n$
 - $1 \leq k \leq r - l$
 
 ### 計算量
@@ -210,10 +220,17 @@ T wm.kth_smallest(unsigned l, unsigned r, unsigned k);
 ```cpp
 T wm.kth_largest(unsigned l, unsigned r, unsigned k);
 ```
-`v[l,r)` (0-origin)の中で`k`番目(1-origin)に大きい値を返します。
+`v[l,r)` (0-origin)の中で`k`番目(1-origin)に大きい値を返す。
+例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
+
+```cpp
+T wm.kth_largest(1, 5, 2) // 返り値は4
+```
+
+のようになる。
 
 ### 制約
-- $0 \leq l < r \leq n$
+- $0 \leq l \lt r \leq n$
 - $1 \leq k \leq r - l$
 
 
@@ -221,18 +238,25 @@ T wm.kth_largest(unsigned l, unsigned r, unsigned k);
 - $O(\log{n})$
 
 
-
 ## range_freq
 
 ```cpp
-unsigned wm.range_freq(int vl, int vr, T mink, T maxk);
+unsigned wm.range_freq(int l, int r, T mink, T maxk);
 ```
 
-`v[l, r) の中で要素の値が[mink, maxk)`に入る値の個数を返します。
+`v[l, r)` の中で要素の値が `[mink, maxk)`に入る値の個数を返す。
+例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
+
+```cpp
+T wm.range_freq(1, 5, 1, 2) // 返り値は2
+T wm.range_freq(0, 4, 1, 4) // 返り値は3
+```
+
+のようになる。
 
 ### 制約
-- $0 \leq l < r \leq n$
-- $mink \leq maxk$
+- $0 \leq l \lt r \leq n$
+- `std::numeric_limits<T>::min()` $\leq mink \leq maxk \leq$ `std::numeric_limits<T>::max()`
 
 
 ### 計算量
@@ -244,11 +268,20 @@ unsigned wm.range_freq(int vl, int vr, T mink, T maxk);
 ```cpp
 T wm.prev_value(unsigned l, unsigned r, T val);
 ```
-`v[l,r)` の中で`val`の次に小さい要素を返します。
-条件を満たす値が存在しない場合は`std::numeric_limits<T>::max()`を返します。
+`v[l,r)` の中で`val`未満の要素のうち最大のものを返す。
+条件を満たす値が存在しない場合は`std::numeric_limits<T>::max()`を返す。
+例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
+
+```cpp
+T wm.prev_value(1, 5, 4)    // 返り値は1
+T wm.prev_value(1, 5, 1)    // 返り値はstd::numeric_limits<T>::max()
+T wm.prev_value(1, 5, 100)  // 返り値は5
+```
+
+のようになる。
 
 ### 制約
-- $0 \leq l < r \leq n$
+- $0 \leq l \lt r \leq n$
 
 
 ### 計算量
@@ -260,11 +293,21 @@ T wm.prev_value(unsigned l, unsigned r, T val);
 ```cpp
 T wm.next_value(unsigned l, unsigned r, T val);
 ```
-`v[l,r)` の中で`val`の次に大きい要素を返します。
-条件を満たす値が存在しない場合は`std::numeric_limits<T>::min()`を返します。
+`v[l,r)` の中で`val`より大きい要素のうち最小のも
+を返す。
+条件を満たす値が存在しない場合は`std::numeric_limits<T>::min()`を返す。
+例として、`v = {3, 1, 4, 1, 5, 9}`ならば、 
+
+```cpp
+T wm.next_value(1, 5, 4)    // 返り値は5
+T wm.next_value(1, 5, 1)    // 返り値は4
+T wm.next_value(1, 5, 100)  // 返り値はstd::numeric_limits<T>::min()
+```
+
+のようになる。
 
 ### 制約
-- $0 \leq l < r \leq n$
+- $0 \leq l \lt r \leq n$
 
 
 ### 計算量
