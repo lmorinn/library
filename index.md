@@ -152,7 +152,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
       title: Wavelet Matrix (Rectangle)
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
       title: Wavelet Matrix (Segment Tree)
     - icon: ':warning:'
@@ -333,11 +333,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
       title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
-  - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
-      title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query
     pages:
     - icon: ':heavy_check_mark:'

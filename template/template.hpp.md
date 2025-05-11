@@ -19,9 +19,6 @@ data:
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
-    title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
     title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - icon: ':heavy_check_mark:'
@@ -238,7 +235,6 @@ data:
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
-  - verify/AizuOnlineJudge/data-structure/wavelet-matrix/WarehouseManagementRobot.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
