@@ -131,7 +131,7 @@ title: Rectangle Apply Point Get
 
 ## 概要
 
-[Wavelet Matrix (Dual Segment Tree)](../data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[Wavelet Matrix (Dual Segment Tree)](../WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点の重みに対して矩形作用 / 1点取得が可能。 
 

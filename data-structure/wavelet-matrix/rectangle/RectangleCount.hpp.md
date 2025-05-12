@@ -109,7 +109,7 @@ title: Rectangle Count
 
 ## 概要
 
-[Wavelet Matrix (Template)](../data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[Wavelet Matrix (Template)](../WaveletMatrixTemplate.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点に対して矩形カウントが可能。
 

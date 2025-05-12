@@ -163,7 +163,7 @@ title: Rectangle Sum
 
 ## 概要
 
-[Wavelet Matrix (Template Sum)](../data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[Wavelet Matrix (Template Sum)](../WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点に対して矩形総和取得が可能。
 
