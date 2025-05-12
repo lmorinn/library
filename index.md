@@ -152,9 +152,6 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
-    - icon: ':heavy_check_mark:'
-      path: data-structure/wavelet-matrix/WaveletMatrixRectangle.hpp
-      title: Wavelet Matrix (Rectangle)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
       title: Wavelet Matrix (Segment Tree)
@@ -444,9 +441,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/RectangleSum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
