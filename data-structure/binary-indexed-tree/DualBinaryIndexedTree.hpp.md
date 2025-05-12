@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
+    title: Wavelet Matrix (Dual Binary Indexed Tree)
   - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourAdd.hpp
     title: Centroid Decomposition (Contour Add)
@@ -31,6 +34,7 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
   requiredBy:
+  - data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
   - graph/tree/CentroidDecompositionContourAdd.hpp
   timestamp: '2025-05-03 16:54:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
