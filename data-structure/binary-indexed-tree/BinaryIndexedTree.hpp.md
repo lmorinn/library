@@ -1,26 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
-    title: Wavelet Matrix (Binary Indexed Tree)
-  - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
-    title: Point Add Rectangle Sum
-  - icon: ':heavy_check_mark:'
-    path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-    title: Rectangle Add Point Get
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
@@ -43,15 +28,10 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
-  requiredBy:
-  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-  - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
-  - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
+  requiredBy: []
   timestamp: '2024-11-18 02:13:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 title: Binary Indexed Tree

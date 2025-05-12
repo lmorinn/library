@@ -64,7 +64,7 @@ data:
       title: Reversible Lazy Splay Tree
   - name: data-structure/binary-indexed-tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -140,7 +140,7 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrix3D.hpp
       title: Wavelet Matrix (3D)
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
       title: Wavelet Matrix (Binary Indexed Tree)
     - icon: ':warning:'
@@ -172,18 +172,18 @@ data:
       title: Wavelet Matrix (Toggle)
   - name: data-structure/wavelet-matrix/query
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
-      title: Point Add Rectangle Sum
+      title: data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
       title: Point Set Range Frequency
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/RangeMex.hpp
       title: Range Mex Query
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
-      title: Rectangle Add Point Get
+      title: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
       title: Rectangle Add Rectangle Sum
@@ -450,14 +450,8 @@ data:
   - name: verify/LibraryChecker/data-structure/wavelet-matrix/query
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointAddRectangleSum.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
-      title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddPointGet.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
