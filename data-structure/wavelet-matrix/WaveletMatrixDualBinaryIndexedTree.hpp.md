@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
     title: Dual Binary Indexed Tree
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
+    title: Rectangle Add Point Get
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -139,7 +142,8 @@ data:
   - data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
   timestamp: '2025-05-12 13:53:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

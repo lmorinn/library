@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
     title: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
+    title: Rectangle Sum Point Add
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -163,6 +166,7 @@ data:
   requiredBy:
   - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
   timestamp: '2025-05-12 11:31:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

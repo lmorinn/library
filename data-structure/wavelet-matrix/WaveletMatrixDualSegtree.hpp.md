@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
+    title: Rectangle Apply Point Get
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -160,7 +163,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
   timestamp: '2025-05-12 13:19:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

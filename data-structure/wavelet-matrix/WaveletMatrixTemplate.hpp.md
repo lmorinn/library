@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
     title: Point Set Range Frequency
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
+    title: Rectangle Count
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
@@ -152,6 +155,7 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
   requiredBy:
   - data-structure/wavelet-matrix/query/PointSetRangeFreq.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
   timestamp: '2025-05-11 23:11:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

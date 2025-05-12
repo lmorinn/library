@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
+    title: Rectangle Sum
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -236,7 +239,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
-  requiredBy: []
+  requiredBy:
+  - data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
   timestamp: '2024-11-14 18:13:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

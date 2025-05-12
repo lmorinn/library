@@ -193,6 +193,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/query/WaveletMatrixonHeavyLightDecomposition.hpp
       title: Wavelet Matrix on Heavy Light Decomposition
+  - name: data-structure/wavelet-matrix/rectangle
+    pages:
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
+      title: Rectangle Add Point Get
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
+      title: Rectangle Apply Point Get
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
+      title: Rectangle Count
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
+      title: Rectangle Prod Point Set
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
+      title: Rectangle Sum
+    - icon: ':warning:'
+      path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
+      title: Rectangle Sum Point Add
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'

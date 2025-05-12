@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/query/RangeMex.hpp
     title: Range Mex Query
+  - icon: ':warning:'
+    path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
+    title: Rectangle Prod Point Set
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -169,6 +172,7 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
   requiredBy:
   - data-structure/wavelet-matrix/query/RangeMex.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
   timestamp: '2025-05-12 02:45:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
