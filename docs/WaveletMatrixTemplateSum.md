@@ -1,5 +1,5 @@
 ---
-title: Wavelet Matrix (Template Sum)
+title: ウェーブレット行列 (+ 累積和)
 documentation_of: //data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
 ---
 

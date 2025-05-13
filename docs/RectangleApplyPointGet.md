@@ -1,13 +1,13 @@
 ---
-title: Rectangle Apply Point Get
+title: 矩形作用・一点取得
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
 ---
 
 ## 概要
 
-[Wavelet Matrix (Dual Segment Tree)](../WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ 双対セグメント木)](../WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形作用 / 1点取得が可能。 
+事前に与えられた点の重みに対して矩形作用 / 一点取得が可能。 
 
 ## コンストラクタ
 

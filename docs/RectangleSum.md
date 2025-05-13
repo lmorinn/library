@@ -1,11 +1,11 @@
 ---
-title: Rectangle Sum
+title: 矩形和
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
 ---
 
 ## 概要
 
-[Wavelet Matrix (Template Sum)](../WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ 累積和)](../WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点に対して矩形総和取得が可能。
 

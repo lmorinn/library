@@ -1,5 +1,5 @@
 ---
-title: Wavelet Matrix (Dual Binary Indexed Tree)
+title: ウェーブレット行列 (+ 双対BIT)
 documentation_of: //data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
 ---
 

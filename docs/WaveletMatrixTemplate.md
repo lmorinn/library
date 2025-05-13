@@ -1,5 +1,5 @@
 ---
-title: Wavelet Matrix (Template)
+title: ウェーブレット行列
 documentation_of: //data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
 ---
 

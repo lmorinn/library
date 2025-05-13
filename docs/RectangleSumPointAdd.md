@@ -1,13 +1,13 @@
 ---
-title: Rectangle Sum Point Add
+title: 矩形和・一点加算
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
 ---
 
 ## 概要
 
-[Wavelet Matrix (Binary Indexed Tree)](../WaveletMatrixBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ BIT)](../WaveletMatrixBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形総和取得 / 1点加算が可能。
+事前に与えられた点の重みに対して矩形総和取得 / 一点加算が可能。
 
 
 ## コンストラクタ
