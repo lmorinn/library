@@ -3,7 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
-    title: Wavelet Matrix (Dual Segment Tree)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
+      \u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -126,14 +127,14 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
 layout: document
-title: Rectangle Apply Point Get
+title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Dual Segment Tree)](../WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ 双対セグメント木)](../WaveletMatrixDualSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形作用 / 1点取得が可能。 
+事前に与えられた点の重みに対して矩形作用 / 一点取得が可能。 
 
 ## コンストラクタ
 

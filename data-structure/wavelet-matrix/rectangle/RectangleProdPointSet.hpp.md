@@ -3,7 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
-    title: Wavelet Matrix (Segment Tree)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u30BB\u30B0\
+      \u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -128,14 +129,14 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
 layout: document
-title: Rectangle Prod Point Set
+title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Segment Tree)](../WaveletMatrixSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ セグメント木)](../WaveletMatrixSegtree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形総積取得 / 1点更新が可能。
+事前に与えられた点の重みに対して矩形総積取得 / 一点更新が可能。
 
 
 ## コンストラクタ

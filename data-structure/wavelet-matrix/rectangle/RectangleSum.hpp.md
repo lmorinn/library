@@ -3,7 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
-    title: Wavelet Matrix (Template Sum)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u7D2F\u7A4D\
+      \u548C)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -158,12 +159,12 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
 layout: document
-title: Rectangle Sum
+title: "\u77E9\u5F62\u548C"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Template Sum)](../WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ 累積和)](../WaveletMatrixTemplateSum.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点に対して矩形総和取得が可能。
 

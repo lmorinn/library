@@ -10,7 +10,7 @@ data:
     title: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-    title: Rectangle Sum Point Add
+    title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -172,7 +172,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
 layout: document
-title: Wavelet Matrix (Binary Indexed Tree)
+title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ BIT)"
 ---
 
 ## 概要

@@ -6,7 +6,8 @@ data:
     title: Dual Binary Indexed Tree
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
-    title: Wavelet Matrix (Dual Binary Indexed Tree)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
+      BIT)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -117,14 +118,14 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
 layout: document
-title: Rectangle Add Point Get
+title: "\u77E9\u5F62\u52A0\u7B97\u30FB\u4E00\u70B9\u53D6\u5F97"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Dual Binary Indexed Tree)](../WaveletMatrixDualBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ 双対BIT)](../WaveletMatrixDualBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形加算 / 1点取得が可能。 
+事前に与えられた点の重みに対して矩形加算 / 一点取得が可能。 
 
 
 ## コンストラクタ

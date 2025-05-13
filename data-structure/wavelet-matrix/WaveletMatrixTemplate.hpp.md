@@ -7,7 +7,7 @@ data:
     title: Point Set Range Frequency
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
-    title: Rectangle Count
+    title: "\u77E9\u5F62\u30AB\u30A6\u30F3\u30C8"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
@@ -164,7 +164,7 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
 layout: document
-title: Wavelet Matrix (Template)
+title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
 ---
 
 ## 概要

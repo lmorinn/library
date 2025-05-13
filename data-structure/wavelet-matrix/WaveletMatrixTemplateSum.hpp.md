@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
-    title: Rectangle Sum
+    title: "\u77E9\u5F62\u548C"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -246,7 +246,8 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
 layout: document
-title: Wavelet Matrix (Template Sum)
+title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u7D2F\u7A4D\u548C\
+  )"
 ---
 
 ## 概要

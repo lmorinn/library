@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-    title: Wavelet Matrix (Template)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -104,12 +104,12 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
 layout: document
-title: Rectangle Count
+title: "\u77E9\u5F62\u30AB\u30A6\u30F3\u30C8"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Template)](../WaveletMatrixTemplate.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列](../WaveletMatrixTemplate.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
 事前に与えられた点に対して矩形カウントが可能。
 

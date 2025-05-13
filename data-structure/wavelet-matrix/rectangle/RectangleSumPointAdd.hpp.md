@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
-    title: Wavelet Matrix (Binary Indexed Tree)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ BIT)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -122,14 +122,14 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
 layout: document
-title: Rectangle Sum Point Add
+title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
 ---
 
 ## 概要
 
-[Wavelet Matrix (Binary Indexed Tree)](../WaveletMatrixBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
+[ウェーブレット行列 (+ BIT)](../WaveletMatrixBinaryIndexedTree.hpp) を拡張して、2次元平面のクエリに答えられるようにしたデータ構造。
 
-事前に与えられた点の重みに対して矩形総和取得 / 1点加算が可能。
+事前に与えられた点の重みに対して矩形総和取得 / 一点加算が可能。
 
 
 ## コンストラクタ

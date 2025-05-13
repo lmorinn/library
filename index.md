@@ -142,31 +142,32 @@ data:
       title: Wavelet Matrix (3D)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
-      title: Wavelet Matrix (Binary Indexed Tree)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ BIT)"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
-      title: Wavelet Matrix (Dual Binary Indexed Tree)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
+        BIT)"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
-      title: Wavelet Matrix (Dual Segment Tree)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
-      title: Wavelet Matrix (Segment Tree)
-    - icon: ':warning:'
-      path: data-structure/wavelet-matrix/WaveletMatrixSqrtTree.hpp
-      title: Wavelet Matrix (Sqrt Tree)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u30BB\u30B0\
+        \u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-      title: Wavelet Matrix (Template)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
-      title: Wavelet Matrix (Template Sum)
+      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u7D2F\u7A4D\
+        \u548C)"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
       title: Wavelet Matrix (Toggle)
@@ -197,22 +198,22 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
-      title: Rectangle Add Point Get
+      title: "\u77E9\u5F62\u52A0\u7B97\u30FB\u4E00\u70B9\u53D6\u5F97"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
-      title: Rectangle Apply Point Get
+      title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
-      title: Rectangle Count
+      title: "\u77E9\u5F62\u30AB\u30A6\u30F3\u30C8"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
-      title: Rectangle Prod Point Set
+      title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
-      title: Rectangle Sum
+      title: "\u77E9\u5F62\u548C"
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-      title: Rectangle Sum Point Add
+      title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'

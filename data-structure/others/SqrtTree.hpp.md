@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: data-structure/wavelet-matrix/WaveletMatrixSqrtTree.hpp
-    title: Wavelet Matrix (Sqrt Tree)
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -114,8 +111,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/others/SqrtTree.hpp
-  requiredBy:
-  - data-structure/wavelet-matrix/WaveletMatrixSqrtTree.hpp
+  requiredBy: []
   timestamp: '2024-11-15 13:36:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
-    title: Rectangle Apply Point Get
+    title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -170,7 +170,8 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
 layout: document
-title: Wavelet Matrix (Dual Segment Tree)
+title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\u30BB\
+  \u30B0\u30E1\u30F3\u30C8\u6728)"
 ---
 
 ## 概要

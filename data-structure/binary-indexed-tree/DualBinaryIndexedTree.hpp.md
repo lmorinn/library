@@ -4,10 +4,11 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
-    title: Wavelet Matrix (Dual Binary Indexed Tree)
+    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
+      BIT)"
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
-    title: Rectangle Add Point Get
+    title: "\u77E9\u5F62\u52A0\u7B97\u30FB\u4E00\u70B9\u53D6\u5F97"
   - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourAdd.hpp
     title: Centroid Decomposition (Contour Add)

@@ -7,7 +7,7 @@ data:
     title: Range Mex Query
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
-    title: Rectangle Prod Point Set
+    title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -178,7 +178,8 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
 layout: document
-title: Wavelet Matrix (Segment Tree)
+title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u30BB\u30B0\u30E1\
+  \u30F3\u30C8\u6728)"
 ---
 
 ## 概要
