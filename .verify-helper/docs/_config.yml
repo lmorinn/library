@@ -7,7 +7,7 @@ plugins:
 - jekyll-remote-theme
 
 lang: ja
-remote_theme: pages-themes/merlot@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
 
 timezone: Asia/Tokyo
 
