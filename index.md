@@ -307,6 +307,9 @@ data:
   - name: math/number-theory
     pages:
     - icon: ':warning:'
+      path: math/number-theory/PrimalityTest.hpp
+      title: Primality Test
+    - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
   - name: string
