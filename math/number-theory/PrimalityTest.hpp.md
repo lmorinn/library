@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: math/number-theory/Factorize.hpp
+    title: Factorize
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -63,7 +66,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/PrimalityTest.hpp
-  requiredBy: []
+  requiredBy:
+  - math/number-theory/Factorize.hpp
   timestamp: '2025-05-15 03:42:15+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
