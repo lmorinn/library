@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: math/number-theory/Factorize.hpp
     title: Factorize
+  - icon: ':warning:'
+    path: math/number-theory/PrimitiveRoot.hpp
+    title: Primitive Root
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -68,6 +71,7 @@ data:
   path: math/number-theory/PrimalityTest.hpp
   requiredBy:
   - math/number-theory/Factorize.hpp
+  - math/number-theory/PrimitiveRoot.hpp
   timestamp: '2025-05-15 03:42:15+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

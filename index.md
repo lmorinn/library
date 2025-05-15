@@ -313,6 +313,9 @@ data:
       path: math/number-theory/PrimalityTest.hpp
       title: Primality Test
     - icon: ':warning:'
+      path: math/number-theory/PrimitiveRoot.hpp
+      title: Primitive Root
+    - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
   - name: string
