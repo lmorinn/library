@@ -45,13 +45,14 @@ long long find_prime_factor(long long n) {
   return -1;
 }
 
-vector<long long> factorize(long long n) {
+vector<long long> factorize(long long n, bool set = false) {
   vector<long long> res;
   while (!is_prime(n) and n > 1) {
     long long p = find_prime_factor(n);
+    if (set) res.emplace_back(p);
     while (n % p == 0) {
       n /= p;
-      res.emplace_back(p);
+      if (!set) res.emplace_back(p);
     }
   }
   if (n > 1) {
