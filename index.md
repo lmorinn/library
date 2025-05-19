@@ -309,12 +309,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/CountingPrimes.hpp
       title: Counting Primes
+    - icon: ':warning:'
+      path: math/number-theory/EnumerateDivisors.hpp
+      title: Enumerate Divisors
     - icon: ':heavy_check_mark:'
       path: math/number-theory/EnumerateQuotients.hpp
       title: Enumerate Quotients
     - icon: ':heavy_check_mark:'
       path: math/number-theory/EulersPhiFunction.hpp
       title: Euler's Phi Function
+    - icon: ':warning:'
+      path: math/number-theory/EulersPhiFunctionTable.hpp
+      title: Euler's Phi Function Table
     - icon: ':heavy_check_mark:'
       path: math/number-theory/Factorize.hpp
       title: Factorize

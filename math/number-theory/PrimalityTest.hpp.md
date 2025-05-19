@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: math/number-theory/EnumerateDivisors.hpp
+    title: Enumerate Divisors
   - icon: ':heavy_check_mark:'
     path: math/number-theory/EulersPhiFunction.hpp
     title: Euler's Phi Function
@@ -85,6 +88,7 @@ data:
   isVerificationFile: false
   path: math/number-theory/PrimalityTest.hpp
   requiredBy:
+  - math/number-theory/EnumerateDivisors.hpp
   - math/number-theory/EulersPhiFunction.hpp
   - math/number-theory/Factorize.hpp
   - math/number-theory/PrimitiveRoot.hpp
