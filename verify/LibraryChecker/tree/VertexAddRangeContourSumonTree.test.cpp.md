@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourSum.hpp
     title: Centroid Decomposition (Contour Sum)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

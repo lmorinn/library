@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.hpp
     title: Range Chmin Chmax Add Range Sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

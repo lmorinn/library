@@ -306,16 +306,22 @@ data:
       title: Nth term of linear recurrence (Matrix Power)
   - name: math/number-theory
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: math/number-theory/CountingPrimes.hpp
+      title: Counting Primes
+    - icon: ':heavy_check_mark:'
+      path: math/number-theory/EnumerateQuotients.hpp
+      title: Enumerate Quotients
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/Factorize.hpp
       title: Factorize
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/PrimalityTest.hpp
       title: Primality Test
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/PrimitiveRoot.hpp
       title: Primitive Root
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
   - name: string
@@ -334,7 +340,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -492,6 +498,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
       title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+  - name: verify/LibraryChecker/math/number-theory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+      title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+      title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
+      title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+      title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+      title: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+      title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - name: verify/LibraryChecker/string
     pages:
     - icon: ':heavy_check_mark:'

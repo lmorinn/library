@@ -94,6 +94,24 @@ data:
     path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+    title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+    title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
+    title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+    title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+    title: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+    title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
     title: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,9 +123,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -209,7 +227,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
@@ -233,6 +251,12 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
+  - verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
+  - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+  - verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+  - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+  - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp

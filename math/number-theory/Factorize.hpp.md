@@ -1,17 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimalityTest.hpp
     title: Primality Test
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimitiveRoot.hpp
     title: Primitive Root
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+    title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+    title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/PrimalityTest.hpp\"\n__int128_t mod_pow(__int128_t\
@@ -86,8 +92,10 @@ data:
   requiredBy:
   - math/number-theory/PrimitiveRoot.hpp
   timestamp: '2025-05-15 13:59:29+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
 documentation_of: math/number-theory/Factorize.hpp
 layout: document
 title: Factorize

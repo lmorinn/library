@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: data-structure/square-root-decomposition/PointSetRangeSum.hpp
-    title: Point Set Range Sum
+    path: math/number-theory/CountingPrimes.hpp
+    title: Counting Primes
   - icon: ':question:'
     path: template/template.hpp
     title: Template
@@ -14,9 +14,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    PROBLEM: https://judge.yosupo.jp/problem/counting_primes
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    - https://judge.yosupo.jp/problem/counting_primes
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -63,55 +63,37 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp\"\
-    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\n#line\
-    \ 1 \"data-structure/square-root-decomposition/PointSetRangeSum.hpp\"\ntemplate\
-    \ <class T>\nclass PointSetRangeSum {\n   private:\n    int n;\n    vector<T>\
-    \ a, sum;\n    int bsize;\n\n   public:\n    PointSetRangeSum(const vector<T>\
-    \ &v) {\n        a = v;\n        n = a.size();\n        bsize = sqrt(n) + 1;\n\
-    \        sum.resize(bsize);\n        for (int i = 0; i < n; i++) {\n         \
-    \   sum[i / bsize] += a[i];\n        }\n    }\n\n    T get(int p) {\n        return\
-    \ a[p];\n    }\n\n    void set(int p, T val) {\n        sum[p / bsize] -= a[p];\n\
-    \        sum[p / bsize] += val;\n        a[p] = val;\n    }\n\n    void add(int\
-    \ p, T val) {\n        sum[p / bsize] += val;\n        a[p] += val;\n    }\n\n\
-    \    T range_sum(int l, int r) {\n        if (l / bsize == r / bsize) {\n    \
-    \        T s = 0;\n            for (int i = l; i < r; i++) {\n               \
-    \ s += a[i];\n            }\n            return s;\n        } else {\n       \
-    \     T l_sum = 0;\n            for (int i = l; i < l / bsize * bsize + bsize;\
-    \ i++) {\n                l_sum += a[i];\n            }\n\n            T r_sum\
-    \ = 0;\n            for (int i = r / bsize * bsize; i < r; i++) {\n          \
-    \      r_sum += a[i];\n            }\n            T mid_sum = 0;\n\n         \
-    \   for (int i = 0; i < bsize; i++) {\n                if (l < i * bsize and (i\
-    \ + 1) * bsize <= r) {\n                    mid_sum += sum[i];\n             \
-    \   }\n            }\n            return l_sum + mid_sum + r_sum;\n        }\n\
-    \    }\n};\n#line 4 \"verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q;\n    in(n,\
-    \ q);\n    vector<lint> a(n, 0);\n    PointSetRangeSum<lint> w(a);\n\n    rep(i,\
-    \ q) {\n        int com;\n        in(com);\n        if (com == 0) {\n        \
-    \    int p, x;\n            in(p, x);\n            p--;\n            w.add(p,\
-    \ x);\n        } else {\n            int l, r;\n            in(l, r);\n      \
-    \      l--;\n            out(w.range_sum(l, r));\n        }\n    }\n}\n"
-  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\
-    \n#include \"../../../../data-structure/square-root-decomposition/PointSetRangeSum.hpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q;\n    in(n,\
-    \ q);\n    vector<lint> a(n, 0);\n    PointSetRangeSum<lint> w(a);\n\n    rep(i,\
-    \ q) {\n        int com;\n        in(com);\n        if (com == 0) {\n        \
-    \    int p, x;\n            in(p, x);\n            p--;\n            w.add(p,\
-    \ x);\n        } else {\n            int l, r;\n            in(l, r);\n      \
-    \      l--;\n            out(w.range_sum(l, r));\n        }\n    }\n}\n"
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\n#line 1\
+    \ \"math/number-theory/CountingPrimes.hpp\"\nlong long count_prime(long long n)\
+    \ {\n  long long sq = sqrtl(n);\n  vector<long long> d(sq * 2 + 1);\n  long long\
+    \ siz = d.size();\n  vector<long long> dp(siz);\n  for (long long s = 1; s <=\
+    \ sq; s++) d[s] = n / s;\n  for (long long s = 1; s <= sq; s++) d[siz - s] = s;\n\
+    \  for (int i = 1; i < siz; i++) dp[i] = d[i] - 1;\n\n  for (long long p = 2;\
+    \ p <= sq; p++) {\n    long long p2 = p * p;\n    if (dp[siz - p + 1] == dp[siz\
+    \ - p]) continue;\n    for (int i = 1; i < siz; i++) {\n      if (d[i] < p2) break;\n\
+    \      long long prev = d[i] / p;\n      if (prev > sq) {\n        dp[i] -= dp[n\
+    \ / prev] - dp[siz - p + 1];\n      } else {\n        dp[i] -= dp[siz - prev]\
+    \ - dp[siz - p + 1];\n      }\n    }\n  }\n  return dp[1];\n}\n#line 4 \"verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  lint n;\n  in(n);\n  out(count_prime(n));\n\
+    }\n"
+  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\
+    \n#include \"../../../../math/number-theory/CountingPrimes.hpp\"\n\nint main()\
+    \ {\n  cin.tie(0)->sync_with_stdio(0);\n  lint n;\n  in(n);\n  out(count_prime(n));\n\
+    }\n"
   dependsOn:
   - template/template.hpp
-  - data-structure/square-root-decomposition/PointSetRangeSum.hpp
+  - math/number-theory/CountingPrimes.hpp
   isVerificationFile: true
-  path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+  path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   requiredBy: []
-  timestamp: '2024-11-28 00:17:08+09:00'
+  timestamp: '2025-05-20 01:52:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+documentation_of: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
-- /verify/verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp.html
-title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+- /verify/verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+- /verify/verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp.html
+title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
 ---
