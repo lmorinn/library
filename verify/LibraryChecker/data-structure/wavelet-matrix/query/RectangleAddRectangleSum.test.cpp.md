@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/query/RectangleAddRectangleSum.hpp
     title: Rectangle Add Rectangle Sum
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

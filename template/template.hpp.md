@@ -96,9 +96,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
-  - icon: ':x:'
-    path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
-    title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
     title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
@@ -123,9 +120,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -227,7 +224,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
@@ -253,7 +250,6 @@ data:
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
-  - verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
   - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp

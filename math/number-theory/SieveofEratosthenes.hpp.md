@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
-    title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/SieveofEratosthenes.hpp\"\nvector<bool>\
@@ -25,9 +22,8 @@ data:
   path: math/number-theory/SieveofEratosthenes.hpp
   requiredBy: []
   timestamp: '2025-05-20 01:52:42+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: math/number-theory/SieveofEratosthenes.hpp
 layout: document
 title: Sieve of Eratosthenes
