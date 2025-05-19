@@ -3,12 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: math/number-theory/EulersPhiFunction.hpp
+    title: Euler's Phi Function
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/Factorize.hpp
     title: Factorize
   - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimitiveRoot.hpp
     title: Primitive Root
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
     title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
@@ -79,11 +85,13 @@ data:
   isVerificationFile: false
   path: math/number-theory/PrimalityTest.hpp
   requiredBy:
+  - math/number-theory/EulersPhiFunction.hpp
   - math/number-theory/Factorize.hpp
   - math/number-theory/PrimitiveRoot.hpp
   timestamp: '2025-05-15 03:42:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp

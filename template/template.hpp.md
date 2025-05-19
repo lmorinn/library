@@ -67,6 +67,9 @@ data:
     path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
     title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -237,6 +240,7 @@ data:
   - verify/AizuOnlineJudge/geometry/CGL_2_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_D.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
+  - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp

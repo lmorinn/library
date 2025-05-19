@@ -313,6 +313,9 @@ data:
       path: math/number-theory/EnumerateQuotients.hpp
       title: Enumerate Quotients
     - icon: ':heavy_check_mark:'
+      path: math/number-theory/EulersPhiFunction.hpp
+      title: Euler's Phi Function
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/Factorize.hpp
       title: Factorize
     - icon: ':heavy_check_mark:'
@@ -443,6 +446,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
       title: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
+  - name: verify/AizuOnlineJudge/math/number-theory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+      title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - name: verify/AizuOnlineJudge/string
     pages:
     - icon: ':heavy_check_mark:'
