@@ -112,6 +112,9 @@ data:
     path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
     title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+    title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
     title: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - icon: ':heavy_check_mark:'
@@ -254,6 +257,7 @@ data:
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+  - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
   - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp

@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimitiveRoot.hpp
     title: Primitive Root
+  - icon: ':heavy_check_mark:'
+    path: math/number-theory/TetrationMod.hpp
+    title: Tetration Mod
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
@@ -27,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
     title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+    title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -88,6 +94,7 @@ data:
   isVerificationFile: false
   path: math/number-theory/PrimalityTest.hpp
   requiredBy:
+  - math/number-theory/TetrationMod.hpp
   - math/number-theory/EnumerateDivisors.hpp
   - math/number-theory/EulersPhiFunction.hpp
   - math/number-theory/Factorize.hpp
@@ -97,6 +104,7 @@ data:
   verifiedWith:
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+  - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
 documentation_of: math/number-theory/PrimalityTest.hpp

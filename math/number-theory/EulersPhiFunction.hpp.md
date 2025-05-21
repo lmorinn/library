@@ -7,11 +7,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimalityTest.hpp
     title: Primality Test
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/number-theory/TetrationMod.hpp
+    title: Tetration Mod
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
     title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+    title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -74,11 +80,13 @@ data:
   - math/number-theory/PrimalityTest.hpp
   isVerificationFile: false
   path: math/number-theory/EulersPhiFunction.hpp
-  requiredBy: []
+  requiredBy:
+  - math/number-theory/TetrationMod.hpp
   timestamp: '2025-05-20 02:16:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
 documentation_of: math/number-theory/EulersPhiFunction.hpp
 layout: document
 title: Euler's Phi Function

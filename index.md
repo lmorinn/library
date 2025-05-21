@@ -219,6 +219,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/CumulativeSum.hpp
       title: Cumulative Sum
+    - icon: ':warning:'
+      path: dp/DeterministicFiniteAutomatonDP.hpp
+      title: Deterministic Finite Automaton DP
     - icon: ':heavy_check_mark:'
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence
@@ -333,6 +336,9 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
+    - icon: ':heavy_check_mark:'
+      path: math/number-theory/TetrationMod.hpp
+      title: Tetration Mod
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -529,6 +535,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
       title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+      title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - name: verify/LibraryChecker/string
     pages:
     - icon: ':heavy_check_mark:'
