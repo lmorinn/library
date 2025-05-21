@@ -57,6 +57,7 @@
   "verify/LibraryChecker/math/number-theory/Factorize.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp": "2025-05-20 01:52:42 +0900",
+  "verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp": "2025-05-21 17:36:44 +0900",
   "verify/LibraryChecker/string/NumberofSubstrings.test.cpp": "2024-12-21 23:38:39 +0900",
   "verify/LibraryChecker/string/SuffixArray.test.cpp": "2024-09-26 13:24:19 +0900",
   "verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp": "2024-06-26 20:58:27 +0900",
