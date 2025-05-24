@@ -336,6 +336,12 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
+    - icon: ':warning:'
+      path: math/number-theory/SumofEulersPhiFunction.hpp
+      title: Sum of Eulers Phi Function
+    - icon: ':warning:'
+      path: math/number-theory/SumofMultiplicativeFunction.hpp
+      title: Sum of Multiplicative Function
     - icon: ':heavy_check_mark:'
       path: math/number-theory/TetrationMod.hpp
       title: Tetration Mod
