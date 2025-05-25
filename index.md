@@ -268,6 +268,9 @@ data:
       title: Link Cut Tree (Vertex)
   - name: graph/others
     pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/others/CycleDetection.hpp
+      title: Cycle Detection
     - icon: ':warning:'
       path: graph/others/GraphReachability.hpp
       title: Directed Graph Reachability
@@ -524,6 +527,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
       title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+  - name: verify/LibraryChecker/graph/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+      title: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+      title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

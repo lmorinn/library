@@ -97,6 +97,12 @@ data:
     path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+    title: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+    title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -273,6 +279,8 @@ data:
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
+  - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+  - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template
