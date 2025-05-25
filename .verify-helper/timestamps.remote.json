@@ -52,6 +52,8 @@
   "verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp": "2024-11-29 04:01:10 +0900",
   "verify/LibraryChecker/dp/StaticRangeSum.test.cpp": "2024-06-26 20:58:27 +0900",
   "verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp": "2024-12-02 00:38:27 +0900",
+  "verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp": "2025-05-26 05:25:37 +0900",
+  "verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp": "2025-05-26 05:25:37 +0900",
   "verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/Factorize.test.cpp": "2025-05-20 01:52:42 +0900",
