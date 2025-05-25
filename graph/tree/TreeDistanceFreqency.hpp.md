@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/tree/TreeDistanceFreqency.hpp\"\n\nclass TreeDistFreq\
@@ -108,8 +111,9 @@ data:
   path: graph/tree/TreeDistanceFreqency.hpp
   requiredBy: []
   timestamp: '2025-05-03 16:53:05+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: graph/tree/TreeDistanceFreqency.hpp
 layout: document
 title: Frequency Table of Tree Distance

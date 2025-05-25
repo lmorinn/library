@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/SumofMultiplicativeFunction.hpp\"\nint\
@@ -64,8 +67,9 @@ data:
   path: math/number-theory/SumofMultiplicativeFunction.hpp
   requiredBy: []
   timestamp: '2025-05-24 20:50:03+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
 documentation_of: math/number-theory/SumofMultiplicativeFunction.hpp
 layout: document
 title: Sum of Multiplicative Function

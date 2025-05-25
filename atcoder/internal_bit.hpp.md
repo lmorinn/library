@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/convolution.hpp
     title: atcoder/convolution.hpp
   - icon: ':warning:'
@@ -11,10 +11,13 @@ data:
   - icon: ':warning:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include\
@@ -50,8 +53,9 @@ data:
   - atcoder/lazysegtree.hpp
   - atcoder/convolution.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/internal_bit.hpp
 layout: document
 redirect_from:

@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: atcoder
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/convolution.hpp
       title: atcoder/convolution.hpp
     - icon: ':warning:'
@@ -12,13 +12,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_bit.hpp
       title: atcoder/internal_bit.hpp
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -98,7 +98,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/LazySegmentTree.hpp
       title: Lazy Segment Tree
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/segment-tree/PersistentLazySegmentTree.hpp
       title: Persistent Lazy Segment Tree
     - icon: ':warning:'
@@ -219,7 +219,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/CumulativeSum.hpp
       title: Cumulative Sum
-    - icon: ':warning:'
+    - icon: ':x:'
       path: dp/DeterministicFiniteAutomatonDP.hpp
       title: Deterministic Finite Automaton DP
     - icon: ':heavy_check_mark:'
@@ -241,7 +241,7 @@ data:
       title: Geometry
   - name: graph/connected-components
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/connected-components/StronglyConnectedComponents.hpp
       title: Strongly Connected Components
     - icon: ':heavy_check_mark:'
@@ -302,7 +302,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/TreeDistanceFreqency.hpp
       title: Frequency Table of Tree Distance
   - name: math
@@ -339,10 +339,10 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/number-theory/SumofEulersPhiFunction.hpp
       title: Sum of Eulers Phi Function
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/SumofMultiplicativeFunction.hpp
       title: Sum of Multiplicative Function
     - icon: ':heavy_check_mark:'
@@ -364,7 +364,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -403,6 +403,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+    - icon: ':x:'
+      path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+      title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - name: verify/AizuOnlineJudge/geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -490,6 +493,9 @@ data:
       title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - name: verify/LibraryChecker/data-structure/segment-tree
     pages:
+    - icon: ':x:'
+      path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+      title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
@@ -524,6 +530,9 @@ data:
       title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
   - name: verify/LibraryChecker/graph/connected-components
     pages:
+    - icon: ':x:'
+      path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
+      title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
       title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
@@ -535,6 +544,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
       title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - name: verify/LibraryChecker/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+      title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'
@@ -552,6 +566,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
       title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+      title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+      title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
       title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp

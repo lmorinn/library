@@ -21,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
     title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
+  - icon: ':x:'
+    path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+    title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
     title: verify/AizuOnlineJudge/geometry/CGL_1_A.test.cpp
@@ -78,6 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
@@ -93,6 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
+    title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
@@ -102,6 +111,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
     title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
@@ -118,6 +130,12 @@ data:
     path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
     title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
     title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,9 +150,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -236,7 +254,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
@@ -251,6 +269,7 @@ data:
   - verify/AizuOnlineJudge/geometry/CGL_7_A.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
@@ -266,7 +285,9 @@ data:
   - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
@@ -276,11 +297,14 @@ data:
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

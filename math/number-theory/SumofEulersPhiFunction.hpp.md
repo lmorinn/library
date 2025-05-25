@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/SumofEulersPhiFunction.hpp\"\nint sum_of_totient(long\
@@ -61,8 +64,9 @@ data:
   path: math/number-theory/SumofEulersPhiFunction.hpp
   requiredBy: []
   timestamp: '2025-05-24 20:50:03+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
 documentation_of: math/number-theory/SumofEulersPhiFunction.hpp
 layout: document
 title: Sum of Eulers Phi Function

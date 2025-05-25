@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+    title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"dp/DeterministicFiniteAutomatonDP.hpp\"\n\nenum class Ordering\
@@ -298,8 +301,9 @@ data:
   path: dp/DeterministicFiniteAutomatonDP.hpp
   requiredBy: []
   timestamp: '2025-05-21 18:35:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
 documentation_of: dp/DeterministicFiniteAutomatonDP.hpp
 layout: document
 title: Deterministic Finite Automaton DP

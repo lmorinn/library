@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: data-structure/square-root-decomposition/PointSetRangeSum.hpp
-    title: Point Set Range Sum
+  - icon: ':x:'
+    path: graph/connected-components/StronglyConnectedComponents.hpp
+    title: Strongly Connected Components
   - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
+    - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -63,55 +63,44 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp\"\
-    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\n#line\
-    \ 1 \"data-structure/square-root-decomposition/PointSetRangeSum.hpp\"\ntemplate\
-    \ <class T>\nclass PointSetRangeSum {\n   private:\n    int n;\n    vector<T>\
-    \ a, sum;\n    int bsize;\n\n   public:\n    PointSetRangeSum(const vector<T>\
-    \ &v) {\n        a = v;\n        n = a.size();\n        bsize = sqrt(n) + 1;\n\
-    \        sum.resize(bsize);\n        for (int i = 0; i < n; i++) {\n         \
-    \   sum[i / bsize] += a[i];\n        }\n    }\n\n    T get(int p) {\n        return\
-    \ a[p];\n    }\n\n    void set(int p, T val) {\n        sum[p / bsize] -= a[p];\n\
-    \        sum[p / bsize] += val;\n        a[p] = val;\n    }\n\n    void add(int\
-    \ p, T val) {\n        sum[p / bsize] += val;\n        a[p] += val;\n    }\n\n\
-    \    T range_sum(int l, int r) {\n        if (l / bsize == r / bsize) {\n    \
-    \        T s = 0;\n            for (int i = l; i < r; i++) {\n               \
-    \ s += a[i];\n            }\n            return s;\n        } else {\n       \
-    \     T l_sum = 0;\n            for (int i = l; i < l / bsize * bsize + bsize;\
-    \ i++) {\n                l_sum += a[i];\n            }\n\n            T r_sum\
-    \ = 0;\n            for (int i = r / bsize * bsize; i < r; i++) {\n          \
-    \      r_sum += a[i];\n            }\n            T mid_sum = 0;\n\n         \
-    \   for (int i = 0; i < bsize; i++) {\n                if (l < i * bsize and (i\
-    \ + 1) * bsize <= r) {\n                    mid_sum += sum[i];\n             \
-    \   }\n            }\n            return l_sum + mid_sum + r_sum;\n        }\n\
-    \    }\n};\n#line 4 \"verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q;\n    in(n,\
-    \ q);\n    vector<lint> a(n, 0);\n    PointSetRangeSum<lint> w(a);\n\n    rep(i,\
-    \ q) {\n        int com;\n        in(com);\n        if (com == 0) {\n        \
-    \    int p, x;\n            in(p, x);\n            p--;\n            w.add(p,\
-    \ x);\n        } else {\n            int l, r;\n            in(l, r);\n      \
-    \      l--;\n            out(w.range_sum(l, r));\n        }\n    }\n}\n"
-  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\"\
-    \n#include \"../../../../data-structure/square-root-decomposition/PointSetRangeSum.hpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, q;\n    in(n,\
-    \ q);\n    vector<lint> a(n, 0);\n    PointSetRangeSum<lint> w(a);\n\n    rep(i,\
-    \ q) {\n        int com;\n        in(com);\n        if (com == 0) {\n        \
-    \    int p, x;\n            in(p, x);\n            p--;\n            w.add(p,\
-    \ x);\n        } else {\n            int l, r;\n            in(l, r);\n      \
-    \      l--;\n            out(w.range_sum(l, r));\n        }\n    }\n}\n"
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#line 1 \"graph/connected-components/StronglyConnectedComponents.hpp\"\
+    \n\nclass SCC {\n   private:\n    vector<vector<int>> g, r;\n    int time;\n \
+    \   int n;\n    vector<bool> seen, seen2;\n    vector<int> idx;\n    int component_id;\n\
+    \    vector<vector<int>> components;\n\n    void dfs(int cur) {\n        seen[cur]\
+    \ = true;\n        for (auto nex : g[cur]) {\n            if (seen[nex] == false)\
+    \ {\n                dfs(nex);\n            }\n        }\n        idx[time] =\
+    \ cur;\n        time++;\n    }\n\n    void dfs2(int cur) {\n        seen2[cur]\
+    \ = true;\n        components[component_id].emplace_back(cur);\n        for (auto\
+    \ nex : r[cur]) {\n            if (seen2[nex] == false) {\n                dfs2(nex);\n\
+    \            }\n        }\n    }\n\n   public:\n    SCC() {}\n    SCC(int siz)\
+    \ {\n        n = siz;\n        g.resize(n);\n        r.resize(n);\n        time\
+    \ = 0;\n        component_id = 0;\n        idx.assign(n, -1);\n        seen.assign(n,\
+    \ false);\n        seen2.assign(n, false);\n    }\n\n    void add_edge(int u,\
+    \ int v) {\n        g[u].emplace_back(v);\n        r[v].emplace_back(u);\n   \
+    \ }\n\n    vector<vector<int>> decompose() {\n        for (int i = 0; i < n; i++)\
+    \ {\n            if (!seen[i]) {\n                dfs(i);\n            }\n   \
+    \     }\n\n        for (int i = time - 1; i >= 0; i--) {\n            if (!seen2[idx[i]])\
+    \ {\n                components.emplace_back(vector<int>());\n               \
+    \ dfs2(idx[i]);\n                component_id++;\n            }\n        }\n\n\
+    \        return components;\n    }\n};\n#line 4 \"verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp\"\
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n}\n"
+  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
+    \n#include \"../../../../graph/connected-components/StronglyConnectedComponents.hpp\"\
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n}\n"
   dependsOn:
   - template/template.hpp
-  - data-structure/square-root-decomposition/PointSetRangeSum.hpp
+  - graph/connected-components/StronglyConnectedComponents.hpp
   isVerificationFile: true
-  path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+  path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   requiredBy: []
-  timestamp: '2024-11-28 00:17:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-05-26 06:11:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+documentation_of: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
-- /verify/verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp.html
-title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
+- /verify/verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
+- /verify/verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp.html
+title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
 ---

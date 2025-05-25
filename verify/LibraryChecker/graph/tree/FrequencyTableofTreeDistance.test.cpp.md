@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: atcoder/convolution.hpp
+    title: atcoder/convolution.hpp
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   - icon: ':question:'
@@ -13,16 +16,22 @@ data:
   - icon: ':question:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    path: graph/tree/TreeDistanceFreqency.hpp
+    title: Frequency Table of Tree Distance
+  - icon: ':question:'
+    path: template/template.hpp
+    title: Template
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
+    links:
+    - https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
   bundledCode: "#line 1 \"atcoder/convolution.hpp\"\n\n\n\n#include <algorithm>\n\
     #include <array>\n#include <cassert>\n#include <type_traits>\n#include <vector>\n\
     \n#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
@@ -396,180 +405,133 @@ data:
     \ long)(x), (long long)(MOD1));\n        if (diff < 0) diff += MOD1;\n       \
     \ static constexpr unsigned long long offset[5] = {\n            0, 0, M1M2M3,\
     \ 2 * M1M2M3, 3 * M1M2M3};\n        x -= offset[diff % 5];\n        c[i] = x;\n\
-    \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n\n"
-  code: "#ifndef ATCODER_CONVOLUTION_HPP\n#define ATCODER_CONVOLUTION_HPP 1\n\n#include\
-    \ <algorithm>\n#include <array>\n#include <cassert>\n#include <type_traits>\n\
-    #include <vector>\n\n#include \"atcoder/internal_bit\"\n#include \"atcoder/modint\"\
-    \n\nnamespace atcoder {\n\nnamespace internal {\n\ntemplate <class mint,\n   \
-    \       int g = internal::primitive_root<mint::mod()>,\n          internal::is_static_modint_t<mint>*\
-    \ = nullptr>\nstruct fft_info {\n    static constexpr int rank2 = countr_zero_constexpr(mint::mod()\
-    \ - 1);\n    std::array<mint, rank2 + 1> root;   // root[i]^(2^i) == 1\n    std::array<mint,\
-    \ rank2 + 1> iroot;  // root[i] * iroot[i] == 1\n\n    std::array<mint, std::max(0,\
-    \ rank2 - 2 + 1)> rate2;\n    std::array<mint, std::max(0, rank2 - 2 + 1)> irate2;\n\
-    \n    std::array<mint, std::max(0, rank2 - 3 + 1)> rate3;\n    std::array<mint,\
-    \ std::max(0, rank2 - 3 + 1)> irate3;\n\n    fft_info() {\n        root[rank2]\
-    \ = mint(g).pow((mint::mod() - 1) >> rank2);\n        iroot[rank2] = root[rank2].inv();\n\
-    \        for (int i = rank2 - 1; i >= 0; i--) {\n            root[i] = root[i\
-    \ + 1] * root[i + 1];\n            iroot[i] = iroot[i + 1] * iroot[i + 1];\n \
-    \       }\n\n        {\n            mint prod = 1, iprod = 1;\n            for\
-    \ (int i = 0; i <= rank2 - 2; i++) {\n                rate2[i] = root[i + 2] *\
-    \ prod;\n                irate2[i] = iroot[i + 2] * iprod;\n                prod\
-    \ *= iroot[i + 2];\n                iprod *= root[i + 2];\n            }\n   \
-    \     }\n        {\n            mint prod = 1, iprod = 1;\n            for (int\
-    \ i = 0; i <= rank2 - 3; i++) {\n                rate3[i] = root[i + 3] * prod;\n\
-    \                irate3[i] = iroot[i + 3] * iprod;\n                prod *= iroot[i\
-    \ + 3];\n                iprod *= root[i + 3];\n            }\n        }\n   \
-    \ }\n};\n\ntemplate <class mint, internal::is_static_modint_t<mint>* = nullptr>\n\
-    void butterfly(std::vector<mint>& a) {\n    int n = int(a.size());\n    int h\
-    \ = internal::countr_zero((unsigned int)n);\n\n    static const fft_info<mint>\
-    \ info;\n\n    int len = 0;  // a[i, i+(n>>len), i+2*(n>>len), ..] is transformed\n\
-    \    while (len < h) {\n        if (h - len == 1) {\n            int p = 1 <<\
-    \ (h - len - 1);\n            mint rot = 1;\n            for (int s = 0; s < (1\
-    \ << len); s++) {\n                int offset = s << (h - len);\n            \
-    \    for (int i = 0; i < p; i++) {\n                    auto l = a[i + offset];\n\
-    \                    auto r = a[i + offset + p] * rot;\n                    a[i\
-    \ + offset] = l + r;\n                    a[i + offset + p] = l - r;\n       \
-    \         }\n                if (s + 1 != (1 << len))\n                    rot\
-    \ *= info.rate2[countr_zero(~(unsigned int)(s))];\n            }\n           \
-    \ len++;\n        } else {\n            // 4-base\n            int p = 1 << (h\
-    \ - len - 2);\n            mint rot = 1, imag = info.root[2];\n            for\
-    \ (int s = 0; s < (1 << len); s++) {\n                mint rot2 = rot * rot;\n\
-    \                mint rot3 = rot2 * rot;\n                int offset = s << (h\
-    \ - len);\n                for (int i = 0; i < p; i++) {\n                   \
-    \ auto mod2 = 1ULL * mint::mod() * mint::mod();\n                    auto a0 =\
-    \ 1ULL * a[i + offset].val();\n                    auto a1 = 1ULL * a[i + offset\
-    \ + p].val() * rot.val();\n                    auto a2 = 1ULL * a[i + offset +\
-    \ 2 * p].val() * rot2.val();\n                    auto a3 = 1ULL * a[i + offset\
-    \ + 3 * p].val() * rot3.val();\n                    auto a1na3imag =\n       \
-    \                 1ULL * mint(a1 + mod2 - a3).val() * imag.val();\n          \
-    \          auto na2 = mod2 - a2;\n                    a[i + offset] = a0 + a2\
-    \ + a1 + a3;\n                    a[i + offset + 1 * p] = a0 + a2 + (2 * mod2\
-    \ - (a1 + a3));\n                    a[i + offset + 2 * p] = a0 + na2 + a1na3imag;\n\
-    \                    a[i + offset + 3 * p] = a0 + na2 + (mod2 - a1na3imag);\n\
-    \                }\n                if (s + 1 != (1 << len))\n               \
-    \     rot *= info.rate3[countr_zero(~(unsigned int)(s))];\n            }\n   \
-    \         len += 2;\n        }\n    }\n}\n\ntemplate <class mint, internal::is_static_modint_t<mint>*\
-    \ = nullptr>\nvoid butterfly_inv(std::vector<mint>& a) {\n    int n = int(a.size());\n\
-    \    int h = internal::countr_zero((unsigned int)n);\n\n    static const fft_info<mint>\
-    \ info;\n\n    int len = h;  // a[i, i+(n>>len), i+2*(n>>len), ..] is transformed\n\
-    \    while (len) {\n        if (len == 1) {\n            int p = 1 << (h - len);\n\
-    \            mint irot = 1;\n            for (int s = 0; s < (1 << (len - 1));\
-    \ s++) {\n                int offset = s << (h - len + 1);\n                for\
-    \ (int i = 0; i < p; i++) {\n                    auto l = a[i + offset];\n   \
-    \                 auto r = a[i + offset + p];\n                    a[i + offset]\
-    \ = l + r;\n                    a[i + offset + p] =\n                        (unsigned\
-    \ long long)(mint::mod() + l.val() - r.val()) *\n                        irot.val();\n\
-    \                    ;\n                }\n                if (s + 1 != (1 <<\
-    \ (len - 1)))\n                    irot *= info.irate2[countr_zero(~(unsigned\
-    \ int)(s))];\n            }\n            len--;\n        } else {\n          \
-    \  // 4-base\n            int p = 1 << (h - len);\n            mint irot = 1,\
-    \ iimag = info.iroot[2];\n            for (int s = 0; s < (1 << (len - 2)); s++)\
-    \ {\n                mint irot2 = irot * irot;\n                mint irot3 = irot2\
-    \ * irot;\n                int offset = s << (h - len + 2);\n                for\
-    \ (int i = 0; i < p; i++) {\n                    auto a0 = 1ULL * a[i + offset\
-    \ + 0 * p].val();\n                    auto a1 = 1ULL * a[i + offset + 1 * p].val();\n\
-    \                    auto a2 = 1ULL * a[i + offset + 2 * p].val();\n         \
-    \           auto a3 = 1ULL * a[i + offset + 3 * p].val();\n\n                \
-    \    auto a2na3iimag =\n                        1ULL *\n                     \
-    \   mint((mint::mod() + a2 - a3) * iimag.val()).val();\n\n                   \
-    \ a[i + offset] = a0 + a1 + a2 + a3;\n                    a[i + offset + 1 * p]\
-    \ =\n                        (a0 + (mint::mod() - a1) + a2na3iimag) * irot.val();\n\
-    \                    a[i + offset + 2 * p] =\n                        (a0 + a1\
-    \ + (mint::mod() - a2) + (mint::mod() - a3)) *\n                        irot2.val();\n\
-    \                    a[i + offset + 3 * p] =\n                        (a0 + (mint::mod()\
-    \ - a1) + (mint::mod() - a2na3iimag)) *\n                        irot3.val();\n\
-    \                }\n                if (s + 1 != (1 << (len - 2)))\n         \
-    \           irot *= info.irate3[countr_zero(~(unsigned int)(s))];\n          \
-    \  }\n            len -= 2;\n        }\n    }\n}\n\ntemplate <class mint, internal::is_static_modint_t<mint>*\
-    \ = nullptr>\nstd::vector<mint> convolution_naive(const std::vector<mint>& a,\n\
-    \                                    const std::vector<mint>& b) {\n    int n\
-    \ = int(a.size()), m = int(b.size());\n    std::vector<mint> ans(n + m - 1);\n\
-    \    if (n < m) {\n        for (int j = 0; j < m; j++) {\n            for (int\
-    \ i = 0; i < n; i++) {\n                ans[i + j] += a[i] * b[j];\n         \
-    \   }\n        }\n    } else {\n        for (int i = 0; i < n; i++) {\n      \
-    \      for (int j = 0; j < m; j++) {\n                ans[i + j] += a[i] * b[j];\n\
-    \            }\n        }\n    }\n    return ans;\n}\n\ntemplate <class mint,\
-    \ internal::is_static_modint_t<mint>* = nullptr>\nstd::vector<mint> convolution_fft(std::vector<mint>\
-    \ a, std::vector<mint> b) {\n    int n = int(a.size()), m = int(b.size());\n \
-    \   int z = (int)internal::bit_ceil((unsigned int)(n + m - 1));\n    a.resize(z);\n\
-    \    internal::butterfly(a);\n    b.resize(z);\n    internal::butterfly(b);\n\
-    \    for (int i = 0; i < z; i++) {\n        a[i] *= b[i];\n    }\n    internal::butterfly_inv(a);\n\
-    \    a.resize(n + m - 1);\n    mint iz = mint(z).inv();\n    for (int i = 0; i\
-    \ < n + m - 1; i++) a[i] *= iz;\n    return a;\n}\n\n}  // namespace internal\n\
-    \ntemplate <class mint, internal::is_static_modint_t<mint>* = nullptr>\nstd::vector<mint>\
-    \ convolution(std::vector<mint>&& a, std::vector<mint>&& b) {\n    int n = int(a.size()),\
-    \ m = int(b.size());\n    if (!n || !m) return {};\n\n    int z = (int)internal::bit_ceil((unsigned\
-    \ int)(n + m - 1));\n    assert((mint::mod() - 1) % z == 0);\n\n    if (std::min(n,\
-    \ m) <= 60) return convolution_naive(a, b);\n    return internal::convolution_fft(a,\
-    \ b);\n}\ntemplate <class mint, internal::is_static_modint_t<mint>* = nullptr>\n\
-    std::vector<mint> convolution(const std::vector<mint>& a,\n                  \
-    \            const std::vector<mint>& b) {\n    int n = int(a.size()), m = int(b.size());\n\
-    \    if (!n || !m) return {};\n\n    int z = (int)internal::bit_ceil((unsigned\
-    \ int)(n + m - 1));\n    assert((mint::mod() - 1) % z == 0);\n\n    if (std::min(n,\
-    \ m) <= 60) return convolution_naive(a, b);\n    return internal::convolution_fft(a,\
-    \ b);\n}\n\ntemplate <unsigned int mod = 998244353,\n          class T,\n    \
-    \      std::enable_if_t<internal::is_integral<T>::value>* = nullptr>\nstd::vector<T>\
-    \ convolution(const std::vector<T>& a, const std::vector<T>& b) {\n    int n =\
-    \ int(a.size()), m = int(b.size());\n    if (!n || !m) return {};\n\n    using\
-    \ mint = static_modint<mod>;\n\n    int z = (int)internal::bit_ceil((unsigned\
-    \ int)(n + m - 1));\n    assert((mint::mod() - 1) % z == 0);\n\n    std::vector<mint>\
-    \ a2(n), b2(m);\n    for (int i = 0; i < n; i++) {\n        a2[i] = mint(a[i]);\n\
-    \    }\n    for (int i = 0; i < m; i++) {\n        b2[i] = mint(b[i]);\n    }\n\
-    \    auto c2 = convolution(std::move(a2), std::move(b2));\n    std::vector<T>\
-    \ c(n + m - 1);\n    for (int i = 0; i < n + m - 1; i++) {\n        c[i] = c2[i].val();\n\
-    \    }\n    return c;\n}\n\nstd::vector<long long> convolution_ll(const std::vector<long\
-    \ long>& a,\n                                      const std::vector<long long>&\
-    \ b) {\n    int n = int(a.size()), m = int(b.size());\n    if (!n || !m) return\
-    \ {};\n\n    static constexpr unsigned long long MOD1 = 754974721;  // 2^24\n\
-    \    static constexpr unsigned long long MOD2 = 167772161;  // 2^25\n    static\
-    \ constexpr unsigned long long MOD3 = 469762049;  // 2^26\n    static constexpr\
-    \ unsigned long long M2M3 = MOD2 * MOD3;\n    static constexpr unsigned long long\
-    \ M1M3 = MOD1 * MOD3;\n    static constexpr unsigned long long M1M2 = MOD1 * MOD2;\n\
-    \    static constexpr unsigned long long M1M2M3 = MOD1 * MOD2 * MOD3;\n\n    static\
-    \ constexpr unsigned long long i1 =\n        internal::inv_gcd(MOD2 * MOD3, MOD1).second;\n\
-    \    static constexpr unsigned long long i2 =\n        internal::inv_gcd(MOD1\
-    \ * MOD3, MOD2).second;\n    static constexpr unsigned long long i3 =\n      \
-    \  internal::inv_gcd(MOD1 * MOD2, MOD3).second;\n        \n    static constexpr\
-    \ int MAX_AB_BIT = 24;\n    static_assert(MOD1 % (1ull << MAX_AB_BIT) == 1, \"\
-    MOD1 isn't enough to support an array length of 2^24.\");\n    static_assert(MOD2\
-    \ % (1ull << MAX_AB_BIT) == 1, \"MOD2 isn't enough to support an array length\
-    \ of 2^24.\");\n    static_assert(MOD3 % (1ull << MAX_AB_BIT) == 1, \"MOD3 isn't\
-    \ enough to support an array length of 2^24.\");\n    assert(n + m - 1 <= (1 <<\
-    \ MAX_AB_BIT));\n\n    auto c1 = convolution<MOD1>(a, b);\n    auto c2 = convolution<MOD2>(a,\
-    \ b);\n    auto c3 = convolution<MOD3>(a, b);\n\n    std::vector<long long> c(n\
-    \ + m - 1);\n    for (int i = 0; i < n + m - 1; i++) {\n        unsigned long\
-    \ long x = 0;\n        x += (c1[i] * i1) % MOD1 * M2M3;\n        x += (c2[i] *\
-    \ i2) % MOD2 * M1M3;\n        x += (c3[i] * i3) % MOD3 * M1M2;\n        // B =\
-    \ 2^63, -B <= x, r(real value) < B\n        // (x, x - M, x - 2M, or x - 3M) =\
-    \ r (mod 2B)\n        // r = c1[i] (mod MOD1)\n        // focus on MOD1\n    \
-    \    // r = x, x - M', x - 2M', x - 3M' (M' = M % 2^64) (mod 2B)\n        // r\
-    \ = x,\n        //     x - M' + (0 or 2B),\n        //     x - 2M' + (0, 2B or\
-    \ 4B),\n        //     x - 3M' + (0, 2B, 4B or 6B) (without mod!)\n        //\
-    \ (r - x) = 0, (0)\n        //           - M' + (0 or 2B), (1)\n        //   \
-    \        -2M' + (0 or 2B or 4B), (2)\n        //           -3M' + (0 or 2B or\
-    \ 4B or 6B) (3) (mod MOD1)\n        // we checked that\n        //   ((1) mod\
-    \ MOD1) mod 5 = 2\n        //   ((2) mod MOD1) mod 5 = 3\n        //   ((3) mod\
-    \ MOD1) mod 5 = 4\n        long long diff =\n            c1[i] - internal::safe_mod((long\
-    \ long)(x), (long long)(MOD1));\n        if (diff < 0) diff += MOD1;\n       \
-    \ static constexpr unsigned long long offset[5] = {\n            0, 0, M1M2M3,\
-    \ 2 * M1M2M3, 3 * M1M2M3};\n        x -= offset[diff % 5];\n        c[i] = x;\n\
-    \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n#endif  // ATCODER_CONVOLUTION_HPP\n"
+    \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n\n#line 2 \"template/template.hpp\"\
+    \n#pragma region Macros\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
+    \ lint = long long;\nusing ull = unsigned long long;\nusing ld = long double;\n\
+    using int128 = __int128_t;\n#define all(x) (x).begin(), (x).end()\n#define uniqv(v)\
+    \ v.erase(unique(all(v)), v.end())\n#define OVERLOAD_REP(_1, _2, _3, name, ...)\
+    \ name\n#define REP1(i, n) for (auto i = std::decay_t<decltype(n)>{}; (i) != (n);\
+    \ ++(i))\n#define REP2(i, l, r) for (auto i = (l); (i) != (r); ++(i))\n#define\
+    \ rep(...) OVERLOAD_REP(__VA_ARGS__, REP2, REP1)(__VA_ARGS__)\n#define logfixed(x)\
+    \ cout << fixed << setprecision(10) << x << endl;\n\nostream &operator<<(ostream\
+    \ &dest, __int128_t value) {\n  ostream::sentry s(dest);\n  if (s) {\n    __uint128_t\
+    \ tmp = value < 0 ? -value : value;\n    char buffer[128];\n    char *d = end(buffer);\n\
+    \    do {\n      --d;\n      *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n\
+    \    } while (tmp != 0);\n    if (value < 0) {\n      --d;\n      *d = '-';\n\
+    \    }\n    int len = end(buffer) - d;\n    if (dest.rdbuf()->sputn(d, len) !=\
+    \ len) {\n      dest.setstate(ios_base::badbit);\n    }\n  }\n  return dest;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const vector<T> &v)\
+    \ {\n  for (int i = 0; i < (int)v.size(); i++) {\n    os << v[i] << (i + 1 !=\
+    \ (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n}\n\ntemplate <typename T>\n\
+    ostream &operator<<(ostream &os, const set<T> &set_var) {\n  for (auto itr = set_var.begin();\
+    \ itr != set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr !=\
+    \ set_var.end()) os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T>\nostream &operator<<(ostream &os, const unordered_set<T> &set_var) {\n  for\
+    \ (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os << *itr;\n\
+    \    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n  }\n  return\
+    \ os;\n}\n\ntemplate <typename T, typename U>\nostream &operator<<(ostream &os,\
+    \ const map<T, U> &map_var) {\n  for (auto itr = map_var.begin(); itr != map_var.end();\
+    \ itr++) {\n    os << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n\
+    \  return os;\n}\n\ntemplate <typename T, typename U>\nostream &operator<<(ostream\
+    \ &os, const unordered_map<T, U> &map_var) {\n  for (auto itr = map_var.begin();\
+    \ itr != map_var.end(); itr++) {\n    os << itr->first << \" -> \" << itr->second\
+    \ << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename T, typename U>\nostream\
+    \ &operator<<(ostream &os, const pair<T, U> &pair_var) {\n  os << pair_var.first\
+    \ << \" \" << pair_var.second;\n  return os;\n}\n\nvoid out() { cout << '\\n';\
+    \ }\ntemplate <class T, class... Ts>\nvoid out(const T &a, const Ts &...b) {\n\
+    \  cout << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\nvoid\
+    \ outf() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid outf(const\
+    \ T &a, const Ts &...b) {\n  cout << fixed << setprecision(14) << a;\n  (cout\
+    \ << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\ntemplate <typename T>\n\
+    istream &operator>>(istream &is, vector<T> &v) {\n  for (T &in : v) is >> in;\n\
+    \  return is;\n}\n\ninline void in(void) { return; }\ntemplate <typename First,\
+    \ typename... Rest>\nvoid in(First &first, Rest &...rest) {\n  cin >> first;\n\
+    \  in(rest...);\n  return;\n}\n\ntemplate <typename T>\nbool chmax(T &a, const\
+    \ T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n  }\n  return false;\n\
+    }\ntemplate <typename T>\nbool chmin(T &a, const T &b) {\n  if (a > b) {\n   \
+    \ a = b;\n    return true;\n  }\n  return false;\n}\n\nvector<lint> dx8 = {1,\
+    \ 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1, 1, 0, -1, -1, -1};\n\
+    vector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0, 1, 0, -1};\n\n#pragma\
+    \ endregion\n#line 3 \"verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
+    \n#line 1 \"graph/tree/TreeDistanceFreqency.hpp\"\n\nclass TreeDistFreq {\n  \
+    \ private:\n    vector<vector<int>> g;\n    vector<bool> dead;\n    int n;\n\n\
+    \    int find_centroid(int root) {\n        static vector<int> subtree_size(g.size());\n\
+    \        function<void(int, int)> subtree_size_dp = [&](int u, int prev) {\n \
+    \           subtree_size[u] = 1;\n            for (int v : g[u]) {\n         \
+    \       if (v != prev and !dead[v]) {\n                    subtree_size_dp(v,\
+    \ u);\n                    subtree_size[u] += subtree_size[v];\n             \
+    \   }\n            }\n        };\n        subtree_size_dp(root, -1);\n       \
+    \ int n = subtree_size[root];\n        function<int(int, int)> dfs = [&](int u,\
+    \ int prev) {\n            for (int v : g[u]) {\n                if (v != prev\
+    \ and !dead[v]) {\n                    if (subtree_size[v] > n / 2) {\n      \
+    \                  return dfs(v, u);\n                    }\n                }\n\
+    \            }\n            return u;\n        };\n\n        return dfs(root,\
+    \ -1);\n    }\n\n    vector<long long> centroid_decomposition(int start) {\n \
+    \       vector<long long> ans(g.size());\n        function<void(int)> rec = [&](int\
+    \ start) {\n            int c = find_centroid(start);\n            dead[c] = true;\n\
+    \            for (int u : g[c]) {\n                if (!dead[u]) rec(u);\n   \
+    \         }\n            vector<vector<long long>> subtree_dist;\n\n         \
+    \   int alive_sub = 0;\n            for (int u : g[c]) {\n                if (!dead[u])\
+    \ {\n                    subtree_dist.emplace_back();\n                    calc_freq(c,\
+    \ u, subtree_dist[alive_sub]);\n                    for (int i = 0; i < int(subtree_dist[alive_sub].size());\
+    \ i++) {\n                        ans[i] += subtree_dist[alive_sub][i];\n    \
+    \                }\n                    alive_sub++;\n                }\n    \
+    \        }\n\n            sort(subtree_dist.begin(), subtree_dist.end(), [](const\
+    \ vector<long long> &a, const vector<long long> &b) {\n                return\
+    \ int(a.size()) < int(b.size());\n            });\n\n            if (alive_sub\
+    \ >= 2) {\n                vector<long long> l = subtree_dist[0];\n          \
+    \      for (int i = 0; i < alive_sub - 1; i++) {\n                    int idx\
+    \ = 0;\n                    for (long long x : convolution_ll(l, subtree_dist[i\
+    \ + 1])) {\n                        ans[idx] += x;\n                        idx++;\n\
+    \                        if (idx == n) break;\n                    }\n       \
+    \             int nex_size = subtree_dist[i + 1].size();\n                   \
+    \ l.resize(nex_size);\n                    for (int j = 0; j < nex_size; j++)\
+    \ {\n                        l[j] += subtree_dist[i + 1][j];\n               \
+    \     }\n                }\n            }\n            dead[c] = false;\n    \
+    \    };\n        rec(0);\n        return ans;\n    }\n\n    void calc_freq(int\
+    \ c, int u, vector<long long> &freq) {\n        freq.resize(2);\n        freq[1]\
+    \ = 1;\n        auto dfs = [&](auto &&self, int v, int prev, int dist) -> void\
+    \ {\n            for (int nex : g[v]) {\n                if (nex != prev and !dead[nex])\
+    \ {\n                    if (int(freq.size()) <= dist + 1) {\n               \
+    \         freq.emplace_back(1);\n                    } else {\n              \
+    \          freq[dist + 1]++;\n                    }\n                    self(self,\
+    \ nex, v, dist + 1);\n                }\n            }\n        };\n        dfs(dfs,\
+    \ u, c, 1);\n    }\n\n   public:\n    TreeDistFreq(int siz) {\n        n = siz;\n\
+    \        g.resize(n);\n        dead.resize(n, false);\n    }\n    TreeDistFreq()\
+    \ {}\n\n    void add_edge(int u, int v) {\n        g[u].emplace_back(v);\n   \
+    \     g[v].emplace_back(u);\n    }\n\n    vector<long long> get_table() {\n  \
+    \      return centroid_decomposition(0);\n    }\n};\n#line 6 \"verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp\"\
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n;\n    in(n);\n\
+    \    TreeDistFreq t(n);\n    rep(i, n - 1) {\n        int a, b;\n        in(a,\
+    \ b);\n        t.add_edge(a, b);\n    }\n\n    vector<long long> res = t.get_table();\n\
+    \    rep(i, 1, n) {\n        cout << res[i] << ((i != n - 1) ? \" \" : \"\\n\"\
+    );\n    }\n}\n"
+  code: "#include \"../../../../atcoder/convolution.hpp\"\n#include \"../../../../template/template.hpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
+    \n#include \"../../../../graph/tree/TreeDistanceFreqency.hpp\"\n\nint main() {\n\
+    \    cin.tie(0)->sync_with_stdio(0);\n    int n;\n    in(n);\n    TreeDistFreq\
+    \ t(n);\n    rep(i, n - 1) {\n        int a, b;\n        in(a, b);\n        t.add_edge(a,\
+    \ b);\n    }\n\n    vector<long long> res = t.get_table();\n    rep(i, 1, n) {\n\
+    \        cout << res[i] << ((i != n - 1) ? \" \" : \"\\n\");\n    }\n}\n"
   dependsOn:
+  - atcoder/convolution.hpp
   - atcoder/internal_bit.hpp
   - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
-  isVerificationFile: false
-  path: atcoder/convolution.hpp
+  - template/template.hpp
+  - graph/tree/TreeDistanceFreqency.hpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-documentation_of: atcoder/convolution.hpp
+  timestamp: '2025-05-26 06:10:36+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 layout: document
 redirect_from:
-- /library/atcoder/convolution.hpp
-- /library/atcoder/convolution.hpp.html
-title: atcoder/convolution.hpp
+- /verify/verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+- /verify/verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp.html
+title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 ---

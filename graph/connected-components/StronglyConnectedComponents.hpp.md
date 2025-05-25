@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: graph/others/GraphReachability.hpp
     title: Directed Graph Reachability
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
+    title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/connected-components/StronglyConnectedComponents.hpp\"\
@@ -56,8 +59,9 @@ data:
   requiredBy:
   - graph/others/GraphReachability.hpp
   timestamp: '2024-12-07 15:59:40+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
 documentation_of: graph/connected-components/StronglyConnectedComponents.hpp
 layout: document
 title: Strongly Connected Components
