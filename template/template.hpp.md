@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
     title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
     title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,7 +81,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,7 +132,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -150,9 +150,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -254,7 +254,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp

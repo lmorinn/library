@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/connected-components/StronglyConnectedComponents.hpp
     title: Strongly Connected Components
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -84,18 +84,24 @@ data:
     \ {\n                components.emplace_back(vector<int>());\n               \
     \ dfs2(idx[i]);\n                component_id++;\n            }\n        }\n\n\
     \        return components;\n    }\n};\n#line 4 \"verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n}\n"
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, m;\n    in(n,\
+    \ m);\n    SCC g(n);\n\n    rep(i, m) {\n        int a, b;\n        in(a, b);\n\
+    \        g.add_edge(a, b);\n    }\n\n    auto res = g.decompose();\n    out(res.size());\n\
+    \    for (auto v : res) {\n        out(v.size(), v);\n    }\n}\n"
   code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
     \n#include \"../../../../graph/connected-components/StronglyConnectedComponents.hpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n}\n"
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int n, m;\n    in(n,\
+    \ m);\n    SCC g(n);\n\n    rep(i, m) {\n        int a, b;\n        in(a, b);\n\
+    \        g.add_edge(a, b);\n    }\n\n    auto res = g.decompose();\n    out(res.size());\n\
+    \    for (auto v : res) {\n        out(v.size(), v);\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/connected-components/StronglyConnectedComponents.hpp
   isVerificationFile: true
   path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   requiredBy: []
-  timestamp: '2025-05-26 06:11:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-05-26 06:29:32+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
 layout: document

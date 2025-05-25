@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -98,7 +98,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/LazySegmentTree.hpp
       title: Lazy Segment Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/PersistentLazySegmentTree.hpp
       title: Persistent Lazy Segment Tree
     - icon: ':warning:'
@@ -219,7 +219,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/CumulativeSum.hpp
       title: Cumulative Sum
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: dp/DeterministicFiniteAutomatonDP.hpp
       title: Deterministic Finite Automaton DP
     - icon: ':heavy_check_mark:'
@@ -241,7 +241,7 @@ data:
       title: Geometry
   - name: graph/connected-components
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/connected-components/StronglyConnectedComponents.hpp
       title: Strongly Connected Components
     - icon: ':heavy_check_mark:'
@@ -339,7 +339,7 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/SumofEulersPhiFunction.hpp
       title: Sum of Eulers Phi Function
     - icon: ':heavy_check_mark:'
@@ -364,7 +364,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -403,7 +403,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
       title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - name: verify/AizuOnlineJudge/geometry
@@ -493,7 +493,7 @@ data:
       title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - name: verify/LibraryChecker/data-structure/segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -530,7 +530,7 @@ data:
       title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
   - name: verify/LibraryChecker/graph/connected-components
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
       title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     - icon: ':heavy_check_mark:'
@@ -569,7 +569,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
       title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
       title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     - icon: ':heavy_check_mark:'

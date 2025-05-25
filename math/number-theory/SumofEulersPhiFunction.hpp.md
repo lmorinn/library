@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/SumofEulersPhiFunction.hpp\"\nint sum_of_totient(long\
@@ -64,7 +64,7 @@ data:
   path: math/number-theory/SumofEulersPhiFunction.hpp
   requiredBy: []
   timestamp: '2025-05-24 20:50:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
 documentation_of: math/number-theory/SumofEulersPhiFunction.hpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/connected-components/StronglyConnectedComponents.hpp
     title: Strongly Connected Components
   _extendedRequiredBy: []

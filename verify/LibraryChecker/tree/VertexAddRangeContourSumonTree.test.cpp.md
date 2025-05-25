@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/fenwicktree.hpp
     title: atcoder/fenwicktree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
   - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourSum.hpp
     title: Centroid Decomposition (Contour Sum)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

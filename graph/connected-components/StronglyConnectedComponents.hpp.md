@@ -6,12 +6,12 @@ data:
     path: graph/others/GraphReachability.hpp
     title: Directed Graph Reachability
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/connected-components/StronglyConnectedComponents.hpp\"\
@@ -59,7 +59,7 @@ data:
   requiredBy:
   - graph/others/GraphReachability.hpp
   timestamp: '2024-12-07 15:59:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
 documentation_of: graph/connected-components/StronglyConnectedComponents.hpp
