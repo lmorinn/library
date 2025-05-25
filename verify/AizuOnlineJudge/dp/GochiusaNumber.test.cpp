@@ -68,5 +68,5 @@ int main() {
     iota(all(alphabet), '0');
     string s;
     in(s);
-    out(count_dfa(AndDfa(Leq(s), Gochiusa()), s.size(), alphabet));
+    out(count_dfa_ll(AndDfa(Leq(s), Gochiusa()), s.size(), alphabet));
 }
