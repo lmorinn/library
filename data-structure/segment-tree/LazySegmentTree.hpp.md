@@ -5,6 +5,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/others/AreaofUnionofRectangles.hpp
     title: Area of Union of Rectangles
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeAddRangeMax.hpp
+    title: Range Add Range Max
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeAddRangeMin.hpp
+    title: Range Add Range Min
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeAddRangeSum.hpp
+    title: Range Add Range Sum
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
+    title: Range Update Range Max
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
+    title: Range Update Range Min
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
+    title: Range Update Range Sum
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
@@ -152,12 +170,18 @@ data:
   path: data-structure/segment-tree/LazySegmentTree.hpp
   requiredBy:
   - data-structure/others/AreaofUnionofRectangles.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
+  - data-structure/segment-tree/query/RangeAddRangeMax.hpp
+  - data-structure/segment-tree/query/RangeAddRangeMin.hpp
+  - data-structure/segment-tree/query/RangeAddRangeSum.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
-  - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
 documentation_of: data-structure/segment-tree/LazySegmentTree.hpp
 layout: document
 title: Lazy Segment Tree

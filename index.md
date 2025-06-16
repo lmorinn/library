@@ -95,6 +95,9 @@ data:
     - icon: ':warning:'
       path: data-structure/segment-tree/DualSegmentTree2D.hpp
       title: Dual Segment Tree (2D)
+    - icon: ':warning:'
+      path: data-structure/segment-tree/DynamicSegmentTree.hpp
+      title: Dynamic Segment Tree
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/LazySegmentTree.hpp
       title: Lazy Segment Tree
@@ -110,6 +113,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/SegmentTreeBeatsChminChmax.hpp
       title: Segment Tree Beats
+  - name: data-structure/segment-tree/query
+    pages:
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeAddRangeMax.hpp
+      title: Range Add Range Max
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeAddRangeMin.hpp
+      title: Range Add Range Min
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeAddRangeSum.hpp
+      title: Range Add Range Sum
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
+      title: Range Update Range Max
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
+      title: Range Update Range Min
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
+      title: Range Update Range Sum
   - name: data-structure/square-root-decomposition
     pages:
     - icon: ':heavy_check_mark:'
