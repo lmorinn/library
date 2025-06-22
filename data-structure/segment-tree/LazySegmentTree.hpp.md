@@ -170,12 +170,12 @@ data:
   path: data-structure/segment-tree/LazySegmentTree.hpp
   requiredBy:
   - data-structure/others/AreaofUnionofRectangles.hpp
-  - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
-  - data-structure/segment-tree/query/RangeAddRangeMax.hpp
   - data-structure/segment-tree/query/RangeAddRangeMin.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
+  - data-structure/segment-tree/query/RangeAddRangeMax.hpp
   - data-structure/segment-tree/query/RangeAddRangeSum.hpp
   - data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
-  - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

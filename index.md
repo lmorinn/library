@@ -60,6 +60,9 @@ data:
   - name: data-structure/balanced-binary-search-tree
     pages:
     - icon: ':warning:'
+      path: data-structure/balanced-binary-search-tree/RedBlackTree.hpp
+      title: Red Black Tree
+    - icon: ':warning:'
       path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
       title: Reversible Lazy Splay Tree
   - name: data-structure/binary-indexed-tree

@@ -165,8 +165,8 @@ data:
   path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   requiredBy:
   - data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   timestamp: '2025-05-12 11:31:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
