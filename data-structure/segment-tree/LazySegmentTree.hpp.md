@@ -15,6 +15,12 @@ data:
     path: data-structure/segment-tree/query/RangeAddRangeSum.hpp
     title: Range Add Range Sum
   - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
+    title: Range Linear Add Range Sum
+  - icon: ':warning:'
+    path: data-structure/segment-tree/query/RangeLinearUpdateRangeMinMaxSum.hpp
+    title: Range Linear Update Range Min Max Sum
+  - icon: ':warning:'
     path: data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
     title: Range Update Range Max
   - icon: ':warning:'
@@ -174,8 +180,10 @@ data:
   - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
   - data-structure/segment-tree/query/RangeAddRangeMax.hpp
   - data-structure/segment-tree/query/RangeAddRangeSum.hpp
+  - data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
   - data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
   - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
+  - data-structure/segment-tree/query/RangeLinearUpdateRangeMinMaxSum.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

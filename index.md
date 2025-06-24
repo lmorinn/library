@@ -81,6 +81,9 @@ data:
     - icon: ':warning:'
       path: data-structure/others/BinaryTrie.hpp
       title: Binary Trie
+    - icon: ':warning:'
+      path: data-structure/others/CompressUnionofRectangles.hpp
+      title: Area of Union of Rectangles (Coordinate Compression)
     - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree
@@ -127,6 +130,12 @@ data:
     - icon: ':warning:'
       path: data-structure/segment-tree/query/RangeAddRangeSum.hpp
       title: Range Add Range Sum
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
+      title: Range Linear Add Range Sum
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeLinearUpdateRangeMinMaxSum.hpp
+      title: Range Linear Update Range Min Max Sum
     - icon: ':warning:'
       path: data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
       title: Range Update Range Max
