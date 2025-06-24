@@ -87,6 +87,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree
+    - icon: ':warning:'
+      path: data-structure/others/PersistentArray.hpp
+      title: Persistent Array
     - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
@@ -167,6 +170,9 @@ data:
       title: Range Set Range Min
   - name: data-structure/union-find
     pages:
+    - icon: ':warning:'
+      path: data-structure/union-find/PersistentUnionFind.hpp
+      title: Persistent Union Find
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find/UndoableUnionFind.hpp
       title: Undoable Union Find
