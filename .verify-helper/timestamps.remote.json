@@ -35,6 +35,7 @@
   "verify/AtCoder/data-structure/wavelet-matrix/PrefixEquality.test.cpp": "2024-06-26 15:54:48 +0900",
   "verify/AtCoder/data-structure/wavelet-matrix/SmallerSum.test.cpp": "2024-11-14 18:52:01 +0900",
   "verify/AtCoder/string/CountSubstringQuery.test.cpp": "2024-09-26 13:24:19 +0900",
+  "verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp": "2025-07-27 00:14:47 +0900",
   "verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp": "2024-11-22 13:46:17 +0900",
   "verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp": "2024-06-26 21:07:55 +0900",
   "verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp": "2024-12-13 12:22:25 +0900",
