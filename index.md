@@ -59,6 +59,9 @@ data:
       title: atcoder/twosat.hpp
   - name: data-structure/balanced-binary-search-tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/balanced-binary-search-tree/AVLTree.hpp
+      title: AVL Tree
     - icon: ':warning:'
       path: data-structure/balanced-binary-search-tree/RedBlackTree.hpp
       title: Red Black Tree
@@ -521,6 +524,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - name: verify/LibraryChecker/data-structure/balanced-binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
+      title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
     - icon: ':heavy_check_mark:'

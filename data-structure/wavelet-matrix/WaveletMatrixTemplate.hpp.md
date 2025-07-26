@@ -159,9 +159,9 @@ data:
   timestamp: '2025-05-11 23:11:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
 layout: document
 title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
