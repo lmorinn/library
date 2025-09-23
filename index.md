@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -110,7 +110,7 @@ data:
     - icon: ':warning:'
       path: data-structure/segment-tree/DualSegmentTree2D.hpp
       title: Dual Segment Tree (2D)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/DynamicSegmentTree.hpp
       title: Dynamic Segment Tree
     - icon: ':heavy_check_mark:'
@@ -208,7 +208,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
       title: Wavelet Matrix
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
       title: Wavelet Matrix (Cumulative Sum)
     - icon: ':warning:'
@@ -251,7 +251,7 @@ data:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
       title: Rectangle Prod Point Set
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
       title: Rectangle Sum
     - icon: ':warning:'
@@ -379,7 +379,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/PrimitiveRoot.hpp
       title: Primitive Root
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
     - icon: ':heavy_check_mark:'
@@ -553,7 +553,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
     - icon: ':heavy_check_mark:'
@@ -588,6 +588,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
       title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - name: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
+      title: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
   - name: verify/LibraryChecker/dp
     pages:
     - icon: ':heavy_check_mark:'
@@ -619,6 +624,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
       title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+      title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
       title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp

@@ -96,7 +96,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - icon: ':heavy_check_mark:'
@@ -118,6 +118,9 @@ data:
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
+    title: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
@@ -135,6 +138,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
+    title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
     title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
@@ -282,6 +288,7 @@ data:
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
+  - verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
   - verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
@@ -298,6 +305,7 @@ data:
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
   - verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
   - verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp

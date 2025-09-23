@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/segment-tree/DynamicSegmentTree.hpp\"\ntemplate\
@@ -79,7 +79,7 @@ data:
   path: data-structure/segment-tree/DynamicSegmentTree.hpp
   requiredBy: []
   timestamp: '2025-06-17 01:30:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
 documentation_of: data-structure/segment-tree/DynamicSegmentTree.hpp

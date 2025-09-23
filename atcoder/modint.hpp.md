@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_math.hpp
     title: atcoder/internal_math.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
   _extendedRequiredBy:
@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
@@ -343,7 +343,7 @@ data:
   requiredBy:
   - atcoder/convolution.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
