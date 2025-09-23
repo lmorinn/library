@@ -1,5 +1,5 @@
 ---
-title: 矩形作用・一点取得
+title: Rectangle Apply Point Get
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
 ---
 

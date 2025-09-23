@@ -1,5 +1,5 @@
 ---
-title: 矩形加算・一点取得
+title: Rectangle Add Point Get
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 矩形和・一点加算
+title: Rectangle Sum Point Add
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
 ---
 

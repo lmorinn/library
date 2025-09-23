@@ -1,5 +1,5 @@
 ---
-title: 矩形カウント
+title: Rectangle Count
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
 ---
 

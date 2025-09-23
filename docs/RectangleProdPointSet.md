@@ -1,5 +1,5 @@
 ---
-title: 矩形総積・一点代入
+title: Rectangle Prod Point Set
 documentation_of: //data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
 ---
 
