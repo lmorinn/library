@@ -1,5 +1,5 @@
 ---
-title: ウェーブレット行列 (+ セグメント木)
+title: Wavelet Matrix (Segment Tree)
 documentation_of: //data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
 ---
 

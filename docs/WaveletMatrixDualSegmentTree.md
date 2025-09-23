@@ -1,5 +1,5 @@
 ---
-title: ウェーブレット行列 (+ 双対セグメント木)
+title: Wavelet Matrix (Dual Segment Tree)
 documentation_of: //data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
 ---
 
