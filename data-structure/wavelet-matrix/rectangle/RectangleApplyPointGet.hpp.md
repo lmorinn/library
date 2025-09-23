@@ -88,40 +88,44 @@ data:
     \ C, B);\n    };\n    dfs(dfs, 0, l, r, 0, 1 << bitsize);\n  }\n};\n#line 2 \"\
     data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp\"\n\ntemplate\
     \ <class S, class F, auto mapping, auto composition, auto id, class T>\nclass\
-    \ RectangleApplyPointGet {\n private:\n  WaveletMatrix<S, F, mapping, composition,\
-    \ id, T> wm;\n  vector<T> px;\n  vector<int> ord;\n\n public:\n  RectangleApplyPointGet()\
-    \ {}\n  RectangleApplyPointGet(vector<T> x, vector<T> y, vector<S> w) {\n    int\
-    \ n = int(x.size());\n    ord.resize(n);\n    vector<tuple<T, T, S, int>> v(n);\n\
-    \    for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i], i};\n    sort(v.begin(),\
-    \ v.end(), [](const auto &a, const auto &b) {\n      return get<0>(a) < get<0>(b);\n\
-    \    });\n    px.resize(n);\n    for (int i = 0; i < n; i++) {\n      px[i] =\
-    \ get<0>(v[i]);\n      y[i] = get<1>(v[i]);\n      w[i] = get<2>(v[i]);\n    \
-    \  ord[i] = get<3>(v[i]);\n    }\n    wm = WaveletMatrix<S, F, mapping, composition,\
-    \ id, T>(y, w);\n  }\n\n  void rectangle_apply(T xl, T xr, T yl, T yr, F x) {\n\
-    \    int l = distance(px.begin(), lower_bound(px.begin(), px.end(), xl));\n  \
-    \  int r = distance(px.begin(), lower_bound(px.begin(), px.end(), xr));\n    wm.range_apply(l,\
-    \ r, yl, yr, x);\n  }\n\n  S get(int p) {\n    return wm.get(ord[p]);\n  }\n};\n"
+    \ RectangleApplyPointGet {\n   private:\n    WaveletMatrix<S, F, mapping, composition,\
+    \ id, T> wm;\n    vector<T> px;\n    vector<int> ord;\n\n   public:\n    RectangleApplyPointGet()\
+    \ {}\n    RectangleApplyPointGet(vector<T> x, vector<T> y, vector<S> w) {\n  \
+    \      int n = int(x.size());\n        ord.resize(n);\n        vector<tuple<T,\
+    \ T, S, int>> v(n);\n        for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i],\
+    \ i};\n        sort(v.begin(), v.end(), [](const auto &a, const auto &b) {\n \
+    \           return std::get<0>(a) < std::get<0>(b);\n        });\n        px.resize(n);\n\
+    \        for (int i = 0; i < n; i++) {\n            px[i] = std::get<0>(v[i]);\n\
+    \            y[i] = std::get<1>(v[i]);\n            w[i] = std::get<2>(v[i]);\n\
+    \            ord[std::get<3>(v[i])] = i;\n        }\n        wm = WaveletMatrix<S,\
+    \ F, mapping, composition, id, T>(y, w);\n    }\n\n    void rectangle_apply(T\
+    \ xl, T xr, T yl, T yr, F x) {\n        int l = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xl));\n        int r = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xr));\n        wm.range_apply(l, r, yl, yr, x);\n    }\n\n    S get(int\
+    \ p) {\n        return wm.get(ord[p]);\n    }\n};\n"
   code: "#include \"../WaveletMatrixDualSegtree.hpp\"\n\ntemplate <class S, class\
     \ F, auto mapping, auto composition, auto id, class T>\nclass RectangleApplyPointGet\
-    \ {\n private:\n  WaveletMatrix<S, F, mapping, composition, id, T> wm;\n  vector<T>\
-    \ px;\n  vector<int> ord;\n\n public:\n  RectangleApplyPointGet() {}\n  RectangleApplyPointGet(vector<T>\
-    \ x, vector<T> y, vector<S> w) {\n    int n = int(x.size());\n    ord.resize(n);\n\
-    \    vector<tuple<T, T, S, int>> v(n);\n    for (int i = 0; i < n; i++) v[i] =\
-    \ {x[i], y[i], w[i], i};\n    sort(v.begin(), v.end(), [](const auto &a, const\
-    \ auto &b) {\n      return get<0>(a) < get<0>(b);\n    });\n    px.resize(n);\n\
-    \    for (int i = 0; i < n; i++) {\n      px[i] = get<0>(v[i]);\n      y[i] =\
-    \ get<1>(v[i]);\n      w[i] = get<2>(v[i]);\n      ord[i] = get<3>(v[i]);\n  \
-    \  }\n    wm = WaveletMatrix<S, F, mapping, composition, id, T>(y, w);\n  }\n\n\
-    \  void rectangle_apply(T xl, T xr, T yl, T yr, F x) {\n    int l = distance(px.begin(),\
-    \ lower_bound(px.begin(), px.end(), xl));\n    int r = distance(px.begin(), lower_bound(px.begin(),\
-    \ px.end(), xr));\n    wm.range_apply(l, r, yl, yr, x);\n  }\n\n  S get(int p)\
-    \ {\n    return wm.get(ord[p]);\n  }\n};"
+    \ {\n   private:\n    WaveletMatrix<S, F, mapping, composition, id, T> wm;\n \
+    \   vector<T> px;\n    vector<int> ord;\n\n   public:\n    RectangleApplyPointGet()\
+    \ {}\n    RectangleApplyPointGet(vector<T> x, vector<T> y, vector<S> w) {\n  \
+    \      int n = int(x.size());\n        ord.resize(n);\n        vector<tuple<T,\
+    \ T, S, int>> v(n);\n        for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i],\
+    \ i};\n        sort(v.begin(), v.end(), [](const auto &a, const auto &b) {\n \
+    \           return std::get<0>(a) < std::get<0>(b);\n        });\n        px.resize(n);\n\
+    \        for (int i = 0; i < n; i++) {\n            px[i] = std::get<0>(v[i]);\n\
+    \            y[i] = std::get<1>(v[i]);\n            w[i] = std::get<2>(v[i]);\n\
+    \            ord[std::get<3>(v[i])] = i;\n        }\n        wm = WaveletMatrix<S,\
+    \ F, mapping, composition, id, T>(y, w);\n    }\n\n    void rectangle_apply(T\
+    \ xl, T xr, T yl, T yr, F x) {\n        int l = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xl));\n        int r = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xr));\n        wm.range_apply(l, r, yl, yr, x);\n    }\n\n    S get(int\
+    \ p) {\n        return wm.get(ord[p]);\n    }\n};"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
   isVerificationFile: false
   path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
   requiredBy: []
-  timestamp: '2025-05-12 15:13:30+09:00'
+  timestamp: '2025-09-23 21:04:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp

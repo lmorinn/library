@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/PrimitiveRoot.hpp
     title: Primitive Root
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

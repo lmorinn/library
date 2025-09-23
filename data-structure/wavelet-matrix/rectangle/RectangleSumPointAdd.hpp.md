@@ -83,41 +83,45 @@ data:
     \ zero[d];\n\n      rec(rec, d + 1, rank0_l, rank0_r, A, C);\n      rec(rec, d\
     \ + 1, rank1_l, rank1_r, C, B);\n    };\n    dfs(dfs, 0, vl, vr, 0, 1 << bitsize);\n\
     \    return res;\n  }\n};\n#line 2 \"data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp\"\
-    \n\ntemplate <class T, class S>\nclass RectangleSumPointAdd {\n private:\n  WaveletMatrix<T,\
-    \ S> wm;\n  vector<T> px;\n  vector<int> ord;\n\n public:\n  RectangleSumPointAdd()\
-    \ {}\n  RectangleSumPointAdd(vector<T> x, vector<T> y, vector<S> w) {\n    int\
-    \ n = int(x.size());\n    ord.resize(n);\n    vector<tuple<T, T, S, int>> v(n);\n\
-    \    for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i], i};\n    sort(v.begin(),\
-    \ v.end(), [](const auto &a, const auto &b) {\n      return get<0>(a) < get<0>(b);\n\
-    \    });\n    px.resize(n);\n    for (int i = 0; i < n; i++) {\n      px[i] =\
-    \ get<0>(v[i]);\n      y[i] = get<1>(v[i]);\n      w[i] = get<2>(v[i]);\n    \
-    \  ord[i] = get<3>(v[i]);\n    }\n    wm = WaveletMatrix<T, S>(y, w);\n  }\n\n\
-    \  S rectangle_sum(T xl, T xr, T yl, T yr) {\n    int l = distance(px.begin(),\
-    \ lower_bound(px.begin(), px.end(), xl));\n    int r = distance(px.begin(), lower_bound(px.begin(),\
-    \ px.end(), xr));\n    return wm.range_sum(l, r, yl, yr);\n  }\n\n  void add(int\
-    \ p, S x) {\n    wm.add(ord[p], x);\n  }\n\n  void set(int p, S x) {\n    wm.set(ord[p],\
-    \ x);\n  }\n};\n"
+    \n\ntemplate <class T, class S>\nclass RectangleSumPointAdd {\n   private:\n \
+    \   WaveletMatrix<T, S> wm;\n    vector<T> px;\n    vector<int> ord;\n\n   public:\n\
+    \    RectangleSumPointAdd() {}\n    RectangleSumPointAdd(vector<T> x, vector<T>\
+    \ y, vector<S> w) {\n        int n = int(x.size());\n        ord.resize(n);\n\
+    \        vector<tuple<T, T, S, int>> v(n);\n        for (int i = 0; i < n; i++)\
+    \ v[i] = {x[i], y[i], w[i], i};\n        sort(v.begin(), v.end(), [](const auto\
+    \ &a, const auto &b) {\n            return std::get<0>(a) < std::get<0>(b);\n\
+    \        });\n        px.resize(n);\n        for (int i = 0; i < n; i++) {\n \
+    \           px[i] = std::get<0>(v[i]);\n            y[i] = std::get<1>(v[i]);\n\
+    \            w[i] = std::get<2>(v[i]);\n            ord[std::get<3>(v[i])] = i;\n\
+    \        }\n        wm = WaveletMatrix<T, S>(y, w);\n    }\n\n    S rectangle_sum(T\
+    \ xl, T xr, T yl, T yr) {\n        int l = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xl));\n        int r = distance(px.begin(), lower_bound(px.begin(),\
+    \ px.end(), xr));\n        return wm.range_sum(l, r, yl, yr);\n    }\n\n    void\
+    \ add(int p, S x) {\n        wm.add(ord[p], x);\n    }\n\n    void set(int p,\
+    \ S x) {\n        wm.set(ord[p], x);\n    }\n};\n"
   code: "#include \"../WaveletMatrixBinaryIndexedTree.hpp\"\n\ntemplate <class T,\
-    \ class S>\nclass RectangleSumPointAdd {\n private:\n  WaveletMatrix<T, S> wm;\n\
-    \  vector<T> px;\n  vector<int> ord;\n\n public:\n  RectangleSumPointAdd() {}\n\
-    \  RectangleSumPointAdd(vector<T> x, vector<T> y, vector<S> w) {\n    int n =\
-    \ int(x.size());\n    ord.resize(n);\n    vector<tuple<T, T, S, int>> v(n);\n\
-    \    for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i], i};\n    sort(v.begin(),\
-    \ v.end(), [](const auto &a, const auto &b) {\n      return get<0>(a) < get<0>(b);\n\
-    \    });\n    px.resize(n);\n    for (int i = 0; i < n; i++) {\n      px[i] =\
-    \ get<0>(v[i]);\n      y[i] = get<1>(v[i]);\n      w[i] = get<2>(v[i]);\n    \
-    \  ord[i] = get<3>(v[i]);\n    }\n    wm = WaveletMatrix<T, S>(y, w);\n  }\n\n\
-    \  S rectangle_sum(T xl, T xr, T yl, T yr) {\n    int l = distance(px.begin(),\
-    \ lower_bound(px.begin(), px.end(), xl));\n    int r = distance(px.begin(), lower_bound(px.begin(),\
-    \ px.end(), xr));\n    return wm.range_sum(l, r, yl, yr);\n  }\n\n  void add(int\
-    \ p, S x) {\n    wm.add(ord[p], x);\n  }\n\n  void set(int p, S x) {\n    wm.set(ord[p],\
-    \ x);\n  }\n};"
+    \ class S>\nclass RectangleSumPointAdd {\n   private:\n    WaveletMatrix<T, S>\
+    \ wm;\n    vector<T> px;\n    vector<int> ord;\n\n   public:\n    RectangleSumPointAdd()\
+    \ {}\n    RectangleSumPointAdd(vector<T> x, vector<T> y, vector<S> w) {\n    \
+    \    int n = int(x.size());\n        ord.resize(n);\n        vector<tuple<T, T,\
+    \ S, int>> v(n);\n        for (int i = 0; i < n; i++) v[i] = {x[i], y[i], w[i],\
+    \ i};\n        sort(v.begin(), v.end(), [](const auto &a, const auto &b) {\n \
+    \           return std::get<0>(a) < std::get<0>(b);\n        });\n        px.resize(n);\n\
+    \        for (int i = 0; i < n; i++) {\n            px[i] = std::get<0>(v[i]);\n\
+    \            y[i] = std::get<1>(v[i]);\n            w[i] = std::get<2>(v[i]);\n\
+    \            ord[std::get<3>(v[i])] = i;\n        }\n        wm = WaveletMatrix<T,\
+    \ S>(y, w);\n    }\n\n    S rectangle_sum(T xl, T xr, T yl, T yr) {\n        int\
+    \ l = distance(px.begin(), lower_bound(px.begin(), px.end(), xl));\n        int\
+    \ r = distance(px.begin(), lower_bound(px.begin(), px.end(), xr));\n        return\
+    \ wm.range_sum(l, r, yl, yr);\n    }\n\n    void add(int p, S x) {\n        wm.add(ord[p],\
+    \ x);\n    }\n\n    void set(int p, S x) {\n        wm.set(ord[p], x);\n    }\n\
+    };"
   dependsOn:
   - data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   isVerificationFile: false
   path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
   requiredBy: []
-  timestamp: '2025-05-12 15:13:30+09:00'
+  timestamp: '2025-09-23 21:04:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/connected-components/StronglyConnectedComponents.hpp
     title: Strongly Connected Components
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

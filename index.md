@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -81,7 +81,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/others/AreaofUnionofRectangles.hpp
       title: Area of Union of Rectangles
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/BinaryTrie.hpp
       title: Binary Trie
     - icon: ':warning:'
@@ -110,7 +110,7 @@ data:
     - icon: ':warning:'
       path: data-structure/segment-tree/DualSegmentTree2D.hpp
       title: Dual Segment Tree (2D)
-    - icon: ':warning:'
+    - icon: ':x:'
       path: data-structure/segment-tree/DynamicSegmentTree.hpp
       title: Dynamic Segment Tree
     - icon: ':heavy_check_mark:'
@@ -407,7 +407,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -540,6 +540,9 @@ data:
       path: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
       title: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+      title: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
     - icon: ':heavy_check_mark:'
@@ -550,6 +553,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
+      title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp

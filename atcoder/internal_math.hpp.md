@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: atcoder/math.hpp
     title: atcoder/math.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   _extendedVerifiedWith:
@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
@@ -30,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
@@ -194,11 +197,12 @@ data:
   - atcoder/convolution.hpp
   - atcoder/math.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp

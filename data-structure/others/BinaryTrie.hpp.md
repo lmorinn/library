@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+    title: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/others/BinaryTrie.hpp\"\ntemplate <typename\
@@ -117,8 +120,9 @@ data:
   path: data-structure/others/BinaryTrie.hpp
   requiredBy: []
   timestamp: '2024-08-24 16:53:34+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
 documentation_of: data-structure/others/BinaryTrie.hpp
 layout: document
 title: Binary Trie

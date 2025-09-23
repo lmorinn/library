@@ -10,22 +10,22 @@ data:
   - icon: ':question:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
-  - icon: ':heavy_check_mark:'
-    path: data-structure/segment-tree/PersistentLazySegmentTree.hpp
-    title: Persistent Lazy Segment Tree
+  - icon: ':x:'
+    path: data-structure/segment-tree/DynamicSegmentTree.hpp
+    title: Dynamic Segment Tree
   - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/persistent_range_affine_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite_large_array
     links:
-    - https://judge.yosupo.jp/problem/persistent_range_affine_range_sum
+    - https://judge.yosupo.jp/problem/point_set_range_composite_large_array
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
     \ <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
     #endif\n\n#line 1 \"atcoder/internal_math.hpp\"\n\n\n\n#include <utility>\n\n\
@@ -232,7 +232,7 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp\"\
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp\"\
     \nusing namespace atcoder;\n#line 2 \"template/template.hpp\"\n#pragma region\
     \ Macros\n#include <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\n\
     using ull = unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n\
@@ -279,116 +279,74 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 4 \"verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_range_affine_range_sum\"\
-    \n#line 1 \"data-structure/segment-tree/PersistentLazySegmentTree.hpp\"\n\ntemplate\
-    \ <class S, auto op, auto e, class F, auto mapping, auto composition, auto id>\n\
-    class persistent_lazy_segtree {\n   private:\n    vector<S> node;\n    vector<F>\
-    \ lazy;\n\n    vector<int> l_id, r_id;\n    int idx = 0;\n    int n, root;\n \
-    \   int NODE_SIZE = 45000000;\n\n    inline int newleaf(S x) {\n        int pos\
-    \ = idx++;\n        node[pos] = x;\n        return pos;\n    }\n\n    inline int\
-    \ newparent(int l, int r) {\n        int pos = idx++;\n        l_id[pos] = l;\n\
-    \        r_id[pos] = r;\n        node[pos] = op(node[l], node[r]);\n        return\
-    \ pos;\n    }\n\n    inline int newlazy(int node_id, F f, int l, int r) {\n  \
-    \      int pos = idx++;\n        l_id[pos] = l_id[node_id];\n        r_id[pos]\
-    \ = r_id[node_id];\n        lazy[pos] = composition(f, lazy[node_id]);\n     \
-    \   node[pos] = mapping(f, node[node_id]);\n\n        return pos;\n    }\n\n \
-    \   inline void push(int root_id, int l, int r) {\n        if (l + 1 < r and lazy[root_id]\
-    \ != id()) {\n            l_id[root_id] = newlazy(l_id[root_id], lazy[root_id],\
-    \ l, (l + r) >> 1);\n            r_id[root_id] = newlazy(r_id[root_id], lazy[root_id],\
-    \ (l + r) >> 1, r);\n            lazy[root_id] = id();\n        }\n    }\n\n \
-    \   int build(const vector<S> &v, int l, int r) {\n        if (r - l == 1) {\n\
-    \            return newleaf(v[l]);\n        } else {\n            return newparent(build(v,\
-    \ l, (l + r) >> 1), build(v, (l + r) >> 1, r));\n        }\n    }\n\n    int set_query(int\
-    \ i, S x, int root_id, int l, int r) {\n        if (r - l == 1) {\n          \
-    \  return newleaf(x);\n        }\n        int mid = (l + r) >> 1;\n        if\
-    \ (i < mid) {\n            return newparent(set_query(i, x, l_id[root_id], l,\
-    \ mid), r_id[root_id]);\n        } else {\n            return newparent(l_id[root_id],\
-    \ set_query(i, x, r_id[root_id], mid, r));\n        }\n    }\n\n    int apply_query(int\
-    \ a, int b, F f, int root_id, int l = 0, int r = -1) {\n        if (r == -1) r\
-    \ = n;\n        if (r <= a or b <= l) return root_id;\n        if (a <= l and\
-    \ r <= b) return newlazy(root_id, f, l, r);\n        push(root_id, l, r);\n  \
-    \      int mid = (l + r) >> 1;\n        return newparent(apply_query(a, b, f,\
-    \ l_id[root_id], l, mid), apply_query(a, b, f, r_id[root_id], mid, r));\n    }\n\
-    \n    S prod_query(int a, int b, int root_id, int l = 0, int r = -1) {\n     \
-    \   if (r == -1) r = n;\n        if (r <= a or b <= l) return e();\n        if\
-    \ (a <= l and r <= b) return node[root_id];\n        push(root_id, l, r);\n  \
-    \      int mid = (l + r) >> 1;\n        return op(prod_query(a, b, l_id[root_id],\
-    \ l, mid), prod_query(a, b, r_id[root_id], mid, r));\n    }\n\n    S get_query(int\
-    \ i, int root_id, int l = 0, int r = -1) {\n        if (r == -1) r = n;\n    \
-    \    if (r - l == 1) return node[root_id];\n        push(root_id, l, r);\n\n \
-    \       int mid = (l + r) >> 1;\n        if (i < mid) {\n            return get_query(i,\
-    \ l_id[root_id], l, mid);\n        } else {\n            return get_query(i, r_id[root_id],\
-    \ mid, r);\n        }\n    }\n\n    int rollback_query(int a, int b, int root,\
-    \ int old_root, int l = 0, int r = -1) {\n        if (r == -1) r = n;\n      \
-    \  if (r <= a or b <= l) return root;\n        if (a <= l and r <= b) return old_root;\n\
-    \        push(root, l, r);\n        push(old_root, l, r);\n        return newparent(rollback_query(a,\
-    \ b, l_id[root], l_id[old_root], l, (l + r) >> 1), rollback_query(a, b, r_id[root],\
-    \ r_id[old_root], (l + r) >> 1, r));\n    }\n\n   public:\n    persistent_lazy_segtree()\
-    \ {}\n    persistent_lazy_segtree(const vector<S> &v) {\n        node.resize(NODE_SIZE);\n\
-    \        lazy.resize(NODE_SIZE, id());\n        l_id.resize(NODE_SIZE);\n    \
-    \    r_id.resize(NODE_SIZE);\n        n = v.size();\n        root = build(v, 0,\
-    \ n);\n    }\n\n    int get_root() {\n        return root;\n    }\n\n    int set(int\
-    \ p, S x, int root_id) {\n        return set_query(p, x, root_id, 0, n);\n   \
-    \ }\n\n    int apply(int l, int r, F f, int root_id) {\n        return apply_query(l,\
-    \ r, f, root_id, 0, n);\n    }\n\n    S prod(int l, int r, int root_id) {\n  \
-    \      return prod_query(l, r, root_id);\n    }\n\n    S get(int p, int root_id)\
-    \ {\n        return get_query(p, root_id);\n    }\n\n    int rollback(int a, int\
-    \ b, int root_id, int old_root) {\n        return rollback_query(a, b, root_id,\
-    \ old_root, 0, n);\n    }\n\n    vector<S> status(int root_id) {\n        vector<S>\
-    \ res(n);\n\n        for (int i = 0; i < n; i++) {\n            res[i] = get(i,\
-    \ root_id);\n        }\n        return res;\n    }\n};\n#line 6 \"verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp\"\
-    \n\nstruct S {\n    modint998244353 val;\n    int siz;\n};\n\nS op(S a, S b) {\n\
-    \    return {a.val + b.val, a.siz + b.siz};\n}\n\nS e() {\n    return {0, 0};\n\
-    }\n\nstruct F {\n    modint998244353 b, c;\n};\n\nS mapping(F f, S x) {\n    return\
-    \ {f.b * x.val + f.c * x.siz, x.siz};\n}\n\nF composition(F g, F f) {\n    return\
-    \ {g.b * f.b, g.b * f.c + g.c};\n}\n\nF id() {\n    return {1, 0};\n}\n\nbool\
-    \ operator!=(F a, F b) {\n    if (a.b != b.b or a.c != b.c) return true;\n   \
-    \ return false;\n}\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int\
-    \ n, q;\n    in(n, q);\n    vector<S> v(n);\n    rep(i, n) {\n        int a;\n\
-    \        in(a);\n        v[i] = {a, 1};\n    }\n\n    unordered_map<int, int>\
-    \ idx;\n    persistent_lazy_segtree<S, op, e, F, mapping, composition, id> seg(v);\n\
-    \    idx[-1] = seg.get_root();\n\n    rep(i, q) {\n        int com, k, l, r, b,\
-    \ c, s;\n        in(com, k);\n        if (com == 0) {\n            in(l, r, b,\
-    \ c);\n            idx[i] = seg.apply(l, r, {b, c}, idx[k]);\n        } else if\
-    \ (com == 1) {\n            in(s, l, r);\n            idx[i] = seg.rollback(l,\
-    \ r, idx[k], idx[s]);\n        } else if (com == 2) {\n            in(l, r);\n\
-    \            out(seg.prod(l, r, idx[k]).val.val());\n        }\n    }\n}\n"
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 4 \"verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite_large_array\"\
+    \n#line 1 \"data-structure/segment-tree/DynamicSegmentTree.hpp\"\ntemplate <class\
+    \ S, auto op, auto e>\nclass DynamicSegmentTree {\n private:\n  struct Node {\n\
+    \    S value;\n    Node *left;\n    Node *right;\n    Node(S value) : value(value),\
+    \ left(nullptr), right(nullptr) {}\n  };\n  long long n;\n  Node *root = nullptr;\n\
+    \n  void set(S x, Node *&t, long long a, long long b, long long l = 0, long long\
+    \ r = -1) {\n    if (r < 0) r = n;\n    if (r <= a or b <= l) return;\n    if\
+    \ (!t) t = new Node(e());\n    if (r - l == 1) {\n      t->value = x;\n      return;\n\
+    \    }\n    long long m = (l + r) >> 1ll;\n    set(x, t->left, a, b, l, m);\n\
+    \    set(x, t->right, a, b, m, r);\n    if (t->left and t->right) {\n      t->value\
+    \ = op(t->left->value, t->right->value);\n    } else if (t->left) {\n      t->value\
+    \ = t->left->value;\n    } else if (t->right) {\n      t->value = t->right->value;\n\
+    \    }\n  }\n\n  S prod(Node *&t, long long a, long long b, long long l = 0, long\
+    \ long r = -1) {\n    if (r < 0) r = n;\n    if (!t or r <= a or b <= l) return\
+    \ e();\n    if (a <= l and r <= b) {\n      return t->value;\n    }\n    long\
+    \ long m = (l + r) >> 1ll;\n    return op(prod(t->left, a, b, l, m), prod(t->right,\
+    \ a, b, m, r));\n  }\n\n  template <auto f>\n  long long max_right(bool &fin,\
+    \ S &p, Node *&t, long long a, long long l = 0, long long r = -1) {\n    if (r\
+    \ < 0) r = n;\n    if (l >= r) {\n      fin = true;\n      return r;\n    }\n\
+    \    if (fin or r <= a) return l;\n    if (!t) {\n      S val = op(p, e());\n\
+    \      if (f(val)) {\n        p = val;\n        return r;\n      } else {\n  \
+    \      fin = true;\n        return l;\n      }\n    }\n    if (a <= l) {\n   \
+    \   S val = op(p, t->value);\n      if (f(val)) {\n        p = val;\n        return\
+    \ r;\n      }\n    }\n    long long m = (l + r) >> 1ll;\n    long long res = max_right<f>(fin,\
+    \ p, t->left, a, l, m);\n    if (fin) return res;\n    return max_right<f>(fin,\
+    \ p, t->right, a, m, r);\n  }\n\n public:\n  DynamicSegmentTree() {}\n  DynamicSegmentTree(long\
+    \ long n_) {\n    n = bit_ceil(uint64_t(n_));\n  }\n  void set(long long p, S\
+    \ x) {\n    set(x, root, p, p + 1);\n  }\n\n  S get(long long p) {\n    return\
+    \ prod(root, p, p + 1);\n  }\n\n  S prod(long long l, long long r) {\n    return\
+    \ prod(root, l, r);\n  }\n\n  template <auto g>\n  long long max_right(long long\
+    \ l) {\n    S p = e();\n    bool fin = false;\n    return max_right<g>(fin, p,\
+    \ root, l);\n  }\n};\n#line 6 \"verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp\"\
+    \n\nusing mint = modint998244353;\nstruct S {\n    mint a, b;\n};\n\nS op(S x,\
+    \ S y) {\n    return {x.a * y.a, x.b * y.a + y.b};\n}\n\nS e() { return {1, 0};\
+    \ }\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\n    int n, q;\n  \
+    \  in(n, q);\n    DynamicSegmentTree<S, op, e> seg(n);\n    rep(i, q) {\n    \
+    \    int com;\n        in(com);\n        if (com == 0) {\n            int p, c,\
+    \ d;\n            in(p, c, d);\n            seg.set(p, {c, d});\n        } else\
+    \ {\n            int l, r, x;\n            in(l, r, x);\n            S ret = seg.prod(l,\
+    \ r);\n            out((ret.a * x + ret.b).val());\n        }\n    }\n}\n"
   code: "#include \"../../../../atcoder/modint.hpp\"\nusing namespace atcoder;\n#include\
-    \ \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_range_affine_range_sum\"\
-    \n#include \"../../../../data-structure/segment-tree/PersistentLazySegmentTree.hpp\"\
-    \n\nstruct S {\n    modint998244353 val;\n    int siz;\n};\n\nS op(S a, S b) {\n\
-    \    return {a.val + b.val, a.siz + b.siz};\n}\n\nS e() {\n    return {0, 0};\n\
-    }\n\nstruct F {\n    modint998244353 b, c;\n};\n\nS mapping(F f, S x) {\n    return\
-    \ {f.b * x.val + f.c * x.siz, x.siz};\n}\n\nF composition(F g, F f) {\n    return\
-    \ {g.b * f.b, g.b * f.c + g.c};\n}\n\nF id() {\n    return {1, 0};\n}\n\nbool\
-    \ operator!=(F a, F b) {\n    if (a.b != b.b or a.c != b.c) return true;\n   \
-    \ return false;\n}\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int\
-    \ n, q;\n    in(n, q);\n    vector<S> v(n);\n    rep(i, n) {\n        int a;\n\
-    \        in(a);\n        v[i] = {a, 1};\n    }\n\n    unordered_map<int, int>\
-    \ idx;\n    persistent_lazy_segtree<S, op, e, F, mapping, composition, id> seg(v);\n\
-    \    idx[-1] = seg.get_root();\n\n    rep(i, q) {\n        int com, k, l, r, b,\
-    \ c, s;\n        in(com, k);\n        if (com == 0) {\n            in(l, r, b,\
-    \ c);\n            idx[i] = seg.apply(l, r, {b, c}, idx[k]);\n        } else if\
-    \ (com == 1) {\n            in(s, l, r);\n            idx[i] = seg.rollback(l,\
-    \ r, idx[k], idx[s]);\n        } else if (com == 2) {\n            in(l, r);\n\
-    \            out(seg.prod(l, r, idx[k]).val.val());\n        }\n    }\n}\n"
+    \ \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite_large_array\"\
+    \n#include \"../../../../data-structure/segment-tree/DynamicSegmentTree.hpp\"\n\
+    \nusing mint = modint998244353;\nstruct S {\n    mint a, b;\n};\n\nS op(S x, S\
+    \ y) {\n    return {x.a * y.a, x.b * y.a + y.b};\n}\n\nS e() { return {1, 0};\
+    \ }\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\n    int n, q;\n  \
+    \  in(n, q);\n    DynamicSegmentTree<S, op, e> seg(n);\n    rep(i, q) {\n    \
+    \    int com;\n        in(com);\n        if (com == 0) {\n            int p, c,\
+    \ d;\n            in(p, c, d);\n            seg.set(p, {c, d});\n        } else\
+    \ {\n            int l, r, x;\n            in(l, r, x);\n            S ret = seg.prod(l,\
+    \ r);\n            out((ret.a * x + ret.b).val());\n        }\n    }\n}\n"
   dependsOn:
   - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
   - template/template.hpp
-  - data-structure/segment-tree/PersistentLazySegmentTree.hpp
+  - data-structure/segment-tree/DynamicSegmentTree.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+  path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   requiredBy: []
-  timestamp: '2025-05-26 06:11:32+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-09-23 21:10:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+documentation_of: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-- /verify/verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp.html
-title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+- /verify/verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
+- /verify/verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp.html
+title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
 ---

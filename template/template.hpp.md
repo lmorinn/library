@@ -88,11 +88,17 @@ data:
     path: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
     title: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+    title: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
@@ -162,9 +168,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -266,7 +272,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
@@ -287,12 +293,14 @@ data:
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
   - verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
+  - verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
   - verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
   - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
   - verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
