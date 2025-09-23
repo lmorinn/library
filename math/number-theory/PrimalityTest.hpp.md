@@ -94,11 +94,11 @@ data:
   isVerificationFile: false
   path: math/number-theory/PrimalityTest.hpp
   requiredBy:
-  - math/number-theory/EulersPhiFunction.hpp
-  - math/number-theory/TetrationMod.hpp
   - math/number-theory/PrimitiveRoot.hpp
-  - math/number-theory/EnumerateDivisors.hpp
+  - math/number-theory/TetrationMod.hpp
   - math/number-theory/Factorize.hpp
+  - math/number-theory/EulersPhiFunction.hpp
+  - math/number-theory/EnumerateDivisors.hpp
   timestamp: '2025-05-15 03:42:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

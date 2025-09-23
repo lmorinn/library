@@ -122,7 +122,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
 layout: document
-title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
+title: Rectangle Sum Point Add
 ---
 
 ## 概要

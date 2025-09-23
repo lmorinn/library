@@ -104,7 +104,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
 layout: document
-title: "\u77E9\u5F62\u30AB\u30A6\u30F3\u30C8"
+title: Rectangle Count
 ---
 
 ## 概要

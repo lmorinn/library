@@ -127,7 +127,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
 layout: document
-title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
+title: Rectangle Apply Point Get
 ---
 
 ## 概要

@@ -7,7 +7,7 @@ data:
     title: Range Mex Query
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
-    title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
+    title: Rectangle Prod Point Set
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -171,8 +171,8 @@ data:
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
   requiredBy:
-  - data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
   - data-structure/wavelet-matrix/query/RangeMex.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
   timestamp: '2025-05-12 02:45:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

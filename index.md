@@ -242,22 +242,22 @@ data:
     pages:
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
-      title: "\u77E9\u5F62\u52A0\u7B97\u30FB\u4E00\u70B9\u53D6\u5F97"
+      title: Rectangle Add Point Get
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
-      title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
+      title: Rectangle Apply Point Get
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleCount.hpp
-      title: "\u77E9\u5F62\u30AB\u30A6\u30F3\u30C8"
+      title: Rectangle Count
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
-      title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
+      title: Rectangle Prod Point Set
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
-      title: "\u77E9\u5F62\u548C"
+      title: Rectangle Sum
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-      title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
+      title: Rectangle Sum Point Add
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'

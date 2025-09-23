@@ -159,7 +159,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
 layout: document
-title: "\u77E9\u5F62\u548C"
+title: Rectangle Sum
 ---
 
 ## 概要

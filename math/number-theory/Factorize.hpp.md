@@ -105,9 +105,9 @@ data:
   isVerificationFile: false
   path: math/number-theory/Factorize.hpp
   requiredBy:
-  - math/number-theory/EulersPhiFunction.hpp
-  - math/number-theory/TetrationMod.hpp
   - math/number-theory/PrimitiveRoot.hpp
+  - math/number-theory/TetrationMod.hpp
+  - math/number-theory/EulersPhiFunction.hpp
   - math/number-theory/EnumerateDivisors.hpp
   timestamp: '2025-05-15 13:59:29+09:00'
   verificationStatus: LIBRARY_ALL_AC

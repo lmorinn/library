@@ -343,8 +343,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp

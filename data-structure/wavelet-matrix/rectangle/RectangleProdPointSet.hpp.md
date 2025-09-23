@@ -129,7 +129,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/rectangle/RectangleProdPointSet.hpp
 layout: document
-title: "\u77E9\u5F62\u7DCF\u7A4D\u30FB\u4E00\u70B9\u4EE3\u5165"
+title: Rectangle Prod Point Set
 ---
 
 ## 概要

@@ -10,7 +10,7 @@ data:
     title: data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-    title: "\u77E9\u5F62\u548C\u30FB\u4E00\u70B9\u52A0\u7B97"
+    title: Rectangle Sum Point Add
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -164,9 +164,9 @@ data:
   isVerificationFile: false
   path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
   requiredBy:
-  - data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
-  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
   - data-structure/wavelet-matrix/query/PointAddRectangleSum.hpp
+  - data-structure/wavelet-matrix/query/RectangleAddPointGet.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleSumPointAdd.hpp
   timestamp: '2025-05-12 11:31:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

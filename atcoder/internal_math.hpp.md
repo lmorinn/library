@@ -190,15 +190,15 @@ data:
   isVerificationFile: false
   path: atcoder/internal_math.hpp
   requiredBy:
-  - atcoder/convolution.hpp
   - atcoder/modint.hpp
+  - atcoder/convolution.hpp
   - atcoder/math.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp

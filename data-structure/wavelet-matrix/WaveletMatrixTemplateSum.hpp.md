@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleSum.hpp
-    title: "\u77E9\u5F62\u548C"
+    title: Rectangle Sum
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp

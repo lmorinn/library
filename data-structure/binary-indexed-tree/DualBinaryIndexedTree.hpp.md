@@ -8,7 +8,7 @@ data:
       BIT)"
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
-    title: "\u77E9\u5F62\u52A0\u7B97\u30FB\u4E00\u70B9\u53D6\u5F97"
+    title: Rectangle Add Point Get
   - icon: ':heavy_check_mark:'
     path: graph/tree/CentroidDecompositionContourAdd.hpp
     title: Centroid Decomposition (Contour Add)
@@ -39,8 +39,8 @@ data:
   path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
   requiredBy:
   - graph/tree/CentroidDecompositionContourAdd.hpp
-  - data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
   - data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
+  - data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
   timestamp: '2025-05-03 16:54:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/rectangle/RectangleApplyPointGet.hpp
-    title: "\u77E9\u5F62\u4F5C\u7528\u30FB\u4E00\u70B9\u53D6\u5F97"
+    title: Rectangle Apply Point Get
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
