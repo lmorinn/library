@@ -3,8 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
-    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
-      \u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
+    title: Wavelet Matrix (Dual Segment Tree)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

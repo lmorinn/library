@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/union-find/PersistentUnionFind.hpp
     title: Persistent Union Find
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
+    title: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/others/PersistentArray.hpp\"\n\ntemplate\
@@ -71,8 +74,9 @@ data:
   requiredBy:
   - data-structure/union-find/PersistentUnionFind.hpp
   timestamp: '2025-06-25 05:31:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
 documentation_of: data-structure/others/PersistentArray.hpp
 layout: document
 title: Persistent Array

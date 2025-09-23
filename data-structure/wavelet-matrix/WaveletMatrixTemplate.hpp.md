@@ -164,7 +164,7 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
 layout: document
-title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
+title: Wavelet Matrix
 ---
 
 ## 概要

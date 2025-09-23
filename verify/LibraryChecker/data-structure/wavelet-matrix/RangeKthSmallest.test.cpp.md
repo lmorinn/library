@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-    title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
+    title: Wavelet Matrix
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

@@ -246,8 +246,7 @@ data:
   verifiedWith: []
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
 layout: document
-title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u7D2F\u7A4D\u548C\
-  )"
+title: Wavelet Matrix (Cumulative Sum)
 ---
 
 ## 概要

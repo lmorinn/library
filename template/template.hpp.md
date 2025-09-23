@@ -82,6 +82,12 @@ data:
     path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
     title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+    title: verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
+    title: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - icon: ':heavy_check_mark:'
@@ -96,6 +102,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
+    title: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
@@ -283,6 +292,9 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
+  - verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
+  - verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
+  - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
   - verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp

@@ -88,9 +88,12 @@ data:
       path: data-structure/others/CompressUnionofRectangles.hpp
       title: Area of Union of Rectangles (Coordinate Compression)
     - icon: ':heavy_check_mark:'
+      path: data-structure/others/LiChaoTree.hpp
+      title: Li Chao Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/PersistentArray.hpp
       title: Persistent Array
     - icon: ':heavy_check_mark:'
@@ -173,7 +176,7 @@ data:
       title: Range Set Range Min
   - name: data-structure/union-find
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/union-find/PersistentUnionFind.hpp
       title: Persistent Union Find
     - icon: ':heavy_check_mark:'
@@ -186,32 +189,28 @@ data:
       title: Wavelet Matrix (3D)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixBinaryIndexedTree.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ BIT)"
+      title: Wavelet Matrix (BIT)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
-        BIT)"
+      title: Wavelet Matrix (Dual BIT)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixDualSegtree.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u53CC\u5BFE\
-        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
+      title: Wavelet Matrix (Dual Segment Tree)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixHash.hpp
       title: Wavelet Matrix (Hash)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixSegtree.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u30BB\u30B0\
-        \u30E1\u30F3\u30C8\u6728)"
+      title: Wavelet Matrix (Segment Tree)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
       title: Wavelet Matrix (String)
     - icon: ':heavy_check_mark:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217"
+      title: Wavelet Matrix
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixTemplateSum.hpp
-      title: "\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217 (+ \u7D2F\u7A4D\
-        \u548C)"
+      title: Wavelet Matrix (Cumulative Sum)
     - icon: ':warning:'
       path: data-structure/wavelet-matrix/WaveletMatrixToggle.hpp
       title: Wavelet Matrix (Toggle)
@@ -535,6 +534,12 @@ data:
       path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
       title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+      title: verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
+      title: verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
     - icon: ':heavy_check_mark:'
@@ -556,6 +561,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
+  - name: verify/LibraryChecker/data-structure/union-find
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
+      title: verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
   - name: verify/LibraryChecker/data-structure/wavelet-matrix
     pages:
     - icon: ':heavy_check_mark:'
