@@ -345,6 +345,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
+    - icon: ':warning:'
+      path: graph/tree/Rerooting.hpp
+      title: Rerooting DP
     - icon: ':heavy_check_mark:'
       path: graph/tree/TreeDistanceFreqency.hpp
       title: Frequency Table of Tree Distance
