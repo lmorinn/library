@@ -397,6 +397,9 @@ data:
       path: string/FMindex.hpp
       title: FM-index
     - icon: ':heavy_check_mark:'
+      path: string/RollingHash.hpp
+      title: Rolling Hash
+    - icon: ':heavy_check_mark:'
       path: string/SuffixArray.hpp
       title: Suffix Array
     - icon: ':heavy_check_mark:'
@@ -520,6 +523,9 @@ data:
       title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - name: verify/AizuOnlineJudge/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
+      title: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
       title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp

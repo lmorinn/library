@@ -73,6 +73,9 @@ data:
     path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
     title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
+    title: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -314,6 +317,7 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_C.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_2_c.test.cpp
