@@ -379,7 +379,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/PrimitiveRoot.hpp
       title: Primitive Root
-    - icon: ':x:'
+    - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
     - icon: ':heavy_check_mark:'
@@ -407,7 +407,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -624,9 +624,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
       title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
-    - icon: ':x:'
-      path: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
-      title: verify/LibraryChecker/math/number-theory/EnumeratePrimes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp
       title: verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp

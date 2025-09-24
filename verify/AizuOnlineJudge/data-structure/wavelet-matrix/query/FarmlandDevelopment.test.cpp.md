@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/query/WaveletMatrixonHeavyLightDecomposition.hpp
     title: Wavelet Matrix on Heavy Light Decomposition
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
