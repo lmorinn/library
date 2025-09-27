@@ -32,7 +32,7 @@ class Rerooting {
         for (int i = 0; i < deg; i++) {
             int v = g[u][i];
             if (v != prev) {
-                dp[v][idx[u][i]] = put_edge(op(acc_l, acc_r[u][i + 1]), e_id[v][idx[u][i]]);
+                dp[v][idx[u][i]] = put_edge(put_vertex(op(acc_l, acc_r[u][i + 1]), u), e_id[v][idx[u][i]]);
                 preorder_dfs(v, u);
             }
             acc_l = op(acc_l, dp[u][i]);
