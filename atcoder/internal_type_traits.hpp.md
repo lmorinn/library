@@ -28,6 +28,9 @@ data:
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+    title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -142,6 +145,7 @@ data:
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp

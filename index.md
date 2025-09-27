@@ -345,7 +345,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/Rerooting.hpp
       title: Rerooting DP
     - icon: ':heavy_check_mark:'
@@ -628,6 +628,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
       title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+      title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

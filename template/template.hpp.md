@@ -139,6 +139,9 @@ data:
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+    title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -284,6 +287,7 @@ data:
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp

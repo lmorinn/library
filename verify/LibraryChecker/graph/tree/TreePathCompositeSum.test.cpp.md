@@ -7,40 +7,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: atcoder/convolution.hpp
-    title: atcoder/convolution.hpp
-  _extendedVerifiedWith:
+    path: atcoder/modint.hpp
+    title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-    title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+    path: graph/tree/Rerooting.hpp
+    title: Rerooting DP
   - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-    title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+    path: template/template.hpp
+    title: Template
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/tree_path_composite_sum
+    links:
+    - https://judge.yosupo.jp/problem/tree_path_composite_sum
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
     \ <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
     #endif\n\n#line 1 \"atcoder/internal_math.hpp\"\n\n\n\n#include <utility>\n\n\
@@ -247,119 +232,118 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n"
-  code: "#ifndef ATCODER_MODINT_HPP\n#define ATCODER_MODINT_HPP 1\n\n#include <cassert>\n\
-    #include <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
-    #endif\n\n#include \"atcoder/internal_math\"\n#include \"atcoder/internal_type_traits\"\
-    \n\nnamespace atcoder {\n\nnamespace internal {\n\nstruct modint_base {};\nstruct\
-    \ static_modint_base : modint_base {};\n\ntemplate <class T> using is_modint =\
-    \ std::is_base_of<modint_base, T>;\ntemplate <class T> using is_modint_t = std::enable_if_t<is_modint<T>::value>;\n\
-    \n}  // namespace internal\n\ntemplate <int m, std::enable_if_t<(1 <= m)>* = nullptr>\n\
-    struct static_modint : internal::static_modint_base {\n    using mint = static_modint;\n\
-    \n  public:\n    static constexpr int mod() { return m; }\n    static mint raw(int\
-    \ v) {\n        mint x;\n        x._v = v;\n        return x;\n    }\n\n    static_modint()\
-    \ : _v(0) {}\n    template <class T, internal::is_signed_int_t<T>* = nullptr>\n\
-    \    static_modint(T v) {\n        long long x = (long long)(v % (long long)(umod()));\n\
-    \        if (x < 0) x += umod();\n        _v = (unsigned int)(x);\n    }\n   \
-    \ template <class T, internal::is_unsigned_int_t<T>* = nullptr>\n    static_modint(T\
-    \ v) {\n        _v = (unsigned int)(v % umod());\n    }\n\n    unsigned int val()\
-    \ const { return _v; }\n\n    mint& operator++() {\n        _v++;\n        if\
-    \ (_v == umod()) _v = 0;\n        return *this;\n    }\n    mint& operator--()\
-    \ {\n        if (_v == 0) _v = umod();\n        _v--;\n        return *this;\n\
-    \    }\n    mint operator++(int) {\n        mint result = *this;\n        ++*this;\n\
-    \        return result;\n    }\n    mint operator--(int) {\n        mint result\
-    \ = *this;\n        --*this;\n        return result;\n    }\n\n    mint& operator+=(const\
-    \ mint& rhs) {\n        _v += rhs._v;\n        if (_v >= umod()) _v -= umod();\n\
-    \        return *this;\n    }\n    mint& operator-=(const mint& rhs) {\n     \
-    \   _v -= rhs._v;\n        if (_v >= umod()) _v += umod();\n        return *this;\n\
-    \    }\n    mint& operator*=(const mint& rhs) {\n        unsigned long long z\
-    \ = _v;\n        z *= rhs._v;\n        _v = (unsigned int)(z % umod());\n    \
-    \    return *this;\n    }\n    mint& operator/=(const mint& rhs) { return *this\
-    \ = *this * rhs.inv(); }\n\n    mint operator+() const { return *this; }\n   \
-    \ mint operator-() const { return mint() - *this; }\n\n    mint pow(long long\
-    \ n) const {\n        assert(0 <= n);\n        mint x = *this, r = 1;\n      \
-    \  while (n) {\n            if (n & 1) r *= x;\n            x *= x;\n        \
-    \    n >>= 1;\n        }\n        return r;\n    }\n    mint inv() const {\n \
-    \       if (prime) {\n            assert(_v);\n            return pow(umod() -\
-    \ 2);\n        } else {\n            auto eg = internal::inv_gcd(_v, m);\n   \
-    \         assert(eg.first == 1);\n            return eg.second;\n        }\n \
-    \   }\n\n    friend mint operator+(const mint& lhs, const mint& rhs) {\n     \
-    \   return mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs,\
-    \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
-    \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
-    \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
-    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const mint& lhs,\
-    \ const mint& rhs) {\n        return lhs._v == rhs._v;\n    }\n    friend bool\
-    \ operator!=(const mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n\
-    \    }\n\n  private:\n    unsigned int _v;\n    static constexpr unsigned int\
-    \ umod() { return m; }\n    static constexpr bool prime = internal::is_prime<m>;\n\
-    };\n\ntemplate <int id> struct dynamic_modint : internal::modint_base {\n    using\
-    \ mint = dynamic_modint;\n\n  public:\n    static int mod() { return (int)(bt.umod());\
-    \ }\n    static void set_mod(int m) {\n        assert(1 <= m);\n        bt = internal::barrett(m);\n\
-    \    }\n    static mint raw(int v) {\n        mint x;\n        x._v = v;\n   \
-    \     return x;\n    }\n\n    dynamic_modint() : _v(0) {}\n    template <class\
-    \ T, internal::is_signed_int_t<T>* = nullptr>\n    dynamic_modint(T v) {\n   \
-    \     long long x = (long long)(v % (long long)(mod()));\n        if (x < 0) x\
-    \ += mod();\n        _v = (unsigned int)(x);\n    }\n    template <class T, internal::is_unsigned_int_t<T>*\
-    \ = nullptr>\n    dynamic_modint(T v) {\n        _v = (unsigned int)(v % mod());\n\
-    \    }\n\n    unsigned int val() const { return _v; }\n\n    mint& operator++()\
-    \ {\n        _v++;\n        if (_v == umod()) _v = 0;\n        return *this;\n\
-    \    }\n    mint& operator--() {\n        if (_v == 0) _v = umod();\n        _v--;\n\
-    \        return *this;\n    }\n    mint operator++(int) {\n        mint result\
-    \ = *this;\n        ++*this;\n        return result;\n    }\n    mint operator--(int)\
-    \ {\n        mint result = *this;\n        --*this;\n        return result;\n\
-    \    }\n\n    mint& operator+=(const mint& rhs) {\n        _v += rhs._v;\n   \
-    \     if (_v >= umod()) _v -= umod();\n        return *this;\n    }\n    mint&\
-    \ operator-=(const mint& rhs) {\n        _v += mod() - rhs._v;\n        if (_v\
-    \ >= umod()) _v -= umod();\n        return *this;\n    }\n    mint& operator*=(const\
-    \ mint& rhs) {\n        _v = bt.mul(_v, rhs._v);\n        return *this;\n    }\n\
-    \    mint& operator/=(const mint& rhs) { return *this = *this * rhs.inv(); }\n\
-    \n    mint operator+() const { return *this; }\n    mint operator-() const { return\
-    \ mint() - *this; }\n\n    mint pow(long long n) const {\n        assert(0 <=\
-    \ n);\n        mint x = *this, r = 1;\n        while (n) {\n            if (n\
-    \ & 1) r *= x;\n            x *= x;\n            n >>= 1;\n        }\n       \
-    \ return r;\n    }\n    mint inv() const {\n        auto eg = internal::inv_gcd(_v,\
-    \ mod());\n        assert(eg.first == 1);\n        return eg.second;\n    }\n\n\
-    \    friend mint operator+(const mint& lhs, const mint& rhs) {\n        return\
-    \ mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs, const mint&\
-    \ rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint operator*(const\
-    \ mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n    }\n   \
-    \ friend mint operator/(const mint& lhs, const mint& rhs) {\n        return mint(lhs)\
-    \ /= rhs;\n    }\n    friend bool operator==(const mint& lhs, const mint& rhs)\
-    \ {\n        return lhs._v == rhs._v;\n    }\n    friend bool operator!=(const\
-    \ mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n    }\n\n \
-    \ private:\n    unsigned int _v;\n    static internal::barrett bt;\n    static\
-    \ unsigned int umod() { return bt.umod(); }\n};\ntemplate <int id> internal::barrett\
-    \ dynamic_modint<id>::bt(998244353);\n\nusing modint998244353 = static_modint<998244353>;\n\
-    using modint1000000007 = static_modint<1000000007>;\nusing modint = dynamic_modint<-1>;\n\
-    \nnamespace internal {\n\ntemplate <class T>\nusing is_static_modint = std::is_base_of<internal::static_modint_base,\
-    \ T>;\n\ntemplate <class T>\nusing is_static_modint_t = std::enable_if_t<is_static_modint<T>::value>;\n\
-    \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
-    \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
-    \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n#endif  // ATCODER_MODINT_HPP\n"
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"template/template.hpp\"\
+    \n#pragma region Macros\n#include <bits/stdc++.h>\nusing namespace std;\nusing\
+    \ lint = long long;\nusing ull = unsigned long long;\nusing ld = long double;\n\
+    using int128 = __int128_t;\n#define all(x) (x).begin(), (x).end()\n#define uniqv(v)\
+    \ v.erase(unique(all(v)), v.end())\n#define OVERLOAD_REP(_1, _2, _3, name, ...)\
+    \ name\n#define REP1(i, n) for (auto i = std::decay_t<decltype(n)>{}; (i) != (n);\
+    \ ++(i))\n#define REP2(i, l, r) for (auto i = (l); (i) != (r); ++(i))\n#define\
+    \ rep(...) OVERLOAD_REP(__VA_ARGS__, REP2, REP1)(__VA_ARGS__)\n#define logfixed(x)\
+    \ cout << fixed << setprecision(10) << x << endl;\n\nostream &operator<<(ostream\
+    \ &dest, __int128_t value) {\n  ostream::sentry s(dest);\n  if (s) {\n    __uint128_t\
+    \ tmp = value < 0 ? -value : value;\n    char buffer[128];\n    char *d = end(buffer);\n\
+    \    do {\n      --d;\n      *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n\
+    \    } while (tmp != 0);\n    if (value < 0) {\n      --d;\n      *d = '-';\n\
+    \    }\n    int len = end(buffer) - d;\n    if (dest.rdbuf()->sputn(d, len) !=\
+    \ len) {\n      dest.setstate(ios_base::badbit);\n    }\n  }\n  return dest;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const vector<T> &v)\
+    \ {\n  for (int i = 0; i < (int)v.size(); i++) {\n    os << v[i] << (i + 1 !=\
+    \ (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n}\n\ntemplate <typename T>\n\
+    ostream &operator<<(ostream &os, const set<T> &set_var) {\n  for (auto itr = set_var.begin();\
+    \ itr != set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr !=\
+    \ set_var.end()) os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T>\nostream &operator<<(ostream &os, const unordered_set<T> &set_var) {\n  for\
+    \ (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os << *itr;\n\
+    \    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n  }\n  return\
+    \ os;\n}\n\ntemplate <typename T, typename U>\nostream &operator<<(ostream &os,\
+    \ const map<T, U> &map_var) {\n  for (auto itr = map_var.begin(); itr != map_var.end();\
+    \ itr++) {\n    os << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n\
+    \  return os;\n}\n\ntemplate <typename T, typename U>\nostream &operator<<(ostream\
+    \ &os, const unordered_map<T, U> &map_var) {\n  for (auto itr = map_var.begin();\
+    \ itr != map_var.end(); itr++) {\n    os << itr->first << \" -> \" << itr->second\
+    \ << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename T, typename U>\nostream\
+    \ &operator<<(ostream &os, const pair<T, U> &pair_var) {\n  os << pair_var.first\
+    \ << \" \" << pair_var.second;\n  return os;\n}\n\nvoid out() { cout << '\\n';\
+    \ }\ntemplate <class T, class... Ts>\nvoid out(const T &a, const Ts &...b) {\n\
+    \  cout << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\nvoid\
+    \ outf() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid outf(const\
+    \ T &a, const Ts &...b) {\n  cout << fixed << setprecision(14) << a;\n  (cout\
+    \ << ... << (cout << ' ', b));\n  cout << '\\n';\n}\n\ntemplate <typename T>\n\
+    istream &operator>>(istream &is, vector<T> &v) {\n  for (T &in : v) is >> in;\n\
+    \  return is;\n}\n\ninline void in(void) { return; }\ntemplate <typename First,\
+    \ typename... Rest>\nvoid in(First &first, Rest &...rest) {\n  cin >> first;\n\
+    \  in(rest...);\n  return;\n}\n\ntemplate <typename T>\nbool chmax(T &a, const\
+    \ T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n  }\n  return false;\n\
+    }\ntemplate <typename T>\nbool chmin(T &a, const T &b) {\n  if (a > b) {\n   \
+    \ a = b;\n    return true;\n  }\n  return false;\n}\n\nvector<lint> dx8 = {1,\
+    \ 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1, 1, 0, -1, -1, -1};\n\
+    vector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0, 1, 0, -1};\n\n#pragma\
+    \ endregion\n#line 3 \"verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/tree_path_composite_sum\"\
+    \n#line 1 \"graph/tree/Rerooting.hpp\"\ntemplate <class S, auto op, auto e, auto\
+    \ put_vertex, auto put_edge>\nclass Rerooting {\n   private:\n    int n;\n   \
+    \ vector<vector<int>> idx;\n    vector<vector<int>> g, e_id, rev_id;\n    vector<vector<S>>\
+    \ dp, acc_r;\n    vector<S> ans;\n\n    S postorder_dfs(int u, int prev = -1)\
+    \ {\n        S res = e();\n        int deg = int(g[u].size());\n        dp[u].resize(deg,\
+    \ e());\n        for (int i = 0; i < deg; i++) {\n            int v = g[u][i];\n\
+    \            if (v == prev) continue;\n            dp[u][i] = put_edge(postorder_dfs(v,\
+    \ u), e_id[u][i]);\n            res = op(res, dp[u][i]);\n        }\n        return\
+    \ put_vertex(res, u);\n    }\n\n    void preorder_dfs(int u, int prev = -1) {\n\
+    \        int deg = int(g[u].size());\n        acc_r[u].resize(deg + 1, e());\n\
+    \        S acc_l = e();\n        for (int i = deg - 1; i >= 0; i--) {\n      \
+    \      acc_r[u][i] = op(acc_r[u][i + 1], dp[u][i]);\n        }\n        ans[u]\
+    \ = put_vertex(acc_r[u][0], u);\n\n        for (int i = 0; i < deg; i++) {\n \
+    \           int v = g[u][i];\n            if (v != prev) {\n                dp[v][idx[u][i]]\
+    \ = put_edge(put_vertex(op(acc_l, acc_r[u][i + 1]), u), e_id[v][idx[u][i]]);\n\
+    \                preorder_dfs(v, u);\n            }\n            acc_l = op(acc_l,\
+    \ dp[u][i]);\n        }\n    }\n\n   public:\n    Rerooting(int n) : n(n) {\n\
+    \        g.resize(n);\n        idx.resize(n);\n        dp.resize(n);\n       \
+    \ acc_r.resize(n);\n        ans.resize(n);\n        e_id.resize(n);\n        rev_id.resize(n);\n\
+    \    }\n\n    void add_edge(int u, int v, int u_v_id, int v_u_id) {\n        idx[u].emplace_back(int(g[v].size()));\n\
+    \        idx[v].emplace_back(int(g[u].size()));\n        g[u].emplace_back(v);\n\
+    \        g[v].emplace_back(u);\n        e_id[u].emplace_back(u_v_id);\n      \
+    \  e_id[v].emplace_back(v_u_id);\n    }\n\n    vector<S> build() {\n        postorder_dfs(0);\n\
+    \        preorder_dfs(0);\n        return ans;\n    }\n};\n#line 6 \"verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp\"\
+    \n\nusing mint = modint998244353;\n\nstruct S {\n    mint val;\n    int sub;\n\
+    };\n\nvector<int> a, b, c;\n\nS op(S a, S b) {\n    return {a.val + b.val, a.sub\
+    \ + b.sub};\n}\n\nS e() {\n    return {0, 0};\n}\n\nS put_vertex(S x, int i) {\n\
+    \    return {x.val + a[i], x.sub + 1};\n}\n\nS put_edge(S x, int i) {\n    return\
+    \ {x.val * b[i] + mint(x.sub) * c[i], x.sub};\n}\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    \    int n;\n    in(n);\n    a.resize(n);\n    b.resize(n - 1);\n    c.resize(n\
+    \ - 1);\n    in(a);\n\n    Rerooting<S, op, e, put_vertex, put_edge> t(n);\n \
+    \   rep(i, n - 1) {\n        int u, v;\n        in(u, v, b[i], c[i]);\n      \
+    \  t.add_edge(u, v, i, i);\n    }\n\n    vector<int> res;\n    for (auto [v, s]\
+    \ : t.build()) {\n        res.emplace_back(v.val());\n    }\n    out(res);\n}\n"
+  code: "#include \"../../../../atcoder/modint.hpp\"\n#include \"../../../../template/template.hpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/tree_path_composite_sum\"\
+    \n#include \"../../../../graph/tree/Rerooting.hpp\"\n\nusing mint = modint998244353;\n\
+    \nstruct S {\n    mint val;\n    int sub;\n};\n\nvector<int> a, b, c;\n\nS op(S\
+    \ a, S b) {\n    return {a.val + b.val, a.sub + b.sub};\n}\n\nS e() {\n    return\
+    \ {0, 0};\n}\n\nS put_vertex(S x, int i) {\n    return {x.val + a[i], x.sub +\
+    \ 1};\n}\n\nS put_edge(S x, int i) {\n    return {x.val * b[i] + mint(x.sub) *\
+    \ c[i], x.sub};\n}\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int\
+    \ n;\n    in(n);\n    a.resize(n);\n    b.resize(n - 1);\n    c.resize(n - 1);\n\
+    \    in(a);\n\n    Rerooting<S, op, e, put_vertex, put_edge> t(n);\n    rep(i,\
+    \ n - 1) {\n        int u, v;\n        in(u, v, b[i], c[i]);\n        t.add_edge(u,\
+    \ v, i, i);\n    }\n\n    vector<int> res;\n    for (auto [v, s] : t.build())\
+    \ {\n        res.emplace_back(v.val());\n    }\n    out(res);\n}\n"
   dependsOn:
+  - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
-  isVerificationFile: false
-  path: atcoder/modint.hpp
-  requiredBy:
-  - atcoder/convolution.hpp
-  timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-documentation_of: atcoder/modint.hpp
+  - template/template.hpp
+  - graph/tree/Rerooting.hpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  requiredBy: []
+  timestamp: '2025-09-27 19:55:30+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
 layout: document
 redirect_from:
-- /library/atcoder/modint.hpp
-- /library/atcoder/modint.hpp.html
-title: atcoder/modint.hpp
+- /verify/verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+- /verify/verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp.html
+title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
 ---
