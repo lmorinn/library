@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
@@ -30,8 +33,9 @@ data:
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   requiredBy: []
   timestamp: '2024-11-18 02:13:41+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 title: Binary Indexed Tree

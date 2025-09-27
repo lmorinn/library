@@ -5,7 +5,7 @@ data:
     path: math/number-theory/PrimalityTest.hpp
     title: Primality Test
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/EnumerateDivisors.hpp
     title: Enumerate Divisors
   - icon: ':heavy_check_mark:'
@@ -21,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
     title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
     title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
@@ -115,6 +118,7 @@ data:
   - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
   - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
 documentation_of: math/number-theory/Factorize.hpp
 layout: document

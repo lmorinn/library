@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/EulersPhiFunctionTable.hpp\"\nvector<int>\
@@ -22,8 +25,9 @@ data:
   path: math/number-theory/EulersPhiFunctionTable.hpp
   requiredBy: []
   timestamp: '2025-05-20 03:07:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
 documentation_of: math/number-theory/EulersPhiFunctionTable.hpp
 layout: document
 title: Euler's Phi Function Table

@@ -8,10 +8,13 @@ data:
     path: math/number-theory/PrimalityTest.hpp
     title: Primality Test
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/PrimalityTest.hpp\"\n__int128_t mod_pow(__int128_t\
@@ -81,8 +84,9 @@ data:
   path: math/number-theory/EnumerateDivisors.hpp
   requiredBy: []
   timestamp: '2025-05-20 03:07:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
 documentation_of: math/number-theory/EnumerateDivisors.hpp
 layout: document
 title: Enumerate Divisors

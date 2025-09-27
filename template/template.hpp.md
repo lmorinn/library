@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - icon: ':heavy_check_mark:'
@@ -70,8 +73,17 @@ data:
     path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
     title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+    title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
     title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
+    title: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_B.test.cpp
@@ -79,8 +91,14 @@ data:
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
     title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
     title: verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
@@ -93,6 +111,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
     title: verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/others/StaticRMQ_SqrtTree.test.cpp
+    title: verify/LibraryChecker/data-structure/others/StaticRMQ_SqrtTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
     title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
@@ -301,6 +322,7 @@ data:
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
@@ -309,14 +331,17 @@ data:
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
   - verify/LibraryChecker/data-structure/union-find/PersistentUnionfind.test.cpp
   - verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
   - verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
   - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+  - verify/LibraryChecker/data-structure/others/StaticRMQ_SqrtTree.test.cpp
   - verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
+  - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
@@ -333,6 +358,8 @@ data:
   - verify/AizuOnlineJudge/geometry/CGL_1_B.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_3_A.test.cpp
   - verify/AizuOnlineJudge/geometry/CGL_7_B.test.cpp
+  - verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+  - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
@@ -341,6 +368,7 @@ data:
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
+  - verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

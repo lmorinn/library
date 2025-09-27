@@ -16,6 +16,9 @@ data:
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
     title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+    title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -154,6 +157,7 @@ data:
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document

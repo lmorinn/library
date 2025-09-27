@@ -62,15 +62,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/balanced-binary-search-tree/AVLTree.hpp
       title: AVL Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/balanced-binary-search-tree/RedBlackTree.hpp
       title: Red Black Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
       title: Reversible Lazy Splay Tree
   - name: data-structure/binary-indexed-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/others/SparseTable.hpp
       title: Sparse Table
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/SqrtTree.hpp
       title: Sqrt Tree
   - name: data-structure/segment-tree
@@ -322,7 +322,7 @@ data:
       title: Low Link
   - name: graph/shortest-path
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/shortest-path/Dijkstra.hpp
       title: Dijkstra
     - icon: ':heavy_check_mark:'
@@ -361,7 +361,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/CountingPrimes.hpp
       title: Counting Primes
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/EnumerateDivisors.hpp
       title: Enumerate Divisors
     - icon: ':heavy_check_mark:'
@@ -370,7 +370,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/EulersPhiFunction.hpp
       title: Euler's Phi Function
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/EulersPhiFunctionTable.hpp
       title: Euler's Phi Function Table
     - icon: ':heavy_check_mark:'
@@ -417,6 +417,11 @@ data:
       path: template/template.hpp
       title: Template
   verificationCategories:
+  - name: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -512,6 +517,9 @@ data:
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+      title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
       title: verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp
   - name: verify/AizuOnlineJudge/graph/tree
@@ -524,6 +532,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
       title: verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+      title: verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
+      title: verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - name: verify/AizuOnlineJudge/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -535,8 +549,16 @@ data:
   - name: verify/LibraryChecker/data-structure/balanced-binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+      title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
       title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/OrderedSet.test.cpp
+  - name: verify/LibraryChecker/data-structure/binary-indexed-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
+      title: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
   - name: verify/LibraryChecker/data-structure/others
     pages:
     - icon: ':heavy_check_mark:'
@@ -554,6 +576,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/others/StaticRMQ_SqrtTree.test.cpp
+      title: verify/LibraryChecker/data-structure/others/StaticRMQ_SqrtTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
       title: verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
