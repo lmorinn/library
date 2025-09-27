@@ -66,6 +66,7 @@
   "verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp": "2025-05-26 05:25:37 +0900",
   "verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp": "2025-05-26 05:25:37 +0900",
   "verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp": "2025-05-26 06:10:36 +0900",
+  "verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp": "2025-09-27 19:55:30 +0900",
   "verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/Factorize.test.cpp": "2025-05-20 01:52:42 +0900",
