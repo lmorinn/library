@@ -266,6 +266,12 @@ data:
       path: dp/DeterministicFiniteAutomatonDP.hpp
       title: Deterministic Finite Automaton DP
     - icon: ':heavy_check_mark:'
+      path: dp/KnapsackProblem.hpp
+      title: 01 Knapsack Problem
+    - icon: ':heavy_check_mark:'
+      path: dp/KnapsackProblemNoLimit.hpp
+      title: Knapsack Problem
+    - icon: ':heavy_check_mark:'
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence
     - icon: ':warning:'
@@ -454,6 +460,12 @@ data:
       title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - name: verify/AizuOnlineJudge/dp
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/dp/DPL1_B.test.cpp
+      title: verify/AizuOnlineJudge/dp/DPL1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/dp/DPL1_C.test.cpp
+      title: verify/AizuOnlineJudge/dp/DPL1_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp

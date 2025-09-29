@@ -25,6 +25,12 @@ data:
     path: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
     title: verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/dp/DPL1_B.test.cpp
+    title: verify/AizuOnlineJudge/dp/DPL1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/dp/DPL1_C.test.cpp
+    title: verify/AizuOnlineJudge/dp/DPL1_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
     title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - icon: ':heavy_check_mark:'
@@ -362,6 +368,8 @@ data:
   - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+  - verify/AizuOnlineJudge/dp/DPL1_B.test.cpp
+  - verify/AizuOnlineJudge/dp/DPL1_C.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeSum.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeSetRangeMin.test.cpp
