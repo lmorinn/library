@@ -281,6 +281,12 @@ data:
       path: dp/RectangleAddPointGet.hpp
       title: Rectangle Add Point Get
     - icon: ':warning:'
+      path: dp/SlidingWindowMaximum.hpp
+      title: Sliding Window (Maximum)
+    - icon: ':heavy_check_mark:'
+      path: dp/SlidingWindowMinimum.hpp
+      title: Sliding Window (Minimum)
+    - icon: ':warning:'
       path: dp/TravelingSalesmanProblem.hpp
       title: Traveling Salesman Problem
   - name: geometry
@@ -469,6 +475,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
       title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/dp/DSL_3_D.test.cpp
+      title: verify/AizuOnlineJudge/dp/DSL_3_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
       title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
