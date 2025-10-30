@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/SternBrocotTree.hpp\"\n\n// m/n\nvector<pair<char,\
@@ -88,8 +91,9 @@ data:
   path: math/number-theory/SternBrocotTree.hpp
   requiredBy: []
   timestamp: '2025-10-30 19:44:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
 documentation_of: math/number-theory/SternBrocotTree.hpp
 layout: document
 title: "Stern\u2013Brocot Tree"

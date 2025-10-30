@@ -187,6 +187,9 @@ data:
     path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
     title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
+    title: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -341,6 +344,7 @@ data:
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+  - verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
   - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp

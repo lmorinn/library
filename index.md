@@ -397,7 +397,7 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/SternBrocotTree.hpp
       title: "Stern\u2013Brocot Tree"
     - icon: ':heavy_check_mark:'
@@ -697,6 +697,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
       title: verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
+      title: verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
       title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
