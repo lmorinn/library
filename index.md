@@ -397,6 +397,9 @@ data:
     - icon: ':warning:'
       path: math/number-theory/SieveofEratosthenes.hpp
       title: Sieve of Eratosthenes
+    - icon: ':warning:'
+      path: math/number-theory/SternBrocotTree.hpp
+      title: "Stern\u2013Brocot Tree"
     - icon: ':heavy_check_mark:'
       path: math/number-theory/SumofEulersPhiFunction.hpp
       title: Sum of Eulers Phi Function
