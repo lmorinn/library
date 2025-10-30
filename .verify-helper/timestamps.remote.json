@@ -81,6 +81,7 @@
   "verify/LibraryChecker/math/number-theory/Factorize.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp": "2025-05-20 01:52:42 +0900",
   "verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp": "2025-05-20 01:52:42 +0900",
+  "verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp": "2025-10-30 23:04:46 +0900",
   "verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp": "2025-05-26 06:10:12 +0900",
   "verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp": "2025-05-26 06:09:49 +0900",
   "verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp": "2025-05-21 17:36:44 +0900",
