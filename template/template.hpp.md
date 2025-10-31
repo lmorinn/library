@@ -136,6 +136,9 @@ data:
     path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
+    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -328,6 +331,7 @@ data:
   - verify/LibraryChecker/data-structure/others/SetXorMin.test.cpp
   - verify/LibraryChecker/data-structure/others/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp

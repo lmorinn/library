@@ -111,6 +111,9 @@ data:
       path: data-structure/segment-tree/DualSegmentTree2D.hpp
       title: Dual Segment Tree (2D)
     - icon: ':heavy_check_mark:'
+      path: data-structure/segment-tree/DynamicLazySegmentTree.hpp
+      title: Dynamic Lazy Segment Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/DynamicSegmentTree.hpp
       title: Dynamic Segment Tree
     - icon: ':heavy_check_mark:'
@@ -617,6 +620,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
+      title: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
