@@ -371,6 +371,11 @@ data:
     - icon: ':warning:'
       path: math/NthTermOfLinearRecurrenceMatPow.hpp
       title: Nth term of linear recurrence (Matrix Power)
+  - name: math/fps
+    pages:
+    - icon: ':warning:'
+      path: math/fps/FormalPowerSeries.hpp
+      title: Formal Power Series
   - name: math/number-theory
     pages:
     - icon: ':heavy_check_mark:'
