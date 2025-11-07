@@ -1,5 +1,5 @@
 ---
-title: Li Chao Tree
+title: Li Chao Tree (min)
 documentation_of: //data-structure/others/LiChaoTree.hpp
 ---
 
