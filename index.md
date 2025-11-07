@@ -104,6 +104,9 @@ data:
       title: Sqrt Tree
   - name: data-structure/segment-tree
     pages:
+    - icon: ':warning:'
+      path: data-structure/segment-tree/ACLSegmentTreeBeatsChminChmax.hpp
+      title: Segment Tree Beats (ACL-based)
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/DualSegmentTree.hpp
       title: Dual Segment Tree
@@ -142,6 +145,9 @@ data:
     - icon: ':warning:'
       path: data-structure/segment-tree/query/RangeAddRangeSum.hpp
       title: Range Add Range Sum
+    - icon: ':warning:'
+      path: data-structure/segment-tree/query/RangeBitwiseORBitwiseAND.hpp
+      title: Range Bitwise OR Bitwise AND
     - icon: ':warning:'
       path: data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
       title: Range Linear Add Range Sum
