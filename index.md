@@ -87,9 +87,15 @@ data:
     - icon: ':warning:'
       path: data-structure/others/CompressUnionofRectangles.hpp
       title: Area of Union of Rectangles (Coordinate Compression)
+    - icon: ':warning:'
+      path: data-structure/others/IntervalSet..hpp
+      title: data-structure/others/IntervalSet..hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/others/LiChaoTree.hpp
-      title: Li Chao Tree
+      title: Li Chao Tree (min)
+    - icon: ':warning:'
+      path: data-structure/others/LiChaoTreeMax.hpp
+      title: Li Chao Tree (max)
     - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree

@@ -104,7 +104,7 @@ data:
   - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
 documentation_of: data-structure/others/LiChaoTree.hpp
 layout: document
-title: Li Chao Tree
+title: Li Chao Tree (min)
 ---
 
 ## 概要
