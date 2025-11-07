@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"data-structure/others/IntervalSet..hpp\"\n// [l, r]\ntemplate\
+  bundledCode: "#line 1 \"data-structure/others/IntervalSet.hpp\"\n// [l, r]\ntemplate\
     \ <class T>\nclass IntervalSet {\n   private:\n    set<pair<T, T>> s;\n\n   public:\n\
     \    IntervalSet() {\n        T mi = numeric_limits<T>::min();\n        T mx =\
     \ numeric_limits<T>::max();\n        s.emplace(mi, mi);\n        s.emplace(mx,\
@@ -69,15 +69,20 @@ data:
     \ << \"] \";\n        }\n        cout << \"\\n\";\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: data-structure/others/IntervalSet..hpp
+  path: data-structure/others/IntervalSet.hpp
   requiredBy: []
-  timestamp: '2025-11-07 13:47:01+09:00'
+  timestamp: '2025-11-07 13:51:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: data-structure/others/IntervalSet..hpp
+documentation_of: data-structure/others/IntervalSet.hpp
 layout: document
-redirect_from:
-- /library/data-structure/others/IntervalSet..hpp
-- /library/data-structure/others/IntervalSet..hpp.html
-title: data-structure/others/IntervalSet..hpp
+title: Interval Set
 ---
+
+## 概要
+
+区間をSetで管理するテク
+工事中
+
+## 計算量
+todo

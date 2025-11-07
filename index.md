@@ -88,8 +88,8 @@ data:
       path: data-structure/others/CompressUnionofRectangles.hpp
       title: Area of Union of Rectangles (Coordinate Compression)
     - icon: ':warning:'
-      path: data-structure/others/IntervalSet..hpp
-      title: data-structure/others/IntervalSet..hpp
+      path: data-structure/others/IntervalSet.hpp
+      title: Interval Set
     - icon: ':heavy_check_mark:'
       path: data-structure/others/LiChaoTree.hpp
       title: Li Chao Tree (min)
