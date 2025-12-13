@@ -354,16 +354,16 @@ data:
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
+  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
 documentation_of: atcoder/modint.hpp
 layout: document
 redirect_from:

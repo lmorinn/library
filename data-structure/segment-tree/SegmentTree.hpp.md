@@ -110,10 +110,10 @@ data:
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
+  - verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
-  - verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
-  - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
 documentation_of: data-structure/segment-tree/SegmentTree.hpp
 layout: document
 title: Segment Tree
