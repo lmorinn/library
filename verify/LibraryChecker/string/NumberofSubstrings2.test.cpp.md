@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: string/LCPArray.hpp
+    title: LCP Array
+  - icon: ':question:'
     path: string/SuffixArray.hpp
     title: Suffix Array
   - icon: ':question:'
@@ -14,9 +17,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/suffixarray
+    PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
     links:
-    - https://judge.yosupo.jp/problem/suffixarray
+    - https://judge.yosupo.jp/problem/number_of_substrings
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -63,29 +66,29 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/string/SuffixArray.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n#line 2 \"\
-    string/SuffixArray.hpp\"\n\n#define tget(i) (((t)[(i) >> 3] >> (7 - ((i) & 7)))\
-    \ & 1)\n\n#define tset(i, b)                                    \\\n    do { \
-    \                                             \\\n        if (b)             \
-    \                           \\\n            (t)[(i) >> 3] |= (1 << (7 - ((i) &\
-    \ 7)));  \\\n        else                                          \\\n      \
-    \      (t)[(i) >> 3] &= ~(1 << (7 - ((i) & 7))); \\\n    } while (0)\n\n#define\
-    \ chr(i) (cs == sizeof(int) ? ((int *)s)[i] : ((unsigned char *)s)[i])\n#define\
-    \ isLMS(i) (i > 0 and tget(i) and !tget(i - 1))\n\nvoid getBuckets(unsigned char\
-    \ *s, int *bkt, int n, int K, int cs, bool end) {\n    int sum = 0;\n    for (int\
-    \ i = 0; i <= K; i++) {\n        bkt[i] = 0;\n    }\n    for (int i = 0; i < n;\
-    \ i++) {\n        bkt[chr(i)]++;\n    }\n    for (int i = 0; i <= K; i++) {\n\
-    \        sum += bkt[i];\n        bkt[i] = end ? sum : sum - bkt[i];\n    }\n}\n\
-    \nvoid induceSAl(unsigned char *t, int *SA, unsigned char *s, int *bkt, int n,\
-    \ int K, int cs, bool end) {\n    getBuckets(s, bkt, n, K, cs, end);\n    for\
-    \ (int i = 0; i < n; i++) {\n        int j = SA[i] - 1;\n        if (j >= 0 and\
-    \ !tget(j)) {\n            SA[bkt[chr(j)]++] = j;\n        }\n    }\n}\n\nvoid\
-    \ induceSAs(unsigned char *t, int *SA, unsigned char *s, int *bkt, int n, int\
-    \ K, int cs, bool end) {\n    getBuckets(s, bkt, n, K, cs, end);\n    for (int\
-    \ i = n - 1; i >= 0; i--) {\n        int j = SA[i] - 1;\n        if (j >= 0 and\
-    \ tget(j)) {\n            SA[--bkt[chr(j)]] = j;\n        }\n    }\n}\n\nvoid\
-    \ SA_IS(unsigned char *s, int *SA, int n, int K, int cs) {\n    unsigned char\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/string/NumberofSubstrings2.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n#line\
+    \ 2 \"string/SuffixArray.hpp\"\n\n#define tget(i) (((t)[(i) >> 3] >> (7 - ((i)\
+    \ & 7))) & 1)\n\n#define tset(i, b)                                    \\\n  \
+    \  do {                                              \\\n        if (b)      \
+    \                                  \\\n            (t)[(i) >> 3] |= (1 << (7 -\
+    \ ((i) & 7)));  \\\n        else                                          \\\n\
+    \            (t)[(i) >> 3] &= ~(1 << (7 - ((i) & 7))); \\\n    } while (0)\n\n\
+    #define chr(i) (cs == sizeof(int) ? ((int *)s)[i] : ((unsigned char *)s)[i])\n\
+    #define isLMS(i) (i > 0 and tget(i) and !tget(i - 1))\n\nvoid getBuckets(unsigned\
+    \ char *s, int *bkt, int n, int K, int cs, bool end) {\n    int sum = 0;\n   \
+    \ for (int i = 0; i <= K; i++) {\n        bkt[i] = 0;\n    }\n    for (int i =\
+    \ 0; i < n; i++) {\n        bkt[chr(i)]++;\n    }\n    for (int i = 0; i <= K;\
+    \ i++) {\n        sum += bkt[i];\n        bkt[i] = end ? sum : sum - bkt[i];\n\
+    \    }\n}\n\nvoid induceSAl(unsigned char *t, int *SA, unsigned char *s, int *bkt,\
+    \ int n, int K, int cs, bool end) {\n    getBuckets(s, bkt, n, K, cs, end);\n\
+    \    for (int i = 0; i < n; i++) {\n        int j = SA[i] - 1;\n        if (j\
+    \ >= 0 and !tget(j)) {\n            SA[bkt[chr(j)]++] = j;\n        }\n    }\n\
+    }\n\nvoid induceSAs(unsigned char *t, int *SA, unsigned char *s, int *bkt, int\
+    \ n, int K, int cs, bool end) {\n    getBuckets(s, bkt, n, K, cs, end);\n    for\
+    \ (int i = n - 1; i >= 0; i--) {\n        int j = SA[i] - 1;\n        if (j >=\
+    \ 0 and tget(j)) {\n            SA[--bkt[chr(j)]] = j;\n        }\n    }\n}\n\n\
+    void SA_IS(unsigned char *s, int *SA, int n, int K, int cs) {\n    unsigned char\
     \ *t = (unsigned char *)malloc(n / 8 + 1);\n    tset(n - 2, 0);\n    tset(n -\
     \ 1, 1);\n    for (int i = n - 3; i >= 0; i--) {\n        tset(i, (chr(i) < chr(i\
     \ + 1) or (chr(i) == chr(i + 1) and tget(i + 1) == 1)) ? 1 : 0);\n    }\n\n  \
@@ -123,25 +126,35 @@ data:
     \ < str.size(); i++) {\n        s[i] = str[i];\n    }\n    s[int(str.size())]\
     \ = 0;\n    SA_IS((unsigned char *)(s), sa, n, k, cs);\n    vector<int> res(n\
     \ - 1);\n    for (int i = 0; i < n - 1; i++) {\n        res[i] = sa[i + 1];\n\
-    \    }\n    free(sa);\n    free(s);\n    return res;\n}\n#line 4 \"verify/LibraryChecker/string/SuffixArray.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    string s;\n    in(s);\n\
-    \    out(suffixArray(s));\n}\n"
-  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\
-    \n#include \"../../../string/SuffixArray.hpp\"\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\
-    \    string s;\n    in(s);\n    out(suffixArray(s));\n}\n"
+    \    }\n    free(sa);\n    free(s);\n    return res;\n}\n#line 2 \"string/LCPArray.hpp\"\
+    \nvector<int> LCPArray(const string& s, const vector<int>& sa) {\n  int n = int(s.size());\n\
+    \  vector<int> rank(n);\n  for (int i = 0; i < n; i++) rank[sa[i]] = i;\n  vector<int>\
+    \ lcp(n - 1);\n  int h = 0;\n  for (int i = 0; i < n; i++) {\n    if (h > 0) h--;\n\
+    \    if (rank[i] == 0) continue;\n    int j = sa[rank[i] - 1];\n    for (; j +\
+    \ h < n and i + h < n; h++) {\n      if (s[j + h] != s[i + h]) break;\n    }\n\
+    \    lcp[rank[i] - 1] = h;\n  }\n  return lcp;\n}\n#line 4 \"verify/LibraryChecker/string/NumberofSubstrings2.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  string s;\n  in(s);\n \
+    \ vector<int> l = LCPArray(s, suffixArray(s));\n  lint n = s.size();\n  lint res\
+    \ = n * (n + 1) / 2;\n  for (auto x : l) res -= x;\n  out(res);\n}\n"
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\
+    \n#include \"../../../string/LCPArray.hpp\"\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  string s;\n  in(s);\n  vector<int> l = LCPArray(s, suffixArray(s));\n  lint\
+    \ n = s.size();\n  lint res = n * (n + 1) / 2;\n  for (auto x : l) res -= x;\n\
+    \  out(res);\n}\n"
   dependsOn:
   - template/template.hpp
+  - string/LCPArray.hpp
   - string/SuffixArray.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/string/SuffixArray.test.cpp
+  path: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
   requiredBy: []
-  timestamp: '2024-09-26 13:24:19+09:00'
+  timestamp: '2025-12-14 23:58:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/string/SuffixArray.test.cpp
+documentation_of: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/string/SuffixArray.test.cpp
-- /verify/verify/LibraryChecker/string/SuffixArray.test.cpp.html
-title: verify/LibraryChecker/string/SuffixArray.test.cpp
+- /verify/verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
+- /verify/verify/LibraryChecker/string/NumberofSubstrings2.test.cpp.html
+title: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
 ---

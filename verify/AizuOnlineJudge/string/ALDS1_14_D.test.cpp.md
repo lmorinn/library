@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/FMindex.hpp
     title: FM-index
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/SuffixArray.hpp
     title: Suffix Array
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

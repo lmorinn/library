@@ -99,6 +99,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree
+    - icon: ':x:'
+      path: data-structure/others/MonotonicMinQueue.hpp
+      title: Monotonic Queue (Min Queue)
     - icon: ':heavy_check_mark:'
       path: data-structure/others/PersistentArray.hpp
       title: Persistent Array
@@ -434,10 +437,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/FMindex.hpp
       title: FM-index
+    - icon: ':question:'
+      path: string/LCPArray.hpp
+      title: LCP Array
+    - icon: ':x:'
+      path: string/LongestCommonSubstring.hpp
+      title: Longest Common Substring
     - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: Rolling Hash
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/SuffixArray.hpp
       title: Suffix Array
     - icon: ':heavy_check_mark:'
@@ -448,7 +457,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -734,9 +743,15 @@ data:
       title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - name: verify/LibraryChecker/string
     pages:
+    - icon: ':x:'
+      path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
+      title: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
       title: verify/LibraryChecker/string/NumberofSubstrings.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
+      title: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/string/SuffixArray.test.cpp
       title: verify/LibraryChecker/string/SuffixArray.test.cpp

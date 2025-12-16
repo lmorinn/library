@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/SumofEulersPhiFunction.hpp
     title: Sum of Eulers Phi Function
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
