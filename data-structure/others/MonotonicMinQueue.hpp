@@ -27,4 +27,4 @@ class MonotonicMinQueue {
   const T& minimum() const {
     return deq.front();
   }
-};
+};docs/MonotonicMinQueue.md
