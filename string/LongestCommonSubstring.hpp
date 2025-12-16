@@ -54,7 +54,7 @@ vector<pair<int, int>> longest_common_substring(const vector<string>& v) {
       } else if (sa[l] > s1_siz) {
         cnt_s2--;
       }
-      l++;data-structure/others/MonotonicMinQueue.hpp
+      l++;
       if (!que.empty()) que.pop();
     }
 
