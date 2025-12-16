@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/others/MonotonicMinQueue.hpp
     title: Monotonic Queue (Min Queue)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/LCPArray.hpp
     title: LCP Array
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/LongestCommonSubstring.hpp
     title: Longest Common Substring
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/SuffixArray.hpp
     title: Suffix Array
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/longest_common_substring
@@ -81,22 +81,22 @@ data:
     \ == deq.front()) deq.pop_front();\n    que.pop();\n  }\n\n  const T& front()\
     \ const {\n    return que.front();\n  }\n\n  bool empty() const {\n    return\
     \ que.empty();\n  }\n\n  const T& minimum() const {\n    return deq.front();\n\
-    \  }\n};docs/MonotonicMinQueue.md\n#line 2 \"string/SuffixArray.hpp\"\n\n#define\
-    \ tget(i) (((t)[(i) >> 3] >> (7 - ((i) & 7))) & 1)\n\n#define tset(i, b)     \
-    \                               \\\n    do {                                 \
-    \             \\\n        if (b)                                        \\\n \
-    \           (t)[(i) >> 3] |= (1 << (7 - ((i) & 7)));  \\\n        else       \
-    \                                   \\\n            (t)[(i) >> 3] &= ~(1 << (7\
-    \ - ((i) & 7))); \\\n    } while (0)\n\n#define chr(i) (cs == sizeof(int) ? ((int\
-    \ *)s)[i] : ((unsigned char *)s)[i])\n#define isLMS(i) (i > 0 and tget(i) and\
-    \ !tget(i - 1))\n\nvoid getBuckets(unsigned char *s, int *bkt, int n, int K, int\
-    \ cs, bool end) {\n    int sum = 0;\n    for (int i = 0; i <= K; i++) {\n    \
-    \    bkt[i] = 0;\n    }\n    for (int i = 0; i < n; i++) {\n        bkt[chr(i)]++;\n\
-    \    }\n    for (int i = 0; i <= K; i++) {\n        sum += bkt[i];\n        bkt[i]\
-    \ = end ? sum : sum - bkt[i];\n    }\n}\n\nvoid induceSAl(unsigned char *t, int\
-    \ *SA, unsigned char *s, int *bkt, int n, int K, int cs, bool end) {\n    getBuckets(s,\
-    \ bkt, n, K, cs, end);\n    for (int i = 0; i < n; i++) {\n        int j = SA[i]\
-    \ - 1;\n        if (j >= 0 and !tget(j)) {\n            SA[bkt[chr(j)]++] = j;\n\
+    \  }\n};\n#line 2 \"string/SuffixArray.hpp\"\n\n#define tget(i) (((t)[(i) >> 3]\
+    \ >> (7 - ((i) & 7))) & 1)\n\n#define tset(i, b)                             \
+    \       \\\n    do {                                              \\\n       \
+    \ if (b)                                        \\\n            (t)[(i) >> 3]\
+    \ |= (1 << (7 - ((i) & 7)));  \\\n        else                               \
+    \           \\\n            (t)[(i) >> 3] &= ~(1 << (7 - ((i) & 7))); \\\n   \
+    \ } while (0)\n\n#define chr(i) (cs == sizeof(int) ? ((int *)s)[i] : ((unsigned\
+    \ char *)s)[i])\n#define isLMS(i) (i > 0 and tget(i) and !tget(i - 1))\n\nvoid\
+    \ getBuckets(unsigned char *s, int *bkt, int n, int K, int cs, bool end) {\n \
+    \   int sum = 0;\n    for (int i = 0; i <= K; i++) {\n        bkt[i] = 0;\n  \
+    \  }\n    for (int i = 0; i < n; i++) {\n        bkt[chr(i)]++;\n    }\n    for\
+    \ (int i = 0; i <= K; i++) {\n        sum += bkt[i];\n        bkt[i] = end ? sum\
+    \ : sum - bkt[i];\n    }\n}\n\nvoid induceSAl(unsigned char *t, int *SA, unsigned\
+    \ char *s, int *bkt, int n, int K, int cs, bool end) {\n    getBuckets(s, bkt,\
+    \ n, K, cs, end);\n    for (int i = 0; i < n; i++) {\n        int j = SA[i] -\
+    \ 1;\n        if (j >= 0 and !tget(j)) {\n            SA[bkt[chr(j)]++] = j;\n\
     \        }\n    }\n}\n\nvoid induceSAs(unsigned char *t, int *SA, unsigned char\
     \ *s, int *bkt, int n, int K, int cs, bool end) {\n    getBuckets(s, bkt, n, K,\
     \ cs, end);\n    for (int i = n - 1; i >= 0; i--) {\n        int j = SA[i] - 1;\n\
@@ -165,13 +165,13 @@ data:
     \  if (lcs_len < que.minimum()) {\n          lcs_len = que.minimum();\n      \
     \    best_l = l;\n          best_r = r;\n        }\n      }\n\n      if (r ==\
     \ concat_n) break;\n      if (sa[l] < s1_siz) {\n        cnt_s1--;\n      } else\
-    \ if (sa[l] > s1_siz) {\n        cnt_s2--;\n      }\n      l++;data-structure/others/MonotonicMinQueue.hpp\n\
-    \      if (!que.empty()) que.pop();\n    }\n\n    vector<pair<int, int>> res(2,\
-    \ {0, 0});\n    if (best_l == -1) return res;\n    for (int i = best_l; i < best_r;\
-    \ i++) {\n      if (sa[i] < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n\
-    \      } else if (sa[i] > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i]\
-    \ - s1_siz - 1 + lcs_len};\n      }\n    }\n    return res;\n  } else {\n    vector<pair<int,\
-    \ int>> res(2, {0, 0});\n    // todo\n    return res;\n  }\n}\n#line 4 \"verify/LibraryChecker/string/LongestCommonSubstring.test.cpp\"\
+    \ if (sa[l] > s1_siz) {\n        cnt_s2--;\n      }\n      l++;\n      if (!que.empty())\
+    \ que.pop();\n    }\n\n    vector<pair<int, int>> res(2, {0, 0});\n    if (best_l\
+    \ == -1) return res;\n    for (int i = best_l; i < best_r; i++) {\n      if (sa[i]\
+    \ < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n      } else if (sa[i]\
+    \ > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i] - s1_siz - 1 + lcs_len};\n\
+    \      }\n    }\n    return res;\n  } else {\n    vector<pair<int, int>> res(2,\
+    \ {0, 0});\n    // todo\n    return res;\n  }\n}\n#line 4 \"verify/LibraryChecker/string/LongestCommonSubstring.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  vector<string> v(2);\n\
     \  in(v);\n  auto res = longest_common_substring(v);\n  out(res[0].first, res[0].second,\
     \ res[1].first, res[1].second);\n}\n"
@@ -188,8 +188,8 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   requiredBy: []
-  timestamp: '2025-12-17 00:28:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-12-17 00:38:44+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
 layout: document

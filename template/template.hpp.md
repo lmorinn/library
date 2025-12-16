@@ -201,7 +201,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
     title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
     title: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - icon: ':heavy_check_mark:'
@@ -219,9 +219,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -323,7 +323,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2024-06-28 15:04:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/FareySequence2286.test.cpp

@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/others/MonotonicMinQueue.hpp
     title: Monotonic Queue (Min Queue)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/LCPArray.hpp
     title: LCP Array
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/SuffixArray.hpp
     title: Suffix Array
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
     title: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/others/MonotonicMinQueue.hpp\"\ntemplate\
@@ -27,18 +27,18 @@ data:
     \ pop() {\n    if (que.front() == deq.front()) deq.pop_front();\n    que.pop();\n\
     \  }\n\n  const T& front() const {\n    return que.front();\n  }\n\n  bool empty()\
     \ const {\n    return que.empty();\n  }\n\n  const T& minimum() const {\n    return\
-    \ deq.front();\n  }\n};docs/MonotonicMinQueue.md\n#line 2 \"string/SuffixArray.hpp\"\
-    \n\n#define tget(i) (((t)[(i) >> 3] >> (7 - ((i) & 7))) & 1)\n\n#define tset(i,\
-    \ b)                                    \\\n    do {                         \
-    \                     \\\n        if (b)                                     \
-    \   \\\n            (t)[(i) >> 3] |= (1 << (7 - ((i) & 7)));  \\\n        else\
-    \                                          \\\n            (t)[(i) >> 3] &= ~(1\
-    \ << (7 - ((i) & 7))); \\\n    } while (0)\n\n#define chr(i) (cs == sizeof(int)\
-    \ ? ((int *)s)[i] : ((unsigned char *)s)[i])\n#define isLMS(i) (i > 0 and tget(i)\
-    \ and !tget(i - 1))\n\nvoid getBuckets(unsigned char *s, int *bkt, int n, int\
-    \ K, int cs, bool end) {\n    int sum = 0;\n    for (int i = 0; i <= K; i++) {\n\
-    \        bkt[i] = 0;\n    }\n    for (int i = 0; i < n; i++) {\n        bkt[chr(i)]++;\n\
-    \    }\n    for (int i = 0; i <= K; i++) {\n        sum += bkt[i];\n        bkt[i]\
+    \ deq.front();\n  }\n};\n#line 2 \"string/SuffixArray.hpp\"\n\n#define tget(i)\
+    \ (((t)[(i) >> 3] >> (7 - ((i) & 7))) & 1)\n\n#define tset(i, b)             \
+    \                       \\\n    do {                                         \
+    \     \\\n        if (b)                                        \\\n         \
+    \   (t)[(i) >> 3] |= (1 << (7 - ((i) & 7)));  \\\n        else               \
+    \                           \\\n            (t)[(i) >> 3] &= ~(1 << (7 - ((i)\
+    \ & 7))); \\\n    } while (0)\n\n#define chr(i) (cs == sizeof(int) ? ((int *)s)[i]\
+    \ : ((unsigned char *)s)[i])\n#define isLMS(i) (i > 0 and tget(i) and !tget(i\
+    \ - 1))\n\nvoid getBuckets(unsigned char *s, int *bkt, int n, int K, int cs, bool\
+    \ end) {\n    int sum = 0;\n    for (int i = 0; i <= K; i++) {\n        bkt[i]\
+    \ = 0;\n    }\n    for (int i = 0; i < n; i++) {\n        bkt[chr(i)]++;\n   \
+    \ }\n    for (int i = 0; i <= K; i++) {\n        sum += bkt[i];\n        bkt[i]\
     \ = end ? sum : sum - bkt[i];\n    }\n}\n\nvoid induceSAl(unsigned char *t, int\
     \ *SA, unsigned char *s, int *bkt, int n, int K, int cs, bool end) {\n    getBuckets(s,\
     \ bkt, n, K, cs, end);\n    for (int i = 0; i < n; i++) {\n        int j = SA[i]\
@@ -111,13 +111,13 @@ data:
     \  if (lcs_len < que.minimum()) {\n          lcs_len = que.minimum();\n      \
     \    best_l = l;\n          best_r = r;\n        }\n      }\n\n      if (r ==\
     \ concat_n) break;\n      if (sa[l] < s1_siz) {\n        cnt_s1--;\n      } else\
-    \ if (sa[l] > s1_siz) {\n        cnt_s2--;\n      }\n      l++;data-structure/others/MonotonicMinQueue.hpp\n\
-    \      if (!que.empty()) que.pop();\n    }\n\n    vector<pair<int, int>> res(2,\
-    \ {0, 0});\n    if (best_l == -1) return res;\n    for (int i = best_l; i < best_r;\
-    \ i++) {\n      if (sa[i] < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n\
-    \      } else if (sa[i] > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i]\
-    \ - s1_siz - 1 + lcs_len};\n      }\n    }\n    return res;\n  } else {\n    vector<pair<int,\
-    \ int>> res(2, {0, 0});\n    // todo\n    return res;\n  }\n}\n"
+    \ if (sa[l] > s1_siz) {\n        cnt_s2--;\n      }\n      l++;\n      if (!que.empty())\
+    \ que.pop();\n    }\n\n    vector<pair<int, int>> res(2, {0, 0});\n    if (best_l\
+    \ == -1) return res;\n    for (int i = best_l; i < best_r; i++) {\n      if (sa[i]\
+    \ < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n      } else if (sa[i]\
+    \ > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i] - s1_siz - 1 + lcs_len};\n\
+    \      }\n    }\n    return res;\n  } else {\n    vector<pair<int, int>> res(2,\
+    \ {0, 0});\n    // todo\n    return res;\n  }\n}\n"
   code: "#include \"../data-structure/others/MonotonicMinQueue.hpp\"\n#include \"\
     LCPArray.hpp\"\nvector<pair<int, int>> longest_common_substring(const vector<string>&\
     \ v) {\n  int siz = int(v.size());\n  if (siz < 2) return {};\n  string concat\
@@ -138,13 +138,13 @@ data:
     \ if (lcs_len < que.minimum()) {\n          lcs_len = que.minimum();\n       \
     \   best_l = l;\n          best_r = r;\n        }\n      }\n\n      if (r == concat_n)\
     \ break;\n      if (sa[l] < s1_siz) {\n        cnt_s1--;\n      } else if (sa[l]\
-    \ > s1_siz) {\n        cnt_s2--;\n      }\n      l++;data-structure/others/MonotonicMinQueue.hpp\n\
-    \      if (!que.empty()) que.pop();\n    }\n\n    vector<pair<int, int>> res(2,\
-    \ {0, 0});\n    if (best_l == -1) return res;\n    for (int i = best_l; i < best_r;\
-    \ i++) {\n      if (sa[i] < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n\
-    \      } else if (sa[i] > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i]\
-    \ - s1_siz - 1 + lcs_len};\n      }\n    }\n    return res;\n  } else {\n    vector<pair<int,\
-    \ int>> res(2, {0, 0});\n    // todo\n    return res;\n  }\n}"
+    \ > s1_siz) {\n        cnt_s2--;\n      }\n      l++;\n      if (!que.empty())\
+    \ que.pop();\n    }\n\n    vector<pair<int, int>> res(2, {0, 0});\n    if (best_l\
+    \ == -1) return res;\n    for (int i = best_l; i < best_r; i++) {\n      if (sa[i]\
+    \ < s1_siz) {\n        res[0] = {sa[i], sa[i] + lcs_len};\n      } else if (sa[i]\
+    \ > s1_siz) {\n        res[1] = {sa[i] - s1_siz - 1, sa[i] - s1_siz - 1 + lcs_len};\n\
+    \      }\n    }\n    return res;\n  } else {\n    vector<pair<int, int>> res(2,\
+    \ {0, 0});\n    // todo\n    return res;\n  }\n}"
   dependsOn:
   - data-structure/others/MonotonicMinQueue.hpp
   - string/LCPArray.hpp
@@ -152,8 +152,8 @@ data:
   isVerificationFile: false
   path: string/LongestCommonSubstring.hpp
   requiredBy: []
-  timestamp: '2025-12-17 00:28:44+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-12-17 00:38:44+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
 documentation_of: string/LongestCommonSubstring.hpp

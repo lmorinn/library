@@ -5,17 +5,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/FMindex.hpp
     title: FM-index
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/LCPArray.hpp
     title: LCP Array
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/LongestCommonSubstring.hpp
     title: Longest Common Substring
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
     title: verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
     title: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"string/SuffixArray.hpp\"\n\n#define tget(i) (((t)[(i) >>\
@@ -155,7 +155,7 @@ data:
   - string/LongestCommonSubstring.hpp
   - string/FMindex.hpp
   timestamp: '2024-09-26 13:24:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dynamic-tree/LinkCutTreeEdge.hpp
     title: Link Cut Tree (Edge)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

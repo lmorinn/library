@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/SuffixArray.hpp
     title: Suffix Array
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/LongestCommonSubstring.hpp
     title: Longest Common Substring
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
     title: verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
     title: verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"string/SuffixArray.hpp\"\n\n#define tget(i) (((t)[(i) >>\
@@ -100,7 +100,7 @@ data:
   requiredBy:
   - string/LongestCommonSubstring.hpp
   timestamp: '2025-12-14 23:58:30+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp

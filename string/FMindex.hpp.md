@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/wavelet-matrix/WaveletMatrixString.hpp
     title: Wavelet Matrix (String)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/SuffixArray.hpp
     title: Suffix Array
   _extendedRequiredBy: []

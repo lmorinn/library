@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/balanced-binary-search-tree/ReversibleLazySplayTree.hpp
     title: Reversible Lazy Splay Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
