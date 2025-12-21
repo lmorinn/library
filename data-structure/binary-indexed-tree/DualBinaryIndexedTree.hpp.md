@@ -37,9 +37,9 @@ data:
   isVerificationFile: false
   path: data-structure/binary-indexed-tree/DualBinaryIndexedTree.hpp
   requiredBy:
+  - graph/tree/CentroidDecompositionContourAdd.hpp
   - data-structure/wavelet-matrix/WaveletMatrixDualBinaryIndexedTree.hpp
   - data-structure/wavelet-matrix/rectangle/RectangleAddPointGet.hpp
-  - graph/tree/CentroidDecompositionContourAdd.hpp
   timestamp: '2025-05-03 16:54:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

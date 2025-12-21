@@ -158,9 +158,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
-  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
-  - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
+  - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
+  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
 documentation_of: string/SuffixArray.hpp
 layout: document
 title: Suffix Array

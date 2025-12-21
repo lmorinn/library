@@ -175,20 +175,20 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/LazySegmentTree.hpp
   requiredBy:
-  - data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
-  - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
-  - data-structure/segment-tree/query/RangeAddRangeSum.hpp
-  - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
-  - data-structure/segment-tree/query/RangeAddRangeMin.hpp
-  - data-structure/segment-tree/query/RangeAddRangeMax.hpp
-  - data-structure/segment-tree/query/RangeLinearUpdateRangeMinMaxSum.hpp
-  - data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
   - data-structure/others/AreaofUnionofRectangles.hpp
+  - data-structure/segment-tree/query/RangeAddRangeSum.hpp
+  - data-structure/segment-tree/query/RangeLinearAddRangeSum.hpp
+  - data-structure/segment-tree/query/RangeAddRangeMax.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeSum.hpp
+  - data-structure/segment-tree/query/RangeAddRangeMin.hpp
+  - data-structure/segment-tree/query/RangeLinearUpdateRangeMinMaxSum.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMin.hpp
+  - data-structure/segment-tree/query/RangeUpdateRangeMax.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
+  - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_F.test.cpp
   - verify/LibraryChecker/data-structure/others/AreaofUnionofRectangles.test.cpp
 documentation_of: data-structure/segment-tree/LazySegmentTree.hpp
 layout: document

@@ -152,17 +152,17 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document
 redirect_from:

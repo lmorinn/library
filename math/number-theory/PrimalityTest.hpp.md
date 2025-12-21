@@ -107,10 +107,10 @@ data:
   verifiedWith:
   - verify/AizuOnlineJudge/math/number-theory/ITP1_3_D.test.cpp
   - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
-  - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
-  - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
-  - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
   - verify/LibraryChecker/math/number-theory/PrimitiveRoot.test.cpp
+  - verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
+  - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+  - verify/LibraryChecker/math/number-theory/Factorize.test.cpp
 documentation_of: math/number-theory/PrimalityTest.hpp
 layout: document
 title: Primality Test
