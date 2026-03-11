@@ -361,6 +361,9 @@ data:
   - name: graph/tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/tree/CartesianTree.hpp
+      title: Cartesian Tree
+    - icon: ':heavy_check_mark:'
       path: graph/tree/CentroidDecompositionContourAdd.hpp
       title: Centroid Decomposition (Contour Add)
     - icon: ':heavy_check_mark:'
@@ -757,6 +760,9 @@ data:
       title: verify/LibraryChecker/string/SuffixArray.test.cpp
   - name: verify/LibraryChecker/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/tree/CartesianTree.test.cpp
+      title: verify/LibraryChecker/tree/CartesianTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
       title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
