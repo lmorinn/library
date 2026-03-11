@@ -1,3 +1,6 @@
+name: Install setuptools
+run: python -m pip install --upgrade pip setuptools
+
 name: library-update
 run-name: ${{ github.workflow }} (${{ github.ref_name }})
 
