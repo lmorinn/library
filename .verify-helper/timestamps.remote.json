@@ -90,6 +90,7 @@
   "verify/LibraryChecker/string/NumberofSubstrings.test.cpp": "2024-12-21 23:38:39 +0900",
   "verify/LibraryChecker/string/NumberofSubstrings2.test.cpp": "2025-12-14 23:58:30 +0900",
   "verify/LibraryChecker/string/SuffixArray.test.cpp": "2024-09-26 13:24:19 +0900",
+  "verify/LibraryChecker/tree/CartesianTree.test.cpp": "2026-03-11 19:33:55 +0900",
   "verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp": "2024-06-26 20:58:27 +0900",
   "verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp": "2025-05-03 18:57:33 +0900",
   "verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp": "2024-06-26 20:58:27 +0900",
