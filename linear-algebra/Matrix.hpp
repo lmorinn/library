@@ -143,4 +143,64 @@ struct Matrix {
     }
     return res;
   }
+
+  pair<bool, Matrix<S>> inverse() {
+    int h = height();
+    int w = width();
+    assert(h == w);
+    Matrix<S> B(h, w * 2);
+    for (int i = 0; i < h; i++) {
+      for (int j = 0; j < w; j++) {
+        B[i][j] = (*this)[i][j];
+      }
+    }
+    for (int i = 0; i < h; i++) {
+      B[i][i + w] = 1;
+    }
+    w *= 2;
+    int rnk = 0;
+
+    int ch = 0;
+    int cw = 0;
+    while (ch < h and cw < h) {
+      bool ok = false;
+      for (int j = cw; j < h; j++) {
+        for (int i = ch; i < h; i++) {
+          if (B[i][j] != 0) {
+            ok = true;
+            swap(B[ch], B[i]);
+            S d = B[ch][j];
+            for (int j2 = j; j2 < w; j2++) {
+              B[ch][j2] /= d;
+            }
+            for (int i2 = 0; i2 < h; i2++) {
+              if (B[i2][j] != 0 and i2 != ch) {
+                S m = B[i2][j];
+                for (int j2 = j; j2 < w; j2++) {
+                  B[i2][j2] -= B[ch][j2] * m;
+                }
+              }
+            }
+            rnk++;
+            ch++;
+            cw = j + 1;
+            break;
+          }
+        }
+        if (ok) break;
+      }
+      if (!ok) break;
+    }
+    Matrix<S> res(h);
+    if (rnk == h) {
+      for (int i = 0; i < h; i++) {
+        for (int j = 0; j < h; j++) {
+          res[i][j] = B[i][j + h];
+        }
+      }
+      return {true, res};
+    } else {
+      return {false, res};
+    }
+  }
 };
