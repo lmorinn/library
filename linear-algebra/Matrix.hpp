@@ -52,4 +52,44 @@ struct Matrix {
   Matrix operator+(const Matrix& B) const { return (Matrix(*this) += B); }
   Matrix operator-(const Matrix& B) const { return (Matrix(*this) -= B); }
   Matrix operator*(const Matrix& B) const { return (Matrix(*this) *= B); }
+
+  int rank() {
+    Matrix B(*this);
+    if (B.height() == 0 or B.width() == 0) return 0;
+    int res = 0;
+    int h = height();
+    int w = width();
+    int ch = 0;
+    int cw = 0;
+    while (ch < h and cw < w) {
+      bool ok = false;
+      for (int j = cw; j < w; j++) {
+        for (int i = ch; i < h; i++) {
+          if (B[i][j] != 0) {
+            ok = true;
+            swap(B[ch], B[i]);
+            S d = B[ch][j];
+            for (int j2 = j; j2 < w; j2++) {
+              B[ch][j2] /= d;
+            }
+            for (int i2 = 0; i2 < h; i2++) {
+              if (B[i2][j] != 0 and i2 != ch) {
+                S m = B[i2][j];
+                for (int j2 = j; j2 < w; j2++) {
+                  B[i2][j2] -= B[ch][j2] * m;
+                }
+              }
+            }
+            res++;
+            ch++;
+            cw = j + 1;
+            break;
+          }
+        }
+        if (ok) break;
+      }
+      if (!ok) break;
+    }
+    return res;
+  }
 };
