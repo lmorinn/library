@@ -92,4 +92,55 @@ struct Matrix {
     }
     return res;
   }
+
+  S determinant() {
+    Matrix B(*this);
+    if (B.height() == 0 or B.width() == 0) return 0;
+    assert(B.height() == B.width());
+    int h = height();
+    int w = width();
+    int ch = 0;
+    int cw = 0;
+    S div = 1;
+    bool neg = false;
+    while (ch < h and cw < w) {
+      bool ok = false;
+      for (int j = cw; j < w; j++) {
+        for (int i = ch; i < h; i++) {
+          if (B[i][j] != 0) {
+            ok = true;
+            if (ch != i) neg = !neg;
+            swap(B[ch], B[i]);
+            S d = B[ch][j];
+            div /= d;
+            for (int j2 = j; j2 < w; j2++) {
+              B[ch][j2] /= d;
+            }
+            for (int i2 = 0; i2 < h; i2++) {
+              if (B[i2][j] != 0 and i2 != ch) {
+                S m = B[i2][j];
+                for (int j2 = j; j2 < w; j2++) {
+                  B[i2][j2] -= B[ch][j2] * m;
+                }
+              }
+            }
+            ch++;
+            cw = j + 1;
+            break;
+          }
+        }
+        if (ok) {
+          break;
+        } else {
+          return S(0);
+        }
+      }
+      if (!ok) break;
+    }
+    S res = (neg ? -B[0][0] : B[0][0]) / div;
+    for (int i = 1; i < h; i++) {
+      res = res * B[i][i];
+    }
+    return res;
+  }
 };
