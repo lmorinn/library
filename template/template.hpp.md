@@ -82,6 +82,9 @@ data:
     path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
     title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
     title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -331,6 +334,7 @@ data:
   timestamp: '2024-06-28 15:04:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp

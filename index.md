@@ -339,6 +339,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dynamic-tree/LinkCutTreeVertex.hpp
       title: Link Cut Tree (Vertex)
+  - name: graph/flow
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/flow/MaximumMatchingSize.hpp
+      title: Maximum Matching Size (Randomized)
   - name: graph/others
     pages:
     - icon: ':heavy_check_mark:'
@@ -440,6 +445,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/TetrationMod.hpp
       title: Tetration Mod
+  - name: other
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: other/Xorshift.hpp
+      title: Xorshift
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -575,6 +585,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
       title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
+  - name: verify/AizuOnlineJudge/graph/flow
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+      title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'

@@ -11,10 +11,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
+  - icon: ':heavy_check_mark:'
+    path: graph/flow/MaximumMatchingSize.hpp
+    title: Maximum Matching Size (Randomized)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
     title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
@@ -205,12 +211,14 @@ data:
   isVerificationFile: false
   path: atcoder/internal_math.hpp
   requiredBy:
+  - graph/flow/MaximumMatchingSize.hpp
   - atcoder/math.hpp
   - atcoder/convolution.hpp
   - atcoder/modint.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp

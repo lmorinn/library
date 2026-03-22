@@ -1,8 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph/flow/MaximumMatchingSize.hpp
+    title: Maximum Matching Size (Randomized)
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
@@ -82,10 +88,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: linear-algebra/Matrix.hpp
-  requiredBy: []
+  requiredBy:
+  - graph/flow/MaximumMatchingSize.hpp
   timestamp: '2026-03-22 11:53:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
 documentation_of: linear-algebra/Matrix.hpp
 layout: document
