@@ -11,14 +11,8 @@ data:
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/flow/MaximumMatchingSize.hpp
-    title: Maximum Matching Size (Randomized)
-  - icon: ':heavy_check_mark:'
     path: linear-algebra/Matrix.hpp
     title: Matrix
-  - icon: ':heavy_check_mark:'
-    path: other/Xorshift.hpp
-    title: Xorshift
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -29,9 +23,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_7_A
+    PROBLEM: https://judge.yosupo.jp/problem/matrix_det
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/GRL_7_A
+    - https://judge.yosupo.jp/problem/matrix_det
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -78,14 +72,14 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp\"\
-    \n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_7_A\"\n#line\
-    \ 1 \"atcoder/modint.hpp\"\n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include <type_traits>\n\
-    \n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#line 1 \"atcoder/internal_math.hpp\"\
-    \n\n\n\n#line 5 \"atcoder/internal_math.hpp\"\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
-    #endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n// @param m `1 <= m`\n\
-    // @return x mod m\nconstexpr long long safe_mod(long long x, long long m) {\n\
-    \    x %= m;\n    if (x < 0) x += m;\n    return x;\n}\n\n// Fast modular multiplication\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\n#line 1 \"atcoder/modint.hpp\"\
+    \n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include <type_traits>\n\n#ifdef _MSC_VER\n\
+    #include <intrin.h>\n#endif\n\n#line 1 \"atcoder/internal_math.hpp\"\n\n\n\n#line\
+    \ 5 \"atcoder/internal_math.hpp\"\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
+    \nnamespace atcoder {\n\nnamespace internal {\n\n// @param m `1 <= m`\n// @return\
+    \ x mod m\nconstexpr long long safe_mod(long long x, long long m) {\n    x %=\
+    \ m;\n    if (x < 0) x += m;\n    return x;\n}\n\n// Fast modular multiplication\
     \ by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
     // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
     \   unsigned long long im;\n\n    // @param m `1 <= m`\n    explicit barrett(unsigned\
@@ -335,43 +329,33 @@ data:
     \    }\n        if (ok) {\n          break;\n        } else {\n          return\
     \ S(0);\n        }\n      }\n      if (!ok) break;\n    }\n    S res = (neg ?\
     \ -B[0][0] : B[0][0]) / div;\n    for (int i = 1; i < h; i++) {\n      res = res\
-    \ * B[i][i];\n    }\n    return res;\n  }\n};\n#line 1 \"other/Xorshift.hpp\"\n\
-    inline static unsigned long long seed = 1235;\nunsigned long long rand_gen(long\
-    \ long p) {\n  unsigned long long x = seed;\n  x ^= x << 13;\n  x ^= x >> 7;\n\
-    \  x ^= x << 17;\n  seed = x;\n  return seed % p;\n}\n#line 4 \"graph/flow/MaximumMatchingSize.hpp\"\
-    \n\nclass MaximumMatchingsize {\n private:\n  int n;\n  const int MOD = 998244353;\n\
-    \  Matrix<atcoder::modint998244353> m;\n  unordered_map<int, int> seen;\n\n public:\n\
-    \  MaximumMatchingsize() {}\n  MaximumMatchingsize(int n) : n(n), m(n) {}\n\n\
-    \  void add_edge(int u, int v) {\n    int x = rand_gen(MOD);\n    while (seen.contains(x))\
-    \ x = rand_gen(MOD);\n    m[u][v] = x;\n    m[v][u] = -x;\n    seen[x] = 1;\n\
-    \  }\n\n  int maximum_matching() {\n    return m.rank() / 2;\n  }\n};\n#line 4\
-    \ \"verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp\"\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int x, y, e;\n  in(x, y, e);\n  MaximumMatchingsize g(x + y);\n  rep(i, e)\
-    \ {\n    int u, v;\n    in(u, v);\n    v += x;\n    g.add_edge(u, v);\n  }\n \
-    \ out(g.maximum_matching());\n}\n"
-  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_7_A\"\
-    \n#include \"../../../../graph/flow/MaximumMatchingSize.hpp\"\n\nint main() {\n\
-    \  cin.tie(0)->sync_with_stdio(0);\n  int x, y, e;\n  in(x, y, e);\n  MaximumMatchingsize\
-    \ g(x + y);\n  rep(i, e) {\n    int u, v;\n    in(u, v);\n    v += x;\n    g.add_edge(u,\
-    \ v);\n  }\n  out(g.maximum_matching());\n}\n"
+    \ * B[i][i];\n    }\n    return res;\n  }\n};\n#line 5 \"verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp\"\
+    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int n;\n  in(n);\n  Matrix<modint998244353> a(n);\n  rep(i, n) rep(j, n) {\n\
+    \    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.determinant().val());\n\
+    }\n"
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\
+    \n#include \"../../../atcoder/modint.hpp\"\n#include \"../../../linear-algebra/Matrix.hpp\"\
+    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int n;\n  in(n);\n  Matrix<modint998244353> a(n);\n  rep(i, n) rep(j, n) {\n\
+    \    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.determinant().val());\n\
+    }\n"
   dependsOn:
   - template/template.hpp
-  - graph/flow/MaximumMatchingSize.hpp
   - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
   - linear-algebra/Matrix.hpp
-  - other/Xorshift.hpp
   isVerificationFile: true
-  path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
   requiredBy: []
   timestamp: '2026-03-22 22:16:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+documentation_of: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
-- /verify/verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp.html
-title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+- /verify/verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+- /verify/verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp.html
+title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
 ---

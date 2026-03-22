@@ -313,10 +313,26 @@ data:
     \        }\n              }\n            }\n            res++;\n            ch++;\n\
     \            cw = j + 1;\n            break;\n          }\n        }\n       \
     \ if (ok) break;\n      }\n      if (!ok) break;\n    }\n    return res;\n  }\n\
-    };\n#line 5 \"verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp\"\nusing\
-    \ namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int\
-    \ n, m;\n  in(n, m);\n  Matrix<modint998244353> a(n, m);\n  rep(i, n) rep(j, m)\
-    \ {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.rank());\n}\n"
+    \n  S determinant() {\n    Matrix B(*this);\n    if (B.height() == 0 or B.width()\
+    \ == 0) return 0;\n    assert(B.height() == B.width());\n    int h = height();\n\
+    \    int w = width();\n    int ch = 0;\n    int cw = 0;\n    S div = 1;\n    bool\
+    \ neg = false;\n    while (ch < h and cw < w) {\n      bool ok = false;\n    \
+    \  for (int j = cw; j < w; j++) {\n        for (int i = ch; i < h; i++) {\n  \
+    \        if (B[i][j] != 0) {\n            ok = true;\n            if (ch != i)\
+    \ neg = !neg;\n            swap(B[ch], B[i]);\n            S d = B[ch][j];\n \
+    \           div /= d;\n            for (int j2 = j; j2 < w; j2++) {\n        \
+    \      B[ch][j2] /= d;\n            }\n            for (int i2 = 0; i2 < h; i2++)\
+    \ {\n              if (B[i2][j] != 0 and i2 != ch) {\n                S m = B[i2][j];\n\
+    \                for (int j2 = j; j2 < w; j2++) {\n                  B[i2][j2]\
+    \ -= B[ch][j2] * m;\n                }\n              }\n            }\n     \
+    \       ch++;\n            cw = j + 1;\n            break;\n          }\n    \
+    \    }\n        if (ok) {\n          break;\n        } else {\n          return\
+    \ S(0);\n        }\n      }\n      if (!ok) break;\n    }\n    S res = (neg ?\
+    \ -B[0][0] : B[0][0]) / div;\n    for (int i = 1; i < h; i++) {\n      res = res\
+    \ * B[i][i];\n    }\n    return res;\n  }\n};\n#line 5 \"verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp\"\
+    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int n, m;\n  in(n, m);\n  Matrix<modint998244353> a(n, m);\n  rep(i, n) rep(j,\
+    \ m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.rank());\n}\n"
   code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_rank\"\
     \n#include \"../../../atcoder/modint.hpp\"\n#include \"../../../linear-algebra/Matrix.hpp\"\
     \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
@@ -331,7 +347,7 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   requiredBy: []
-  timestamp: '2026-03-22 11:53:13+09:00'
+  timestamp: '2026-03-22 22:16:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp

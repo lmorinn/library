@@ -43,6 +43,9 @@ data:
     path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+    title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - icon: ':heavy_check_mark:'
@@ -168,6 +171,7 @@ data:
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp

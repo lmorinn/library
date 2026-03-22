@@ -266,16 +266,32 @@ data:
     \        }\n              }\n            }\n            res++;\n            ch++;\n\
     \            cw = j + 1;\n            break;\n          }\n        }\n       \
     \ if (ok) break;\n      }\n      if (!ok) break;\n    }\n    return res;\n  }\n\
-    };\n#line 1 \"other/Xorshift.hpp\"\ninline static unsigned long long seed = 1235;\n\
-    unsigned long long rand_gen(long long p) {\n  unsigned long long x = seed;\n \
-    \ x ^= x << 13;\n  x ^= x >> 7;\n  x ^= x << 17;\n  seed = x;\n  return seed %\
-    \ p;\n}\n#line 4 \"graph/flow/MaximumMatchingSize.hpp\"\n\nclass MaximumMatchingsize\
-    \ {\n private:\n  int n;\n  const int MOD = 998244353;\n  Matrix<atcoder::modint998244353>\
-    \ m;\n  unordered_map<int, int> seen;\n\n public:\n  MaximumMatchingsize() {}\n\
-    \  MaximumMatchingsize(int n) : n(n), m(n) {}\n\n  void add_edge(int u, int v)\
-    \ {\n    int x = rand_gen(MOD);\n    while (seen.contains(x)) x = rand_gen(MOD);\n\
-    \    m[u][v] = x;\n    m[v][u] = -x;\n    seen[x] = 1;\n  }\n\n  int maximum_matching()\
-    \ {\n    return m.rank() / 2;\n  }\n};\n"
+    \n  S determinant() {\n    Matrix B(*this);\n    if (B.height() == 0 or B.width()\
+    \ == 0) return 0;\n    assert(B.height() == B.width());\n    int h = height();\n\
+    \    int w = width();\n    int ch = 0;\n    int cw = 0;\n    S div = 1;\n    bool\
+    \ neg = false;\n    while (ch < h and cw < w) {\n      bool ok = false;\n    \
+    \  for (int j = cw; j < w; j++) {\n        for (int i = ch; i < h; i++) {\n  \
+    \        if (B[i][j] != 0) {\n            ok = true;\n            if (ch != i)\
+    \ neg = !neg;\n            swap(B[ch], B[i]);\n            S d = B[ch][j];\n \
+    \           div /= d;\n            for (int j2 = j; j2 < w; j2++) {\n        \
+    \      B[ch][j2] /= d;\n            }\n            for (int i2 = 0; i2 < h; i2++)\
+    \ {\n              if (B[i2][j] != 0 and i2 != ch) {\n                S m = B[i2][j];\n\
+    \                for (int j2 = j; j2 < w; j2++) {\n                  B[i2][j2]\
+    \ -= B[ch][j2] * m;\n                }\n              }\n            }\n     \
+    \       ch++;\n            cw = j + 1;\n            break;\n          }\n    \
+    \    }\n        if (ok) {\n          break;\n        } else {\n          return\
+    \ S(0);\n        }\n      }\n      if (!ok) break;\n    }\n    S res = (neg ?\
+    \ -B[0][0] : B[0][0]) / div;\n    for (int i = 1; i < h; i++) {\n      res = res\
+    \ * B[i][i];\n    }\n    return res;\n  }\n};\n#line 1 \"other/Xorshift.hpp\"\n\
+    inline static unsigned long long seed = 1235;\nunsigned long long rand_gen(long\
+    \ long p) {\n  unsigned long long x = seed;\n  x ^= x << 13;\n  x ^= x >> 7;\n\
+    \  x ^= x << 17;\n  seed = x;\n  return seed % p;\n}\n#line 4 \"graph/flow/MaximumMatchingSize.hpp\"\
+    \n\nclass MaximumMatchingsize {\n private:\n  int n;\n  const int MOD = 998244353;\n\
+    \  Matrix<atcoder::modint998244353> m;\n  unordered_map<int, int> seen;\n\n public:\n\
+    \  MaximumMatchingsize() {}\n  MaximumMatchingsize(int n) : n(n), m(n) {}\n\n\
+    \  void add_edge(int u, int v) {\n    int x = rand_gen(MOD);\n    while (seen.contains(x))\
+    \ x = rand_gen(MOD);\n    m[u][v] = x;\n    m[v][u] = -x;\n    seen[x] = 1;\n\
+    \  }\n\n  int maximum_matching() {\n    return m.rank() / 2;\n  }\n};\n"
   code: "#include \"../../atcoder/modint.hpp\"\n#include \"../../linear-algebra/Matrix.hpp\"\
     \n#include \"../../other/Xorshift.hpp\"\n\nclass MaximumMatchingsize {\n private:\n\
     \  int n;\n  const int MOD = 998244353;\n  Matrix<atcoder::modint998244353> m;\n\
@@ -293,7 +309,7 @@ data:
   isVerificationFile: false
   path: graph/flow/MaximumMatchingSize.hpp
   requiredBy: []
-  timestamp: '2026-03-22 12:58:06+09:00'
+  timestamp: '2026-03-22 22:16:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp

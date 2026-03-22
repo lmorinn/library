@@ -733,6 +733,9 @@ data:
   - name: verify/LibraryChecker/linear-algebra
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+      title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - name: verify/LibraryChecker/math/number-theory
