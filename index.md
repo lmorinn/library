@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -384,6 +384,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/TreeDistanceFreqency.hpp
       title: Frequency Table of Tree Distance
+  - name: linear-algebra
+    pages:
+    - icon: ':x:'
+      path: linear-algebra/Matrix.hpp
+      title: Matrix
   - name: math
     pages:
     - icon: ':warning:'
@@ -460,7 +465,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -715,6 +720,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
       title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - name: verify/LibraryChecker/linear-algebra
+    pages:
+    - icon: ':x:'
+      path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+      title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

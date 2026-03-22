@@ -7,84 +7,107 @@ data:
   - icon: ':question:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: atcoder/convolution.hpp
-    title: atcoder/convolution.hpp
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-    title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-    title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-    title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - icon: ':question:'
+    path: atcoder/modint.hpp
+    title: atcoder/modint.hpp
   - icon: ':x:'
-    path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-    title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+    path: linear-algebra/Matrix.hpp
+    title: Matrix
+  - icon: ':question:'
+    path: template/template.hpp
+    title: Template
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: true
-  _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _pathExtension: cpp
+  _verificationStatusIcon: ':x:'
   attributes:
-    links: []
-  bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
-    \ <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
-    #endif\n\n#line 1 \"atcoder/internal_math.hpp\"\n\n\n\n#include <utility>\n\n\
-    #ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\nnamespace atcoder {\n\nnamespace\
-    \ internal {\n\n// @param m `1 <= m`\n// @return x mod m\nconstexpr long long\
-    \ safe_mod(long long x, long long m) {\n    x %= m;\n    if (x < 0) x += m;\n\
-    \    return x;\n}\n\n// Fast modular multiplication by barrett reduction\n// Reference:\
-    \ https://en.wikipedia.org/wiki/Barrett_reduction\n// NOTE: reconsider after Ice\
-    \ Lake\nstruct barrett {\n    unsigned int _m;\n    unsigned long long im;\n\n\
-    \    // @param m `1 <= m`\n    explicit barrett(unsigned int m) : _m(m), im((unsigned\
-    \ long long)(-1) / m + 1) {}\n\n    // @return m\n    unsigned int umod() const\
-    \ { return _m; }\n\n    // @param a `0 <= a < m`\n    // @param b `0 <= b < m`\n\
-    \    // @return `a * b % m`\n    unsigned int mul(unsigned int a, unsigned int\
-    \ b) const {\n        // [1] m = 1\n        // a = b = im = 0, so okay\n\n   \
-    \     // [2] m >= 2\n        // im = ceil(2^64 / m)\n        // -> im * m = 2^64\
-    \ + r (0 <= r < m)\n        // let z = a*b = c*m + d (0 <= c, d < m)\n       \
-    \ // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 + c*r + d*im\n     \
-    \   // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64 + m * (m + 1) <\
-    \ 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n        unsigned long\
-    \ long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned long long x;\n\
-    \        _umul128(z, im, &x);\n#else\n        unsigned long long x =\n       \
-    \     (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n#endif\n     \
-    \   unsigned long long y = x * _m;\n        return (unsigned int)(z - y + (z <\
-    \ y ? _m : 0));\n    }\n};\n\n// @param n `0 <= n`\n// @param m `1 <= m`\n// @return\
-    \ `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long long x, long long\
-    \ n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m = (unsigned int)(m);\n\
-    \    unsigned long long r = 1;\n    unsigned long long y = safe_mod(x, m);\n \
-    \   while (n) {\n        if (n & 1) r = (r * y) % _m;\n        y = (y * y) % _m;\n\
-    \        n >>= 1;\n    }\n    return r;\n}\n\n// Reference:\n// M. Forisek and\
-    \ J. Jancina,\n// Fast Primality Testing for Integers That Fit into a Machine\
-    \ Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int n) {\n   \
-    \ if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return true;\n\
-    \    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while (d % 2\
-    \ == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for (long\
-    \ long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/matrix_product
+    links:
+    - https://judge.yosupo.jp/problem/matrix_product
+  bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
+    \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
+    \ all(x) (x).begin(), (x).end()\n#define uniqv(v) v.erase(unique(all(v)), v.end())\n\
+    #define OVERLOAD_REP(_1, _2, _3, name, ...) name\n#define REP1(i, n) for (auto\
+    \ i = std::decay_t<decltype(n)>{}; (i) != (n); ++(i))\n#define REP2(i, l, r) for\
+    \ (auto i = (l); (i) != (r); ++(i))\n#define rep(...) OVERLOAD_REP(__VA_ARGS__,\
+    \ REP2, REP1)(__VA_ARGS__)\n#define logfixed(x) cout << fixed << setprecision(10)\
+    \ << x << endl;\n\nostream &operator<<(ostream &dest, __int128_t value) {\n  ostream::sentry\
+    \ s(dest);\n  if (s) {\n    __uint128_t tmp = value < 0 ? -value : value;\n  \
+    \  char buffer[128];\n    char *d = end(buffer);\n    do {\n      --d;\n     \
+    \ *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n    } while (tmp != 0);\n\
+    \    if (value < 0) {\n      --d;\n      *d = '-';\n    }\n    int len = end(buffer)\
+    \ - d;\n    if (dest.rdbuf()->sputn(d, len) != len) {\n      dest.setstate(ios_base::badbit);\n\
+    \    }\n  }\n  return dest;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream\
+    \ &os, const vector<T> &v) {\n  for (int i = 0; i < (int)v.size(); i++) {\n  \
+    \  os << v[i] << (i + 1 != (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const set<T> &set_var)\
+    \ {\n  for (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os\
+    \ << *itr;\n    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n\
+    \  }\n  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os,\
+    \ const unordered_set<T> &set_var) {\n  for (auto itr = set_var.begin(); itr !=\
+    \ set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr != set_var.end())\
+    \ os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename T, typename\
+    \ U>\nostream &operator<<(ostream &os, const map<T, U> &map_var) {\n  for (auto\
+    \ itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os << itr->first\
+    \ << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T, typename U>\nostream &operator<<(ostream &os, const unordered_map<T, U> &map_var)\
+    \ {\n  for (auto itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os\
+    \ << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\
+    \ntemplate <typename T, typename U>\nostream &operator<<(ostream &os, const pair<T,\
+    \ U> &pair_var) {\n  os << pair_var.first << \" \" << pair_var.second;\n  return\
+    \ os;\n}\n\nvoid out() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid\
+    \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
+    \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
+    \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
+    \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
+    \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
+    \ {\n  cin >> first;\n  in(rest...);\n  return;\n}\n\ntemplate <typename T>\n\
+    bool chmax(T &a, const T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n\
+    \  }\n  return false;\n}\ntemplate <typename T>\nbool chmin(T &a, const T &b)\
+    \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
+    vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
+    \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\n#line 1\
+    \ \"atcoder/modint.hpp\"\n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include <type_traits>\n\
+    \n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#line 1 \"atcoder/internal_math.hpp\"\
+    \n\n\n\n#line 5 \"atcoder/internal_math.hpp\"\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
+    #endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n// @param m `1 <= m`\n\
+    // @return x mod m\nconstexpr long long safe_mod(long long x, long long m) {\n\
+    \    x %= m;\n    if (x < 0) x += m;\n    return x;\n}\n\n// Fast modular multiplication\
+    \ by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
+    // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
+    \   unsigned long long im;\n\n    // @param m `1 <= m`\n    explicit barrett(unsigned\
+    \ int m) : _m(m), im((unsigned long long)(-1) / m + 1) {}\n\n    // @return m\n\
+    \    unsigned int umod() const { return _m; }\n\n    // @param a `0 <= a < m`\n\
+    \    // @param b `0 <= b < m`\n    // @return `a * b % m`\n    unsigned int mul(unsigned\
+    \ int a, unsigned int b) const {\n        // [1] m = 1\n        // a = b = im\
+    \ = 0, so okay\n\n        // [2] m >= 2\n        // im = ceil(2^64 / m)\n    \
+    \    // -> im * m = 2^64 + r (0 <= r < m)\n        // let z = a*b = c*m + d (0\
+    \ <= c, d < m)\n        // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64\
+    \ + c*r + d*im\n        // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64\
+    \ + m * (m + 1) < 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n     \
+    \   unsigned long long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned\
+    \ long long x;\n        _umul128(z, im, &x);\n#else\n        unsigned long long\
+    \ x =\n            (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n\
+    #endif\n        unsigned long long y = x * _m;\n        return (unsigned int)(z\
+    \ - y + (z < y ? _m : 0));\n    }\n};\n\n// @param n `0 <= n`\n// @param m `1\
+    \ <= m`\n// @return `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long\
+    \ long x, long long n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m\
+    \ = (unsigned int)(m);\n    unsigned long long r = 1;\n    unsigned long long\
+    \ y = safe_mod(x, m);\n    while (n) {\n        if (n & 1) r = (r * y) % _m;\n\
+    \        y = (y * y) % _m;\n        n >>= 1;\n    }\n    return r;\n}\n\n// Reference:\n\
+    // M. Forisek and J. Jancina,\n// Fast Primality Testing for Integers That Fit\
+    \ into a Machine Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int\
+    \ n) {\n    if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return\
+    \ true;\n    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while\
+    \ (d % 2 == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for\
+    \ (long long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
     \ t, n);\n        while (t != n - 1 && y != 1 && y != n - 1) {\n            y\
     \ = y * y % n;\n            t <<= 1;\n        }\n        if (y != n - 1 && t %\
     \ 2 == 0) {\n            return false;\n        }\n    }\n    return true;\n}\n\
@@ -256,122 +279,58 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n"
-  code: "#ifndef ATCODER_MODINT_HPP\n#define ATCODER_MODINT_HPP 1\n\n#include <cassert>\n\
-    #include <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
-    #endif\n\n#include \"atcoder/internal_math\"\n#include \"atcoder/internal_type_traits\"\
-    \n\nnamespace atcoder {\n\nnamespace internal {\n\nstruct modint_base {};\nstruct\
-    \ static_modint_base : modint_base {};\n\ntemplate <class T> using is_modint =\
-    \ std::is_base_of<modint_base, T>;\ntemplate <class T> using is_modint_t = std::enable_if_t<is_modint<T>::value>;\n\
-    \n}  // namespace internal\n\ntemplate <int m, std::enable_if_t<(1 <= m)>* = nullptr>\n\
-    struct static_modint : internal::static_modint_base {\n    using mint = static_modint;\n\
-    \n  public:\n    static constexpr int mod() { return m; }\n    static mint raw(int\
-    \ v) {\n        mint x;\n        x._v = v;\n        return x;\n    }\n\n    static_modint()\
-    \ : _v(0) {}\n    template <class T, internal::is_signed_int_t<T>* = nullptr>\n\
-    \    static_modint(T v) {\n        long long x = (long long)(v % (long long)(umod()));\n\
-    \        if (x < 0) x += umod();\n        _v = (unsigned int)(x);\n    }\n   \
-    \ template <class T, internal::is_unsigned_int_t<T>* = nullptr>\n    static_modint(T\
-    \ v) {\n        _v = (unsigned int)(v % umod());\n    }\n\n    unsigned int val()\
-    \ const { return _v; }\n\n    mint& operator++() {\n        _v++;\n        if\
-    \ (_v == umod()) _v = 0;\n        return *this;\n    }\n    mint& operator--()\
-    \ {\n        if (_v == 0) _v = umod();\n        _v--;\n        return *this;\n\
-    \    }\n    mint operator++(int) {\n        mint result = *this;\n        ++*this;\n\
-    \        return result;\n    }\n    mint operator--(int) {\n        mint result\
-    \ = *this;\n        --*this;\n        return result;\n    }\n\n    mint& operator+=(const\
-    \ mint& rhs) {\n        _v += rhs._v;\n        if (_v >= umod()) _v -= umod();\n\
-    \        return *this;\n    }\n    mint& operator-=(const mint& rhs) {\n     \
-    \   _v -= rhs._v;\n        if (_v >= umod()) _v += umod();\n        return *this;\n\
-    \    }\n    mint& operator*=(const mint& rhs) {\n        unsigned long long z\
-    \ = _v;\n        z *= rhs._v;\n        _v = (unsigned int)(z % umod());\n    \
-    \    return *this;\n    }\n    mint& operator/=(const mint& rhs) { return *this\
-    \ = *this * rhs.inv(); }\n\n    mint operator+() const { return *this; }\n   \
-    \ mint operator-() const { return mint() - *this; }\n\n    mint pow(long long\
-    \ n) const {\n        assert(0 <= n);\n        mint x = *this, r = 1;\n      \
-    \  while (n) {\n            if (n & 1) r *= x;\n            x *= x;\n        \
-    \    n >>= 1;\n        }\n        return r;\n    }\n    mint inv() const {\n \
-    \       if (prime) {\n            assert(_v);\n            return pow(umod() -\
-    \ 2);\n        } else {\n            auto eg = internal::inv_gcd(_v, m);\n   \
-    \         assert(eg.first == 1);\n            return eg.second;\n        }\n \
-    \   }\n\n    friend mint operator+(const mint& lhs, const mint& rhs) {\n     \
-    \   return mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs,\
-    \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
-    \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
-    \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
-    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const mint& lhs,\
-    \ const mint& rhs) {\n        return lhs._v == rhs._v;\n    }\n    friend bool\
-    \ operator!=(const mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n\
-    \    }\n\n  private:\n    unsigned int _v;\n    static constexpr unsigned int\
-    \ umod() { return m; }\n    static constexpr bool prime = internal::is_prime<m>;\n\
-    };\n\ntemplate <int id> struct dynamic_modint : internal::modint_base {\n    using\
-    \ mint = dynamic_modint;\n\n  public:\n    static int mod() { return (int)(bt.umod());\
-    \ }\n    static void set_mod(int m) {\n        assert(1 <= m);\n        bt = internal::barrett(m);\n\
-    \    }\n    static mint raw(int v) {\n        mint x;\n        x._v = v;\n   \
-    \     return x;\n    }\n\n    dynamic_modint() : _v(0) {}\n    template <class\
-    \ T, internal::is_signed_int_t<T>* = nullptr>\n    dynamic_modint(T v) {\n   \
-    \     long long x = (long long)(v % (long long)(mod()));\n        if (x < 0) x\
-    \ += mod();\n        _v = (unsigned int)(x);\n    }\n    template <class T, internal::is_unsigned_int_t<T>*\
-    \ = nullptr>\n    dynamic_modint(T v) {\n        _v = (unsigned int)(v % mod());\n\
-    \    }\n\n    unsigned int val() const { return _v; }\n\n    mint& operator++()\
-    \ {\n        _v++;\n        if (_v == umod()) _v = 0;\n        return *this;\n\
-    \    }\n    mint& operator--() {\n        if (_v == 0) _v = umod();\n        _v--;\n\
-    \        return *this;\n    }\n    mint operator++(int) {\n        mint result\
-    \ = *this;\n        ++*this;\n        return result;\n    }\n    mint operator--(int)\
-    \ {\n        mint result = *this;\n        --*this;\n        return result;\n\
-    \    }\n\n    mint& operator+=(const mint& rhs) {\n        _v += rhs._v;\n   \
-    \     if (_v >= umod()) _v -= umod();\n        return *this;\n    }\n    mint&\
-    \ operator-=(const mint& rhs) {\n        _v += mod() - rhs._v;\n        if (_v\
-    \ >= umod()) _v -= umod();\n        return *this;\n    }\n    mint& operator*=(const\
-    \ mint& rhs) {\n        _v = bt.mul(_v, rhs._v);\n        return *this;\n    }\n\
-    \    mint& operator/=(const mint& rhs) { return *this = *this * rhs.inv(); }\n\
-    \n    mint operator+() const { return *this; }\n    mint operator-() const { return\
-    \ mint() - *this; }\n\n    mint pow(long long n) const {\n        assert(0 <=\
-    \ n);\n        mint x = *this, r = 1;\n        while (n) {\n            if (n\
-    \ & 1) r *= x;\n            x *= x;\n            n >>= 1;\n        }\n       \
-    \ return r;\n    }\n    mint inv() const {\n        auto eg = internal::inv_gcd(_v,\
-    \ mod());\n        assert(eg.first == 1);\n        return eg.second;\n    }\n\n\
-    \    friend mint operator+(const mint& lhs, const mint& rhs) {\n        return\
-    \ mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs, const mint&\
-    \ rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint operator*(const\
-    \ mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n    }\n   \
-    \ friend mint operator/(const mint& lhs, const mint& rhs) {\n        return mint(lhs)\
-    \ /= rhs;\n    }\n    friend bool operator==(const mint& lhs, const mint& rhs)\
-    \ {\n        return lhs._v == rhs._v;\n    }\n    friend bool operator!=(const\
-    \ mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n    }\n\n \
-    \ private:\n    unsigned int _v;\n    static internal::barrett bt;\n    static\
-    \ unsigned int umod() { return bt.umod(); }\n};\ntemplate <int id> internal::barrett\
-    \ dynamic_modint<id>::bt(998244353);\n\nusing modint998244353 = static_modint<998244353>;\n\
-    using modint1000000007 = static_modint<1000000007>;\nusing modint = dynamic_modint<-1>;\n\
-    \nnamespace internal {\n\ntemplate <class T>\nusing is_static_modint = std::is_base_of<internal::static_modint_base,\
-    \ T>;\n\ntemplate <class T>\nusing is_static_modint_t = std::enable_if_t<is_static_modint<T>::value>;\n\
-    \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
-    \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
-    \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n#endif  // ATCODER_MODINT_HPP\n"
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 1 \"linear-algebra/Matrix.hpp\"\
+    \ntemplate <class S>\nstruct Matrix {\n private:\n public:\n  vector<vector<S>>\
+    \ A;\n  Matrix() {}\n  Matrix(int n, int m) : A(n, vector<S>(m)) {}\n  Matrix(int\
+    \ n) : A(n, vector<S>(n)) {}\n\n  inline int size() const { return A.size(); }\n\
+    \  inline int height() const { return A.size(); }\n  inline int width() const\
+    \ { return A[0].size(); }\n  inline const vector<S>& operator[](int h) const {\
+    \ return (A[h]); }\n  inline vector<S>& operator[](int h) { return (A[h]); }\n\
+    \n  Matrix& operator+=(const Matrix& B) {\n    int h = height();\n    int w =\
+    \ width();\n    for (int i = 0; i < h; i++) {\n      for (int j = 0; j < w; j++)\
+    \ {\n        (*this)[i][j] += B[i][j];\n      }\n    }\n    return (*this);\n\
+    \  }\n  Matrix& operator-=(const Matrix& B) {\n    int h = height();\n    int\
+    \ w = width();\n    for (int i = 0; i < h; i++) {\n      for (int j = 0; j < w;\
+    \ j++) {\n        (*this)[i][j] -= B[i][j];\n      }\n    }\n    return (*this);\n\
+    \  }\n\n  Matrix& operator*=(const Matrix& B) {\n    int h = height();\n    int\
+    \ w = B.width();\n    int c = width();\n    vector<vector<S>> C(h, vector<S>(w));\n\
+    \    for (int i = 0; i < h; i++) {\n      for (int j = 0; j < w; j++) {\n    \
+    \    for (int k = 0; k < c; k++) {\n          C[i][j] = (C[i][j] + (*this)[i][k]\
+    \ * B[k][j]);\n        }\n      }\n    }\n    A = move(C);\n    return (*this);\n\
+    \  }\n  Matrix operator+(const Matrix& B) const { return (Matrix(*this) += B);\
+    \ }\n  Matrix operator-(const Matrix& B) const { return (Matrix(*this) -= B);\
+    \ }\n  Matrix operator*(const Matrix& B) const { return (Matrix(*this) *= B);\
+    \ }\n};\n#line 5 \"verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp\"\
+    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int n, m, k;\n  in(n, m, k);\n  Matrix<modint998244353> a(n, m), b(m, k);\n\
+    \  rep(i, n) rep(j, m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n\n  rep(i,\
+    \ m) rep(j, k) {\n    int x;\n    in(x);\n    b[i][j] = x;\n  }\n\n  Matrix<modint998244353>\
+    \ c = a * b;\n  rep(i, n) {\n    rep(j, k) {\n      cout << c[i][j].val();\n \
+    \     if (j != k - 1) cout << \" \";\n    }\n    out();\n  }\n}\n"
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\
+    \n#include \"../../../atcoder/modint.hpp\"\n#include \"../../../linear-algebra/Matrix.hpp\"\
+    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int n, m, k;\n  in(n, m, k);\n  Matrix<modint998244353> a(n, m), b(m, k);\n\
+    \  rep(i, n) rep(j, m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n\n  rep(i,\
+    \ m) rep(j, k) {\n    int x;\n    in(x);\n    b[i][j] = x;\n  }\n\n  Matrix<modint998244353>\
+    \ c = a * b;\n  rep(i, n) {\n    rep(j, k) {\n      cout << c[i][j].val();\n \
+    \     if (j != k - 1) cout << \" \";\n    }\n    out();\n  }\n}\n"
   dependsOn:
+  - template/template.hpp
+  - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
-  isVerificationFile: false
-  path: atcoder/modint.hpp
-  requiredBy:
-  - atcoder/convolution.hpp
-  timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verifiedWith:
-  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  - verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-documentation_of: atcoder/modint.hpp
+  - linear-algebra/Matrix.hpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+  requiredBy: []
+  timestamp: '2026-03-22 10:42:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
 layout: document
 redirect_from:
-- /library/atcoder/modint.hpp
-- /library/atcoder/modint.hpp.html
-title: atcoder/modint.hpp
+- /verify/verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+- /verify/verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp.html
+title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
 ---
