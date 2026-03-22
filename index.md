@@ -186,7 +186,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/square-root-decomposition/RangeAddRangeSum.hpp
       title: Range Add Range Sum
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.hpp
       title: Range Chmin Chmax Add Range Sum
     - icon: ':heavy_check_mark:'
@@ -675,11 +675,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
       title: verify/LibraryChecker/data-structure/segment-tree/RangeChminChmaxAddRangeSum.test.cpp
-  - name: verify/LibraryChecker/data-structure/square-root-decomposition
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
-      title: verify/LibraryChecker/data-structure/square-root-decomposition/RangeChminChmaxAddRangeSum.test.cpp
   - name: verify/LibraryChecker/data-structure/union-find
     pages:
     - icon: ':heavy_check_mark:'
