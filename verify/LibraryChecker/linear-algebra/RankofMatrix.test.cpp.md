@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_math.hpp
     title: atcoder/internal_math.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: linear-algebra/Matrix.hpp
     title: Matrix
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/matrix_product
+    PROBLEM: https://judge.yosupo.jp/problem/matrix_rank
     links:
-    - https://judge.yosupo.jp/problem/matrix_product
+    - https://judge.yosupo.jp/problem/matrix_rank
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\nusing lint = long long;\nusing ull =\
     \ unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n#define\
@@ -72,9 +72,9 @@ data:
     \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
     vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
     \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
-    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\n#line 1\
-    \ \"atcoder/modint.hpp\"\n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include <type_traits>\n\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 2 \"verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_rank\"\n#line 1 \"\
+    atcoder/modint.hpp\"\n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include <type_traits>\n\
     \n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#line 1 \"atcoder/internal_math.hpp\"\
     \n\n\n\n#line 5 \"atcoder/internal_math.hpp\"\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
     #endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n// @param m `1 <= m`\n\
@@ -300,21 +300,28 @@ data:
     \  }\n  Matrix operator+(const Matrix& B) const { return (Matrix(*this) += B);\
     \ }\n  Matrix operator-(const Matrix& B) const { return (Matrix(*this) -= B);\
     \ }\n  Matrix operator*(const Matrix& B) const { return (Matrix(*this) *= B);\
-    \ }\n};\n#line 5 \"verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp\"\
-    \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int n, m, k;\n  in(n, m, k);\n  Matrix<modint998244353> a(n, m), b(m, k);\n\
-    \  rep(i, n) rep(j, m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n\n  rep(i,\
-    \ m) rep(j, k) {\n    int x;\n    in(x);\n    b[i][j] = x;\n  }\n\n  Matrix<modint998244353>\
-    \ c = a * b;\n  rep(i, n) {\n    rep(j, k) {\n      cout << c[i][j].val();\n \
-    \     if (j != k - 1) cout << \" \";\n    }\n    out();\n  }\n}\n"
-  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\
+    \ }\n\n  int rank() {\n    Matrix B(*this);\n    if (B.height() == 0 or B.width()\
+    \ == 0) return 0;\n    int res = 0;\n    int h = height();\n    int w = width();\n\
+    \    int ch = 0;\n    int cw = 0;\n    while (ch < h and cw < w) {\n      bool\
+    \ ok = false;\n      for (int j = cw; j < w; j++) {\n        for (int i = ch;\
+    \ i < h; i++) {\n          if (B[i][j] != 0) {\n            ok = true;\n     \
+    \       swap(B[ch], B[i]);\n            S d = B[ch][j];\n            for (int\
+    \ j2 = j; j2 < w; j2++) {\n              B[ch][j2] /= d;\n            }\n    \
+    \        for (int i2 = 0; i2 < h; i2++) {\n              if (B[i2][j] != 0 and\
+    \ i2 != ch) {\n                S m = B[i2][j];\n                for (int j2 =\
+    \ j; j2 < w; j2++) {\n                  B[i2][j2] -= B[ch][j2] * m;\n        \
+    \        }\n              }\n            }\n            res++;\n            ch++;\n\
+    \            cw = j + 1;\n            break;\n          }\n        }\n       \
+    \ if (ok) break;\n      }\n      if (!ok) break;\n    }\n    return res;\n  }\n\
+    };\n#line 5 \"verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp\"\nusing\
+    \ namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int\
+    \ n, m;\n  in(n, m);\n  Matrix<modint998244353> a(n, m);\n  rep(i, n) rep(j, m)\
+    \ {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.rank());\n}\n"
+  code: "#include \"../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_rank\"\
     \n#include \"../../../atcoder/modint.hpp\"\n#include \"../../../linear-algebra/Matrix.hpp\"\
     \nusing namespace atcoder;\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int n, m, k;\n  in(n, m, k);\n  Matrix<modint998244353> a(n, m), b(m, k);\n\
-    \  rep(i, n) rep(j, m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n\n  rep(i,\
-    \ m) rep(j, k) {\n    int x;\n    in(x);\n    b[i][j] = x;\n  }\n\n  Matrix<modint998244353>\
-    \ c = a * b;\n  rep(i, n) {\n    rep(j, k) {\n      cout << c[i][j].val();\n \
-    \     if (j != k - 1) cout << \" \";\n    }\n    out();\n  }\n}\n"
+    \  int n, m;\n  in(n, m);\n  Matrix<modint998244353> a(n, m);\n  rep(i, n) rep(j,\
+    \ m) {\n    int x;\n    in(x);\n    a[i][j] = x;\n  }\n  out(a.rank());\n}\n"
   dependsOn:
   - template/template.hpp
   - atcoder/modint.hpp
@@ -322,15 +329,15 @@ data:
   - atcoder/internal_type_traits.hpp
   - linear-algebra/Matrix.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+  path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   requiredBy: []
-  timestamp: '2026-03-22 10:42:32+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-03-22 11:53:13+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+documentation_of: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-- /verify/verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp.html
-title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+- /verify/verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+- /verify/verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp.html
+title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
 ---

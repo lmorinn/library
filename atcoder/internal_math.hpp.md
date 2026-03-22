@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: atcoder/math.hpp
     title: atcoder/math.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   _extendedVerifiedWith:
@@ -36,18 +36,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - icon: ':x:'
-    path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-    title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+    title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
@@ -209,14 +209,14 @@ data:
   - atcoder/convolution.hpp
   - atcoder/modint.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  - verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+  - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp

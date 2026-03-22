@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/KnapsackProblem.hpp
     title: 01 Knapsack Problem
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

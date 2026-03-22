@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-    title: verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+    title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"linear-algebra/Matrix.hpp\"\ntemplate <class S>\nstruct\
@@ -31,7 +31,20 @@ data:
     \    }\n    A = move(C);\n    return (*this);\n  }\n  Matrix operator+(const Matrix&\
     \ B) const { return (Matrix(*this) += B); }\n  Matrix operator-(const Matrix&\
     \ B) const { return (Matrix(*this) -= B); }\n  Matrix operator*(const Matrix&\
-    \ B) const { return (Matrix(*this) *= B); }\n};\n"
+    \ B) const { return (Matrix(*this) *= B); }\n\n  int rank() {\n    Matrix B(*this);\n\
+    \    if (B.height() == 0 or B.width() == 0) return 0;\n    int res = 0;\n    int\
+    \ h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n    while\
+    \ (ch < h and cw < w) {\n      bool ok = false;\n      for (int j = cw; j < w;\
+    \ j++) {\n        for (int i = ch; i < h; i++) {\n          if (B[i][j] != 0)\
+    \ {\n            ok = true;\n            swap(B[ch], B[i]);\n            S d =\
+    \ B[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              B[ch][j2]\
+    \ /= d;\n            }\n            for (int i2 = 0; i2 < h; i2++) {\n       \
+    \       if (B[i2][j] != 0 and i2 != ch) {\n                S m = B[i2][j];\n \
+    \               for (int j2 = j; j2 < w; j2++) {\n                  B[i2][j2]\
+    \ -= B[ch][j2] * m;\n                }\n              }\n            }\n     \
+    \       res++;\n            ch++;\n            cw = j + 1;\n            break;\n\
+    \          }\n        }\n        if (ok) break;\n      }\n      if (!ok) break;\n\
+    \    }\n    return res;\n  }\n};\n"
   code: "template <class S>\nstruct Matrix {\n private:\n public:\n  vector<vector<S>>\
     \ A;\n  Matrix() {}\n  Matrix(int n, int m) : A(n, vector<S>(m)) {}\n  Matrix(int\
     \ n) : A(n, vector<S>(n)) {}\n\n  inline int size() const { return A.size(); }\n\
@@ -52,15 +65,28 @@ data:
     \  }\n  Matrix operator+(const Matrix& B) const { return (Matrix(*this) += B);\
     \ }\n  Matrix operator-(const Matrix& B) const { return (Matrix(*this) -= B);\
     \ }\n  Matrix operator*(const Matrix& B) const { return (Matrix(*this) *= B);\
-    \ }\n};\n"
+    \ }\n\n  int rank() {\n    Matrix B(*this);\n    if (B.height() == 0 or B.width()\
+    \ == 0) return 0;\n    int res = 0;\n    int h = height();\n    int w = width();\n\
+    \    int ch = 0;\n    int cw = 0;\n    while (ch < h and cw < w) {\n      bool\
+    \ ok = false;\n      for (int j = cw; j < w; j++) {\n        for (int i = ch;\
+    \ i < h; i++) {\n          if (B[i][j] != 0) {\n            ok = true;\n     \
+    \       swap(B[ch], B[i]);\n            S d = B[ch][j];\n            for (int\
+    \ j2 = j; j2 < w; j2++) {\n              B[ch][j2] /= d;\n            }\n    \
+    \        for (int i2 = 0; i2 < h; i2++) {\n              if (B[i2][j] != 0 and\
+    \ i2 != ch) {\n                S m = B[i2][j];\n                for (int j2 =\
+    \ j; j2 < w; j2++) {\n                  B[i2][j2] -= B[ch][j2] * m;\n        \
+    \        }\n              }\n            }\n            res++;\n            ch++;\n\
+    \            cw = j + 1;\n            break;\n          }\n        }\n       \
+    \ if (ok) break;\n      }\n      if (!ok) break;\n    }\n    return res;\n  }\n\
+    };"
   dependsOn: []
   isVerificationFile: false
   path: linear-algebra/Matrix.hpp
   requiredBy: []
-  timestamp: '2026-03-22 10:42:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2026-03-22 11:53:13+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/linear-algebra/MatrixProduct.test.cpp
+  - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
 documentation_of: linear-algebra/Matrix.hpp
 layout: document
 title: Matrix

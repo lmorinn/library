@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/SternBrocotTree.hpp
     title: "Stern\u2013Brocot Tree"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

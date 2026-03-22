@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/SlidingWindowMinimum.hpp
     title: Sliding Window (Minimum)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
