@@ -203,4 +203,69 @@ struct Matrix {
       return {false, res};
     }
   }
+
+  Matrix<S> linear_equation(vector<S> b) {
+    Matrix A(*this);
+
+    int rnk = 0;
+    assert(A.height() == b.size());
+    int h = height();
+    int w = width();
+    int ch = 0;
+    int cw = 0;
+    vector<int> pivot_row(w, -1);
+    while (ch < h and cw < w) {
+      bool ok = false;
+      for (int j = cw; j < w; j++) {
+        for (int i = ch; i < h; i++) {
+          if (A[i][j] != 0) {
+            ok = true;
+            swap(A[ch], A[i]);
+            swap(b[ch], b[i]);
+            S d = A[ch][j];
+            for (int j2 = j; j2 < w; j2++) {
+              A[ch][j2] /= d;
+            }
+            b[ch] /= d;
+            for (int i2 = 0; i2 < h; i2++) {
+              S m = A[i2][j];
+              if (A[i2][j] != 0 and i2 != ch) {
+                for (int j2 = j; j2 < w; j2++) {
+                  A[i2][j2] -= A[ch][j2] * m;
+                }
+              }
+              if (i2 != ch) b[i2] -= b[ch] * m;
+            }
+            pivot_row[j] = ch;
+            rnk++;
+            ch++;
+            cw = j + 1;
+            break;
+          }
+        }
+        if (ok) break;
+      }
+      if (!ok) break;
+    }
+
+    for (int i = rnk; i < h; i++) {
+      if (b[i] != 0) return Matrix<S>(0);
+    }
+    Matrix<S> sol(w - rnk + 1, w);
+    int idx = 1;
+    for (int j = 0; j < w; j++) {
+      if (pivot_row[j] != -1) {
+        sol[0][j] = b[pivot_row[j]];
+      } else {
+        sol[idx][j] = 1;
+        for (int i = 0; i < w; i++) {
+          if (pivot_row[i] != -1) {
+            sol[idx][i] = -A[pivot_row[i]][j];
+          }
+        }
+        idx++;
+      }
+    }
+    return sol;
+  }
 };
