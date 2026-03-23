@@ -12,15 +12,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+    title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"linear-algebra/Matrix.hpp\"\ntemplate <class S>\nstruct\
@@ -91,7 +94,28 @@ data:
     \      if (!ok) break;\n    }\n    Matrix<S> res(h);\n    if (rnk == h) {\n  \
     \    for (int i = 0; i < h; i++) {\n        for (int j = 0; j < h; j++) {\n  \
     \        res[i][j] = B[i][j + h];\n        }\n      }\n      return {true, res};\n\
-    \    } else {\n      return {false, res};\n    }\n  }\n};\n"
+    \    } else {\n      return {false, res};\n    }\n  }\n\n  Matrix<S> linear_equation(vector<S>\
+    \ b) {\n    Matrix A(*this);\n\n    int rnk = 0;\n    assert(A.height() == b.size());\n\
+    \    int h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n\
+    \    vector<int> pivot_row(w, -1);\n    while (ch < h and cw < w) {\n      bool\
+    \ ok = false;\n      for (int j = cw; j < w; j++) {\n        for (int i = ch;\
+    \ i < h; i++) {\n          if (A[i][j] != 0) {\n            ok = true;\n     \
+    \       swap(A[ch], A[i]);\n            swap(b[ch], b[i]);\n            S d =\
+    \ A[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              A[ch][j2]\
+    \ /= d;\n            }\n            b[ch] /= d;\n            for (int i2 = 0;\
+    \ i2 < h; i2++) {\n              S m = A[i2][j];\n              if (A[i2][j] !=\
+    \ 0 and i2 != ch) {\n                for (int j2 = j; j2 < w; j2++) {\n      \
+    \            A[i2][j2] -= A[ch][j2] * m;\n                }\n              }\n\
+    \              if (i2 != ch) b[i2] -= b[ch] * m;\n            }\n            pivot_row[j]\
+    \ = ch;\n            rnk++;\n            ch++;\n            cw = j + 1;\n    \
+    \        break;\n          }\n        }\n        if (ok) break;\n      }\n   \
+    \   if (!ok) break;\n    }\n\n    for (int i = rnk; i < h; i++) {\n      if (b[i]\
+    \ != 0) return Matrix<S>(0);\n    }\n    Matrix<S> sol(w - rnk + 1, w);\n    int\
+    \ idx = 1;\n    for (int j = 0; j < w; j++) {\n      if (pivot_row[j] != -1) {\n\
+    \        sol[0][j] = b[pivot_row[j]];\n      } else {\n        sol[idx][j] = 1;\n\
+    \        for (int i = 0; i < w; i++) {\n          if (pivot_row[i] != -1) {\n\
+    \            sol[idx][i] = -A[pivot_row[i]][j];\n          }\n        }\n    \
+    \    idx++;\n      }\n    }\n    return sol;\n  }\n};\n"
   code: "template <class S>\nstruct Matrix {\n private:\n public:\n  vector<vector<S>>\
     \ A;\n  Matrix() {}\n  Matrix(int n, int m) : A(n, vector<S>(m)) {}\n  Matrix(int\
     \ n) : A(n, vector<S>(n)) {}\n\n  inline int size() const { return A.size(); }\n\
@@ -160,17 +184,39 @@ data:
     \    if (rnk == h) {\n      for (int i = 0; i < h; i++) {\n        for (int j\
     \ = 0; j < h; j++) {\n          res[i][j] = B[i][j + h];\n        }\n      }\n\
     \      return {true, res};\n    } else {\n      return {false, res};\n    }\n\
-    \  }\n};"
+    \  }\n\n  Matrix<S> linear_equation(vector<S> b) {\n    Matrix A(*this);\n\n \
+    \   int rnk = 0;\n    assert(A.height() == b.size());\n    int h = height();\n\
+    \    int w = width();\n    int ch = 0;\n    int cw = 0;\n    vector<int> pivot_row(w,\
+    \ -1);\n    while (ch < h and cw < w) {\n      bool ok = false;\n      for (int\
+    \ j = cw; j < w; j++) {\n        for (int i = ch; i < h; i++) {\n          if\
+    \ (A[i][j] != 0) {\n            ok = true;\n            swap(A[ch], A[i]);\n \
+    \           swap(b[ch], b[i]);\n            S d = A[ch][j];\n            for (int\
+    \ j2 = j; j2 < w; j2++) {\n              A[ch][j2] /= d;\n            }\n    \
+    \        b[ch] /= d;\n            for (int i2 = 0; i2 < h; i2++) {\n         \
+    \     S m = A[i2][j];\n              if (A[i2][j] != 0 and i2 != ch) {\n     \
+    \           for (int j2 = j; j2 < w; j2++) {\n                  A[i2][j2] -= A[ch][j2]\
+    \ * m;\n                }\n              }\n              if (i2 != ch) b[i2]\
+    \ -= b[ch] * m;\n            }\n            pivot_row[j] = ch;\n            rnk++;\n\
+    \            ch++;\n            cw = j + 1;\n            break;\n          }\n\
+    \        }\n        if (ok) break;\n      }\n      if (!ok) break;\n    }\n\n\
+    \    for (int i = rnk; i < h; i++) {\n      if (b[i] != 0) return Matrix<S>(0);\n\
+    \    }\n    Matrix<S> sol(w - rnk + 1, w);\n    int idx = 1;\n    for (int j =\
+    \ 0; j < w; j++) {\n      if (pivot_row[j] != -1) {\n        sol[0][j] = b[pivot_row[j]];\n\
+    \      } else {\n        sol[idx][j] = 1;\n        for (int i = 0; i < w; i++)\
+    \ {\n          if (pivot_row[i] != -1) {\n            sol[idx][i] = -A[pivot_row[i]][j];\n\
+    \          }\n        }\n        idx++;\n      }\n    }\n    return sol;\n  }\n\
+    };"
   dependsOn: []
   isVerificationFile: false
   path: linear-algebra/Matrix.hpp
   requiredBy:
   - graph/flow/MaximumMatchingSize.hpp
-  timestamp: '2026-03-22 22:45:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2026-03-23 15:16:33+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
 documentation_of: linear-algebra/Matrix.hpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_math.hpp
     title: atcoder/internal_math.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: linear-algebra/Matrix.hpp
     title: Matrix
   - icon: ':heavy_check_mark:'
@@ -301,10 +301,31 @@ data:
     \    if (rnk == h) {\n      for (int i = 0; i < h; i++) {\n        for (int j\
     \ = 0; j < h; j++) {\n          res[i][j] = B[i][j + h];\n        }\n      }\n\
     \      return {true, res};\n    } else {\n      return {false, res};\n    }\n\
-    \  }\n};\n#line 1 \"other/Xorshift.hpp\"\ninline static unsigned long long seed\
-    \ = 1235;\nunsigned long long rand_gen(long long p) {\n  unsigned long long x\
-    \ = seed;\n  x ^= x << 13;\n  x ^= x >> 7;\n  x ^= x << 17;\n  seed = x;\n  return\
-    \ seed % p;\n}\n#line 4 \"graph/flow/MaximumMatchingSize.hpp\"\n\nclass MaximumMatchingsize\
+    \  }\n\n  Matrix<S> linear_equation(vector<S> b) {\n    Matrix A(*this);\n\n \
+    \   int rnk = 0;\n    assert(A.height() == b.size());\n    int h = height();\n\
+    \    int w = width();\n    int ch = 0;\n    int cw = 0;\n    vector<int> pivot_row(w,\
+    \ -1);\n    while (ch < h and cw < w) {\n      bool ok = false;\n      for (int\
+    \ j = cw; j < w; j++) {\n        for (int i = ch; i < h; i++) {\n          if\
+    \ (A[i][j] != 0) {\n            ok = true;\n            swap(A[ch], A[i]);\n \
+    \           swap(b[ch], b[i]);\n            S d = A[ch][j];\n            for (int\
+    \ j2 = j; j2 < w; j2++) {\n              A[ch][j2] /= d;\n            }\n    \
+    \        b[ch] /= d;\n            for (int i2 = 0; i2 < h; i2++) {\n         \
+    \     S m = A[i2][j];\n              if (A[i2][j] != 0 and i2 != ch) {\n     \
+    \           for (int j2 = j; j2 < w; j2++) {\n                  A[i2][j2] -= A[ch][j2]\
+    \ * m;\n                }\n              }\n              if (i2 != ch) b[i2]\
+    \ -= b[ch] * m;\n            }\n            pivot_row[j] = ch;\n            rnk++;\n\
+    \            ch++;\n            cw = j + 1;\n            break;\n          }\n\
+    \        }\n        if (ok) break;\n      }\n      if (!ok) break;\n    }\n\n\
+    \    for (int i = rnk; i < h; i++) {\n      if (b[i] != 0) return Matrix<S>(0);\n\
+    \    }\n    Matrix<S> sol(w - rnk + 1, w);\n    int idx = 1;\n    for (int j =\
+    \ 0; j < w; j++) {\n      if (pivot_row[j] != -1) {\n        sol[0][j] = b[pivot_row[j]];\n\
+    \      } else {\n        sol[idx][j] = 1;\n        for (int i = 0; i < w; i++)\
+    \ {\n          if (pivot_row[i] != -1) {\n            sol[idx][i] = -A[pivot_row[i]][j];\n\
+    \          }\n        }\n        idx++;\n      }\n    }\n    return sol;\n  }\n\
+    };\n#line 1 \"other/Xorshift.hpp\"\ninline static unsigned long long seed = 1235;\n\
+    unsigned long long rand_gen(long long p) {\n  unsigned long long x = seed;\n \
+    \ x ^= x << 13;\n  x ^= x >> 7;\n  x ^= x << 17;\n  seed = x;\n  return seed %\
+    \ p;\n}\n#line 4 \"graph/flow/MaximumMatchingSize.hpp\"\n\nclass MaximumMatchingsize\
     \ {\n private:\n  int n;\n  const int MOD = 998244353;\n  Matrix<atcoder::modint998244353>\
     \ m;\n  unordered_map<int, int> seen;\n\n public:\n  MaximumMatchingsize() {}\n\
     \  MaximumMatchingsize(int n) : n(n), m(n) {}\n\n  void add_edge(int u, int v)\
@@ -328,7 +349,7 @@ data:
   isVerificationFile: false
   path: graph/flow/MaximumMatchingSize.hpp
   requiredBy: []
-  timestamp: '2026-03-22 22:45:44+09:00'
+  timestamp: '2026-03-23 15:16:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp

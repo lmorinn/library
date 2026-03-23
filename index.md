@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -391,7 +391,7 @@ data:
       title: Frequency Table of Tree Distance
   - name: linear-algebra
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: linear-algebra/Matrix.hpp
       title: Matrix
   - name: math
@@ -475,7 +475,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -735,12 +735,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+      title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

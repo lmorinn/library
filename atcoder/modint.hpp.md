@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_math.hpp
     title: atcoder/internal_math.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
   _extendedRequiredBy:
@@ -45,21 +45,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+    title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
@@ -368,7 +371,7 @@ data:
   - graph/flow/MaximumMatchingSize.hpp
   - atcoder/convolution.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
@@ -377,6 +380,7 @@ data:
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
