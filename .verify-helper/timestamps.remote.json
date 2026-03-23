@@ -79,7 +79,7 @@
   "verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp": "2025-05-26 06:10:36 +0900",
   "verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp": "2025-09-27 19:55:30 +0900",
   "verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp": "2026-03-23 15:16:33 +0900",
-  "verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp": "2026-03-22 22:45:44 +0900",
+  "verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp": "2026-03-23 15:16:33 +0900",
   "verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp": "2026-03-23 15:16:33 +0900",
   "verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp": "2026-03-23 15:16:33 +0900",
   "verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp": "2025-05-20 01:52:42 +0900",
