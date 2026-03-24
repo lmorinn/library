@@ -1,7 +1,10 @@
 #pragma once
 #pragma region Macros
 #include <bits/stdc++.h>
+#include <tr2/dynamic_bitset>
+
 using namespace std;
+using namespace tr2;
 using lint = long long;
 using ull = unsigned long long;
 using ld = long double;
