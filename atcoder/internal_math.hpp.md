@@ -37,6 +37,12 @@ data:
     path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
@@ -230,6 +236,8 @@ data:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp

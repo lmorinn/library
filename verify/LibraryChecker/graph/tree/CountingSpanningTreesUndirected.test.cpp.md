@@ -7,70 +7,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: atcoder/convolution.hpp
-    title: atcoder/convolution.hpp
+    path: atcoder/modint.hpp
+    title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/flow/MaximumMatchingSize.hpp
-    title: Maximum Matching Size (Randomized)
-  _extendedVerifiedWith:
+    path: graph/tree/CountingSpanningTrees.hpp
+    title: Counting Spanning Trees
   - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-    title: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+    path: linear-algebra/Matrix.hpp
+    title: Matrix
   - icon: ':heavy_check_mark:'
-    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
-    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-    title: verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-    title: verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-    title: verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-    title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-    title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-    title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
-    title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
-    title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-    title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-    title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+    path: template/template.hpp
+    title: Template
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/counting_spanning_tree_undirected
+    links:
+    - https://judge.yosupo.jp/problem/counting_spanning_tree_undirected
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
     \ <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
     #endif\n\n#line 1 \"atcoder/internal_math.hpp\"\n\n\n\n#include <utility>\n\n\
@@ -277,129 +235,186 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n"
-  code: "#ifndef ATCODER_MODINT_HPP\n#define ATCODER_MODINT_HPP 1\n\n#include <cassert>\n\
-    #include <numeric>\n#include <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
-    #endif\n\n#include \"atcoder/internal_math\"\n#include \"atcoder/internal_type_traits\"\
-    \n\nnamespace atcoder {\n\nnamespace internal {\n\nstruct modint_base {};\nstruct\
-    \ static_modint_base : modint_base {};\n\ntemplate <class T> using is_modint =\
-    \ std::is_base_of<modint_base, T>;\ntemplate <class T> using is_modint_t = std::enable_if_t<is_modint<T>::value>;\n\
-    \n}  // namespace internal\n\ntemplate <int m, std::enable_if_t<(1 <= m)>* = nullptr>\n\
-    struct static_modint : internal::static_modint_base {\n    using mint = static_modint;\n\
-    \n  public:\n    static constexpr int mod() { return m; }\n    static mint raw(int\
-    \ v) {\n        mint x;\n        x._v = v;\n        return x;\n    }\n\n    static_modint()\
-    \ : _v(0) {}\n    template <class T, internal::is_signed_int_t<T>* = nullptr>\n\
-    \    static_modint(T v) {\n        long long x = (long long)(v % (long long)(umod()));\n\
-    \        if (x < 0) x += umod();\n        _v = (unsigned int)(x);\n    }\n   \
-    \ template <class T, internal::is_unsigned_int_t<T>* = nullptr>\n    static_modint(T\
-    \ v) {\n        _v = (unsigned int)(v % umod());\n    }\n\n    unsigned int val()\
-    \ const { return _v; }\n\n    mint& operator++() {\n        _v++;\n        if\
-    \ (_v == umod()) _v = 0;\n        return *this;\n    }\n    mint& operator--()\
-    \ {\n        if (_v == 0) _v = umod();\n        _v--;\n        return *this;\n\
-    \    }\n    mint operator++(int) {\n        mint result = *this;\n        ++*this;\n\
-    \        return result;\n    }\n    mint operator--(int) {\n        mint result\
-    \ = *this;\n        --*this;\n        return result;\n    }\n\n    mint& operator+=(const\
-    \ mint& rhs) {\n        _v += rhs._v;\n        if (_v >= umod()) _v -= umod();\n\
-    \        return *this;\n    }\n    mint& operator-=(const mint& rhs) {\n     \
-    \   _v -= rhs._v;\n        if (_v >= umod()) _v += umod();\n        return *this;\n\
-    \    }\n    mint& operator*=(const mint& rhs) {\n        unsigned long long z\
-    \ = _v;\n        z *= rhs._v;\n        _v = (unsigned int)(z % umod());\n    \
-    \    return *this;\n    }\n    mint& operator/=(const mint& rhs) { return *this\
-    \ = *this * rhs.inv(); }\n\n    mint operator+() const { return *this; }\n   \
-    \ mint operator-() const { return mint() - *this; }\n\n    mint pow(long long\
-    \ n) const {\n        assert(0 <= n);\n        mint x = *this, r = 1;\n      \
-    \  while (n) {\n            if (n & 1) r *= x;\n            x *= x;\n        \
-    \    n >>= 1;\n        }\n        return r;\n    }\n    mint inv() const {\n \
-    \       if (prime) {\n            assert(_v);\n            return pow(umod() -\
-    \ 2);\n        } else {\n            auto eg = internal::inv_gcd(_v, m);\n   \
-    \         assert(eg.first == 1);\n            return eg.second;\n        }\n \
-    \   }\n\n    friend mint operator+(const mint& lhs, const mint& rhs) {\n     \
-    \   return mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs,\
-    \ const mint& rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint\
-    \ operator*(const mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n\
-    \    }\n    friend mint operator/(const mint& lhs, const mint& rhs) {\n      \
-    \  return mint(lhs) /= rhs;\n    }\n    friend bool operator==(const mint& lhs,\
-    \ const mint& rhs) {\n        return lhs._v == rhs._v;\n    }\n    friend bool\
-    \ operator!=(const mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n\
-    \    }\n\n  private:\n    unsigned int _v;\n    static constexpr unsigned int\
-    \ umod() { return m; }\n    static constexpr bool prime = internal::is_prime<m>;\n\
-    };\n\ntemplate <int id> struct dynamic_modint : internal::modint_base {\n    using\
-    \ mint = dynamic_modint;\n\n  public:\n    static int mod() { return (int)(bt.umod());\
-    \ }\n    static void set_mod(int m) {\n        assert(1 <= m);\n        bt = internal::barrett(m);\n\
-    \    }\n    static mint raw(int v) {\n        mint x;\n        x._v = v;\n   \
-    \     return x;\n    }\n\n    dynamic_modint() : _v(0) {}\n    template <class\
-    \ T, internal::is_signed_int_t<T>* = nullptr>\n    dynamic_modint(T v) {\n   \
-    \     long long x = (long long)(v % (long long)(mod()));\n        if (x < 0) x\
-    \ += mod();\n        _v = (unsigned int)(x);\n    }\n    template <class T, internal::is_unsigned_int_t<T>*\
-    \ = nullptr>\n    dynamic_modint(T v) {\n        _v = (unsigned int)(v % mod());\n\
-    \    }\n\n    unsigned int val() const { return _v; }\n\n    mint& operator++()\
-    \ {\n        _v++;\n        if (_v == umod()) _v = 0;\n        return *this;\n\
-    \    }\n    mint& operator--() {\n        if (_v == 0) _v = umod();\n        _v--;\n\
-    \        return *this;\n    }\n    mint operator++(int) {\n        mint result\
-    \ = *this;\n        ++*this;\n        return result;\n    }\n    mint operator--(int)\
-    \ {\n        mint result = *this;\n        --*this;\n        return result;\n\
-    \    }\n\n    mint& operator+=(const mint& rhs) {\n        _v += rhs._v;\n   \
-    \     if (_v >= umod()) _v -= umod();\n        return *this;\n    }\n    mint&\
-    \ operator-=(const mint& rhs) {\n        _v += mod() - rhs._v;\n        if (_v\
-    \ >= umod()) _v -= umod();\n        return *this;\n    }\n    mint& operator*=(const\
-    \ mint& rhs) {\n        _v = bt.mul(_v, rhs._v);\n        return *this;\n    }\n\
-    \    mint& operator/=(const mint& rhs) { return *this = *this * rhs.inv(); }\n\
-    \n    mint operator+() const { return *this; }\n    mint operator-() const { return\
-    \ mint() - *this; }\n\n    mint pow(long long n) const {\n        assert(0 <=\
-    \ n);\n        mint x = *this, r = 1;\n        while (n) {\n            if (n\
-    \ & 1) r *= x;\n            x *= x;\n            n >>= 1;\n        }\n       \
-    \ return r;\n    }\n    mint inv() const {\n        auto eg = internal::inv_gcd(_v,\
-    \ mod());\n        assert(eg.first == 1);\n        return eg.second;\n    }\n\n\
-    \    friend mint operator+(const mint& lhs, const mint& rhs) {\n        return\
-    \ mint(lhs) += rhs;\n    }\n    friend mint operator-(const mint& lhs, const mint&\
-    \ rhs) {\n        return mint(lhs) -= rhs;\n    }\n    friend mint operator*(const\
-    \ mint& lhs, const mint& rhs) {\n        return mint(lhs) *= rhs;\n    }\n   \
-    \ friend mint operator/(const mint& lhs, const mint& rhs) {\n        return mint(lhs)\
-    \ /= rhs;\n    }\n    friend bool operator==(const mint& lhs, const mint& rhs)\
-    \ {\n        return lhs._v == rhs._v;\n    }\n    friend bool operator!=(const\
-    \ mint& lhs, const mint& rhs) {\n        return lhs._v != rhs._v;\n    }\n\n \
-    \ private:\n    unsigned int _v;\n    static internal::barrett bt;\n    static\
-    \ unsigned int umod() { return bt.umod(); }\n};\ntemplate <int id> internal::barrett\
-    \ dynamic_modint<id>::bt(998244353);\n\nusing modint998244353 = static_modint<998244353>;\n\
-    using modint1000000007 = static_modint<1000000007>;\nusing modint = dynamic_modint<-1>;\n\
-    \nnamespace internal {\n\ntemplate <class T>\nusing is_static_modint = std::is_base_of<internal::static_modint_base,\
-    \ T>;\n\ntemplate <class T>\nusing is_static_modint_t = std::enable_if_t<is_static_modint<T>::value>;\n\
-    \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
-    \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
-    \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n#endif  // ATCODER_MODINT_HPP\n"
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"template/template.hpp\"\
+    \n#pragma region Macros\n#include <bits/stdc++.h>\n#include <tr2/dynamic_bitset>\n\
+    \nusing namespace std;\nusing namespace tr2;\nusing lint = long long;\nusing ull\
+    \ = unsigned long long;\nusing ld = long double;\nusing int128 = __int128_t;\n\
+    #define all(x) (x).begin(), (x).end()\n#define uniqv(v) v.erase(unique(all(v)),\
+    \ v.end())\n#define OVERLOAD_REP(_1, _2, _3, name, ...) name\n#define REP1(i,\
+    \ n) for (auto i = std::decay_t<decltype(n)>{}; (i) != (n); ++(i))\n#define REP2(i,\
+    \ l, r) for (auto i = (l); (i) != (r); ++(i))\n#define rep(...) OVERLOAD_REP(__VA_ARGS__,\
+    \ REP2, REP1)(__VA_ARGS__)\n#define logfixed(x) cout << fixed << setprecision(10)\
+    \ << x << endl;\n\nostream &operator<<(ostream &dest, __int128_t value) {\n  ostream::sentry\
+    \ s(dest);\n  if (s) {\n    __uint128_t tmp = value < 0 ? -value : value;\n  \
+    \  char buffer[128];\n    char *d = end(buffer);\n    do {\n      --d;\n     \
+    \ *d = \"0123456789\"[tmp % 10];\n      tmp /= 10;\n    } while (tmp != 0);\n\
+    \    if (value < 0) {\n      --d;\n      *d = '-';\n    }\n    int len = end(buffer)\
+    \ - d;\n    if (dest.rdbuf()->sputn(d, len) != len) {\n      dest.setstate(ios_base::badbit);\n\
+    \    }\n  }\n  return dest;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream\
+    \ &os, const vector<T> &v) {\n  for (int i = 0; i < (int)v.size(); i++) {\n  \
+    \  os << v[i] << (i + 1 != (int)v.size() ? \" \" : \"\");\n  }\n  return os;\n\
+    }\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const set<T> &set_var)\
+    \ {\n  for (auto itr = set_var.begin(); itr != set_var.end(); itr++) {\n    os\
+    \ << *itr;\n    ++itr;\n    if (itr != set_var.end()) os << \" \";\n    itr--;\n\
+    \  }\n  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os,\
+    \ const unordered_set<T> &set_var) {\n  for (auto itr = set_var.begin(); itr !=\
+    \ set_var.end(); itr++) {\n    os << *itr;\n    ++itr;\n    if (itr != set_var.end())\
+    \ os << \" \";\n    itr--;\n  }\n  return os;\n}\n\ntemplate <typename T, typename\
+    \ U>\nostream &operator<<(ostream &os, const map<T, U> &map_var) {\n  for (auto\
+    \ itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os << itr->first\
+    \ << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\ntemplate <typename\
+    \ T, typename U>\nostream &operator<<(ostream &os, const unordered_map<T, U> &map_var)\
+    \ {\n  for (auto itr = map_var.begin(); itr != map_var.end(); itr++) {\n    os\
+    \ << itr->first << \" -> \" << itr->second << \"\\n\";\n  }\n  return os;\n}\n\
+    \ntemplate <typename T, typename U>\nostream &operator<<(ostream &os, const pair<T,\
+    \ U> &pair_var) {\n  os << pair_var.first << \" \" << pair_var.second;\n  return\
+    \ os;\n}\n\nvoid out() { cout << '\\n'; }\ntemplate <class T, class... Ts>\nvoid\
+    \ out(const T &a, const Ts &...b) {\n  cout << a;\n  (cout << ... << (cout <<\
+    \ ' ', b));\n  cout << '\\n';\n}\n\nvoid outf() { cout << '\\n'; }\ntemplate <class\
+    \ T, class... Ts>\nvoid outf(const T &a, const Ts &...b) {\n  cout << fixed <<\
+    \ setprecision(14) << a;\n  (cout << ... << (cout << ' ', b));\n  cout << '\\\
+    n';\n}\n\ntemplate <typename T>\nistream &operator>>(istream &is, vector<T> &v)\
+    \ {\n  for (T &in : v) is >> in;\n  return is;\n}\n\ninline void in(void) { return;\
+    \ }\ntemplate <typename First, typename... Rest>\nvoid in(First &first, Rest &...rest)\
+    \ {\n  cin >> first;\n  in(rest...);\n  return;\n}\n\ntemplate <typename T>\n\
+    bool chmax(T &a, const T &b) {\n  if (a < b) {\n    a = b;\n    return true;\n\
+    \  }\n  return false;\n}\ntemplate <typename T>\nbool chmin(T &a, const T &b)\
+    \ {\n  if (a > b) {\n    a = b;\n    return true;\n  }\n  return false;\n}\n\n\
+    vector<lint> dx8 = {1, 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1,\
+    \ 1, 0, -1, -1, -1};\nvector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0,\
+    \ 1, 0, -1};\n\n#pragma endregion\n#line 3 \"verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/counting_spanning_tree_undirected\"\
+    \n#line 1 \"linear-algebra/Matrix.hpp\"\ntemplate <class S>\nstruct Matrix {\n\
+    \ private:\n public:\n  vector<vector<S>> A;\n  Matrix() {}\n  Matrix(int n, int\
+    \ m) : A(n, vector<S>(m)) {}\n  Matrix(int n) : A(n, vector<S>(n)) {}\n\n  inline\
+    \ int size() const { return A.size(); }\n  inline int height() const { return\
+    \ A.size(); }\n  inline int width() const { return A[0].size(); }\n  inline const\
+    \ vector<S>& operator[](int h) const { return (A[h]); }\n  inline vector<S>& operator[](int\
+    \ h) { return (A[h]); }\n\n  Matrix& operator+=(const Matrix& B) {\n    int h\
+    \ = height();\n    int w = width();\n    for (int i = 0; i < h; i++) {\n     \
+    \ for (int j = 0; j < w; j++) {\n        (*this)[i][j] += B[i][j];\n      }\n\
+    \    }\n    return (*this);\n  }\n  Matrix& operator-=(const Matrix& B) {\n  \
+    \  int h = height();\n    int w = width();\n    for (int i = 0; i < h; i++) {\n\
+    \      for (int j = 0; j < w; j++) {\n        (*this)[i][j] -= B[i][j];\n    \
+    \  }\n    }\n    return (*this);\n  }\n\n  Matrix& operator*=(const Matrix& B)\
+    \ {\n    int h = height();\n    int w = B.width();\n    int c = width();\n   \
+    \ vector<vector<S>> C(h, vector<S>(w));\n    for (int i = 0; i < h; i++) {\n \
+    \     for (int j = 0; j < w; j++) {\n        for (int k = 0; k < c; k++) {\n \
+    \         C[i][j] = (C[i][j] + (*this)[i][k] * B[k][j]);\n        }\n      }\n\
+    \    }\n    A = move(C);\n    return (*this);\n  }\n  Matrix operator+(const Matrix&\
+    \ B) const { return (Matrix(*this) += B); }\n  Matrix operator-(const Matrix&\
+    \ B) const { return (Matrix(*this) -= B); }\n  Matrix operator*(const Matrix&\
+    \ B) const { return (Matrix(*this) *= B); }\n\n  int rank() {\n    Matrix B(*this);\n\
+    \    if (B.height() == 0 or B.width() == 0) return 0;\n    int res = 0;\n    int\
+    \ h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n    while\
+    \ (ch < h and cw < w) {\n      bool ok = false;\n      for (int j = cw; j < w;\
+    \ j++) {\n        for (int i = ch; i < h; i++) {\n          if (B[i][j] != 0)\
+    \ {\n            ok = true;\n            swap(B[ch], B[i]);\n            S d =\
+    \ B[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              B[ch][j2]\
+    \ /= d;\n            }\n            for (int i2 = 0; i2 < h; i2++) {\n       \
+    \       if (B[i2][j] != 0 and i2 != ch) {\n                S m = B[i2][j];\n \
+    \               for (int j2 = j; j2 < w; j2++) {\n                  B[i2][j2]\
+    \ -= B[ch][j2] * m;\n                }\n              }\n            }\n     \
+    \       res++;\n            ch++;\n            cw = j + 1;\n            break;\n\
+    \          }\n        }\n        if (ok) break;\n      }\n      if (!ok) break;\n\
+    \    }\n    return res;\n  }\n\n  S determinant() {\n    Matrix B(*this);\n  \
+    \  if (B.height() == 0 or B.width() == 0) return 0;\n    assert(B.height() ==\
+    \ B.width());\n    int h = height();\n    int w = width();\n    int ch = 0;\n\
+    \    int cw = 0;\n    S div = 1;\n    bool neg = false;\n    while (ch < h and\
+    \ cw < w) {\n      bool ok = false;\n      for (int j = cw; j < w; j++) {\n  \
+    \      for (int i = ch; i < h; i++) {\n          if (B[i][j] != 0) {\n       \
+    \     ok = true;\n            if (ch != i) neg = !neg;\n            swap(B[ch],\
+    \ B[i]);\n            S d = B[ch][j];\n            div /= d;\n            for\
+    \ (int j2 = j; j2 < w; j2++) {\n              B[ch][j2] /= d;\n            }\n\
+    \            for (int i2 = 0; i2 < h; i2++) {\n              if (B[i2][j] != 0\
+    \ and i2 != ch) {\n                S m = B[i2][j];\n                for (int j2\
+    \ = j; j2 < w; j2++) {\n                  B[i2][j2] -= B[ch][j2] * m;\n      \
+    \          }\n              }\n            }\n            ch++;\n            cw\
+    \ = j + 1;\n            break;\n          }\n        }\n        if (ok) {\n  \
+    \        break;\n        } else {\n          return S(0);\n        }\n      }\n\
+    \      if (!ok) break;\n    }\n    S res = (neg ? -B[0][0] : B[0][0]) / div;\n\
+    \    for (int i = 1; i < h; i++) {\n      res = res * B[i][i];\n    }\n    return\
+    \ res;\n  }\n\n  pair<bool, Matrix<S>> inverse() {\n    int h = height();\n  \
+    \  int w = width();\n    assert(h == w);\n    Matrix<S> B(h, w * 2);\n    for\
+    \ (int i = 0; i < h; i++) {\n      for (int j = 0; j < w; j++) {\n        B[i][j]\
+    \ = (*this)[i][j];\n      }\n    }\n    for (int i = 0; i < h; i++) {\n      B[i][i\
+    \ + w] = 1;\n    }\n    w *= 2;\n    int rnk = 0;\n\n    int ch = 0;\n    int\
+    \ cw = 0;\n    while (ch < h and cw < h) {\n      bool ok = false;\n      for\
+    \ (int j = cw; j < h; j++) {\n        for (int i = ch; i < h; i++) {\n       \
+    \   if (B[i][j] != 0) {\n            ok = true;\n            swap(B[ch], B[i]);\n\
+    \            S d = B[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n \
+    \             B[ch][j2] /= d;\n            }\n            for (int i2 = 0; i2\
+    \ < h; i2++) {\n              if (B[i2][j] != 0 and i2 != ch) {\n            \
+    \    S m = B[i2][j];\n                for (int j2 = j; j2 < w; j2++) {\n     \
+    \             B[i2][j2] -= B[ch][j2] * m;\n                }\n              }\n\
+    \            }\n            rnk++;\n            ch++;\n            cw = j + 1;\n\
+    \            break;\n          }\n        }\n        if (ok) break;\n      }\n\
+    \      if (!ok) break;\n    }\n    Matrix<S> res(h);\n    if (rnk == h) {\n  \
+    \    for (int i = 0; i < h; i++) {\n        for (int j = 0; j < h; j++) {\n  \
+    \        res[i][j] = B[i][j + h];\n        }\n      }\n      return {true, res};\n\
+    \    } else {\n      return {false, res};\n    }\n  }\n\n  Matrix<S> linear_equation(vector<S>\
+    \ b) {\n    Matrix A(*this);\n\n    int rnk = 0;\n    assert(A.height() == b.size());\n\
+    \    int h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n\
+    \    vector<int> pivot_row(w, -1);\n    while (ch < h and cw < w) {\n      bool\
+    \ ok = false;\n      for (int j = cw; j < w; j++) {\n        for (int i = ch;\
+    \ i < h; i++) {\n          if (A[i][j] != 0) {\n            ok = true;\n     \
+    \       swap(A[ch], A[i]);\n            swap(b[ch], b[i]);\n            S d =\
+    \ A[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              A[ch][j2]\
+    \ /= d;\n            }\n            b[ch] /= d;\n            for (int i2 = 0;\
+    \ i2 < h; i2++) {\n              S m = A[i2][j];\n              if (A[i2][j] !=\
+    \ 0 and i2 != ch) {\n                for (int j2 = j; j2 < w; j2++) {\n      \
+    \            A[i2][j2] -= A[ch][j2] * m;\n                }\n              }\n\
+    \              if (i2 != ch) b[i2] -= b[ch] * m;\n            }\n            pivot_row[j]\
+    \ = ch;\n            rnk++;\n            ch++;\n            cw = j + 1;\n    \
+    \        break;\n          }\n        }\n        if (ok) break;\n      }\n   \
+    \   if (!ok) break;\n    }\n\n    for (int i = rnk; i < h; i++) {\n      if (b[i]\
+    \ != 0) return Matrix<S>(0);\n    }\n    Matrix<S> sol(w - rnk + 1, w);\n    int\
+    \ idx = 1;\n    for (int j = 0; j < w; j++) {\n      if (pivot_row[j] != -1) {\n\
+    \        sol[0][j] = b[pivot_row[j]];\n      } else {\n        sol[idx][j] = 1;\n\
+    \        for (int i = 0; i < w; i++) {\n          if (pivot_row[i] != -1) {\n\
+    \            sol[idx][i] = -A[pivot_row[i]][j];\n          }\n        }\n    \
+    \    idx++;\n      }\n    }\n    return sol;\n  }\n};\n#line 2 \"graph/tree/CountingSpanningTrees.hpp\"\
+    \n\ntemplate <class S>\nstruct CountingSpanningTrees {\n private:\n  Matrix<S>\
+    \ laplacian;\n  int n, root;\n  bool is_undirected = true;\n\n  void internal_add_edge(int\
+    \ from, int to) {\n    if (from != root and to != root) {\n      if (root < from)\
+    \ from--;\n      if (root < to) to--;\n      laplacian[from][to]--;\n      laplacian[from][from]++;\n\
+    \    } else if (from != root) {\n      if (root < from) from--;\n      laplacian[from][from]++;\n\
+    \    }\n  }\n\n public:\n  CountingSpanningTrees() {}\n  CountingSpanningTrees(int\
+    \ n, bool undirected = true, int root = 0) : n(n), is_undirected(undirected),\
+    \ root(root), laplacian(n - 1, n - 1) {}\n\n  // \u3059\u3079\u3066\u306E\u8FBA\
+    \u304C\u6839\u306E\u65B9\u3092\u5411\u304F: u->v\n  // \u6839\u304B\u3089\u3059\
+    \u3079\u3066\u306E\u9802\u70B9\u306B\u5230\u9054: v->u\n  void add_edge(int u,\
+    \ int v) {\n    assert(0 <= u and u < n and 0 <= v and v < n);\n    internal_add_edge(u,\
+    \ v);\n    if (is_undirected) internal_add_edge(v, u);\n  }\n\n  S count_spanning_trees()\
+    \ {\n    if (n != 1) {\n      return laplacian.determinant();\n    } else {\n\
+    \      return 1;\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, m;\n  in(n, m);\n\
+    \  CountingSpanningTrees<modint998244353> t(n);\n  rep(i, m) {\n    int u, v;\n\
+    \    in(u, v);\n    t.add_edge(v, u);\n  }\n  out(t.count_spanning_trees().val());\n\
+    }\n"
+  code: "#include \"../../../../atcoder/modint.hpp\"\n#include \"../../../../template/template.hpp\"\
+    \nusing namespace atcoder;\n#define PROBLEM \"https://judge.yosupo.jp/problem/counting_spanning_tree_undirected\"\
+    \n#include \"../../../../graph/tree/CountingSpanningTrees.hpp\"\n\nint main()\
+    \ {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, m;\n  in(n, m);\n  CountingSpanningTrees<modint998244353>\
+    \ t(n);\n  rep(i, m) {\n    int u, v;\n    in(u, v);\n    t.add_edge(v, u);\n\
+    \  }\n  out(t.count_spanning_trees().val());\n}\n"
   dependsOn:
+  - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
-  isVerificationFile: false
-  path: atcoder/modint.hpp
-  requiredBy:
-  - graph/flow/MaximumMatchingSize.hpp
-  - atcoder/convolution.hpp
-  timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
-  - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
-  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
-  - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
-  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-  - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
-  - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
-  - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-documentation_of: atcoder/modint.hpp
+  - template/template.hpp
+  - graph/tree/CountingSpanningTrees.hpp
+  - linear-algebra/Matrix.hpp
+  isVerificationFile: true
+  path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  requiredBy: []
+  timestamp: '2026-03-24 23:11:54+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
 layout: document
 redirect_from:
-- /library/atcoder/modint.hpp
-- /library/atcoder/modint.hpp.html
-title: atcoder/modint.hpp
+- /verify/verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+- /verify/verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp.html
+title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
 ---

@@ -169,6 +169,12 @@ data:
     path: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
     title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
@@ -392,6 +398,8 @@ data:
   - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp

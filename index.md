@@ -378,6 +378,9 @@ data:
       path: graph/tree/CentroidEnumerate.hpp
       title: Centroid Enumerate
     - icon: ':heavy_check_mark:'
+      path: graph/tree/CountingSpanningTrees.hpp
+      title: Counting Spanning Trees
+    - icon: ':heavy_check_mark:'
       path: graph/tree/EulerTour.hpp
       title: Euler Tour
     - icon: ':heavy_check_mark:'
@@ -727,6 +730,12 @@ data:
       title: verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
   - name: verify/LibraryChecker/graph/tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+      title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+      title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
       title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
