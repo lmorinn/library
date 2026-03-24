@@ -7,15 +7,15 @@ struct CountingSpanningTrees {
   int n, root;
   bool is_undirected = true;
 
-  void internal_add_edge(int from, int to) {
+  void internal_add_edge(int from, int to, S w = 1) {
     if (from != root and to != root) {
       if (root < from) from--;
       if (root < to) to--;
-      laplacian[from][to]--;
-      laplacian[from][from]++;
+      laplacian[from][to] -= w;
+      laplacian[from][from] += w;
     } else if (from != root) {
       if (root < from) from--;
-      laplacian[from][from]++;
+      laplacian[from][from] += w;
     }
   }
 
@@ -25,10 +25,10 @@ struct CountingSpanningTrees {
 
   // すべての辺が根の方を向く: u->v
   // 根からすべての頂点に到達: v->u
-  void add_edge(int u, int v) {
+  void add_edge(int u, int v, S w = 1) {
     assert(0 <= u and u < n and 0 <= v and v < n);
-    internal_add_edge(u, v);
-    if (is_undirected) internal_add_edge(v, u);
+    internal_add_edge(u, v, w);
+    if (is_undirected) internal_add_edge(v, u, w);
   }
 
   S count_spanning_trees() {
