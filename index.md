@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':warning:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -391,7 +391,10 @@ data:
       title: Frequency Table of Tree Distance
   - name: linear-algebra
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
+      path: linear-algebra/BitMatrix.hpp
+      title: Matrix (Mod 2)
+    - icon: ':heavy_check_mark:'
       path: linear-algebra/Matrix.hpp
       title: Matrix
   - name: math
@@ -475,7 +478,7 @@ data:
       title: Trie
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -735,15 +738,30 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/DeterminantofMatrixMod2.test.cpp
+      title: verify/LibraryChecker/linear-algebra/DeterminantofMatrixMod2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/InverseMatrixMod2.test.cpp
+      title: verify/LibraryChecker/linear-algebra/InverseMatrixMod2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/MatrixProductMod2.test.cpp
+      title: verify/LibraryChecker/linear-algebra/MatrixProductMod2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
       title: verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/RankofMatrixMod2.test.cpp
+      title: verify/LibraryChecker/linear-algebra/RankofMatrixMod2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
       title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
+      title: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

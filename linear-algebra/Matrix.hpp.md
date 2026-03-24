@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,9 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
     title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"linear-algebra/Matrix.hpp\"\ntemplate <class S>\nstruct\
@@ -212,7 +212,7 @@ data:
   requiredBy:
   - graph/flow/MaximumMatchingSize.hpp
   timestamp: '2026-03-23 15:16:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp

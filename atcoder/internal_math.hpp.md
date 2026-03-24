@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: atcoder/math.hpp
     title: atcoder/math.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,9 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
@@ -225,7 +225,7 @@ data:
   - atcoder/convolution.hpp
   - atcoder/modint.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
