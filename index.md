@@ -347,6 +347,9 @@ data:
   - name: graph/others
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/others/CountingEulerianCircuits.hpp
+      title: Counting Eulerian Circuits
+    - icon: ':heavy_check_mark:'
       path: graph/others/CycleDetection.hpp
       title: Cycle Detection
     - icon: ':warning:'
@@ -722,6 +725,9 @@ data:
       title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - name: verify/LibraryChecker/graph/others
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+      title: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
       title: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp

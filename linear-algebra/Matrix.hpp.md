@@ -6,12 +6,18 @@ data:
     path: graph/flow/MaximumMatchingSize.hpp
     title: Maximum Matching Size (Randomized)
   - icon: ':heavy_check_mark:'
+    path: graph/others/CountingEulerianCircuits.hpp
+    title: Counting Eulerian Circuits
+  - icon: ':heavy_check_mark:'
     path: graph/tree/CountingSpanningTrees.hpp
     title: Counting Spanning Trees
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
     title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+    title: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
     title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
@@ -221,12 +227,14 @@ data:
   requiredBy:
   - graph/flow/MaximumMatchingSize.hpp
   - graph/tree/CountingSpanningTrees.hpp
+  - graph/others/CountingEulerianCircuits.hpp
   timestamp: '2026-03-23 15:16:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp

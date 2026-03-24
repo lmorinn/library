@@ -376,16 +376,17 @@ data:
     \    idx++;\n      }\n    }\n    return sol;\n  }\n};\n#line 2 \"graph/tree/CountingSpanningTrees.hpp\"\
     \n\ntemplate <class S>\nstruct CountingSpanningTrees {\n private:\n  Matrix<S>\
     \ laplacian;\n  int n, root;\n  bool is_undirected = true;\n\n  void internal_add_edge(int\
-    \ from, int to) {\n    if (from != root and to != root) {\n      if (root < from)\
-    \ from--;\n      if (root < to) to--;\n      laplacian[from][to]--;\n      laplacian[from][from]++;\n\
-    \    } else if (from != root) {\n      if (root < from) from--;\n      laplacian[from][from]++;\n\
-    \    }\n  }\n\n public:\n  CountingSpanningTrees() {}\n  CountingSpanningTrees(int\
-    \ n, bool undirected = true, int root = 0) : n(n), is_undirected(undirected),\
-    \ root(root), laplacian(n - 1, n - 1) {}\n\n  // \u3059\u3079\u3066\u306E\u8FBA\
-    \u304C\u6839\u306E\u65B9\u3092\u5411\u304F: u->v\n  // \u6839\u304B\u3089\u3059\
-    \u3079\u3066\u306E\u9802\u70B9\u306B\u5230\u9054: v->u\n  void add_edge(int u,\
-    \ int v) {\n    assert(0 <= u and u < n and 0 <= v and v < n);\n    internal_add_edge(u,\
-    \ v);\n    if (is_undirected) internal_add_edge(v, u);\n  }\n\n  S count_spanning_trees()\
+    \ from, int to, S w = 1) {\n    if (from != root and to != root) {\n      if (root\
+    \ < from) from--;\n      if (root < to) to--;\n      laplacian[from][to] -= w;\n\
+    \      laplacian[from][from] += w;\n    } else if (from != root) {\n      if (root\
+    \ < from) from--;\n      laplacian[from][from] += w;\n    }\n  }\n\n public:\n\
+    \  CountingSpanningTrees() {}\n  CountingSpanningTrees(int n, bool undirected\
+    \ = true, int root = 0) : n(n), is_undirected(undirected), root(root), laplacian(n\
+    \ - 1, n - 1) {}\n\n  // \u3059\u3079\u3066\u306E\u8FBA\u304C\u6839\u306E\u65B9\
+    \u3092\u5411\u304F: u->v\n  // \u6839\u304B\u3089\u3059\u3079\u3066\u306E\u9802\
+    \u70B9\u306B\u5230\u9054: v->u\n  void add_edge(int u, int v, S w = 1) {\n   \
+    \ assert(0 <= u and u < n and 0 <= v and v < n);\n    internal_add_edge(u, v,\
+    \ w);\n    if (is_undirected) internal_add_edge(v, u, w);\n  }\n\n  S count_spanning_trees()\
     \ {\n    if (n != 1) {\n      return laplacian.determinant();\n    } else {\n\
     \      return 1;\n    }\n  }\n};\n#line 6 \"verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, m, r;\n  in(n, m,\
@@ -408,7 +409,7 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   requiredBy: []
-  timestamp: '2026-03-24 23:11:54+09:00'
+  timestamp: '2026-03-25 02:08:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp

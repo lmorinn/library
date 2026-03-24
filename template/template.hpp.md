@@ -163,6 +163,9 @@ data:
     path: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+    title: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
     title: verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
   - icon: ':heavy_check_mark:'
@@ -402,6 +405,7 @@ data:
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
+  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
   - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
   - verify/LibraryChecker/math/number-theory/SternBrocotTree.test.cpp

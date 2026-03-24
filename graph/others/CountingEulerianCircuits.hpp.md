@@ -2,22 +2,16 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph/tree/CountingSpanningTrees.hpp
+    title: Counting Spanning Trees
+  - icon: ':heavy_check_mark:'
     path: linear-algebra/Matrix.hpp
     title: Matrix
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: graph/others/CountingEulerianCircuits.hpp
-    title: Counting Eulerian Circuits
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
     title: verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-    title: verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -127,37 +121,55 @@ data:
     \ assert(0 <= u and u < n and 0 <= v and v < n);\n    internal_add_edge(u, v,\
     \ w);\n    if (is_undirected) internal_add_edge(v, u, w);\n  }\n\n  S count_spanning_trees()\
     \ {\n    if (n != 1) {\n      return laplacian.determinant();\n    } else {\n\
-    \      return 1;\n    }\n  }\n};\n"
-  code: "#include \"../../linear-algebra/Matrix.hpp\"\n\ntemplate <class S>\nstruct\
-    \ CountingSpanningTrees {\n private:\n  Matrix<S> laplacian;\n  int n, root;\n\
-    \  bool is_undirected = true;\n\n  void internal_add_edge(int from, int to, S\
-    \ w = 1) {\n    if (from != root and to != root) {\n      if (root < from) from--;\n\
-    \      if (root < to) to--;\n      laplacian[from][to] -= w;\n      laplacian[from][from]\
-    \ += w;\n    } else if (from != root) {\n      if (root < from) from--;\n    \
-    \  laplacian[from][from] += w;\n    }\n  }\n\n public:\n  CountingSpanningTrees()\
-    \ {}\n  CountingSpanningTrees(int n, bool undirected = true, int root = 0) : n(n),\
-    \ is_undirected(undirected), root(root), laplacian(n - 1, n - 1) {}\n\n  // \u3059\
-    \u3079\u3066\u306E\u8FBA\u304C\u6839\u306E\u65B9\u3092\u5411\u304F: u->v\n  //\
-    \ \u6839\u304B\u3089\u3059\u3079\u3066\u306E\u9802\u70B9\u306B\u5230\u9054: v->u\n\
-    \  void add_edge(int u, int v, S w = 1) {\n    assert(0 <= u and u < n and 0 <=\
-    \ v and v < n);\n    internal_add_edge(u, v, w);\n    if (is_undirected) internal_add_edge(v,\
-    \ u, w);\n  }\n\n  S count_spanning_trees() {\n    if (n != 1) {\n      return\
-    \ laplacian.determinant();\n    } else {\n      return 1;\n    }\n  }\n};"
+    \      return 1;\n    }\n  }\n};\n#line 2 \"graph/others/CountingEulerianCircuits.hpp\"\
+    \n\ntemplate <class S>\nstruct CountingEulerianCircuits {\n private:\n  int n;\n\
+    \  vector<vector<long long>> g;\n  vector<S> fac;\n  int out_mx = 1;\n\n public:\n\
+    \  CountingEulerianCircuits(int n) : n(n), g(n, vector<long long>(n)), fac(1)\
+    \ { fac[0] = 1; }\n  void add_edge(int u, int v, int w = 1) {\n    g[u][v] +=\
+    \ w;\n  }\n\n  S count_eulerian_circuits() {\n    vector<long long> ods(n);\n\
+    \    vector<int> ids;\n    for (int i = 0; i < n; i++) {\n      long long diff\
+    \ = 0;\n      long long outdeg = 0;\n      for (int j = 0; j < n; j++) {\n   \
+    \     diff += g[i][j] - g[j][i];\n        outdeg += g[i][j];\n      }\n      if\
+    \ (diff != 0) return 0;\n      if (out_mx < outdeg) out_mx = outdeg;\n      ods[i]\
+    \ = outdeg;\n    }\n\n    if (fac.size() < out_mx) {\n      int siz = fac.size();\n\
+    \      fac.resize(out_mx);\n      for (int i = siz; i < out_mx; i++) {\n     \
+    \   fac[i] = fac[i - 1] * i;\n      }\n    }\n    S res = 1;\n    for (int i =\
+    \ 0; i < n; i++) {\n      if (ods[i]) {\n        ids.emplace_back(i);\n      \
+    \  res *= fac[ods[i] - 1];\n      }\n    }\n\n    int siz = ids.size();\n    CountingSpanningTrees<S>\
+    \ t(siz, false, 0);\n    for (int i = 0; i < siz; i++) {\n      for (int j = 0;\
+    \ j < siz; j++) {\n        t.add_edge(i, j, g[ids[i]][ids[j]]);\n      }\n   \
+    \ }\n    res *= t.count_spanning_trees();\n    return res;\n  }\n};\n"
+  code: "#include \"../tree/CountingSpanningTrees.hpp\"\n\ntemplate <class S>\nstruct\
+    \ CountingEulerianCircuits {\n private:\n  int n;\n  vector<vector<long long>>\
+    \ g;\n  vector<S> fac;\n  int out_mx = 1;\n\n public:\n  CountingEulerianCircuits(int\
+    \ n) : n(n), g(n, vector<long long>(n)), fac(1) { fac[0] = 1; }\n  void add_edge(int\
+    \ u, int v, int w = 1) {\n    g[u][v] += w;\n  }\n\n  S count_eulerian_circuits()\
+    \ {\n    vector<long long> ods(n);\n    vector<int> ids;\n    for (int i = 0;\
+    \ i < n; i++) {\n      long long diff = 0;\n      long long outdeg = 0;\n    \
+    \  for (int j = 0; j < n; j++) {\n        diff += g[i][j] - g[j][i];\n       \
+    \ outdeg += g[i][j];\n      }\n      if (diff != 0) return 0;\n      if (out_mx\
+    \ < outdeg) out_mx = outdeg;\n      ods[i] = outdeg;\n    }\n\n    if (fac.size()\
+    \ < out_mx) {\n      int siz = fac.size();\n      fac.resize(out_mx);\n      for\
+    \ (int i = siz; i < out_mx; i++) {\n        fac[i] = fac[i - 1] * i;\n      }\n\
+    \    }\n    S res = 1;\n    for (int i = 0; i < n; i++) {\n      if (ods[i]) {\n\
+    \        ids.emplace_back(i);\n        res *= fac[ods[i] - 1];\n      }\n    }\n\
+    \n    int siz = ids.size();\n    CountingSpanningTrees<S> t(siz, false, 0);\n\
+    \    for (int i = 0; i < siz; i++) {\n      for (int j = 0; j < siz; j++) {\n\
+    \        t.add_edge(i, j, g[ids[i]][ids[j]]);\n      }\n    }\n    res *= t.count_spanning_trees();\n\
+    \    return res;\n  }\n};"
   dependsOn:
+  - graph/tree/CountingSpanningTrees.hpp
   - linear-algebra/Matrix.hpp
   isVerificationFile: false
-  path: graph/tree/CountingSpanningTrees.hpp
-  requiredBy:
-  - graph/others/CountingEulerianCircuits.hpp
-  timestamp: '2026-03-25 02:08:58+09:00'
+  path: graph/others/CountingEulerianCircuits.hpp
+  requiredBy: []
+  timestamp: '2026-03-25 02:15:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
-documentation_of: graph/tree/CountingSpanningTrees.hpp
+documentation_of: graph/others/CountingEulerianCircuits.hpp
 layout: document
-title: Counting Spanning Trees
+title: Counting Eulerian Circuits
 ---
 
 ## 概要
