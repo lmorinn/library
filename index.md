@@ -312,6 +312,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: geometry/Geometry.hpp
       title: Geometry
+    - icon: ':heavy_check_mark:'
+      path: geometry/SortPointsbyArgument.hpp
+      title: Sort Points by Argument
   - name: graph/connected-components
     pages:
     - icon: ':heavy_check_mark:'
@@ -715,6 +718,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
       title: verify/LibraryChecker/dp/StaticRangeSum.test.cpp
+  - name: verify/LibraryChecker/geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
+      title: verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
   - name: verify/LibraryChecker/graph/connected-components
     pages:
     - icon: ':heavy_check_mark:'

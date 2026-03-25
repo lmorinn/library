@@ -157,6 +157,9 @@ data:
     path: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
     title: verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
+    title: verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
     title: verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - icon: ':heavy_check_mark:'
@@ -432,6 +435,7 @@ data:
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/tree/CartesianTree.test.cpp
+  - verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffinePointGet.test.cpp
