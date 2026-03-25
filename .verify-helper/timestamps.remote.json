@@ -72,6 +72,7 @@
   "verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/data-structure/wavelet-matrix/rectangle/RectangleSum.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/dp/StaticRangeSum.test.cpp": "2024-06-26 20:58:27 +0900",
+  "verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp": "2026-03-25 13:12:44 +0900",
   "verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp": "2026-03-25 02:15:50 +0900",
