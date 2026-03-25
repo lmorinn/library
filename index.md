@@ -413,7 +413,7 @@ data:
       title: Nth term of linear recurrence (Matrix Power)
   - name: math/fps
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/FormalPowerSeries.hpp
       title: Formal Power Series
   - name: math/number-theory
@@ -785,6 +785,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
       title: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
+  - name: verify/LibraryChecker/math/fps
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+      title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+      title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+      title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+      title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'

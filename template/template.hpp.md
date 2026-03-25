@@ -214,6 +214,18 @@ data:
     path: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
     title: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -419,6 +431,10 @@ data:
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp

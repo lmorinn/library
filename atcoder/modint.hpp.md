@@ -64,6 +64,30 @@ data:
     path: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
     title: verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -391,6 +415,14 @@ data:
   - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp

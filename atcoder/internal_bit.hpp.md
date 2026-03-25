@@ -15,6 +15,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+    title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,6 +68,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
 documentation_of: atcoder/internal_bit.hpp
 layout: document
 redirect_from:
