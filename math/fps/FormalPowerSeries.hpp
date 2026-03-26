@@ -2,7 +2,7 @@ struct FPS : vector<mint> {
   using vector<mint>::vector;
   using vector<mint>::operator=;
 
-  FPS inv() {
+  FPS inv() const {
     int n = int((*this).size());
     FPS res = {(*this)[0].inv()};
     while (int(res.size()) < n) {
@@ -33,7 +33,7 @@ struct FPS : vector<mint> {
     return {res.begin(), res.begin() + n};
   }
 
-  FPS exp() {
+  FPS exp() const {
     int n = int((*this).size());
     FPS res = {1};
     assert((*this)[0] == 0);
@@ -49,13 +49,13 @@ struct FPS : vector<mint> {
     return {res.begin(), res.begin() + n};
   }
 
-  FPS log() {
-    FPS res = (*this).differentiate();
-    res /= (*this);
-    return res.integrate();
+  FPS log() const {
+    FPS res = *this;
+    res.log_inplace();
+    return res;
   }
 
-  FPS pow(__int128_t m) {
+  FPS pow(__int128_t m) const {
     __int128_t n = int((*this).size());
     if (m == 0) {
       FPS res(n);
@@ -70,9 +70,9 @@ struct FPS : vector<mint> {
         if (coef != 1) {
           for (int j = 0; j < n - i; j++) f[j] /= coef;
         }
-        f = f.log();
+        f.log_inplace();
         for (int j = 0; j < n - i; j++) f[j] *= m;
-        f = f.exp();
+        f.exp_inplace();
         coef = coef.pow(m);
         for (int j = 0; j < n - i; j++) f[j] *= coef;
         FPS res(min(__int128_t(m) * i, n), 0);
@@ -84,7 +84,7 @@ struct FPS : vector<mint> {
     return FPS(n, 0);
   }
 
-  FPS differentiate() {
+  FPS differentiate() const {
     int n = int((*this).size());
     FPS res(n);
     for (int i = 0; i < n - 1; i++) res[i] = (*this)[i + 1] * mint(i + 1);
@@ -92,7 +92,7 @@ struct FPS : vector<mint> {
     return res;
   }
 
-  FPS integrate() {
+  FPS integrate() const {
     int n = int((*this).size());
     vector<mint> iv(n);
     iv[1] = 1;
@@ -101,6 +101,47 @@ struct FPS : vector<mint> {
     res[0] = 0;
     for (int i = 0; i < n - 1; i++) res[i + 1] = (*this)[i] * iv[i + 1];
     return res;
+  }
+
+  void integrate_inplace() {
+    int n = int((*this).size());
+    static vector<mint> inv{0, 1};
+    if (int(inv.size()) < n) {
+      int old_siz = inv.size();
+      inv.resize(n);
+      int mod = mint::mod();
+      for (int i = old_siz; i < n; i++) inv[i] = -inv[mod % i] * (mod / i);
+    }
+    for (int i = n - 1; i > 0; i--) (*this)[i] = (*this)[i - 1] * inv[i];
+    (*this)[0] = 0;
+  }
+
+  void differentiate_inplace() {
+    int n = int((*this).size());
+    if (n == 0) return;
+    for (int i = 0; i < n - 1; i++) {
+      (*this)[i] = (*this)[i + 1] * mint(i + 1);
+    }
+    (*this)[n - 1] = 0;
+  }
+
+  void inv_inplace() {
+    *this = this->inv();
+  }
+  void exp_inplace() {
+    *this = this->exp();
+  }
+
+  void log_inplace() {
+    assert(!empty() and (*this)[0] == 1);
+    FPS inv_f = this->inv();
+    this->differentiate_inplace();
+    *this *= inv_f;
+    this->integrate_inplace();
+  }
+
+  void pow_inplace(__int128_t m) {
+    *this = this->pow(m);
   }
 
   FPS& operator*=(const FPS& g) {
@@ -116,4 +157,29 @@ struct FPS : vector<mint> {
     (*this).resize(n);
     return *this;
   }
+
+  FPS& operator<<=(int k) {
+    int n = int(size());
+    if (k >= n) {
+      assign(n, 0);
+      return *this;
+    }
+    for (int i = n - 1; i >= k; i--) (*this)[i] = (*this)[i - k];
+    for (int i = 0; i < k; i++) (*this)[i] = 0;
+    return *this;
+  }
+
+  FPS& operator>>=(int k) {
+    int n = int(size());
+    if (k >= n) {
+      assign(n, 0);
+      return *this;
+    }
+    for (int i = 0; i < n - k; i++) (*this)[i] = (*this)[i + k];
+    for (int i = n - k; i < n; i++) (*this)[i] = 0;
+    return *this;
+  }
+
+  FPS operator<<(int k) const { return FPS(*this) <<= k; }
+  FPS operator>>(int k) const { return FPS(*this) >>= k; }
 };
