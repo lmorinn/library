@@ -577,11 +577,11 @@ data:
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/convolution.hpp
 layout: document
 redirect_from:

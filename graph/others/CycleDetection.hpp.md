@@ -98,8 +98,8 @@ data:
   timestamp: '2025-05-26 05:25:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp
+  - verify/LibraryChecker/graph/others/CycleDetectionDirected.test.cpp
 documentation_of: graph/others/CycleDetection.hpp
 layout: document
 title: Cycle Detection
