@@ -1,8 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
+    title: $\#_p$ Subset Sum
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
@@ -150,14 +156,16 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/fps/FormalPowerSeries.hpp
-  requiredBy: []
+  requiredBy:
+  - math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
   timestamp: '2026-03-26 12:45:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
 documentation_of: math/fps/FormalPowerSeries.hpp
 layout: document
 title: Formal Power Series

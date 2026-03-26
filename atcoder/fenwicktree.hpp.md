@@ -95,8 +95,8 @@ data:
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
 documentation_of: atcoder/fenwicktree.hpp
 layout: document
 redirect_from:

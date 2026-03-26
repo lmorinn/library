@@ -411,6 +411,11 @@ data:
     - icon: ':warning:'
       path: math/NthTermOfLinearRecurrenceMatPow.hpp
       title: Nth term of linear recurrence (Matrix Power)
+  - name: math/enumerative-combinatorics
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
+      title: $\#_p$ Subset Sum
   - name: math/fps
     pages:
     - icon: ':heavy_check_mark:'
@@ -788,6 +793,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
       title: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
+  - name: verify/LibraryChecker/math/enumerative-combinatorics
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - name: verify/LibraryChecker/math/fps
     pages:
     - icon: ':heavy_check_mark:'
