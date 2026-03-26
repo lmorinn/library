@@ -11,6 +11,9 @@ data:
   - icon: ':warning:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
+  - icon: ':heavy_check_mark:'
+    path: math/fps/ProductofPolynomialSequence.hpp
+    title: Product of Polynomial Sequence
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
@@ -27,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+    title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,6 +70,7 @@ data:
   - atcoder/lazysegtree.hpp
   - atcoder/segtree.hpp
   - atcoder/convolution.hpp
+  - math/fps/ProductofPolynomialSequence.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -71,6 +78,7 @@ data:
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/internal_bit.hpp
 layout: document

@@ -226,6 +226,9 @@ data:
     path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+    title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
     title: verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -429,6 +432,7 @@ data:
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/MatrixProductMod2.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp

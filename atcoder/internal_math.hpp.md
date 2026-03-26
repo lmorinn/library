@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/flow/MaximumMatchingSize.hpp
     title: Maximum Matching Size (Randomized)
+  - icon: ':heavy_check_mark:'
+    path: math/fps/ProductofPolynomialSequence.hpp
+    title: Product of Polynomial Sequence
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
@@ -75,6 +78,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+    title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
@@ -244,6 +250,7 @@ data:
   - atcoder/modint.hpp
   - atcoder/math.hpp
   - atcoder/convolution.hpp
+  - math/fps/ProductofPolynomialSequence.hpp
   - graph/flow/MaximumMatchingSize.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -256,6 +263,7 @@ data:
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp

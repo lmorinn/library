@@ -416,6 +416,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/FormalPowerSeries.hpp
       title: Formal Power Series
+    - icon: ':heavy_check_mark:'
+      path: math/fps/ProductofPolynomialSequence.hpp
+      title: Product of Polynomial Sequence
   - name: math/number-theory
     pages:
     - icon: ':heavy_check_mark:'
@@ -799,6 +802,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
       title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+      title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - name: verify/LibraryChecker/math/number-theory
     pages:
     - icon: ':heavy_check_mark:'
