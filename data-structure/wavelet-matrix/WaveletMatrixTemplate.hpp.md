@@ -160,8 +160,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/wavelet-matrix/RangeKthSmallest.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/PointSetRangeFrequency.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/StaticRangeFrequency.test.cpp
 documentation_of: data-structure/wavelet-matrix/WaveletMatrixTemplate.hpp
 layout: document
 title: Wavelet Matrix

@@ -3,9 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: math/enumerative-combinatorics/BellNumber.hpp
+    title: Bell Number
+  - icon: ':heavy_check_mark:'
+    path: math/enumerative-combinatorics/PartitionFunction.hpp
+    title: Partition Function
+  - icon: ':heavy_check_mark:'
     path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
     title: $\#_p$ Subset Sum
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
     title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
@@ -158,14 +170,18 @@ data:
   path: math/fps/FormalPowerSeries.hpp
   requiredBy:
   - math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
+  - math/enumerative-combinatorics/BellNumber.hpp
+  - math/enumerative-combinatorics/PartitionFunction.hpp
   timestamp: '2026-03-26 12:45:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
   - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
 documentation_of: math/fps/FormalPowerSeries.hpp
 layout: document
 title: Formal Power Series

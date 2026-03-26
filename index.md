@@ -414,6 +414,12 @@ data:
   - name: math/enumerative-combinatorics
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/BellNumber.hpp
+      title: Bell Number
+    - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/PartitionFunction.hpp
+      title: Partition Function
+    - icon: ':heavy_check_mark:'
       path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
       title: $\#_p$ Subset Sum
   - name: math/fps
@@ -795,6 +801,12 @@ data:
       title: verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
   - name: verify/LibraryChecker/math/enumerative-combinatorics
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
       title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
