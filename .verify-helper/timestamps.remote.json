@@ -95,6 +95,7 @@
   "verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
   "verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
   "verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
+  "verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp": "2026-03-26 13:15:11 +0900",
   "verify/LibraryChecker/math/number-theory/CountingPrimes.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/math/number-theory/EnumerateQuotients.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/math/number-theory/Factorize.test.cpp": "2026-03-24 21:06:50 +0900",
