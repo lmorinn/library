@@ -425,6 +425,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
       title: Stirling Number of the Second Kind
+    - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.hpp
+      title: Stirling Number of the Second Kind (Fixed K)
   - name: math/fps
     pages:
     - icon: ':heavy_check_mark:'
@@ -816,6 +819,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
       title: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
   - name: verify/LibraryChecker/math/fps
     pages:
     - icon: ':heavy_check_mark:'
