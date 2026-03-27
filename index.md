@@ -422,6 +422,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
       title: $\#_p$ Subset Sum
+    - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
+      title: Stirling Number of the Second Kind
   - name: math/fps
     pages:
     - icon: ':heavy_check_mark:'
@@ -810,6 +813,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
       title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
   - name: verify/LibraryChecker/math/fps
     pages:
     - icon: ':heavy_check_mark:'

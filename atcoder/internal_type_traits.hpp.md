@@ -76,6 +76,9 @@ data:
     path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
     title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
   - icon: ':heavy_check_mark:'
@@ -211,6 +214,7 @@ data:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp

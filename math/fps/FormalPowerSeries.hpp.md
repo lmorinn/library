@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
     title: $\#_p$ Subset Sum
+  - icon: ':heavy_check_mark:'
+    path: math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
+    title: Stirling Number of the Second Kind
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
@@ -21,6 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
     title: verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
@@ -171,10 +177,12 @@ data:
   requiredBy:
   - math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
   - math/enumerative-combinatorics/BellNumber.hpp
+  - math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
   - math/enumerative-combinatorics/PartitionFunction.hpp
   timestamp: '2026-03-26 12:45:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
