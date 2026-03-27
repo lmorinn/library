@@ -95,6 +95,7 @@
   "verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp": "2026-03-26 15:46:24 +0900",
   "verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp": "2026-03-26 14:52:32 +0900",
   "verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp": "2026-03-27 19:55:31 +0900",
+  "verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp": "2026-03-27 21:00:12 +0900",
   "verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
   "verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
   "verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp": "2026-03-26 12:45:29 +0900",
