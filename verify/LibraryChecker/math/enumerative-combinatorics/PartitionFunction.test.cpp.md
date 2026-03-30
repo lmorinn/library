@@ -461,7 +461,10 @@ data:
     \ 2 * M1M2M3, 3 * M1M2M3};\n        x -= offset[diff % 5];\n        c[i] = x;\n\
     \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n\n#line 5 \"verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp\"\
     \nusing namespace atcoder;\nusing mint = modint998244353;\n\n#line 1 \"math/fps/FormalPowerSeries.hpp\"\
-    \nstruct FPS : vector<mint> {\n  using vector<mint>::vector;\n  using vector<mint>::operator=;\n\
+    \nstruct FPS;\n\nstruct SFPS : vector<pair<int, mint>> {\n  using vector<pair<int,\
+    \ mint>>::vector;\n  using vector<pair<int, mint>>::operator=;\n\n  FPS log(int\
+    \ deg);\n  FPS exp(int deg);\n  FPS pow(long long m, int deg);\n};\n\nstruct FPS\
+    \ : vector<mint> {\n  using vector<mint>::vector;\n  using vector<mint>::operator=;\n\
     \n  FPS inv() const {\n    int n = int((*this).size());\n    FPS res = {(*this)[0].inv()};\n\
     \    while (int(res.size()) < n) {\n      int m = int(res.size());\n      // f\
     \ = f[0, 2m)\n      FPS f((*this).begin(), (*this).begin() + min(n, m << 1));\n\
@@ -522,8 +525,45 @@ data:
     \ {\n    int n = int(size());\n    if (k >= n) {\n      assign(n, 0);\n      return\
     \ *this;\n    }\n    for (int i = 0; i < n - k; i++) (*this)[i] = (*this)[i +\
     \ k];\n    for (int i = n - k; i < n; i++) (*this)[i] = 0;\n    return *this;\n\
-    \  }\n\n  FPS operator<<(int k) const { return FPS(*this) <<= k; }\n  FPS operator>>(int\
-    \ k) const { return FPS(*this) >>= k; }\n};\n#line 2 \"math/enumerative-combinatorics/PartitionFunction.hpp\"\
+    \  }\n\n  FPS& operator/=(const SFPS& g) {\n    int n = (*this).size();\n    int\
+    \ k = int(g.size());\n    auto [d, c] = g.front();\n    assert(d == 0 and c !=\
+    \ 0);\n    mint inv = c.inv();\n    for (int i = 0; i < n; i++) {\n      for (int\
+    \ j = 1; j < k; j++) {\n        const auto& [d, c] = g[j];\n        if (d > i)\
+    \ break;\n        (*this)[i] -= (*this)[i - d] * c;\n      }\n      (*this)[i]\
+    \ *= inv;\n    }\n    return *this;\n  }\n\n  FPS operator<<(int k) const { return\
+    \ FPS(*this) <<= k; }\n  FPS operator>>(int k) const { return FPS(*this) >>= k;\
+    \ }\n};\n\nFPS SFPS::log(int deg) {\n  FPS f(deg);\n  assert((*this)[0].first\
+    \ == 0 and (*this)[0].second == 1 and (*this).back().first < deg);\n  int k =\
+    \ (*this).size();\n  for (int i = 0; i < k; i++) {\n    const auto& [d, c] = (*this)[i];\n\
+    \    f[d] = c;\n  }\n  f.differentiate_inplace();\n  f /= (*this);\n  f.integrate_inplace();\n\
+    \  return f;\n}\n\nFPS SFPS::exp(int deg) {\n  SFPS df = (*this);\n  int k = (*this).size();\n\
+    \  vector<mint> inv(deg);\n  inv[1] = 1;\n  for (int i = 2; i < deg; i++) inv[i]\
+    \ = inv[998244353 % i] * (-(998244353 / i));\n\n  // df = f'\n  for (int i = 0;\
+    \ i < k; i++) {\n    const auto& [d, c] = df[i];\n    df[i] = {d - 1, d * c};\n\
+    \  }\n\n  // F = exp(f)\n  // F' = f'F\n  FPS F(deg);\n  F[0] = 1;\n  for (int\
+    \ i = 0; i < deg - 1; i++) {\n    atcoder::modint998244353 conv_sum = 0;\n   \
+    \ for (int j = 0; j < k; j++) {\n      const auto& [d, c] = df[j];\n      if (d\
+    \ > i) break;\n      conv_sum += c * F[i - d];\n    }\n    F[i + 1] = conv_sum\
+    \ * inv[i + 1];\n  }\n  return F;\n}\n\nFPS SFPS::pow(long long m, int deg) {\n\
+    \  if (m == 0) {\n    FPS res(deg);\n    if (deg) res[0] = 1;\n    return res;\n\
+    \  }\n  vector<mint> inv(deg);\n  inv[1] = 1;\n  for (int i = 2; i < deg; i++)\
+    \ inv[i] = inv[998244353 % i] * (-(998244353 / i));\n\n  int k = (*this).size();\n\
+    \  // F = f ^ m\n  FPS F(deg);\n  // F' = m(f^(n-1))f'\n  // fF' = mFf'\n\n  //\
+    \ \u5B9A\u6570\u9805\u30921\u306B\u3059\u308B\n  for (int i = 0; i < k; i++) {\n\
+    \    const auto& [d, c] = (*this)[i];\n    if (c != 0) {\n      SFPS f((*this).begin()\
+    \ + i, (*this).end());\n      for (int j = 0; j < f.size(); j++) {\n        f[j].first\
+    \ -= d;\n        f[j].second /= c;\n      }\n\n      FPS F(deg);\n      F[0] =\
+    \ 1;\n      for (int j = 0; j < deg - 1; j++) {\n        atcoder::modint998244353\
+    \ dF_j = 0;\n        for (int l = 0; l < f.size(); l++) {\n          const auto&\
+    \ [d_, c_] = f[l];\n          if (d_ == 0) continue;\n          if (d_ - 1 > j)\
+    \ break;\n          dF_j += c_ * F[j - d_ + 1] * (atcoder::modint998244353(m)\
+    \ * d_ - (j - d_ + 1));\n        }\n        F[j + 1] = dF_j * inv[j + 1];\n  \
+    \    }\n      atcoder::modint998244353 coef_pw = atcoder::modint998244353(c).pow(m);\n\
+    \      for (int j = 0; j < deg; j++) F[j] *= coef_pw;\n\n      FPS res(min(__int128_t(m)\
+    \ * d, __int128_t(deg)), 0);\n      if (res.size() < deg) res.insert(res.end(),\
+    \ F.begin(), F.begin() + min(deg, deg - int(res.size())));\n      return res;\n\
+    \    }\n\n    if (__int128_t(d + 1) * m >= deg) return FPS(deg, 0);\n  }\n\n \
+    \ return FPS(deg, 0);\n}\n#line 2 \"math/enumerative-combinatorics/PartitionFunction.hpp\"\
     \n\nFPS partition_function(int n) {\n  FPS log_f(n + 1);\n  vector<atcoder::modint998244353>\
     \ iv(n + 1);\n  iv[1] = 1;\n  for (int i = 2; i < n + 1; i++) iv[i] = iv[998244353\
     \ % i] * (-(998244353 / i));\n  for (long long k = 1; k < n + 1; k++) {\n    for\
@@ -551,7 +591,7 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   requiredBy: []
-  timestamp: '2026-03-26 15:46:24+09:00'
+  timestamp: '2026-03-30 16:02:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp

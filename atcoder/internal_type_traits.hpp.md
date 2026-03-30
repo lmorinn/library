@@ -85,14 +85,26 @@ data:
     path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+    title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
+    title: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
+    title: verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
     title: verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
+    title: verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
     title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
@@ -226,9 +238,13 @@ data:
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
   - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp

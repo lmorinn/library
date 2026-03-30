@@ -32,9 +32,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
+    PROBLEM: https://judge.yosupo.jp/problem/inv_of_formal_power_series_sparse
     links:
-    - https://judge.yosupo.jp/problem/exp_of_formal_power_series
+    - https://judge.yosupo.jp/problem/inv_of_formal_power_series_sparse
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
     \ <bits/stdc++.h>\n#include <tr2/dynamic_bitset>\n\nusing namespace std;\nusing\
     \ namespace tr2;\nusing lint = long long;\nusing ull = unsigned long long;\nusing\
@@ -82,15 +82,28 @@ data:
     \ a = b;\n    return true;\n  }\n  return false;\n}\n\nvector<lint> dx8 = {1,\
     \ 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1, 1, 0, -1, -1, -1};\n\
     vector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0, 1, 0, -1};\n\n#pragma\
-    \ endregion\n#line 2 \"verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
-    \n#line 1 \"atcoder/modint.hpp\"\n\n\n\n#line 6 \"atcoder/modint.hpp\"\n#include\
-    \ <type_traits>\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#line 1 \"\
-    atcoder/internal_math.hpp\"\n\n\n\n#line 5 \"atcoder/internal_math.hpp\"\n\n#ifdef\
-    \ _MSC_VER\n#include <intrin.h>\n#endif\n\nnamespace atcoder {\n\nnamespace internal\
-    \ {\n\n// @param m `1 <= m`\n// @return x mod m\nconstexpr long long safe_mod(long\
-    \ long x, long long m) {\n    x %= m;\n    if (x < 0) x += m;\n    return x;\n\
-    }\n\n// Fast modular multiplication by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
+    \ endregion\n#line 2 \"verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series_sparse\"\
+    \n#line 1 \"atcoder/convolution.hpp\"\n\n\n\n#line 7 \"atcoder/convolution.hpp\"\
+    \n#include <type_traits>\n#line 9 \"atcoder/convolution.hpp\"\n\n#line 1 \"atcoder/internal_bit.hpp\"\
+    \n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#if __cplusplus >= 202002L\n\
+    #include <bit>\n#endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n#if __cplusplus\
+    \ >= 202002L\n\nusing std::bit_ceil;\n\n#else\n\n// @return same with std::bit::bit_ceil\n\
+    unsigned int bit_ceil(unsigned int n) {\n    unsigned int x = 1;\n    while (x\
+    \ < (unsigned int)(n)) x *= 2;\n    return x;\n}\n\n#endif\n\n// @param n `1 <=\
+    \ n`\n// @return same with std::bit::countr_zero\nint countr_zero(unsigned int\
+    \ n) {\n#ifdef _MSC_VER\n    unsigned long index;\n    _BitScanForward(&index,\
+    \ n);\n    return index;\n#else\n    return __builtin_ctz(n);\n#endif\n}\n\n//\
+    \ @param n `1 <= n`\n// @return same with std::bit::countr_zero\nconstexpr int\
+    \ countr_zero_constexpr(unsigned int n) {\n    int x = 0;\n    while (!(n & (1\
+    \ << x))) x++;\n    return x;\n}\n\n}  // namespace internal\n\n}  // namespace\
+    \ atcoder\n\n\n#line 1 \"atcoder/modint.hpp\"\n\n\n\n#line 7 \"atcoder/modint.hpp\"\
+    \n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#line 1 \"atcoder/internal_math.hpp\"\
+    \n\n\n\n#line 5 \"atcoder/internal_math.hpp\"\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
+    #endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n// @param m `1 <= m`\n\
+    // @return x mod m\nconstexpr long long safe_mod(long long x, long long m) {\n\
+    \    x %= m;\n    if (x < 0) x += m;\n    return x;\n}\n\n// Fast modular multiplication\
+    \ by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
     // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
     \   unsigned long long im;\n\n    // @param m `1 <= m`\n    explicit barrett(unsigned\
     \ int m) : _m(m), im((unsigned long long)(-1) / m + 1) {}\n\n    // @return m\n\
@@ -289,24 +302,11 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 1 \"atcoder/convolution.hpp\"\
-    \n\n\n\n#line 9 \"atcoder/convolution.hpp\"\n\n#line 1 \"atcoder/internal_bit.hpp\"\
-    \n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\n#if __cplusplus >= 202002L\n\
-    #include <bit>\n#endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n#if __cplusplus\
-    \ >= 202002L\n\nusing std::bit_ceil;\n\n#else\n\n// @return same with std::bit::bit_ceil\n\
-    unsigned int bit_ceil(unsigned int n) {\n    unsigned int x = 1;\n    while (x\
-    \ < (unsigned int)(n)) x *= 2;\n    return x;\n}\n\n#endif\n\n// @param n `1 <=\
-    \ n`\n// @return same with std::bit::countr_zero\nint countr_zero(unsigned int\
-    \ n) {\n#ifdef _MSC_VER\n    unsigned long index;\n    _BitScanForward(&index,\
-    \ n);\n    return index;\n#else\n    return __builtin_ctz(n);\n#endif\n}\n\n//\
-    \ @param n `1 <= n`\n// @return same with std::bit::countr_zero\nconstexpr int\
-    \ countr_zero_constexpr(unsigned int n) {\n    int x = 0;\n    while (!(n & (1\
-    \ << x))) x++;\n    return x;\n}\n\n}  // namespace internal\n\n}  // namespace\
-    \ atcoder\n\n\n#line 12 \"atcoder/convolution.hpp\"\n\nnamespace atcoder {\n\n\
-    namespace internal {\n\ntemplate <class mint,\n          int g = internal::primitive_root<mint::mod()>,\n\
-    \          internal::is_static_modint_t<mint>* = nullptr>\nstruct fft_info {\n\
-    \    static constexpr int rank2 = countr_zero_constexpr(mint::mod() - 1);\n  \
-    \  std::array<mint, rank2 + 1> root;   // root[i]^(2^i) == 1\n    std::array<mint,\
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 12 \"atcoder/convolution.hpp\"\
+    \n\nnamespace atcoder {\n\nnamespace internal {\n\ntemplate <class mint,\n   \
+    \       int g = internal::primitive_root<mint::mod()>,\n          internal::is_static_modint_t<mint>*\
+    \ = nullptr>\nstruct fft_info {\n    static constexpr int rank2 = countr_zero_constexpr(mint::mod()\
+    \ - 1);\n    std::array<mint, rank2 + 1> root;   // root[i]^(2^i) == 1\n    std::array<mint,\
     \ rank2 + 1> iroot;  // root[i] * iroot[i] == 1\n\n    std::array<mint, std::max(0,\
     \ rank2 - 2 + 1)> rate2;\n    std::array<mint, std::max(0, rank2 - 2 + 1)> irate2;\n\
     \n    std::array<mint, std::max(0, rank2 - 3 + 1)> rate3;\n    std::array<mint,\
@@ -456,8 +456,8 @@ data:
     \ long)(x), (long long)(MOD1));\n        if (diff < 0) diff += MOD1;\n       \
     \ static constexpr unsigned long long offset[5] = {\n            0, 0, M1M2M3,\
     \ 2 * M1M2M3, 3 * M1M2M3};\n        x -= offset[diff % 5];\n        c[i] = x;\n\
-    \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n\n#line 5 \"verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp\"\
-    \nusing namespace atcoder;\nusing mint = modint998244353;\n\n#line 1 \"math/fps/FormalPowerSeries.hpp\"\
+    \    }\n\n    return c;\n}\n\n}  // namespace atcoder\n\n\n#line 5 \"verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp\"\
+    \nusing namespace atcoder;\nusing mint = modint998244353;\n#line 1 \"math/fps/FormalPowerSeries.hpp\"\
     \nstruct FPS;\n\nstruct SFPS : vector<pair<int, mint>> {\n  using vector<pair<int,\
     \ mint>>::vector;\n  using vector<pair<int, mint>>::operator=;\n\n  FPS log(int\
     \ deg);\n  FPS exp(int deg);\n  FPS pow(long long m, int deg);\n};\n\nstruct FPS\
@@ -560,35 +560,37 @@ data:
     \ * d, __int128_t(deg)), 0);\n      if (res.size() < deg) res.insert(res.end(),\
     \ F.begin(), F.begin() + min(deg, deg - int(res.size())));\n      return res;\n\
     \    }\n\n    if (__int128_t(d + 1) * m >= deg) return FPS(deg, 0);\n  }\n\n \
-    \ return FPS(deg, 0);\n}\n#line 9 \"verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp\"\
-    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  in(n);\n  FPS\
-    \ f(n);\n  rep(i, n) {\n    int a;\n    in(a);\n    f[i] = a;\n  }\n\n  f = f.exp();\n\
-    \  rep(i, n) {\n    cout << f[i].val() << \" \";\n  }\n  out();\n}\n"
-  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
-    \n#include \"../../../../atcoder/modint.hpp\"\n#include \"../../../../atcoder/convolution.hpp\"\
-    \nusing namespace atcoder;\nusing mint = modint998244353;\n\n#include \"../../../../math/fps/FormalPowerSeries.hpp\"\
-    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n;\n  in(n);\n  FPS\
-    \ f(n);\n  rep(i, n) {\n    int a;\n    in(a);\n    f[i] = a;\n  }\n\n  f = f.exp();\n\
-    \  rep(i, n) {\n    cout << f[i].val() << \" \";\n  }\n  out();\n}\n"
+    \ return FPS(deg, 0);\n}\n#line 8 \"verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, k;\n  in(n, k);\n\
+    \  FPS f(n);\n  f[0] = 1;\n  SFPS h(k);\n  rep(i, k) {\n    int d, c;\n    in(d,\
+    \ c);\n    h[i] = {d, c};\n  }\n  f /= h;\n\n  rep(i, n) {\n    cout << f[i].val();\n\
+    \    if (i != n - 1) cout << \" \";\n  }\n  out();\n}\n"
+  code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series_sparse\"\
+    \n#include \"../../../../atcoder/convolution.hpp\"\n#include \"../../../../atcoder/modint.hpp\"\
+    \nusing namespace atcoder;\nusing mint = modint998244353;\n#include \"../../../../math/fps/FormalPowerSeries.hpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, k;\n  in(n, k);\n\
+    \  FPS f(n);\n  f[0] = 1;\n  SFPS h(k);\n  rep(i, k) {\n    int d, c;\n    in(d,\
+    \ c);\n    h[i] = {d, c};\n  }\n  f /= h;\n\n  rep(i, n) {\n    cout << f[i].val();\n\
+    \    if (i != n - 1) cout << \" \";\n  }\n  out();\n}\n"
   dependsOn:
   - template/template.hpp
-  - atcoder/modint.hpp
-  - atcoder/internal_math.hpp
-  - atcoder/internal_type_traits.hpp
   - atcoder/convolution.hpp
   - atcoder/internal_bit.hpp
   - atcoder/modint.hpp
+  - atcoder/internal_math.hpp
+  - atcoder/internal_type_traits.hpp
+  - atcoder/modint.hpp
   - math/fps/FormalPowerSeries.hpp
   isVerificationFile: true
-  path: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  path: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
   requiredBy: []
   timestamp: '2026-03-30 16:02:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+documentation_of: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
-- /verify/verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp.html
-title: verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+- /verify/verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
+- /verify/verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp.html
+title: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
 ---
