@@ -1,3 +1,14 @@
+struct FPS;
+
+struct SFPS : vector<pair<int, mint>> {
+  using vector<pair<int, mint>>::vector;
+  using vector<pair<int, mint>>::operator=;
+
+  FPS log(int deg);
+  FPS exp(int deg);
+  FPS pow(long long m, int deg);
+};
+
 struct FPS : vector<mint> {
   using vector<mint>::vector;
   using vector<mint>::operator=;
@@ -180,6 +191,118 @@ struct FPS : vector<mint> {
     return *this;
   }
 
+  FPS& operator/=(const SFPS& g) {
+    int n = (*this).size();
+    int k = int(g.size());
+    auto [d, c] = g.front();
+    assert(d == 0 and c != 0);
+    mint inv = c.inv();
+    for (int i = 0; i < n; i++) {
+      for (int j = 1; j < k; j++) {
+        const auto& [d, c] = g[j];
+        if (d > i) break;
+        (*this)[i] -= (*this)[i - d] * c;
+      }
+      (*this)[i] *= inv;
+    }
+    return *this;
+  }
+
   FPS operator<<(int k) const { return FPS(*this) <<= k; }
   FPS operator>>(int k) const { return FPS(*this) >>= k; }
 };
+
+FPS SFPS::log(int deg) {
+  FPS f(deg);
+  assert((*this)[0].first == 0 and (*this)[0].second == 1 and (*this).back().first < deg);
+  int k = (*this).size();
+  for (int i = 0; i < k; i++) {
+    const auto& [d, c] = (*this)[i];
+    f[d] = c;
+  }
+  f.differentiate_inplace();
+  f /= (*this);
+  f.integrate_inplace();
+  return f;
+}
+
+FPS SFPS::exp(int deg) {
+  SFPS df = (*this);
+  int k = (*this).size();
+  vector<mint> inv(deg);
+  inv[1] = 1;
+  for (int i = 2; i < deg; i++) inv[i] = inv[998244353 % i] * (-(998244353 / i));
+
+  // df = f'
+  for (int i = 0; i < k; i++) {
+    const auto& [d, c] = df[i];
+    df[i] = {d - 1, d * c};
+  }
+
+  // F = exp(f)
+  // F' = f'F
+  FPS F(deg);
+  F[0] = 1;
+  for (int i = 0; i < deg - 1; i++) {
+    atcoder::modint998244353 conv_sum = 0;
+    for (int j = 0; j < k; j++) {
+      const auto& [d, c] = df[j];
+      if (d > i) break;
+      conv_sum += c * F[i - d];
+    }
+    F[i + 1] = conv_sum * inv[i + 1];
+  }
+  return F;
+}
+
+FPS SFPS::pow(long long m, int deg) {
+  if (m == 0) {
+    FPS res(deg);
+    if (deg) res[0] = 1;
+    return res;
+  }
+  vector<mint> inv(deg);
+  inv[1] = 1;
+  for (int i = 2; i < deg; i++) inv[i] = inv[998244353 % i] * (-(998244353 / i));
+
+  int k = (*this).size();
+  // F = f ^ m
+  FPS F(deg);
+  // F' = m(f^(n-1))f'
+  // fF' = mFf'
+
+  // 定数項を1にする
+  for (int i = 0; i < k; i++) {
+    const auto& [d, c] = (*this)[i];
+    if (c != 0) {
+      SFPS f((*this).begin() + i, (*this).end());
+      for (int j = 0; j < f.size(); j++) {
+        f[j].first -= d;
+        f[j].second /= c;
+      }
+
+      FPS F(deg);
+      F[0] = 1;
+      for (int j = 0; j < deg - 1; j++) {
+        atcoder::modint998244353 dF_j = 0;
+        for (int l = 0; l < f.size(); l++) {
+          const auto& [d_, c_] = f[l];
+          if (d_ == 0) continue;
+          if (d_ - 1 > j) break;
+          dF_j += c_ * F[j - d_ + 1] * (atcoder::modint998244353(m) * d_ - (j - d_ + 1));
+        }
+        F[j + 1] = dF_j * inv[j + 1];
+      }
+      atcoder::modint998244353 coef_pw = atcoder::modint998244353(c).pow(m);
+      for (int j = 0; j < deg; j++) F[j] *= coef_pw;
+
+      FPS res(min(__int128_t(m) * d, __int128_t(deg)), 0);
+      if (res.size() < deg) res.insert(res.end(), F.begin(), F.begin() + min(deg, deg - int(res.size())));
+      return res;
+    }
+
+    if (__int128_t(d + 1) * m >= deg) return FPS(deg, 0);
+  }
+
+  return FPS(deg, 0);
+}
