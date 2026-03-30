@@ -13,7 +13,7 @@ int main() {
   in(n, t);
   vector<long long> s(n);
   in(s);
-  FPS res = sharp_p_subset_sum(s, t);
+  FPS<mint> res = sharp_p_subset_sum<mint>(s, t);
   rep(i, 1, t + 1) {
     cout << res[i].val();
     if (i != t) cout << " ";

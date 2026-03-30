@@ -1,10 +1,11 @@
 #include "../fps/FormalPowerSeries.hpp"
 
-FPS partition_function(int n) {
-  FPS log_f(n + 1);
-  vector<atcoder::modint998244353> iv(n + 1);
+template <class S>
+FPS<S> partition_function(int n) {
+  FPS<S> log_f(n + 1);
+  vector<S> iv(n + 1);
   iv[1] = 1;
-  for (int i = 2; i < n + 1; i++) iv[i] = iv[998244353 % i] * (-(998244353 / i));
+  for (int i = 2; i < n + 1; i++) iv[i] = iv[S::mod() % i] * (-(S::mod() / i));
   for (long long k = 1; k < n + 1; k++) {
     for (long long i = 1; k * i < n + 1; i++) {
       log_f[k * i] += iv[i];

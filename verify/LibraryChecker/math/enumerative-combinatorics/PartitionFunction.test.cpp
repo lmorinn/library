@@ -11,7 +11,7 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n;
   in(n);
-  FPS res = partition_function(n);
+  FPS<mint> res = partition_function<mint>(n);
   rep(i, n + 1) {
     cout << res[i].val();
     if (i != n) cout << " ";

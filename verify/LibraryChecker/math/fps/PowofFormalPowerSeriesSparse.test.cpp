@@ -10,14 +10,14 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   lint n, k, m;
   in(n, k, m);
-  SFPS f(k);
+  SFPS<mint> f(k);
   rep(i, k) {
     int d, c;
     in(d, c);
     f[i] = {d, c};
   }
 
-  FPS res = f.pow(m, n);
+  FPS<mint> res = f.pow(m, n);
   rep(i, n) {
     cout << res[i].val();
     if (i != n - 1) cout << " ";

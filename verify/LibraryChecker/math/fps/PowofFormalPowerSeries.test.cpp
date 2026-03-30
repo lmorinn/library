@@ -10,7 +10,7 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   lint n, m;
   in(n, m);
-  FPS a(n);
+  FPS<mint> a(n);
   rep(i, n) {
     int x;
     in(x);

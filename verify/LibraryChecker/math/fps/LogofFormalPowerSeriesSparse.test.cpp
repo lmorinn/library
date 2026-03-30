@@ -10,13 +10,13 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n, k;
   in(n, k);
-  SFPS h(k);
+  SFPS<mint> h(k);
   rep(i, k) {
     int d, c;
     in(d, c);
     h[i] = {d, c};
   }
-  FPS l = h.log(n);
+  FPS<mint> l = h.log(n);
 
   rep(i, n) {
     cout << l[i].val();

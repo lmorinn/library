@@ -11,7 +11,7 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n, k;
   in(n, k);
-  FPS res = Stirling_number_2nd_fixed_k(n, k);
+  FPS<mint> res = Stirling_number_2nd_fixed_k<mint>(n, k);
   rep(i, k, n + 1) {
     cout << res[i].val();
     if (i != n) cout << " ";

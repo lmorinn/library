@@ -11,7 +11,7 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n;
   in(n);
-  FPS b = Bell_number(n);
+  FPS<mint> b = Bell_number<mint>(n);
   rep(i, n + 1) {
     cout << b[i].val();
     if (i != n) cout << " ";
