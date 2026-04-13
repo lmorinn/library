@@ -298,6 +298,9 @@ data:
     path: verify/LibraryChecker/string/SuffixArray.test.cpp
     title: verify/LibraryChecker/string/SuffixArray.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
+    title: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/CartesianTree.test.cpp
     title: verify/LibraryChecker/tree/CartesianTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -483,6 +486,7 @@ data:
   - verify/LibraryChecker/linear-algebra/InverseMatrixMod2.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrixMod2.test.cpp
   - verify/LibraryChecker/geometry/SortPointsbyArgument.test.cpp
+  - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp

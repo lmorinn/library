@@ -20,6 +20,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/fps/ProductofPolynomialSequence.hpp
     title: Product of Polynomial Sequence
+  - icon: ':heavy_check_mark:'
+    path: string/WildcardPatternMatching.hpp
+    title: Wildcard Pattern Matching
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
@@ -162,6 +165,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
+    title: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -473,6 +479,7 @@ data:
   - atcoder/convolution.hpp
   - math/fps/ProductofPolynomialSequence.hpp
   - math/fps/ProductofPolynomialSequence.hpp
+  - string/WildcardPatternMatching.hpp
   - graph/flow/MaximumMatchingSize.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -514,6 +521,7 @@ data:
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+  - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp

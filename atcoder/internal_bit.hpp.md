@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/fps/ProductofPolynomialSequence.hpp
     title: Product of Polynomial Sequence
+  - icon: ':heavy_check_mark:'
+    path: string/WildcardPatternMatching.hpp
+    title: Wildcard Pattern Matching
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
@@ -60,6 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
     title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
+    title: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -98,6 +104,7 @@ data:
   - atcoder/segtree.hpp
   - atcoder/convolution.hpp
   - math/fps/ProductofPolynomialSequence.hpp
+  - string/WildcardPatternMatching.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -115,6 +122,7 @@ data:
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/internal_bit.hpp
 layout: document

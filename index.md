@@ -508,6 +508,9 @@ data:
     - icon: ':warning:'
       path: string/Trie.hpp
       title: Trie
+    - icon: ':heavy_check_mark:'
+      path: string/WildcardPatternMatching.hpp
+      title: Wildcard Pattern Matching
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
@@ -900,6 +903,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/string/SuffixArray.test.cpp
       title: verify/LibraryChecker/string/SuffixArray.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
+      title: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - name: verify/LibraryChecker/tree
     pages:
     - icon: ':heavy_check_mark:'
