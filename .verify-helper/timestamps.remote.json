@@ -119,6 +119,7 @@
   "verify/LibraryChecker/string/NumberofSubstrings.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/string/NumberofSubstrings2.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/string/SuffixArray.test.cpp": "2026-03-24 21:06:50 +0900",
+  "verify/LibraryChecker/string/WildcardPatternMatching.test.cpp": "2026-04-13 15:36:53 +0900",
   "verify/LibraryChecker/tree/CartesianTree.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp": "2024-06-26 20:58:27 +0900",
   "verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp": "2026-03-24 21:06:50 +0900",
