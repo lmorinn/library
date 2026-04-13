@@ -417,6 +417,9 @@ data:
       path: math/enumerative-combinatorics/BellNumber.hpp
       title: Bell Number
     - icon: ':heavy_check_mark:'
+      path: math/enumerative-combinatorics/BinomialCoefficientPrimeMod.hpp
+      title: Binomial Coefficient (Prime Mod)
+    - icon: ':heavy_check_mark:'
       path: math/enumerative-combinatorics/PartitionFunction.hpp
       title: Partition Function
     - icon: ':heavy_check_mark:'
@@ -810,6 +813,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
       title: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
+      title: verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
       title: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp

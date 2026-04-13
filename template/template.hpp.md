@@ -217,6 +217,9 @@ data:
     path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
     title: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
+    title: verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
     title: verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - icon: ':heavy_check_mark:'
@@ -447,6 +450,7 @@ data:
   - verify/LibraryChecker/tree/CartesianTree.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
