@@ -31,7 +31,7 @@ void trie.insert(const string& s)
 文字列 `s` を trie に挿入する。
 
 ### 制約
-- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{char\_size}$
+- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{charsize}$
 
 ### 計算量
 - $O(|s|)$
@@ -46,7 +46,7 @@ bool trie.search(const string& s, bool prefix = false)
 - `prefix = true` のとき、`s` を prefix に持つ文字列が存在すれば `true` を返す。
 
 ### 制約
-- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{char\_size}$
+- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{charsize}$
 
 ### 計算量
 - $O(|s|)$
@@ -60,7 +60,7 @@ bool trie.start_with(const string& s)
 `search(s, true)` を行う。`s` を prefix に持つ文字列が存在すれば `true` を返す。
 
 ### 制約
-- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{char\_size}$
+- `s` の各文字 `c` について $0 \leq c - \mathrm{base} < \mathrm{charsize}$
 
 ### 計算量
 - $O(|s|)$
