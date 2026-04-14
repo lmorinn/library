@@ -51,7 +51,6 @@ class Trie {
                 return false;
             }
             node_id = next_id;
-            out("cnt", tree[node_id].cnt);
         }
         return (prefix) ? true : tree[node_id].fin.size() > 0;
     }
