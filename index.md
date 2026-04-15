@@ -288,7 +288,7 @@ data:
       title: 01 Knapsack Problem
     - icon: ':heavy_check_mark:'
       path: dp/KnapsackProblemNoLimit.hpp
-      title: Knapsack Problem
+      title: Knapsack Problem No Limit
     - icon: ':heavy_check_mark:'
       path: dp/LongestIncreasingSubsequence.hpp
       title: Longest Increasing Subsequence

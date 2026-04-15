@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: dp/KnapsackProblemNoLimit.hpp
-    title: Knapsack Problem
+    title: Knapsack Problem No Limit
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
