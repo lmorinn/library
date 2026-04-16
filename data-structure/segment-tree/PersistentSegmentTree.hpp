@@ -66,6 +66,10 @@ class persistent_segtree {
         root = build(v, 0, n);
     }
 
+    int replace(const vector<S>& v) {
+        return build(v, 0, int(v.size()));
+    }
+
     int get_root() {
         return root;
     }
