@@ -460,6 +460,15 @@ data:
       path: math/number-theory/Factorize.hpp
       title: Factorize
     - icon: ':heavy_check_mark:'
+      path: math/number-theory/GCDConvolution.hpp
+      title: GCD Convolution
+    - icon: ':heavy_check_mark:'
+      path: math/number-theory/LCMConvolution.hpp
+      title: LCM Convolution
+    - icon: ':heavy_check_mark:'
+      path: math/number-theory/MultipleDivisorZetaMobiusTransform.hpp
+      title: "Multiple/Divisor Zeta/M\xF6bius Transform"
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/PrimalityTest.hpp
       title: Primality Test
     - icon: ':heavy_check_mark:'
@@ -480,6 +489,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/TetrationMod.hpp
       title: Tetration Mod
+  - name: math/set-function
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/set-function/BitwiseANDConvolution.hpp
+      title: Bitwise AND Convolution
+    - icon: ':warning:'
+      path: math/set-function/BitwiseORConvolution.hpp
+      title: Bitwise OR Convolution
+    - icon: ':heavy_check_mark:'
+      path: math/set-function/ZetaMobiusTransform.hpp
+      title: "Superset/Subset Zeta/M\xF6bius Transform"
   - name: other
     pages:
     - icon: ':heavy_check_mark:'
@@ -872,6 +892,12 @@ data:
       path: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
       title: verify/LibraryChecker/math/number-theory/Factorize.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
+      title: verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
+      title: verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
       title: verify/LibraryChecker/math/number-theory/PrimalityTest.test.cpp
     - icon: ':heavy_check_mark:'
@@ -889,6 +915,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
       title: verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+  - name: verify/LibraryChecker/math/set-function
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
+      title: verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
   - name: verify/LibraryChecker/string
     pages:
     - icon: ':heavy_check_mark:'

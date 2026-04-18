@@ -115,11 +115,20 @@ data:
     path: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
     title: verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
+    title: verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
+    title: verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
     title: verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
+    title: verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
     title: verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
@@ -239,12 +248,15 @@ data:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+  - verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
+  - verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
