@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: academic
+    pages:
+    - icon: ':warning:'
+      path: academic/Simplex.hpp
+      title: academic/Simplex.hpp
   - name: atcoder
     pages:
     - icon: ':heavy_check_mark:'
