@@ -1,6 +1,6 @@
 ---
 title: Simplex Method
-documentation_of: //math/academic/Simplex.hpp
+documentation_of: //academic/Simplex.hpp
 ---
 
 ## 概要
