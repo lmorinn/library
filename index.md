@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: academic/Simplex.hpp
-      title: academic/Simplex.hpp
+      title: Simplex Method
   - name: atcoder
     pages:
     - icon: ':heavy_check_mark:'

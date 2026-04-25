@@ -257,8 +257,10 @@ data:
   verifiedWith: []
 documentation_of: academic/Simplex.hpp
 layout: document
-redirect_from:
-- /library/academic/Simplex.hpp
-- /library/academic/Simplex.hpp.html
-title: academic/Simplex.hpp
+title: Simplex Method
 ---
+
+## 概要
+
+単体法　(未verify)
+
