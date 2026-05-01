@@ -313,6 +313,9 @@ data:
     path: verify/LibraryChecker/tree/CartesianTree.test.cpp
     title: verify/LibraryChecker/tree/CartesianTree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
+    title: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -459,6 +462,7 @@ data:
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
+  - verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
   - verify/LibraryChecker/tree/CartesianTree.test.cpp
   - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
   - verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp

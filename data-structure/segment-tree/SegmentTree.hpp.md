@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/EulerTour.hpp
     title: Euler Tour
+  - icon: ':heavy_check_mark:'
+    path: graph/tree/LowestCommonAncestor.hpp
+    title: Lowest Common Ancestor
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
@@ -18,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
     title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
+    title: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
     title: verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
@@ -107,12 +113,14 @@ data:
   requiredBy:
   - dp/LongestIncreasingSubsequence.hpp
   - graph/tree/EulerTour.hpp
+  - graph/tree/LowestCommonAncestor.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
   - verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+  - verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
   - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
 documentation_of: data-structure/segment-tree/SegmentTree.hpp
 layout: document

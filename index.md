@@ -398,6 +398,9 @@ data:
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
+      path: graph/tree/LowestCommonAncestor.hpp
+      title: Lowest Common Ancestor
+    - icon: ':heavy_check_mark:'
       path: graph/tree/Rerooting.hpp
       title: Rerooting DP
     - icon: ':heavy_check_mark:'
@@ -950,6 +953,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
       title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
+      title: verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
       title: verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
