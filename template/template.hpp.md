@@ -82,6 +82,9 @@ data:
     path: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
     title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
     title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -460,6 +463,7 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  - verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
   - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
