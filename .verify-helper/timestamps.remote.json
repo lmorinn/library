@@ -30,6 +30,7 @@
   "verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp": "2026-03-24 21:06:50 +0900",
+  "verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp": "2026-05-02 20:17:36 +0900",
   "verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/shortest-path/GRL_1_C.test.cpp": "2024-06-26 17:11:19 +0900",
