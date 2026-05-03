@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
     title: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -138,6 +141,7 @@ data:
   timestamp: '2026-05-02 20:17:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
   - verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
 documentation_of: academic/MinimumCostB-flow.hpp
 layout: document

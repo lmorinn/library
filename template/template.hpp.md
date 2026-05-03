@@ -88,6 +88,9 @@ data:
     path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
     title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
+    title: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
     title: verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -462,6 +465,7 @@ data:
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp
   - verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235dynamic.test.cpp
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
   - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
   - verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
   - verify/AizuOnlineJudge/graph/shortest-path/ALDS1_12_C.test.cpp

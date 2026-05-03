@@ -662,6 +662,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
       title: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
+      title: verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp
   - name: verify/AizuOnlineJudge/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
