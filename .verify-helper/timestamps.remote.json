@@ -31,6 +31,7 @@
   "verify/AizuOnlineJudge/graph/connectivity/GraphConstruction2235lct.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp": "2026-05-03 18:38:34 +0900",
+  "verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp": "2026-05-03 20:10:43 +0900",
   "verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp": "2026-05-02 20:17:36 +0900",
   "verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp": "2026-03-24 21:06:50 +0900",
   "verify/AizuOnlineJudge/graph/flow/GRL_7_A_2.test.cpp": "2026-05-03 14:51:15 +0900",
