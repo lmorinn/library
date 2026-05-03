@@ -4,6 +4,9 @@ data:
   - name: academic
     pages:
     - icon: ':heavy_check_mark:'
+      path: academic/MaxflowAugmentingPath.hpp
+      title: "Maxflow (\u5897\u52A0\u9053\u6CD5)"
+    - icon: ':heavy_check_mark:'
       path: academic/MinimumCostB-flow.hpp
       title: "Minimum Cost b-flow (\u6700\u77ED\u8DEF\u53CD\u5FA9\u6CD5)"
     - icon: ':warning:'
@@ -656,6 +659,9 @@ data:
       title: verify/AizuOnlineJudge/graph/dynamic-tree/AOJ_2450.test.cpp
   - name: verify/AizuOnlineJudge/graph/flow
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
+      title: verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
       title: verify/AizuOnlineJudge/graph/flow/GRL_6_B.test.cpp
