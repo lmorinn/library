@@ -1,5 +1,5 @@
 ---
-title: Maxflow (増加道法)
+title: Maxflow (Ford-Fulkerson法)
 documentation_of: //academic/MaxflowAugmentingPath.hpp
 ---
 
