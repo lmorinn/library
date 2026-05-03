@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: academic/MaxflowAugmentingPath.hpp
-    title: "Maxflow (Ford-Fulkerson\u6CD5)"
+    path: academic/MaxflowDinic.hpp
+    title: "Maxflow (Dinic\u6CD5)"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -64,54 +64,60 @@ data:
     \ a = b;\n    return true;\n  }\n  return false;\n}\n\nvector<lint> dx8 = {1,\
     \ 1, 0, -1, -1, -1, 0, 1};\nvector<lint> dy8 = {0, 1, 1, 1, 0, -1, -1, -1};\n\
     vector<lint> dx4 = {1, 0, -1, 0};\nvector<lint> dy4 = {0, 1, 0, -1};\n\n#pragma\
-    \ endregion\n#line 2 \"verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp\"\n\
+    \ endregion\n#line 2 \"verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp\"\n\
     #define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_6_A\"\n#line 1\
-    \ \"academic/MaxflowAugmentingPath.hpp\"\ntemplate <class Cap>\nclass max_flow\
-    \ {\n private:\n  struct Edge {\n    int to;\n    Cap cap, flow;\n    int rev;\n\
-    \    bool is_rev;\n  };\n\n  vector<pair<int, int>> edge_id;\n  vector<vector<Edge>>\
-    \ g;\n  int n;\n\n public:\n  max_flow(int n) : n(n) {\n    g.resize(n);\n  }\n\
-    \n  void add_edge(int from, int to, Cap cap) {\n    assert(from != to);\n    int\
-    \ from_id = int(g[from].size());\n    int to_id = int(g[to].size());\n    edge_id.emplace_back(from,\
-    \ from_id);\n    g[from].push_back({to, cap, 0, to_id, false});\n    g[to].push_back({from,\
-    \ cap, cap, from_id, true});\n  }\n\n  const Edge get_edge(int id) {\n    auto\
-    \ [vid, eid] = edge_id[id];\n    return g[vid][eid];\n  }\n\n  Cap flow(int s,\
-    \ int t) {\n    Cap res = 0;\n    vector<bool> seen(n, false);\n    while (1)\
-    \ {\n      fill(seen.begin(), seen.end(), false);\n      auto dfs = [&](auto&\
-    \ self, int cur, Cap epsilon) -> Cap {\n        if (cur == t) return epsilon;\n\
-    \        seen[cur] = true;\n        for (int i = 0; i < int(g[cur].size()); i++)\
-    \ {\n          Edge& edge = g[cur][i];\n          if (edge.cap - edge.flow <=\
-    \ 0 or seen[edge.to]) continue;\n          Cap d = self(self, edge.to, min(epsilon,\
-    \ edge.cap - edge.flow));\n          if (d > 0) {\n            edge.flow += d;\n\
-    \            g[edge.to][edge.rev].flow -= d;\n            return d;\n        \
-    \  }\n        }\n        return 0;\n      };\n      Cap f = dfs(dfs, s, numeric_limits<Cap>::max());\n\
-    \      if (f == 0) break;\n      res += f;\n    }\n    return res;\n  }\n\n  vector<bool>\
-    \ min_cut(int s) {\n    vector<bool> reachable(n, false);\n    auto dfs = [&](auto&\
-    \ self, int cur) -> void {\n      reachable[cur] = true;\n      for (int i = 0;\
-    \ i < int(g[cur].size()); i++) {\n        const Edge& edge = g[cur][i];\n    \
-    \    if (edge.cap - edge.flow <= 0 or reachable[edge.to]) continue;\n        self(self,\
-    \ edge.to);\n      }\n    };\n    dfs(dfs, s);\n    return reachable;\n  }\n};\n\
-    #line 4 \"verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp\"\n\nint main() {\n\
-    \  cin.tie(0)->sync_with_stdio(0);\n  int v, e;\n  in(v, e);\n  max_flow<int>\
-    \ g(v);\n  rep(i, e) {\n    int u, v, c;\n    in(u, v, c);\n    g.add_edge(u,\
-    \ v, c);\n  }\n  out(g.flow(0, v - 1));\n}\n"
+    \ \"academic/MaxflowDinic.hpp\"\ntemplate <class Cap>\nclass max_flow {\n private:\n\
+    \  struct Edge {\n    int from, to;\n    Cap cap, flow;\n    int rev;\n  };\n\n\
+    \  vector<pair<int, int>> edge_id;\n  vector<vector<Edge>> g;\n  int n;\n\n public:\n\
+    \  max_flow(int n) : n(n) {\n    g.resize(n);\n  }\n\n  void add_edge(int from,\
+    \ int to, Cap cap) {\n    assert(from != to);\n    int from_id = int(g[from].size());\n\
+    \    int to_id = int(g[to].size());\n    edge_id.emplace_back(from, from_id);\n\
+    \    g[from].push_back({from, to, cap, 0, to_id});\n    g[to].push_back({to, from,\
+    \ cap, cap, from_id});\n  }\n\n  const Edge& get_edge(int id) {\n    auto [vid,\
+    \ eid] = edge_id[id];\n    return g[vid][eid];\n  }\n\n  Cap flow(int s, int t)\
+    \ {\n    Cap res = 0;\n    vector<int> iter(n, -1);\n    vector<int> dist(n, -1);\n\
+    \n    auto bfs = [&](int s) -> void {\n      fill(dist.begin(), dist.end(), -1);\n\
+    \      queue<int> q;\n      dist[s] = 0;\n      q.push(s);\n      while (!q.empty())\
+    \ {\n        int cur = q.front();\n        q.pop();\n        for (int i = 0; i\
+    \ < int(g[cur].size()); i++) {\n          Edge& edge = g[cur][i];\n          if\
+    \ (edge.cap - edge.flow <= 0 or dist[edge.to] != -1) continue;\n          dist[edge.to]\
+    \ = dist[cur] + 1;\n          q.push(edge.to);\n        }\n      }\n    };\n\n\
+    \    auto dfs = [&](auto& self, int cur, Cap epsilon) -> Cap {\n      if (cur\
+    \ == t) return epsilon;\n      for (int& i = iter[cur]; i < int(g[cur].size());\
+    \ i++) {\n        Edge& edge = g[cur][i];\n        if (edge.cap - edge.flow <=\
+    \ 0 or dist[cur] >= dist[edge.to]) continue;\n        Cap d = self(self, edge.to,\
+    \ min(epsilon, edge.cap - edge.flow));\n        if (d > 0) {\n          edge.flow\
+    \ += d;\n          g[edge.to][edge.rev].flow -= d;\n          return d;\n    \
+    \    }\n      }\n      return 0;\n    };\n\n    while (1) {\n      bfs(s);\n \
+    \     if (dist[t] < 0) break;\n      fill(iter.begin(), iter.end(), 0);\n    \
+    \  Cap f;\n      while (f = dfs(dfs, s, numeric_limits<Cap>::max())) res += f;\n\
+    \    }\n\n    return res;\n  }\n\n  vector<bool> min_cut(int s) {\n    vector<bool>\
+    \ reachable(n, false);\n    auto dfs = [&](auto& self, int cur) -> void {\n  \
+    \    reachable[cur] = true;\n      for (int i = 0; i < int(g[cur].size()); i++)\
+    \ {\n        const Edge& edge = g[cur][i];\n        if (edge.cap - edge.flow <=\
+    \ 0 or reachable[edge.to]) continue;\n        self(self, edge.to);\n      }\n\
+    \    };\n    dfs(dfs, s);\n    return reachable;\n  }\n};\n#line 4 \"verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp\"\
+    \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int v, e;\n  in(v, e);\n\
+    \  max_flow<int> g(v);\n  rep(i, e) {\n    int u, v, c;\n    in(u, v, c);\n  \
+    \  g.add_edge(u, v, c);\n  }\n  out(g.flow(0, v - 1));\n}\n"
   code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_6_A\"\
-    \n#include \"../../../../academic/MaxflowAugmentingPath.hpp\"\n\nint main() {\n\
-    \  cin.tie(0)->sync_with_stdio(0);\n  int v, e;\n  in(v, e);\n  max_flow<int>\
-    \ g(v);\n  rep(i, e) {\n    int u, v, c;\n    in(u, v, c);\n    g.add_edge(u,\
-    \ v, c);\n  }\n  out(g.flow(0, v - 1));\n}"
+    \n#include \"../../../../academic/MaxflowDinic.hpp\"\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
+    \  int v, e;\n  in(v, e);\n  max_flow<int> g(v);\n  rep(i, e) {\n    int u, v,\
+    \ c;\n    in(u, v, c);\n    g.add_edge(u, v, c);\n  }\n  out(g.flow(0, v - 1));\n\
+    }"
   dependsOn:
   - template/template.hpp
-  - academic/MaxflowAugmentingPath.hpp
+  - academic/MaxflowDinic.hpp
   isVerificationFile: true
-  path: verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
+  path: verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp
   requiredBy: []
-  timestamp: '2026-05-03 18:38:34+09:00'
+  timestamp: '2026-05-03 20:10:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
+documentation_of: verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
-- /verify/verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp.html
-title: verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
+- /verify/verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp
+- /verify/verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp.html
+title: verify/AizuOnlineJudge/graph/flow/GRL_6_A_2.test.cpp
 ---

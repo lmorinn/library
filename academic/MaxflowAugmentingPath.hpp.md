@@ -70,7 +70,7 @@ data:
   - verify/AizuOnlineJudge/graph/flow/GRL_6_A.test.cpp
 documentation_of: academic/MaxflowAugmentingPath.hpp
 layout: document
-title: "Maxflow (\u5897\u52A0\u9053\u6CD5)"
+title: "Maxflow (Ford-Fulkerson\u6CD5)"
 ---
 
 ## 概要
