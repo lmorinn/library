@@ -377,6 +377,9 @@ data:
       title: Low Link
   - name: graph/shortest-path
     pages:
+    - icon: ':warning:'
+      path: graph/shortest-path/BellmanFord.hpp
+      title: Bellman Ford
     - icon: ':heavy_check_mark:'
       path: graph/shortest-path/Dijkstra.hpp
       title: Dijkstra
