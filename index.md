@@ -110,6 +110,9 @@ data:
     - icon: ':warning:'
       path: data-structure/others/LiChaoTreeMax.hpp
       title: Li Chao Tree (max)
+    - icon: ':warning:'
+      path: data-structure/others/LinearAddImos.hpp
+      title: "\u533A\u9593\u7B49\u5DEE\u6570\u5217\u52A0\u7B97 (imos\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: data-structure/others/MergeSortTree.hpp
       title: Merge Sort Tree
