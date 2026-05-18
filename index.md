@@ -457,6 +457,9 @@ data:
   - name: math/fps
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/fps/BostanMori.hpp
+      title: Bostan-Mori Algorithm
+    - icon: ':heavy_check_mark:'
       path: math/fps/FormalPowerSeries.hpp
       title: Formal Power Series
     - icon: ':heavy_check_mark:'
@@ -900,6 +903,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
       title: verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
+      title: verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
       title: verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp

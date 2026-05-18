@@ -152,8 +152,8 @@ data:
   timestamp: '2026-03-25 02:08:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
   - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
 documentation_of: graph/tree/CountingSpanningTrees.hpp
 layout: document

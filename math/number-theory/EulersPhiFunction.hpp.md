@@ -85,8 +85,8 @@ data:
   timestamp: '2025-05-20 02:16:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/TetrationMod.test.cpp
+  - verify/AizuOnlineJudge/math/number-theory/EulersPhiFunction.test.cpp
 documentation_of: math/number-theory/EulersPhiFunction.hpp
 layout: document
 title: Euler's Phi Function

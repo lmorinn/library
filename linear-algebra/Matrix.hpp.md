@@ -231,14 +231,14 @@ data:
   timestamp: '2026-03-23 15:16:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
   - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
   - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
 documentation_of: linear-algebra/Matrix.hpp
 layout: document
 title: Matrix

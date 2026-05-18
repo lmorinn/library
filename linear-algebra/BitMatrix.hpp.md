@@ -172,10 +172,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/linear-algebra/MatrixProductMod2.test.cpp
-  - verify/LibraryChecker/linear-algebra/RankofMatrixMod2.test.cpp
-  - verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
-  - verify/LibraryChecker/linear-algebra/InverseMatrixMod2.test.cpp
   - verify/LibraryChecker/linear-algebra/DeterminantofMatrixMod2.test.cpp
+  - verify/LibraryChecker/linear-algebra/RankofMatrixMod2.test.cpp
+  - verify/LibraryChecker/linear-algebra/InverseMatrixMod2.test.cpp
+  - verify/LibraryChecker/linear-algebra/SystemofLinearEquationsMod2.test.cpp
 documentation_of: linear-algebra/BitMatrix.hpp
 layout: document
 title: Matrix (Mod 2)
