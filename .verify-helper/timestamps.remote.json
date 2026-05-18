@@ -105,6 +105,7 @@
   "verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp": "2026-03-31 05:32:13 +0900",
   "verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp": "2026-03-31 05:32:13 +0900",
   "verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp": "2026-03-31 05:32:13 +0900",
+  "verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp": "2026-05-18 19:13:13 +0900",
   "verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp": "2026-03-31 05:32:13 +0900",
   "verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp": "2026-03-31 05:32:13 +0900",
   "verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp": "2026-03-31 05:32:13 +0900",
