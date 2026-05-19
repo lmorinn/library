@@ -123,16 +123,20 @@ data:
     \ *= coef_pw;\n\n      FPS<S> res(min(__int128_t(m) * d, __int128_t(deg)), 0);\n\
     \      if (res.size() < deg) res.insert(res.end(), F.begin(), F.begin() + min(deg,\
     \ deg - int(res.size())));\n      return res;\n    }\n\n    if (__int128_t(d +\
-    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n\
-    #line 2 \"math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp\"\n\ntemplate <class\
-    \ S>\nFPS<S> sharp_p_subset_sum(const vector<long long>& s, long long t) {\n \
-    \ int n = int(s.size());\n  FPS<S> log_f(t + 1);\n  vector<int> freq(t + 1);\n\
-    \  for (int i = 0; i < n; i++) {\n    assert(0 < s[i]);\n    if (s[i] <= t) freq[s[i]]++;\n\
-    \  }\n  vector<S> iv(t + 1);\n  iv[1] = 1;\n  for (int i = 2; i < t + 1; i++)\
-    \ iv[i] = iv[S::mod() % i] * (-(S::mod() / i));\n  for (long long k = 1; k < t\
-    \ + 1; k++) {\n    if (freq[k] == 0) continue;\n    for (long long i = 1; k *\
-    \ i < t + 1; i++) {\n      log_f[k * i] += (i % 2 ? 1 : -1) * iv[i] * freq[k];\n\
-    \    }\n  }\n  return log_f.exp();\n}\n"
+    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n\n\
+    template <class S>\nFPS<S> multiply(const FPS<S>& a, const FPS<S>& b, int d =\
+    \ -1) {\n  int siz = int(a.size()) + int(b.size()) - 1;\n  FPS<S> c(siz);\n  for\
+    \ (int i = 0; i < int(a.size()); i++) {\n    for (int j = 0; j < int(b.size());\
+    \ j++) {\n      if (d != -1 and i + j >= d) break;\n      c[i + j] += a[i] * b[j];\n\
+    \    }\n  }\n  if (d != -1) c.resize(d);\n  return c;\n}\n#line 2 \"math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp\"\
+    \n\ntemplate <class S>\nFPS<S> sharp_p_subset_sum(const vector<long long>& s,\
+    \ long long t) {\n  int n = int(s.size());\n  FPS<S> log_f(t + 1);\n  vector<int>\
+    \ freq(t + 1);\n  for (int i = 0; i < n; i++) {\n    assert(0 < s[i]);\n    if\
+    \ (s[i] <= t) freq[s[i]]++;\n  }\n  vector<S> iv(t + 1);\n  iv[1] = 1;\n  for\
+    \ (int i = 2; i < t + 1; i++) iv[i] = iv[S::mod() % i] * (-(S::mod() / i));\n\
+    \  for (long long k = 1; k < t + 1; k++) {\n    if (freq[k] == 0) continue;\n\
+    \    for (long long i = 1; k * i < t + 1; i++) {\n      log_f[k * i] += (i % 2\
+    \ ? 1 : -1) * iv[i] * freq[k];\n    }\n  }\n  return log_f.exp();\n}\n"
   code: "#include \"../fps/FormalPowerSeries.hpp\"\n\ntemplate <class S>\nFPS<S> sharp_p_subset_sum(const\
     \ vector<long long>& s, long long t) {\n  int n = int(s.size());\n  FPS<S> log_f(t\
     \ + 1);\n  vector<int> freq(t + 1);\n  for (int i = 0; i < n; i++) {\n    assert(0\
@@ -146,7 +150,7 @@ data:
   isVerificationFile: false
   path: math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
   requiredBy: []
-  timestamp: '2026-03-31 05:32:13+09:00'
+  timestamp: '2026-05-19 16:52:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp

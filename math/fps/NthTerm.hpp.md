@@ -2,20 +2,16 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: math/fps/BostanMori.hpp
+    title: Bostan-Mori Algorithm
+  - icon: ':heavy_check_mark:'
     path: math/fps/FormalPowerSeries.hpp
     title: Formal Power Series
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: math/fps/NthTerm.hpp
-    title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u306E\u7B2C $n$ \u9805\u76EE\u306E\u8A08\
-      \u7B97"
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
-    title: verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/fps/FormalPowerSeries.hpp\"\ntemplate <class S>\nstruct\
@@ -146,35 +142,37 @@ data:
     \ int(p.size()); i++) ret[i] = p[i * 2 + start];\n    return ret;\n  };\n  while\
     \ (n > 0) {\n    FPS<S> q_ = q;\n    for (int i = 1; i < int(q_.size()); i +=\
     \ 2) q_[i] = -q_[i];\n    p = filter(multiply(p, q_), n & 1);\n    q = filter(multiply(q,\
-    \ q_), 0);\n    n >>= 1;\n  }\n  return p[0] / q[0];\n}\n"
-  code: "#include \"FormalPowerSeries.hpp\"\n\ntemplate <class S>\nS bostan_mori(FPS<S>\
-    \ p, FPS<S> q, long long n) {\n  auto filter = [&](const FPS<S>& p, int start)\
-    \ {\n    FPS<S> ret((p.size() + 1) / 2);\n    for (int i = 0; i * 2 + start <\
-    \ int(p.size()); i++) ret[i] = p[i * 2 + start];\n    return ret;\n  };\n\n  while\
-    \ (n > 0) {\n    FPS<S> q_ = q;\n    for (int i = 1; i < int(q_.size()); i +=\
-    \ 2) q_[i] = -q_[i];\n    auto pq = convolution(p, q_);\n    auto qq = convolution(q,\
-    \ q_);\n    p = filter(FPS<S>(pq.begin(), pq.end()), n & 1);\n    q = filter(FPS<S>(qq.begin(),\
-    \ qq.end()), 0);\n    n >>= 1;\n  }\n  return p[0] / q[0];\n}\n\ntemplate <class\
-    \ S>\nS bostan_mori_naive(FPS<S> p, FPS<S> q, long long n) {\n  auto filter =\
-    \ [&](const FPS<S>& p, int start) {\n    FPS<S> ret((p.size() + 1) / 2);\n   \
-    \ for (int i = 0; i * 2 + start < int(p.size()); i++) ret[i] = p[i * 2 + start];\n\
-    \    return ret;\n  };\n  while (n > 0) {\n    FPS<S> q_ = q;\n    for (int i\
-    \ = 1; i < int(q_.size()); i += 2) q_[i] = -q_[i];\n    p = filter(multiply(p,\
-    \ q_), n & 1);\n    q = filter(multiply(q, q_), 0);\n    n >>= 1;\n  }\n  return\
-    \ p[0] / q[0];\n}"
+    \ q_), 0);\n    n >>= 1;\n  }\n  return p[0] / q[0];\n}\n#line 2 \"math/fps/NthTerm.hpp\"\
+    \n\ntemplate <class S>\nS nth_term(const vector<S>& a, const vector<S>& c, long\
+    \ long n) {\n  assert(a.size() == c.size());\n  int d = int(c.size());\n  FPS<S>\
+    \ l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n  for (int\
+    \ i = 0; i < d; i++) q[i + 1] = -c[i];\n  l *= q;\n  return bostan_mori<S>(l,\
+    \ q, n);\n}\n\ntemplate <class S>\nS nth_term_2(const vector<S>& a, const vector<S>&\
+    \ c, long long n) {\n  assert(a.size() == c.size());\n  int d = int(c.size());\n\
+    \  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n \
+    \ for (int i = 0; i < d; i++) q[i + 1] = -c[i];\n  l = multiply(l, q, d);\n  return\
+    \ bostan_mori_naive<S>(l, q, n);\n}\n"
+  code: "#include \"BostanMori.hpp\"\n\ntemplate <class S>\nS nth_term(const vector<S>&\
+    \ a, const vector<S>& c, long long n) {\n  assert(a.size() == c.size());\n  int\
+    \ d = int(c.size());\n  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d +\
+    \ 1);\n  q[0] = 1;\n  for (int i = 0; i < d; i++) q[i + 1] = -c[i];\n  l *= q;\n\
+    \  return bostan_mori<S>(l, q, n);\n}\n\ntemplate <class S>\nS nth_term_2(const\
+    \ vector<S>& a, const vector<S>& c, long long n) {\n  assert(a.size() == c.size());\n\
+    \  int d = int(c.size());\n  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S>\
+    \ q(d + 1);\n  q[0] = 1;\n  for (int i = 0; i < d; i++) q[i + 1] = -c[i];\n  l\
+    \ = multiply(l, q, d);\n  return bostan_mori_naive<S>(l, q, n);\n}\n"
   dependsOn:
+  - math/fps/BostanMori.hpp
   - math/fps/FormalPowerSeries.hpp
   isVerificationFile: false
-  path: math/fps/BostanMori.hpp
-  requiredBy:
-  - math/fps/NthTerm.hpp
+  path: math/fps/NthTerm.hpp
+  requiredBy: []
   timestamp: '2026-05-19 16:52:35+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
-documentation_of: math/fps/BostanMori.hpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: math/fps/NthTerm.hpp
 layout: document
-title: Bostan-Mori Algorithm
+title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u306E\u7B2C $n$ \u9805\u76EE\u306E\u8A08\u7B97"
 ---
 
 ## 概要

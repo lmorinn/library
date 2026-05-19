@@ -462,6 +462,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/FormalPowerSeries.hpp
       title: Formal Power Series
+    - icon: ':warning:'
+      path: math/fps/NthTerm.hpp
+      title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u306E\u7B2C $n$ \u9805\u76EE\u306E\u8A08\
+        \u7B97"
+    - icon: ':warning:'
+      path: math/fps/NthTermFind.hpp
+      title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u3092\u6301\u3064\u6570\u5217\u306E\u7B2C\
+        \ $n$ \u9805\u76EE\u306E\u8A08\u7B97"
     - icon: ':heavy_check_mark:'
       path: math/fps/ProductofPolynomialSequence.hpp
       title: Product of Polynomial Sequence

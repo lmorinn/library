@@ -20,6 +20,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/fps/BostanMori.hpp
     title: Bostan-Mori Algorithm
+  - icon: ':warning:'
+    path: math/fps/NthTerm.hpp
+    title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u306E\u7B2C $n$ \u9805\u76EE\u306E\u8A08\
+      \u7B97"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
@@ -177,7 +181,12 @@ data:
     \ *= coef_pw;\n\n      FPS<S> res(min(__int128_t(m) * d, __int128_t(deg)), 0);\n\
     \      if (res.size() < deg) res.insert(res.end(), F.begin(), F.begin() + min(deg,\
     \ deg - int(res.size())));\n      return res;\n    }\n\n    if (__int128_t(d +\
-    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n"
+    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n\n\
+    template <class S>\nFPS<S> multiply(const FPS<S>& a, const FPS<S>& b, int d =\
+    \ -1) {\n  int siz = int(a.size()) + int(b.size()) - 1;\n  FPS<S> c(siz);\n  for\
+    \ (int i = 0; i < int(a.size()); i++) {\n    for (int j = 0; j < int(b.size());\
+    \ j++) {\n      if (d != -1 and i + j >= d) break;\n      c[i + j] += a[i] * b[j];\n\
+    \    }\n  }\n  if (d != -1) c.resize(d);\n  return c;\n}\n"
   code: "template <class S>\nstruct FPS;\n\ntemplate <class S>\nstruct SFPS : vector<pair<int,\
     \ S>> {\n  using vector<pair<int, S>>::vector;\n  using vector<pair<int, S>>::operator=;\n\
     \n  FPS<S> log(int deg);\n  FPS<S> exp(int deg);\n  FPS<S> pow(long long m, int\
@@ -286,18 +295,24 @@ data:
     \ *= coef_pw;\n\n      FPS<S> res(min(__int128_t(m) * d, __int128_t(deg)), 0);\n\
     \      if (res.size() < deg) res.insert(res.end(), F.begin(), F.begin() + min(deg,\
     \ deg - int(res.size())));\n      return res;\n    }\n\n    if (__int128_t(d +\
-    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}"
+    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n\n\
+    template <class S>\nFPS<S> multiply(const FPS<S>& a, const FPS<S>& b, int d =\
+    \ -1) {\n  int siz = int(a.size()) + int(b.size()) - 1;\n  FPS<S> c(siz);\n  for\
+    \ (int i = 0; i < int(a.size()); i++) {\n    for (int j = 0; j < int(b.size());\
+    \ j++) {\n      if (d != -1 and i + j >= d) break;\n      c[i + j] += a[i] * b[j];\n\
+    \    }\n  }\n  if (d != -1) c.resize(d);\n  return c;\n}"
   dependsOn: []
   isVerificationFile: false
   path: math/fps/FormalPowerSeries.hpp
   requiredBy:
+  - math/fps/NthTerm.hpp
   - math/fps/BostanMori.hpp
   - math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.hpp
   - math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
   - math/enumerative-combinatorics/BellNumber.hpp
   - math/enumerative-combinatorics/PartitionFunction.hpp
   - math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
-  timestamp: '2026-03-31 05:32:13+09:00'
+  timestamp: '2026-05-19 16:52:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
