@@ -333,3 +333,17 @@ FPS<S> SFPS<S>::pow(long long m, int deg) {
 
   return FPS<S>(deg, 0);
 }
+
+template <class S>
+FPS<S> multiply(const FPS<S>& a, const FPS<S>& b, int d = -1) {
+  int siz = int(a.size()) + int(b.size()) - 1;
+  FPS<S> c(siz);
+  for (int i = 0; i < int(a.size()); i++) {
+    for (int j = 0; j < int(b.size()); j++) {
+      if (d != -1 and i + j >= d) break;
+      c[i + j] += a[i] * b[j];
+    }
+  }
+  if (d != -1) c.resize(d);
+  return c;
+}
