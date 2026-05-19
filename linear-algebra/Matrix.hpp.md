@@ -11,6 +11,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/CountingSpanningTrees.hpp
     title: Counting Spanning Trees
+  - icon: ':warning:'
+    path: math/fps/NthTermFind.hpp
+    title: "\u7DDA\u5F62\u6F38\u5316\u5F0F\u3092\u6301\u3064\u6570\u5217\u306E\u7B2C\
+      \ $n$ \u9805\u76EE\u306E\u8A08\u7B97"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
@@ -228,6 +232,7 @@ data:
   - graph/tree/CountingSpanningTrees.hpp
   - graph/others/CountingEulerianCircuits.hpp
   - graph/flow/MaximumMatchingSize.hpp
+  - math/fps/NthTermFind.hpp
   timestamp: '2026-03-23 15:16:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

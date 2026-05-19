@@ -1,6 +1,15 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: linear-algebra/Matrix.hpp
+    title: Matrix
+  - icon: ':heavy_check_mark:'
+    path: math/fps/BostanMori.hpp
+    title: Bostan-Mori Algorithm
+  - icon: ':heavy_check_mark:'
+    path: math/fps/FormalPowerSeries.hpp
+    title: Formal Power Series
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -8,25 +17,244 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../linear-algebra/Matrix.hpp:\
-    \ line -1: no such header\n"
-  code: "#include \"../linear-algebra/Matrix.hpp\"\n#include \"BostanMori.hpp\"\n\n\
-    // a.size() == d*2\ntemplate <class S>\nS nth_term_find(const vector<S>& a, long\
-    \ long n) {\n  int d = int(a.size()) / 2;\n  Matrix<S> A(d);\n  for (int i = 0;\
-    \ i < d; i++) {\n    for (int j = 0; j < d; j++) A[i][j] = a[d - j - 1 + i];\n\
-    \  }\n  vector<S> coef = A.linear_equation({a.begin() + d, a.end()})[0];\n  FPS<S>\
-    \ l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n  for (int\
-    \ i = 0; i < d; i++) q[i + 1] = -coef[i];\n  l *= q;\n  return bostan_mori<S>(l,\
+  bundledCode: "#line 1 \"linear-algebra/Matrix.hpp\"\ntemplate <class S>\nstruct\
+    \ Matrix {\n private:\n public:\n  vector<vector<S>> A;\n  Matrix() {}\n  Matrix(int\
+    \ n, int m) : A(n, vector<S>(m)) {}\n  Matrix(int n) : A(n, vector<S>(n)) {}\n\
+    \n  inline int size() const { return A.size(); }\n  inline int height() const\
+    \ { return A.size(); }\n  inline int width() const { return A[0].size(); }\n \
+    \ inline const vector<S>& operator[](int h) const { return (A[h]); }\n  inline\
+    \ vector<S>& operator[](int h) { return (A[h]); }\n\n  Matrix& operator+=(const\
+    \ Matrix& B) {\n    int h = height();\n    int w = width();\n    for (int i =\
+    \ 0; i < h; i++) {\n      for (int j = 0; j < w; j++) {\n        (*this)[i][j]\
+    \ += B[i][j];\n      }\n    }\n    return (*this);\n  }\n  Matrix& operator-=(const\
+    \ Matrix& B) {\n    int h = height();\n    int w = width();\n    for (int i =\
+    \ 0; i < h; i++) {\n      for (int j = 0; j < w; j++) {\n        (*this)[i][j]\
+    \ -= B[i][j];\n      }\n    }\n    return (*this);\n  }\n\n  Matrix& operator*=(const\
+    \ Matrix& B) {\n    int h = height();\n    int w = B.width();\n    int c = width();\n\
+    \    vector<vector<S>> C(h, vector<S>(w));\n    for (int i = 0; i < h; i++) {\n\
+    \      for (int j = 0; j < w; j++) {\n        for (int k = 0; k < c; k++) {\n\
+    \          C[i][j] = (C[i][j] + (*this)[i][k] * B[k][j]);\n        }\n      }\n\
+    \    }\n    A = move(C);\n    return (*this);\n  }\n  Matrix operator+(const Matrix&\
+    \ B) const { return (Matrix(*this) += B); }\n  Matrix operator-(const Matrix&\
+    \ B) const { return (Matrix(*this) -= B); }\n  Matrix operator*(const Matrix&\
+    \ B) const { return (Matrix(*this) *= B); }\n\n  int rank() {\n    Matrix B(*this);\n\
+    \    if (B.height() == 0 or B.width() == 0) return 0;\n    int res = 0;\n    int\
+    \ h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n    while\
+    \ (ch < h and cw < w) {\n      bool ok = false;\n      for (int j = cw; j < w;\
+    \ j++) {\n        for (int i = ch; i < h; i++) {\n          if (B[i][j] != 0)\
+    \ {\n            ok = true;\n            swap(B[ch], B[i]);\n            S d =\
+    \ B[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              B[ch][j2]\
+    \ /= d;\n            }\n            for (int i2 = 0; i2 < h; i2++) {\n       \
+    \       if (B[i2][j] != 0 and i2 != ch) {\n                S m = B[i2][j];\n \
+    \               for (int j2 = j; j2 < w; j2++) {\n                  B[i2][j2]\
+    \ -= B[ch][j2] * m;\n                }\n              }\n            }\n     \
+    \       res++;\n            ch++;\n            cw = j + 1;\n            break;\n\
+    \          }\n        }\n        if (ok) break;\n      }\n      if (!ok) break;\n\
+    \    }\n    return res;\n  }\n\n  S determinant() {\n    Matrix B(*this);\n  \
+    \  if (B.height() == 0 or B.width() == 0) return 0;\n    assert(B.height() ==\
+    \ B.width());\n    int h = height();\n    int w = width();\n    int ch = 0;\n\
+    \    int cw = 0;\n    S div = 1;\n    bool neg = false;\n    while (ch < h and\
+    \ cw < w) {\n      bool ok = false;\n      for (int j = cw; j < w; j++) {\n  \
+    \      for (int i = ch; i < h; i++) {\n          if (B[i][j] != 0) {\n       \
+    \     ok = true;\n            if (ch != i) neg = !neg;\n            swap(B[ch],\
+    \ B[i]);\n            S d = B[ch][j];\n            div /= d;\n            for\
+    \ (int j2 = j; j2 < w; j2++) {\n              B[ch][j2] /= d;\n            }\n\
+    \            for (int i2 = 0; i2 < h; i2++) {\n              if (B[i2][j] != 0\
+    \ and i2 != ch) {\n                S m = B[i2][j];\n                for (int j2\
+    \ = j; j2 < w; j2++) {\n                  B[i2][j2] -= B[ch][j2] * m;\n      \
+    \          }\n              }\n            }\n            ch++;\n            cw\
+    \ = j + 1;\n            break;\n          }\n        }\n        if (ok) {\n  \
+    \        break;\n        } else {\n          return S(0);\n        }\n      }\n\
+    \      if (!ok) break;\n    }\n    S res = (neg ? -B[0][0] : B[0][0]) / div;\n\
+    \    for (int i = 1; i < h; i++) {\n      res = res * B[i][i];\n    }\n    return\
+    \ res;\n  }\n\n  pair<bool, Matrix<S>> inverse() {\n    int h = height();\n  \
+    \  int w = width();\n    assert(h == w);\n    Matrix<S> B(h, w * 2);\n    for\
+    \ (int i = 0; i < h; i++) {\n      for (int j = 0; j < w; j++) {\n        B[i][j]\
+    \ = (*this)[i][j];\n      }\n    }\n    for (int i = 0; i < h; i++) {\n      B[i][i\
+    \ + w] = 1;\n    }\n    w *= 2;\n    int rnk = 0;\n\n    int ch = 0;\n    int\
+    \ cw = 0;\n    while (ch < h and cw < h) {\n      bool ok = false;\n      for\
+    \ (int j = cw; j < h; j++) {\n        for (int i = ch; i < h; i++) {\n       \
+    \   if (B[i][j] != 0) {\n            ok = true;\n            swap(B[ch], B[i]);\n\
+    \            S d = B[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n \
+    \             B[ch][j2] /= d;\n            }\n            for (int i2 = 0; i2\
+    \ < h; i2++) {\n              if (B[i2][j] != 0 and i2 != ch) {\n            \
+    \    S m = B[i2][j];\n                for (int j2 = j; j2 < w; j2++) {\n     \
+    \             B[i2][j2] -= B[ch][j2] * m;\n                }\n              }\n\
+    \            }\n            rnk++;\n            ch++;\n            cw = j + 1;\n\
+    \            break;\n          }\n        }\n        if (ok) break;\n      }\n\
+    \      if (!ok) break;\n    }\n    Matrix<S> res(h);\n    if (rnk == h) {\n  \
+    \    for (int i = 0; i < h; i++) {\n        for (int j = 0; j < h; j++) {\n  \
+    \        res[i][j] = B[i][j + h];\n        }\n      }\n      return {true, res};\n\
+    \    } else {\n      return {false, res};\n    }\n  }\n\n  Matrix<S> linear_equation(vector<S>\
+    \ b) {\n    Matrix A(*this);\n\n    int rnk = 0;\n    assert(A.height() == b.size());\n\
+    \    int h = height();\n    int w = width();\n    int ch = 0;\n    int cw = 0;\n\
+    \    vector<int> pivot_row(w, -1);\n    while (ch < h and cw < w) {\n      bool\
+    \ ok = false;\n      for (int j = cw; j < w; j++) {\n        for (int i = ch;\
+    \ i < h; i++) {\n          if (A[i][j] != 0) {\n            ok = true;\n     \
+    \       swap(A[ch], A[i]);\n            swap(b[ch], b[i]);\n            S d =\
+    \ A[ch][j];\n            for (int j2 = j; j2 < w; j2++) {\n              A[ch][j2]\
+    \ /= d;\n            }\n            b[ch] /= d;\n            for (int i2 = 0;\
+    \ i2 < h; i2++) {\n              S m = A[i2][j];\n              if (A[i2][j] !=\
+    \ 0 and i2 != ch) {\n                for (int j2 = j; j2 < w; j2++) {\n      \
+    \            A[i2][j2] -= A[ch][j2] * m;\n                }\n              }\n\
+    \              if (i2 != ch) b[i2] -= b[ch] * m;\n            }\n            pivot_row[j]\
+    \ = ch;\n            rnk++;\n            ch++;\n            cw = j + 1;\n    \
+    \        break;\n          }\n        }\n        if (ok) break;\n      }\n   \
+    \   if (!ok) break;\n    }\n\n    for (int i = rnk; i < h; i++) {\n      if (b[i]\
+    \ != 0) return Matrix<S>(0);\n    }\n    Matrix<S> sol(w - rnk + 1, w);\n    int\
+    \ idx = 1;\n    for (int j = 0; j < w; j++) {\n      if (pivot_row[j] != -1) {\n\
+    \        sol[0][j] = b[pivot_row[j]];\n      } else {\n        sol[idx][j] = 1;\n\
+    \        for (int i = 0; i < w; i++) {\n          if (pivot_row[i] != -1) {\n\
+    \            sol[idx][i] = -A[pivot_row[i]][j];\n          }\n        }\n    \
+    \    idx++;\n      }\n    }\n    return sol;\n  }\n};\n#line 1 \"math/fps/FormalPowerSeries.hpp\"\
+    \ntemplate <class S>\nstruct FPS;\n\ntemplate <class S>\nstruct SFPS : vector<pair<int,\
+    \ S>> {\n  using vector<pair<int, S>>::vector;\n  using vector<pair<int, S>>::operator=;\n\
+    \n  FPS<S> log(int deg);\n  FPS<S> exp(int deg);\n  FPS<S> pow(long long m, int\
+    \ deg);\n};\n\ntemplate <class S>\nstruct FPS : vector<S> {\n  using vector<S>::vector;\n\
+    \  using vector<S>::operator=;\n\n  FPS<S> inv() const {\n    int n = int((*this).size());\n\
+    \    FPS<S> res = {(*this)[0].inv()};\n    while (int(res.size()) < n) {\n   \
+    \   int m = int(res.size());\n      // f = f[0, 2m)\n      FPS<S> f((*this).begin(),\
+    \ (*this).begin() + min(n, m << 1));\n      FPS<S> inv_f(res);\n      f.resize(m\
+    \ << 1);\n      internal::butterfly(f);\n      inv_f.resize(m << 1);\n      internal::butterfly(inv_f);\n\
+    \      // f = f*g\n      for (int i = 0; i < m << 1; i++) f[i] *= inv_f[i];\n\
+    \      internal::butterfly_inv(f);\n\n      // f = f[m, 2m)\n      f.erase(f.begin(),\
+    \ f.begin() + m);\n      f.resize(m << 1);\n      // f = f*g\n      internal::butterfly(f);\n\
+    \      for (int i = 0; i < m << 1; i++) f[i] *= inv_f[i];\n      internal::butterfly_inv(f);\n\
+    \      S m2i = S(m << 1).inv();\n      m2i *= -m2i;\n      for (int i = 0; i <\
+    \ m << 1; i++) f[i] *= m2i;\n      res.insert(res.end(), f.begin(), f.begin()\
+    \ + m);\n    }\n    return {res.begin(), res.begin() + n};\n  }\n\n  FPS<S> exp()\
+    \ const {\n    int n = int((*this).size());\n    FPS<S> res = {1};\n    assert((*this)[0]\
+    \ == 0);\n    for (int siz = 1; siz < n; siz <<= 1) {\n      FPS<S> f(siz << 1);\n\
+    \      f[0] = 1;\n      res.resize(siz << 1);\n      FPS<S> lg = res.log();\n\
+    \      for (int i = 0; i < siz << 1; i++) f[i] -= lg[i];\n      for (int i = 0;\
+    \ i < min(siz << 1, n); i++) f[i] += (*this)[i];\n      res *= f;\n    }\n   \
+    \ return {res.begin(), res.begin() + n};\n  }\n\n  FPS<S> log() const {\n    FPS<S>\
+    \ res = *this;\n    res.log_inplace();\n    return res;\n  }\n\n  FPS<S> pow(__int128_t\
+    \ m) const {\n    __int128_t n = int((*this).size());\n    if (m == 0) {\n   \
+    \   FPS<S> res(n);\n      if (n) res[0] = 1;\n      return res;\n    }\n    //\
+    \ \u5B9A\u6570\u9805\u30921\u306B\u3059\u308B\n    for (__int128_t i = 0; i <\
+    \ n; i++) {\n      if ((*this)[i] != 0) {\n        S coef = (*this)[i];\n    \
+    \    FPS<S> f((*this).begin() + i, (*this).end());\n        if (coef != 1) {\n\
+    \          for (int j = 0; j < n - i; j++) f[j] /= coef;\n        }\n        f.log_inplace();\n\
+    \        for (int j = 0; j < n - i; j++) f[j] *= m;\n        f.exp_inplace();\n\
+    \        coef = coef.pow(m);\n        for (int j = 0; j < n - i; j++) f[j] *=\
+    \ coef;\n        FPS<S> res(min(__int128_t(m) * i, n), 0);\n        if (res.size()\
+    \ < n) res.insert(res.end(), f.begin(), f.begin() + min(__int128_t(n), n - res.size()));\n\
+    \        return res;\n      }\n      if (__int128_t(i + 1) * m >= n) return FPS<S>(n,\
+    \ 0);\n    }\n    return FPS<S>(n, 0);\n  }\n\n  FPS<S> differentiate() const\
+    \ {\n    int n = int((*this).size());\n    FPS<S> res(n);\n    for (int i = 0;\
+    \ i < n - 1; i++) res[i] = (*this)[i + 1] * S(i + 1);\n    res[n - 1] = 0;\n \
+    \   return res;\n  }\n\n  FPS<S> integrate() const {\n    int n = int((*this).size());\n\
+    \    vector<S> iv(n);\n    iv[1] = 1;\n    for (int i = 2; i < n; i++) iv[i] =\
+    \ iv[S::mod() % i] * (-(S::mod() / i));\n    FPS<S> res(n);\n    res[0] = 0;\n\
+    \    for (int i = 0; i < n - 1; i++) res[i + 1] = (*this)[i] * iv[i + 1];\n  \
+    \  return res;\n  }\n\n  void integrate_inplace() {\n    int n = int((*this).size());\n\
+    \    static vector<S> inv{0, 1};\n    if (int(inv.size()) < n) {\n      int old_siz\
+    \ = inv.size();\n      inv.resize(n);\n      int mod = S::mod();\n      for (int\
+    \ i = old_siz; i < n; i++) inv[i] = -inv[mod % i] * (mod / i);\n    }\n    for\
+    \ (int i = n - 1; i > 0; i--) (*this)[i] = (*this)[i - 1] * inv[i];\n    (*this)[0]\
+    \ = 0;\n  }\n\n  void differentiate_inplace() {\n    int n = int((*this).size());\n\
+    \    if (n == 0) return;\n    for (int i = 0; i < n - 1; i++) {\n      (*this)[i]\
+    \ = (*this)[i + 1] * S(i + 1);\n    }\n    (*this)[n - 1] = 0;\n  }\n\n  void\
+    \ inv_inplace() {\n    *this = this->inv();\n  }\n  void exp_inplace() {\n   \
+    \ *this = this->exp();\n  }\n\n  void log_inplace() {\n    assert(!this->empty()\
+    \ and (*this)[0] == 1);\n    FPS<S> inv_f = this->inv();\n    this->differentiate_inplace();\n\
+    \    *this *= inv_f;\n    this->integrate_inplace();\n  }\n\n  void pow_inplace(__int128_t\
+    \ m) {\n    *this = this->pow(m);\n  }\n\n  FPS<S>& operator*=(const FPS<S>& g)\
+    \ {\n    int n = int((*this).size());\n    *this = convolution(*this, g);\n  \
+    \  (*this).resize(n);\n    return *this;\n  }\n\n  FPS<S>& operator/=(FPS<S>&\
+    \ g) {\n    int n = int((*this).size());\n    *this = convolution(*this, g.inv());\n\
+    \    (*this).resize(n);\n    return *this;\n  }\n\n  FPS<S>& operator<<=(int k)\
+    \ {\n    int n = int((*this).size());\n    if (k >= n) {\n      (*this).assign(n,\
+    \ 0);\n      return *this;\n    }\n    for (int i = n - 1; i >= k; i--) (*this)[i]\
+    \ = (*this)[i - k];\n    for (int i = 0; i < k; i++) (*this)[i] = 0;\n    return\
+    \ *this;\n  }\n\n  FPS<S>& operator>>=(int k) {\n    int n = int((*this).size());\n\
+    \    if (k >= n) {\n      (*this).assign(n, 0);\n      return *this;\n    }\n\
+    \    for (int i = 0; i < n - k; i++) (*this)[i] = (*this)[i + k];\n    for (int\
+    \ i = n - k; i < n; i++) (*this)[i] = 0;\n    return *this;\n  }\n\n  FPS<S>&\
+    \ operator*=(const SFPS<S>& g) {\n    int n = (*this).size();\n    int k = int(g.size());\n\
+    \    auto [d, c] = g.front();\n    int start = 0;\n    if (d == 0) {\n      start\
+    \ = 1;\n    } else {\n      c = 0;\n    }\n    for (int i = n - 1; i >= 0; i--)\
+    \ {\n      (*this)[i] *= c;\n      for (int j = start; j < k; j++) {\n       \
+    \ const auto& [d_, c_] = g[j];\n        if (d_ > i) break;\n        (*this)[i]\
+    \ += (*this)[i - d_] * c_;\n      }\n    }\n    return *this;\n  }\n\n  FPS<S>&\
+    \ operator/=(const SFPS<S>& g) {\n    int n = (*this).size();\n    int k = int(g.size());\n\
+    \    auto [d, c] = g.front();\n    assert(d == 0 and c != 0);\n    S inv = c.inv();\n\
+    \    for (int i = 0; i < n; i++) {\n      for (int j = 1; j < k; j++) {\n    \
+    \    const auto& [d, c] = g[j];\n        if (d > i) break;\n        (*this)[i]\
+    \ -= (*this)[i - d] * c;\n      }\n      (*this)[i] *= inv;\n    }\n    return\
+    \ *this;\n  }\n\n  FPS<S> operator<<(int k) const { return FPS<S>(*this) <<= k;\
+    \ }\n  FPS<S> operator>>(int k) const { return FPS<S>(*this) >>= k; }\n};\n\n\
+    template <class S>\nFPS<S> SFPS<S>::log(int deg) {\n  FPS<S> f(deg);\n  assert((*this)[0].first\
+    \ == 0 and (*this)[0].second == 1 and (*this).back().first < deg);\n  int k =\
+    \ (*this).size();\n  for (int i = 0; i < k; i++) {\n    const auto& [d, c] = (*this)[i];\n\
+    \    f[d] = c;\n  }\n  f.differentiate_inplace();\n  f /= (*this);\n  f.integrate_inplace();\n\
+    \  return f;\n}\n\ntemplate <class S>\nFPS<S> SFPS<S>::exp(int deg) {\n  SFPS\
+    \ df = (*this);\n  int k = (*this).size();\n  vector<S> inv(deg);\n  inv[1] =\
+    \ 1;\n  for (int i = 2; i < deg; i++) inv[i] = inv[S::mod() % i] * (-(S::mod()\
+    \ / i));\n\n  // df = f'\n  for (int i = 0; i < k; i++) {\n    const auto& [d,\
+    \ c] = df[i];\n    df[i] = {d - 1, d * c};\n  }\n\n  // F = exp(f)\n  // F' =\
+    \ f'F\n  FPS<S> F(deg);\n  F[0] = 1;\n  for (int i = 0; i < deg - 1; i++) {\n\
+    \    S conv_sum = 0;\n    for (int j = 0; j < k; j++) {\n      const auto& [d,\
+    \ c] = df[j];\n      if (d > i) break;\n      conv_sum += c * F[i - d];\n    }\n\
+    \    F[i + 1] = conv_sum * inv[i + 1];\n  }\n  return F;\n}\n\ntemplate <class\
+    \ S>\nFPS<S> SFPS<S>::pow(long long m, int deg) {\n  if (m == 0) {\n    FPS<S>\
+    \ res(deg);\n    if (deg) res[0] = 1;\n    return res;\n  }\n  vector<S> inv(deg);\n\
+    \  inv[1] = 1;\n  for (int i = 2; i < deg; i++) inv[i] = inv[S::mod() % i] * (-(S::mod()\
+    \ / i));\n\n  int k = (*this).size();\n  // F = f ^ m\n  FPS<S> F(deg);\n  //\
+    \ F' = m(f^(n-1))f'\n  // fF' = mFf'\n\n  // \u5B9A\u6570\u9805\u30921\u306B\u3059\
+    \u308B\n  for (int i = 0; i < k; i++) {\n    const auto& [d, c] = (*this)[i];\n\
+    \    if (c != 0) {\n      SFPS f((*this).begin() + i, (*this).end());\n      for\
+    \ (int j = 0; j < f.size(); j++) {\n        f[j].first -= d;\n        f[j].second\
+    \ /= c;\n      }\n\n      FPS<S> F(deg);\n      F[0] = 1;\n      for (int j =\
+    \ 0; j < deg - 1; j++) {\n        S dF_j = 0;\n        for (int l = 0; l < f.size();\
+    \ l++) {\n          const auto& [d_, c_] = f[l];\n          if (d_ == 0) continue;\n\
+    \          if (d_ - 1 > j) break;\n          dF_j += c_ * F[j - d_ + 1] * (S(m)\
+    \ * d_ - (j - d_ + 1));\n        }\n        F[j + 1] = dF_j * inv[j + 1];\n  \
+    \    }\n      S coef_pw = S(c).pow(m);\n      for (int j = 0; j < deg; j++) F[j]\
+    \ *= coef_pw;\n\n      FPS<S> res(min(__int128_t(m) * d, __int128_t(deg)), 0);\n\
+    \      if (res.size() < deg) res.insert(res.end(), F.begin(), F.begin() + min(deg,\
+    \ deg - int(res.size())));\n      return res;\n    }\n\n    if (__int128_t(d +\
+    \ 1) * m >= deg) return FPS<S>(deg, 0);\n  }\n\n  return FPS<S>(deg, 0);\n}\n\n\
+    template <class S>\nFPS<S> multiply(const FPS<S>& a, const FPS<S>& b, int d =\
+    \ -1) {\n  int siz = int(a.size()) + int(b.size()) - 1;\n  FPS<S> c(siz);\n  for\
+    \ (int i = 0; i < int(a.size()); i++) {\n    for (int j = 0; j < int(b.size());\
+    \ j++) {\n      if (d != -1 and i + j >= d) break;\n      c[i + j] += a[i] * b[j];\n\
+    \    }\n  }\n  if (d != -1) c.resize(d);\n  return c;\n}\n#line 2 \"math/fps/BostanMori.hpp\"\
+    \n\ntemplate <class S>\nS bostan_mori(FPS<S> p, FPS<S> q, long long n) {\n  auto\
+    \ filter = [&](const FPS<S>& p, int start) {\n    FPS<S> ret((p.size() + 1) /\
+    \ 2);\n    for (int i = 0; i * 2 + start < int(p.size()); i++) ret[i] = p[i *\
+    \ 2 + start];\n    return ret;\n  };\n\n  while (n > 0) {\n    FPS<S> q_ = q;\n\
+    \    for (int i = 1; i < int(q_.size()); i += 2) q_[i] = -q_[i];\n    auto pq\
+    \ = convolution(p, q_);\n    auto qq = convolution(q, q_);\n    p = filter(FPS<S>(pq.begin(),\
+    \ pq.end()), n & 1);\n    q = filter(FPS<S>(qq.begin(), qq.end()), 0);\n    n\
+    \ >>= 1;\n  }\n  return p[0] / q[0];\n}\n\ntemplate <class S>\nS bostan_mori_naive(FPS<S>\
+    \ p, FPS<S> q, long long n) {\n  auto filter = [&](const FPS<S>& p, int start)\
+    \ {\n    FPS<S> ret((p.size() + 1) / 2);\n    for (int i = 0; i * 2 + start <\
+    \ int(p.size()); i++) ret[i] = p[i * 2 + start];\n    return ret;\n  };\n  while\
+    \ (n > 0) {\n    FPS<S> q_ = q;\n    for (int i = 1; i < int(q_.size()); i +=\
+    \ 2) q_[i] = -q_[i];\n    p = filter(multiply(p, q_), n & 1);\n    q = filter(multiply(q,\
+    \ q_), 0);\n    n >>= 1;\n  }\n  return p[0] / q[0];\n}\n#line 3 \"math/fps/NthTermFind.hpp\"\
+    \n\n// a.size() == d*2\ntemplate <class S>\nS nth_term_find(const vector<S>& a,\
+    \ long long n) {\n  int d = int(a.size()) / 2;\n  Matrix<S> A(d);\n  for (int\
+    \ i = 0; i < d; i++) {\n    for (int j = 0; j < d; j++) A[i][j] = a[d - j - 1\
+    \ + i];\n  }\n  vector<S> coef = A.linear_equation({a.begin() + d, a.end()})[0];\n\
+    \  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n \
+    \ for (int i = 0; i < d; i++) q[i + 1] = -coef[i];\n  l *= q;\n  return bostan_mori<S>(l,\
+    \ q, n);\n}\n\n// a.size() == d*2\ntemplate <class S>\nS nth_term_find_2(const\
+    \ vector<S>& a, long long n) {\n  int d = int(a.size()) / 2;\n  Matrix<S> A(d);\n\
+    \  for (int i = 0; i < d; i++) {\n    for (int j = 0; j < d; j++) A[i][j] = a[d\
+    \ - j - 1 + i];\n  }\n  vector<S> coef = A.linear_equation({a.begin() + d, a.end()})[0];\n\
+    \  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n \
+    \ for (int i = 0; i < d; i++) q[i + 1] = -coef[i];\n  l = multiply(l, q, d);\n\
+    \  return bostan_mori_naive<S>(l, q, n);\n}\n"
+  code: "#include \"../../linear-algebra/Matrix.hpp\"\n#include \"BostanMori.hpp\"\
+    \n\n// a.size() == d*2\ntemplate <class S>\nS nth_term_find(const vector<S>& a,\
+    \ long long n) {\n  int d = int(a.size()) / 2;\n  Matrix<S> A(d);\n  for (int\
+    \ i = 0; i < d; i++) {\n    for (int j = 0; j < d; j++) A[i][j] = a[d - j - 1\
+    \ + i];\n  }\n  vector<S> coef = A.linear_equation({a.begin() + d, a.end()})[0];\n\
+    \  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n \
+    \ for (int i = 0; i < d; i++) q[i + 1] = -coef[i];\n  l *= q;\n  return bostan_mori<S>(l,\
     \ q, n);\n}\n\n// a.size() == d*2\ntemplate <class S>\nS nth_term_find_2(const\
     \ vector<S>& a, long long n) {\n  int d = int(a.size()) / 2;\n  Matrix<S> A(d);\n\
     \  for (int i = 0; i < d; i++) {\n    for (int j = 0; j < d; j++) A[i][j] = a[d\
@@ -34,11 +262,14 @@ data:
     \  FPS<S> l = {a.begin(), a.begin() + d};\n  FPS<S> q(d + 1);\n  q[0] = 1;\n \
     \ for (int i = 0; i < d; i++) q[i + 1] = -coef[i];\n  l = multiply(l, q, d);\n\
     \  return bostan_mori_naive<S>(l, q, n);\n}"
-  dependsOn: []
+  dependsOn:
+  - linear-algebra/Matrix.hpp
+  - math/fps/BostanMori.hpp
+  - math/fps/FormalPowerSeries.hpp
   isVerificationFile: false
   path: math/fps/NthTermFind.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2026-05-19 17:02:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/fps/NthTermFind.hpp
