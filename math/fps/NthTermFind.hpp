@@ -1,4 +1,4 @@
-#include "../linear-algebra/Matrix.hpp"
+#include "../../linear-algebra/Matrix.hpp"
 #include "BostanMori.hpp"
 
 // a.size() == d*2
