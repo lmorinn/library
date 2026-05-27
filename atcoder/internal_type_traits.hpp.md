@@ -55,6 +55,9 @@ data:
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
+    title: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -250,6 +253,7 @@ data:
   - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
   - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp

@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/LowestCommonAncestor.hpp
     title: Lowest Common Ancestor
+  - icon: ':heavy_check_mark:'
+    path: graph/tree/TreeDPPointSet.hpp
+    title: Tree DP Point Set
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/segment-tree/DSL_2_A.test.cpp
@@ -18,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
     title: verify/AizuOnlineJudge/dp/DPL_1_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
+    title: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
     title: verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
@@ -111,12 +117,14 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/SegmentTree.hpp
   requiredBy:
+  - graph/tree/TreeDPPointSet.hpp
   - graph/tree/LowestCommonAncestor.hpp
   - graph/tree/EulerTour.hpp
   - dp/LongestIncreasingSubsequence.hpp
   timestamp: '2024-06-26 17:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor2.test.cpp
   - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp

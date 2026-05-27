@@ -419,6 +419,9 @@ data:
       path: graph/tree/Rerooting.hpp
       title: Rerooting DP
     - icon: ':heavy_check_mark:'
+      path: graph/tree/TreeDPPointSet.hpp
+      title: Tree DP Point Set
+    - icon: ':heavy_check_mark:'
       path: graph/tree/TreeDistanceFreqency.hpp
       title: Frequency Table of Tree Distance
   - name: linear-algebra
@@ -845,6 +848,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
       title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
+      title: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
       title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
