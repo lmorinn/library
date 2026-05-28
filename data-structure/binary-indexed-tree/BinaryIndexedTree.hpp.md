@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
     title: verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+    title: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
@@ -33,8 +36,9 @@ data:
   path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
   requiredBy: []
   timestamp: '2024-11-18 02:13:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   - verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document

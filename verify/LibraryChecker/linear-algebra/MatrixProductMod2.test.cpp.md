@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linear-algebra/BitMatrix.hpp
     title: Matrix (Mod 2)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

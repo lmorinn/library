@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/SuffixArray.hpp
     title: Suffix Array
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

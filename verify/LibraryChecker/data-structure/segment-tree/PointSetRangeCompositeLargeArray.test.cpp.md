@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/DynamicSegmentTree.hpp
     title: Dynamic Segment Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

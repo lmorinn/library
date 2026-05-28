@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/LowestCommonAncestor.hpp
     title: Lowest Common Ancestor
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

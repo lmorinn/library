@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/connectivity/OfflineDynamicConnectivityDFS.hpp
     title: Offline Dynamic Connectivity (DSU base)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

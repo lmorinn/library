@@ -19,7 +19,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: other/Xorshift.hpp
     title: Xorshift
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

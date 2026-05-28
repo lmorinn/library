@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/TreeDPPointSet.hpp
     title: Tree DP Point Set
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

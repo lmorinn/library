@@ -19,7 +19,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/TreeDistanceFreqency.hpp
     title: Frequency Table of Tree Distance
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

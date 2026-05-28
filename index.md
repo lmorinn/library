@@ -84,7 +84,7 @@ data:
       title: Reversible Lazy Splay Tree
   - name: data-structure/binary-indexed-tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
       title: Binary Indexed Tree
     - icon: ':heavy_check_mark:'
@@ -409,6 +409,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/EulerTour.hpp
       title: Euler Tour
+    - icon: ':question:'
+      path: graph/tree/HLD.hpp
+      title: Heavy Light Decomposition
     - icon: ':heavy_check_mark:'
       path: graph/tree/HeavyLightDecomposition.hpp
       title: Heavy Light Decomposition
@@ -570,7 +573,7 @@ data:
       title: Wildcard Pattern Matching
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -849,11 +852,20 @@ data:
       path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
       title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/JumponTree.test.cpp
+      title: verify/LibraryChecker/graph/tree/JumponTree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
+      title: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
       title: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
       title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+    - icon: ':x:'
+      path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+      title: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   - name: verify/LibraryChecker/linear-algebra
     pages:
     - icon: ':heavy_check_mark:'

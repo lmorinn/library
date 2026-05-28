@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/SumofMultiplicativeFunction.hpp
     title: Sum of Multiplicative Function
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

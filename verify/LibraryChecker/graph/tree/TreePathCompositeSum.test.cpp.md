@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/Rerooting.hpp
     title: Rerooting DP
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

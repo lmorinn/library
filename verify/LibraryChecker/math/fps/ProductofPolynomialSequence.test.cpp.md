@@ -22,7 +22,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/fps/ProductofPolynomialSequence.hpp
     title: Product of Polynomial Sequence
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

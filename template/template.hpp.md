@@ -196,11 +196,20 @@ data:
     path: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
     title: verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/JumponTree.test.cpp
+    title: verify/LibraryChecker/graph/tree/JumponTree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
+    title: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
     title: verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - icon: ':x:'
+    path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+    title: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
     title: verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
@@ -339,9 +348,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -444,7 +453,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2026-03-24 21:06:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp
@@ -453,9 +462,12 @@ data:
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
   - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
+  - verify/LibraryChecker/graph/tree/JumponTree.test.cpp
   - verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
   - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
   - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   - verify/LibraryChecker/graph/connected-components/TwoEdgeConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/connected-components/StronglyConnectedComponents.test.cpp
   - verify/LibraryChecker/graph/others/CycleDetectionUndirected.test.cpp

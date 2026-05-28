@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/DeterministicFiniteAutomatonDP.hpp
     title: Deterministic Finite Automaton DP
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
