@@ -9,17 +9,16 @@ int main() {
   in(n, q);
   hld t(n);
   fenwick_tree<lint> f(n);
-  rep(i, n) {
-    int a;
-    in(a);
-    f.add(i, a);
-  }
+  vector<int> a(n);
+
+  in(a);
   rep(i, 1, n) {
     int p;
     in(p);
     t.add_edge(i, p);
   }
 
+  rep(i, n) f.add(t.traverse_begin(i), a[i]);
   rep(i, q) {
     int com;
     in(com);
