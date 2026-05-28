@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/MultipleDivisorZetaMobiusTransform.hpp
     title: "Multiple/Divisor Zeta/M\xF6bius Transform"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

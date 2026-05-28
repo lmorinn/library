@@ -19,7 +19,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/WildcardPatternMatching.hpp
     title: Wildcard Pattern Matching
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

@@ -207,7 +207,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -348,9 +348,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
     title: verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/template.hpp\"\n#pragma region Macros\n#include\
@@ -453,7 +453,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2026-03-24 21:06:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings.test.cpp

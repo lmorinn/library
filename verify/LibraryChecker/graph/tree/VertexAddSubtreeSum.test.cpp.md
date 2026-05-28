@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
     title: Binary Indexed Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/HLD.hpp
     title: Heavy Light Decomposition
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_subtree_sum
@@ -132,21 +132,22 @@ data:
     \ <= traverse_begin(v[i])) st.pop();\n      par[i] = st.top();\n      st.push(i);\n\
     \    }\n    return {par, v};\n  }\n};\n#line 5 \"verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp\"\
     \n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  int n, q;\n  in(n, q);\n\
-    \  hld t(n);\n  fenwick_tree<lint> f(n);\n  rep(i, n) {\n    int a;\n    in(a);\n\
-    \    f.add(i, a);\n  }\n  rep(i, 1, n) {\n    int p;\n    in(p);\n    t.add_edge(i,\
-    \ p);\n  }\n\n  rep(i, q) {\n    int com;\n    in(com);\n    if (com == 0) {\n\
-    \      int u, x;\n      in(u, x);\n      f.add(t.traverse_begin(u), x);\n    }\
-    \ else {\n      int u;\n      in(u);\n      out(f.sum(t.traverse_begin(u), t.traverse_end(u)));\n\
+    \  hld t(n);\n  fenwick_tree<lint> f(n);\n  vector<int> a(n);\n\n  in(a);\n  rep(i,\
+    \ 1, n) {\n    int p;\n    in(p);\n    t.add_edge(i, p);\n  }\n\n  rep(i, n) f.add(t.traverse_begin(i),\
+    \ a[i]);\n  rep(i, q) {\n    int com;\n    in(com);\n    if (com == 0) {\n   \
+    \   int u, x;\n      in(u, x);\n      f.add(t.traverse_begin(u), x);\n    } else\
+    \ {\n      int u;\n      in(u);\n      out(f.sum(t.traverse_begin(u), t.traverse_end(u)));\n\
     \    }\n  }\n}\n"
   code: "#include \"../../../../template/template.hpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_subtree_sum\"\
     \n#include \"../../../../data-structure/binary-indexed-tree/BinaryIndexedTree.hpp\"\
     \n#include \"../../../../graph/tree/HLD.hpp\"\n\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n\
-    \  int n, q;\n  in(n, q);\n  hld t(n);\n  fenwick_tree<lint> f(n);\n  rep(i, n)\
-    \ {\n    int a;\n    in(a);\n    f.add(i, a);\n  }\n  rep(i, 1, n) {\n    int\
-    \ p;\n    in(p);\n    t.add_edge(i, p);\n  }\n\n  rep(i, q) {\n    int com;\n\
-    \    in(com);\n    if (com == 0) {\n      int u, x;\n      in(u, x);\n      f.add(t.traverse_begin(u),\
-    \ x);\n    } else {\n      int u;\n      in(u);\n      out(f.sum(t.traverse_begin(u),\
-    \ t.traverse_end(u)));\n    }\n  }\n}\n"
+    \  int n, q;\n  in(n, q);\n  hld t(n);\n  fenwick_tree<lint> f(n);\n  vector<int>\
+    \ a(n);\n\n  in(a);\n  rep(i, 1, n) {\n    int p;\n    in(p);\n    t.add_edge(i,\
+    \ p);\n  }\n\n  rep(i, n) f.add(t.traverse_begin(i), a[i]);\n  rep(i, q) {\n \
+    \   int com;\n    in(com);\n    if (com == 0) {\n      int u, x;\n      in(u,\
+    \ x);\n      f.add(t.traverse_begin(u), x);\n    } else {\n      int u;\n    \
+    \  in(u);\n      out(f.sum(t.traverse_begin(u), t.traverse_end(u)));\n    }\n\
+    \  }\n}\n"
   dependsOn:
   - template/template.hpp
   - data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
@@ -154,8 +155,8 @@ data:
   isVerificationFile: true
   path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
   requiredBy: []
-  timestamp: '2026-05-28 17:17:24+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-05-28 17:28:53+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
 layout: document

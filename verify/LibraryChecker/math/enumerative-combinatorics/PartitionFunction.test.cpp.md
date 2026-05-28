@@ -25,7 +25,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/fps/FormalPowerSeries.hpp
     title: Formal Power Series
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

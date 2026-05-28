@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: linear-algebra/Matrix.hpp
     title: Matrix
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

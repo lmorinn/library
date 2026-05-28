@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/set-function/ZetaMobiusTransform.hpp
     title: "Superset/Subset Zeta/M\xF6bius Transform"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
     title: verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
     title: verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/tree/HLD.hpp\"\n\nstruct hld {\n private:\n  int n,\
@@ -129,7 +129,7 @@ data:
   path: graph/tree/HLD.hpp
   requiredBy: []
   timestamp: '2026-05-28 17:17:24+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
   - verify/LibraryChecker/graph/tree/JumponTree.test.cpp

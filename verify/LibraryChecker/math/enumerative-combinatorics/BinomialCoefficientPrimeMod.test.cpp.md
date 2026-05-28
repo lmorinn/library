@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/enumerative-combinatorics/BinomialCoefficientPrimeMod.hpp
     title: Binomial Coefficient (Prime Mod)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

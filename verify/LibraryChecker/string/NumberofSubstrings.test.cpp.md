@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/SuffixAutomaton.hpp
     title: Suffix Automaton (Directed Acyclic Word Graph)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []

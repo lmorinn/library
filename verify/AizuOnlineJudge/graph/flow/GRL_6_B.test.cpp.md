@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: academic/MinimumCostB-flow.hpp
     title: "Minimum Cost b-flow (\u6700\u77ED\u8DEF\u53CD\u5FA9\u6CD5)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
