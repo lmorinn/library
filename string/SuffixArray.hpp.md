@@ -151,15 +151,15 @@ data:
   isVerificationFile: false
   path: string/SuffixArray.hpp
   requiredBy:
-  - string/LongestCommonSubstring.hpp
   - string/LCPArray.hpp
   - string/FMindex.hpp
+  - string/LongestCommonSubstring.hpp
   timestamp: '2024-09-26 13:24:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
   - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
-  - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
 documentation_of: string/SuffixArray.hpp
 layout: document

@@ -170,8 +170,8 @@ data:
   timestamp: '2024-06-26 20:58:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
   - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
+  - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
 documentation_of: graph/tree/EulerTour.hpp
 layout: document
 title: Euler Tour

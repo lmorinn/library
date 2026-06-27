@@ -131,9 +131,9 @@ data:
   timestamp: '2026-05-28 17:17:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
-  - verify/LibraryChecker/graph/tree/JumponTree.test.cpp
   - verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+  - verify/LibraryChecker/graph/tree/JumponTree.test.cpp
+  - verify/LibraryChecker/graph/tree/LowestCommonAncestor.test.cpp
 documentation_of: graph/tree/HLD.hpp
 layout: document
 title: Heavy Light Decomposition

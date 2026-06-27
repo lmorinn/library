@@ -369,6 +369,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/others/CountingEulerianCircuits.hpp
       title: Counting Eulerian Circuits
+    - icon: ':warning:'
+      path: graph/others/CycleBasis.hpp
+      title: Cycle Basis
     - icon: ':heavy_check_mark:'
       path: graph/others/CycleDetection.hpp
       title: Cycle Detection

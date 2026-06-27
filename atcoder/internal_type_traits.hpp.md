@@ -241,56 +241,56 @@ data:
   isVerificationFile: false
   path: atcoder/internal_type_traits.hpp
   requiredBy:
-  - string/WildcardPatternMatching.hpp
-  - graph/flow/MaximumMatchingSize.hpp
-  - atcoder/convolution.hpp
   - atcoder/modint.hpp
+  - atcoder/convolution.hpp
   - atcoder/fenwicktree.hpp
+  - string/WildcardPatternMatching.hpp
   - math/fps/ProductofPolynomialSequence.hpp
+  - graph/flow/MaximumMatchingSize.hpp
   timestamp: '2024-11-29 04:00:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
-  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
-  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
-  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
-  - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
-  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
-  - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
-  - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
-  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
-  - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
-  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/PersistentRangeAffineRangeSum.test.cpp
   - verify/LibraryChecker/data-structure/segment-tree/RangeAffineRangeSumLargeArray.test.cpp
-  - verify/LibraryChecker/data-structure/segment-tree/PointSetRangeCompositeLargeArray.test.cpp
   - verify/LibraryChecker/data-structure/balanced-binary-search-tree/DynamicSequenceRangeAffineRangeSum.test.cpp
-  - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/data-structure/wavelet-matrix/query/RectangleAddRectangleSum.test.cpp
+  - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
   - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BinomialCoefficientPrimeMod.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofTotientFunction.test.cpp
+  - verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
   - verify/LibraryChecker/math/number-theory/SumofMultiplicativeFunction.test.cpp
   - verify/LibraryChecker/math/number-theory/LCMConvolution.test.cpp
-  - verify/LibraryChecker/math/number-theory/GCDConvolution.test.cpp
-  - verify/LibraryChecker/math/set-function/BitwiseANDConvolution.test.cpp
-  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
+  - verify/LibraryChecker/linear-algebra/RankofMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/SystemofLinearEquations.test.cpp
+  - verify/LibraryChecker/linear-algebra/InverseMatrix.test.cpp
+  - verify/LibraryChecker/linear-algebra/DeterminantofMatrix.test.cpp
+  - verify/LibraryChecker/graph/others/CountingEulerianCircuits.test.cpp
+  - verify/LibraryChecker/graph/tree/PointSetTreePathCompositeSumFixed.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesUndirected.test.cpp
+  - verify/LibraryChecker/graph/tree/CountingSpanningTreesDirected.test.cpp
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
+  - verify/LibraryChecker/graph/tree/TreePathCompositeSum.test.cpp
+  - verify/LibraryChecker/tree/VertexGetRangeContourAddonTree.test.cpp
+  - verify/LibraryChecker/tree/VertexAddRangeContourSumonTree.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
+  - verify/AizuOnlineJudge/graph/flow/GRL_7_A.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document
 redirect_from:

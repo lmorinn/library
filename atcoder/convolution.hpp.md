@@ -622,22 +622,22 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/string/WildcardPatternMatching.test.cpp
-  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
-  - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ProductofPolynomialSequence.test.cpp
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+  - verify/LibraryChecker/graph/tree/FrequencyTableofTreeDistance.test.cpp
 documentation_of: atcoder/convolution.hpp
 layout: document
 redirect_from:
