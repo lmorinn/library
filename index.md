@@ -409,6 +409,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/CountingSpanningTrees.hpp
       title: Counting Spanning Trees
+    - icon: ':warning:'
+      path: graph/tree/DSUonTree.hpp
+      title: DSU on Tree
     - icon: ':heavy_check_mark:'
       path: graph/tree/EulerTour.hpp
       title: Euler Tour
@@ -438,6 +441,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: linear-algebra/Matrix.hpp
       title: Matrix
+    - icon: ':warning:'
+      path: linear-algebra/XorBasis.hpp
+      title: Xor Basis
   - name: math
     pages:
     - icon: ':warning:'
