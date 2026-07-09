@@ -551,6 +551,9 @@ data:
       title: "Superset/Subset Zeta/M\xF6bius Transform"
   - name: other
     pages:
+    - icon: ':warning:'
+      path: other/TrinarySearch.hpp
+      title: Trinary Search
     - icon: ':heavy_check_mark:'
       path: other/Xorshift.hpp
       title: Xorshift
