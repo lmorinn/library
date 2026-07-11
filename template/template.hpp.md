@@ -7,6 +7,9 @@ data:
     path: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
     title: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/AizuOnlineJudge/data-structure/others/HyperCubeDatabaseSystem.test.cpp
+    title: verify/AizuOnlineJudge/data-structure/others/HyperCubeDatabaseSystem.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
     title: verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - icon: ':heavy_check_mark:'
@@ -539,6 +542,7 @@ data:
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddPointGet.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/PointSetRangeMin.test.cpp
   - verify/AizuOnlineJudge/data-structure/square-root-decomposition/RangeAddRangeSum.test.cpp
+  - verify/AizuOnlineJudge/data-structure/others/HyperCubeDatabaseSystem.test.cpp
   - verify/AizuOnlineJudge/data-structure/wavelet-matrix/query/FarmlandDevelopment.test.cpp
   - verify/AizuOnlineJudge/dp/GochiusaNumber.test.cpp
   - verify/AizuOnlineJudge/dp/DSL_3_D.test.cpp

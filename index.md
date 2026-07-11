@@ -120,6 +120,9 @@ data:
       path: data-structure/others/MonotonicMinQueue.hpp
       title: Monotonic Queue (Min Queue)
     - icon: ':heavy_check_mark:'
+      path: data-structure/others/MultiDimensionalSum.hpp
+      title: Multi Dimensional Sum
+    - icon: ':heavy_check_mark:'
       path: data-structure/others/PersistentArray.hpp
       title: Persistent Array
     - icon: ':heavy_check_mark:'
@@ -594,6 +597,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
       title: verify/AizuOnlineJudge/data-structure/balanced-binary-search-tree/ITP2_7_B.test.cpp
+  - name: verify/AizuOnlineJudge/data-structure/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/AizuOnlineJudge/data-structure/others/HyperCubeDatabaseSystem.test.cpp
+      title: verify/AizuOnlineJudge/data-structure/others/HyperCubeDatabaseSystem.test.cpp
   - name: verify/AizuOnlineJudge/data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'

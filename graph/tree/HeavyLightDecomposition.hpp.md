@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/tree/HeavyLightDecomposition.hpp\"\ntemplate <class\
+  bundledCode: "#line 1 \"graph/tree/HeavyLightDecomposition.hpp\"\ntemplate <class\
     \ S, auto ops, auto es, class F, auto mappings, auto compositionf, auto idf, class\
     \ T, auto opt, auto et, class G, auto mappingt, auto compositiong, auto idg>\n\
     class hld {\n private:\n  int n;\n  vector<int> subtree, depth, hl, ind, parent,\
@@ -19,12 +19,12 @@ data:
     \ es, F, mappings, compositionf, idf> nodeseg, noderseg;\n  lazy_segtree<T, opt,\
     \ et, G, mappingt, compositiong, idg> pathseg, pathrseg;\n\n  int indr(int x)\
     \ {\n    return abs(ind[x] - (n - 1)) - 1;\n  }\n\n  int indrn(int x) {\n    return\
-    \ abs(ind[x] - (n - 1));\n  }\n\n  int rec_sub(vector<vector<pair<int, T>>> &g,\
+    \ abs(ind[x] - (n - 1));\n  }\n\n  int rec_sub(vector<vector<pair<int, T>>>& g,\
     \ int cur, int d) {\n    int sub = 0;\n    for (auto nex : g[cur]) {\n      if\
     \ (seen[nex.first]) continue;\n      seen[nex.first] = 1;\n      parent[nex.first]\
     \ = cur;\n      sub += rec_sub(g, nex.first, d + 1);\n    }\n    subtree[cur]\
     \ = sub + 1;\n    depth[cur] = d;\n    return subtree[cur];\n  }\n\n  void rec_hld(vector<vector<pair<int,\
-    \ T>>> &g, int cur) {\n    ind[cur] = int(hl.size());\n    seen[cur] = 1;\n  \
+    \ T>>>& g, int cur) {\n    ind[cur] = int(hl.size());\n    seen[cur] = 1;\n  \
     \  hl.push_back(cur);\n    int sub = 0;\n    int ind = -1;\n    for (auto nex\
     \ : g[cur]) {\n      if (subtree[nex.first] > sub and !seen[nex.first]) {\n  \
     \      sub = subtree[nex.first];\n        ind = nex.first;\n      }\n    }\n \
@@ -32,7 +32,7 @@ data:
     \   for (auto nex : g[cur]) {\n        if (nex.first != ind and !seen[nex.first])\
     \ {\n          top[nex.first] = nex.first;\n          dist_top_p[nex.first] =\
     \ nex.second;\n          rec_hld(g, nex.first);\n        }\n      }\n    }\n \
-    \ }\n\n public:\n  hld(vector<vector<pair<int, T>>> &g, vector<S> nodew, int root\
+    \ }\n\n public:\n  hld(vector<vector<pair<int, T>>>& g, vector<S> nodew, int root\
     \ = 0) {\n    n = g.size();\n    seen.resize(n, 0);\n    subtree.resize(n, 0);\n\
     \    ind.resize(n, 0);\n    depth.resize(n, 0);\n    top.resize(n, 0);\n    dist_top_p.resize(n,\
     \ et());\n    parent.resize(n, -1);\n    seen[root] = 1;\n    rec_sub(g, root,\
@@ -74,33 +74,38 @@ data:
     \    noderseg.set(indrn(u), noderseg.get(indrn(u)) + x);\n  }\n\n  // path i ->\
     \ j\n  void apply_edge(int i, int j, G x) {\n    while (1) {\n      if (top[i]\
     \ == top[j]) {\n        if (depth[i] > depth[j]) {\n          pathrseg.apply(indr(i)\
-    \ + 1, indr(j) + 1, x);\n        } else {\n          pathseg.apply(ind[i] + 1,\
-    \ ind[j] + 1, x);\n        }\n        break;\n      }\n\n      if (depth[top[i]]\
-    \ > depth[top[j]]) {\n        pathrseg.apply(indr(i) + 1, indr(top[i]) + 1, x);\n\
-    \        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n        i = parent[top[i]];\n\
-    \      } else {\n        pathseg.apply(ind[top[j]] + 1, ind[j] + 1, x);\n    \
-    \    dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n        j = parent[top[j]];\n\
+    \ + 1, indr(j) + 1, x);\n          pathseg.apply(ind[j] + 1, ind[i] + 1, x);\n\
+    \        } else {\n          pathseg.apply(ind[i] + 1, ind[j] + 1, x);\n     \
+    \     pathrseg.apply(indr(j) + 1, indr(i) + 1, x);\n        }\n        break;\n\
+    \      }\n      if (depth[top[i]] > depth[top[j]]) {\n        pathrseg.apply(indr(i)\
+    \ + 1, indr(top[i]) + 1, x);\n        pathseg.apply(ind[top[i]] + 1, ind[i] +\
+    \ 1, x);\n        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n    \
+    \    i = parent[top[i]];\n      } else {\n        pathseg.apply(ind[top[j]] +\
+    \ 1, ind[j] + 1, x);\n        pathrseg.apply(indr(j) + 1, indr(top[j]) + 1, x);\n\
+    \        dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n        j = parent[top[j]];\n\
     \      }\n    }\n  }\n\n  // path i -> j\n  void apply_node(int i, int j, F x)\
     \ {\n    while (1) {\n      if (top[i] == top[j]) {\n        if (depth[i] > depth[j])\
-    \ {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n        } else {\n\
-    \          nodeseg.apply(ind[i], ind[j] + 1, x);\n        }\n        break;\n\
-    \      }\n\n      if (depth[top[i]] > depth[top[j]]) {\n        noderseg.apply(indrn(i),\
-    \ indrn(top[i]) + 1, x);\n        i = parent[top[i]];\n      } else {\n      \
-    \  nodeseg.apply(ind[top[j]], ind[j] + 1, x);\n        j = parent[top[j]];\n \
-    \     }\n    }\n  }\n};\n"
-  code: "#pragma once\ntemplate <class S, auto ops, auto es, class F, auto mappings,\
-    \ auto compositionf, auto idf, class T, auto opt, auto et, class G, auto mappingt,\
-    \ auto compositiong, auto idg>\nclass hld {\n private:\n  int n;\n  vector<int>\
-    \ subtree, depth, hl, ind, parent, top;\n  vector<bool> seen;\n  vector<T> dist_top_p;\n\
-    \  lazy_segtree<S, ops, es, F, mappings, compositionf, idf> nodeseg, noderseg;\n\
-    \  lazy_segtree<T, opt, et, G, mappingt, compositiong, idg> pathseg, pathrseg;\n\
-    \n  int indr(int x) {\n    return abs(ind[x] - (n - 1)) - 1;\n  }\n\n  int indrn(int\
-    \ x) {\n    return abs(ind[x] - (n - 1));\n  }\n\n  int rec_sub(vector<vector<pair<int,\
-    \ T>>> &g, int cur, int d) {\n    int sub = 0;\n    for (auto nex : g[cur]) {\n\
+    \ {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n          nodeseg.apply(ind[j],\
+    \ ind[i] + 1, x);\n        } else {\n          nodeseg.apply(ind[i], ind[j] +\
+    \ 1, x);\n          noderseg.apply(indrn(j), indrn(i) + 1, x);\n        }\n  \
+    \      break;\n      }\n      if (depth[top[i]] > depth[top[j]]) {\n        noderseg.apply(indrn(i),\
+    \ indrn(top[i]) + 1, x);\n        nodeseg.apply(ind[top[i]], ind[i] + 1, x);\n\
+    \        i = parent[top[i]];\n      } else {\n        nodeseg.apply(ind[top[j]],\
+    \ ind[j] + 1, x);\n        noderseg.apply(indrn(j), indrn(top[j]) + 1, x);\n \
+    \       j = parent[top[j]];\n      }\n    }\n  }\n};\n"
+  code: "template <class S, auto ops, auto es, class F, auto mappings, auto compositionf,\
+    \ auto idf, class T, auto opt, auto et, class G, auto mappingt, auto compositiong,\
+    \ auto idg>\nclass hld {\n private:\n  int n;\n  vector<int> subtree, depth, hl,\
+    \ ind, parent, top;\n  vector<bool> seen;\n  vector<T> dist_top_p;\n  lazy_segtree<S,\
+    \ ops, es, F, mappings, compositionf, idf> nodeseg, noderseg;\n  lazy_segtree<T,\
+    \ opt, et, G, mappingt, compositiong, idg> pathseg, pathrseg;\n\n  int indr(int\
+    \ x) {\n    return abs(ind[x] - (n - 1)) - 1;\n  }\n\n  int indrn(int x) {\n \
+    \   return abs(ind[x] - (n - 1));\n  }\n\n  int rec_sub(vector<vector<pair<int,\
+    \ T>>>& g, int cur, int d) {\n    int sub = 0;\n    for (auto nex : g[cur]) {\n\
     \      if (seen[nex.first]) continue;\n      seen[nex.first] = 1;\n      parent[nex.first]\
     \ = cur;\n      sub += rec_sub(g, nex.first, d + 1);\n    }\n    subtree[cur]\
     \ = sub + 1;\n    depth[cur] = d;\n    return subtree[cur];\n  }\n\n  void rec_hld(vector<vector<pair<int,\
-    \ T>>> &g, int cur) {\n    ind[cur] = int(hl.size());\n    seen[cur] = 1;\n  \
+    \ T>>>& g, int cur) {\n    ind[cur] = int(hl.size());\n    seen[cur] = 1;\n  \
     \  hl.push_back(cur);\n    int sub = 0;\n    int ind = -1;\n    for (auto nex\
     \ : g[cur]) {\n      if (subtree[nex.first] > sub and !seen[nex.first]) {\n  \
     \      sub = subtree[nex.first];\n        ind = nex.first;\n      }\n    }\n \
@@ -108,7 +113,7 @@ data:
     \   for (auto nex : g[cur]) {\n        if (nex.first != ind and !seen[nex.first])\
     \ {\n          top[nex.first] = nex.first;\n          dist_top_p[nex.first] =\
     \ nex.second;\n          rec_hld(g, nex.first);\n        }\n      }\n    }\n \
-    \ }\n\n public:\n  hld(vector<vector<pair<int, T>>> &g, vector<S> nodew, int root\
+    \ }\n\n public:\n  hld(vector<vector<pair<int, T>>>& g, vector<S> nodew, int root\
     \ = 0) {\n    n = g.size();\n    seen.resize(n, 0);\n    subtree.resize(n, 0);\n\
     \    ind.resize(n, 0);\n    depth.resize(n, 0);\n    top.resize(n, 0);\n    dist_top_p.resize(n,\
     \ et());\n    parent.resize(n, -1);\n    seen[root] = 1;\n    rec_sub(g, root,\
@@ -150,25 +155,30 @@ data:
     \    noderseg.set(indrn(u), noderseg.get(indrn(u)) + x);\n  }\n\n  // path i ->\
     \ j\n  void apply_edge(int i, int j, G x) {\n    while (1) {\n      if (top[i]\
     \ == top[j]) {\n        if (depth[i] > depth[j]) {\n          pathrseg.apply(indr(i)\
-    \ + 1, indr(j) + 1, x);\n        } else {\n          pathseg.apply(ind[i] + 1,\
-    \ ind[j] + 1, x);\n        }\n        break;\n      }\n\n      if (depth[top[i]]\
-    \ > depth[top[j]]) {\n        pathrseg.apply(indr(i) + 1, indr(top[i]) + 1, x);\n\
-    \        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n        i = parent[top[i]];\n\
-    \      } else {\n        pathseg.apply(ind[top[j]] + 1, ind[j] + 1, x);\n    \
-    \    dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n        j = parent[top[j]];\n\
+    \ + 1, indr(j) + 1, x);\n          pathseg.apply(ind[j] + 1, ind[i] + 1, x);\n\
+    \        } else {\n          pathseg.apply(ind[i] + 1, ind[j] + 1, x);\n     \
+    \     pathrseg.apply(indr(j) + 1, indr(i) + 1, x);\n        }\n        break;\n\
+    \      }\n      if (depth[top[i]] > depth[top[j]]) {\n        pathrseg.apply(indr(i)\
+    \ + 1, indr(top[i]) + 1, x);\n        pathseg.apply(ind[top[i]] + 1, ind[i] +\
+    \ 1, x);\n        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n    \
+    \    i = parent[top[i]];\n      } else {\n        pathseg.apply(ind[top[j]] +\
+    \ 1, ind[j] + 1, x);\n        pathrseg.apply(indr(j) + 1, indr(top[j]) + 1, x);\n\
+    \        dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n        j = parent[top[j]];\n\
     \      }\n    }\n  }\n\n  // path i -> j\n  void apply_node(int i, int j, F x)\
     \ {\n    while (1) {\n      if (top[i] == top[j]) {\n        if (depth[i] > depth[j])\
-    \ {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n        } else {\n\
-    \          nodeseg.apply(ind[i], ind[j] + 1, x);\n        }\n        break;\n\
-    \      }\n\n      if (depth[top[i]] > depth[top[j]]) {\n        noderseg.apply(indrn(i),\
-    \ indrn(top[i]) + 1, x);\n        i = parent[top[i]];\n      } else {\n      \
-    \  nodeseg.apply(ind[top[j]], ind[j] + 1, x);\n        j = parent[top[j]];\n \
-    \     }\n    }\n  }\n};"
+    \ {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n          nodeseg.apply(ind[j],\
+    \ ind[i] + 1, x);\n        } else {\n          nodeseg.apply(ind[i], ind[j] +\
+    \ 1, x);\n          noderseg.apply(indrn(j), indrn(i) + 1, x);\n        }\n  \
+    \      break;\n      }\n      if (depth[top[i]] > depth[top[j]]) {\n        noderseg.apply(indrn(i),\
+    \ indrn(top[i]) + 1, x);\n        nodeseg.apply(ind[top[i]], ind[i] + 1, x);\n\
+    \        i = parent[top[i]];\n      } else {\n        nodeseg.apply(ind[top[j]],\
+    \ ind[j] + 1, x);\n        noderseg.apply(indrn(j), indrn(top[j]) + 1, x);\n \
+    \       j = parent[top[j]];\n      }\n    }\n  }\n};"
   dependsOn: []
   isVerificationFile: false
   path: graph/tree/HeavyLightDecomposition.hpp
   requiredBy: []
-  timestamp: '2024-06-26 18:54:08+09:00'
+  timestamp: '2026-07-11 15:05:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
