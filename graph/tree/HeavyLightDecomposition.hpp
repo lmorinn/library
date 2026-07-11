@@ -1,4 +1,3 @@
-#pragma once
 template <class S, auto ops, auto es, class F, auto mappings, auto compositionf, auto idf, class T, auto opt, auto et, class G, auto mappingt, auto compositiong, auto idg>
 class hld {
  private:
@@ -17,7 +16,7 @@ class hld {
     return abs(ind[x] - (n - 1));
   }
 
-  int rec_sub(vector<vector<pair<int, T>>> &g, int cur, int d) {
+  int rec_sub(vector<vector<pair<int, T>>>& g, int cur, int d) {
     int sub = 0;
     for (auto nex : g[cur]) {
       if (seen[nex.first]) continue;
@@ -30,7 +29,7 @@ class hld {
     return subtree[cur];
   }
 
-  void rec_hld(vector<vector<pair<int, T>>> &g, int cur) {
+  void rec_hld(vector<vector<pair<int, T>>>& g, int cur) {
     ind[cur] = int(hl.size());
     seen[cur] = 1;
     hl.push_back(cur);
@@ -56,7 +55,7 @@ class hld {
   }
 
  public:
-  hld(vector<vector<pair<int, T>>> &g, vector<S> nodew, int root = 0) {
+  hld(vector<vector<pair<int, T>>>& g, vector<S> nodew, int root = 0) {
     n = g.size();
     seen.resize(n, 0);
     subtree.resize(n, 0);
@@ -173,18 +172,21 @@ class hld {
       if (top[i] == top[j]) {
         if (depth[i] > depth[j]) {
           pathrseg.apply(indr(i) + 1, indr(j) + 1, x);
+          pathseg.apply(ind[j] + 1, ind[i] + 1, x);
         } else {
           pathseg.apply(ind[i] + 1, ind[j] + 1, x);
+          pathrseg.apply(indr(j) + 1, indr(i) + 1, x);
         }
         break;
       }
-
       if (depth[top[i]] > depth[top[j]]) {
         pathrseg.apply(indr(i) + 1, indr(top[i]) + 1, x);
+        pathseg.apply(ind[top[i]] + 1, ind[i] + 1, x);
         dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);
         i = parent[top[i]];
       } else {
         pathseg.apply(ind[top[j]] + 1, ind[j] + 1, x);
+        pathrseg.apply(indr(j) + 1, indr(top[j]) + 1, x);
         dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);
         j = parent[top[j]];
       }
@@ -197,17 +199,20 @@ class hld {
       if (top[i] == top[j]) {
         if (depth[i] > depth[j]) {
           noderseg.apply(indrn(i), indrn(j) + 1, x);
+          nodeseg.apply(ind[j], ind[i] + 1, x);
         } else {
           nodeseg.apply(ind[i], ind[j] + 1, x);
+          noderseg.apply(indrn(j), indrn(i) + 1, x);
         }
         break;
       }
-
       if (depth[top[i]] > depth[top[j]]) {
         noderseg.apply(indrn(i), indrn(top[i]) + 1, x);
+        nodeseg.apply(ind[top[i]], ind[i] + 1, x);
         i = parent[top[i]];
       } else {
         nodeseg.apply(ind[top[j]], ind[j] + 1, x);
+        noderseg.apply(indrn(j), indrn(top[j]) + 1, x);
         j = parent[top[j]];
       }
     }
