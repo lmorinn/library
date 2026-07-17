@@ -162,8 +162,8 @@ class hld {
   }
 
   void set_node(int u, S x) {
-    nodeseg.set(ind[u], nodeseg.get(ind[u]) + x);
-    noderseg.set(indrn(u), noderseg.get(indrn(u)) + x);
+    nodeseg.set(ind[u], x);
+    noderseg.set(indrn(u), x);
   }
 
   // path i -> j
