@@ -38,8 +38,8 @@ data:
   timestamp: '2024-11-18 02:13:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
   - verify/LibraryChecker/graph/tree/VertexAddSubtreeSum.test.cpp
+  - verify/LibraryChecker/data-structure/binary-indexed-tree/PointAddRangeSum.test.cpp
 documentation_of: data-structure/binary-indexed-tree/BinaryIndexedTree.hpp
 layout: document
 title: Binary Indexed Tree

@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: math/set-function/ZetaMobiusTransform.hpp
   requiredBy:
-  - math/set-function/BitwiseORConvolution.hpp
   - math/set-function/BitwiseANDConvolution.hpp
+  - math/set-function/BitwiseORConvolution.hpp
   timestamp: '2026-04-18 20:38:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

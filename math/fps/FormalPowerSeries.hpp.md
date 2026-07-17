@@ -309,31 +309,31 @@ data:
   isVerificationFile: false
   path: math/fps/FormalPowerSeries.hpp
   requiredBy:
+  - math/fps/NthTermFind.hpp
   - math/fps/NthTerm.hpp
   - math/fps/BostanMori.hpp
-  - math/fps/NthTermFind.hpp
-  - math/enumerative-combinatorics/BellNumber.hpp
+  - math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.hpp
   - math/enumerative-combinatorics/Sharp_P_SubsetSum.hpp
   - math/enumerative-combinatorics/StirlingNumberoftheSecondKind.hpp
+  - math/enumerative-combinatorics/BellNumber.hpp
   - math/enumerative-combinatorics/PartitionFunction.hpp
-  - math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.hpp
   timestamp: '2026-05-19 16:52:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/LogofFormalPowerSeriesSparse.test.cpp
   - verify/LibraryChecker/math/fps/KthtermofLinearlyRecurrentSequence.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/fps/InvofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
-  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/fps/InvofFormalPowerSeriesSparse.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
+  - verify/LibraryChecker/math/fps/ExpofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeriesSparse.test.cpp
+  - verify/LibraryChecker/math/fps/LogofFormalPowerSeries.test.cpp
+  - verify/LibraryChecker/math/fps/PowofFormalPowerSeries.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKindFixedK.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/PartitionFunction.test.cpp
-  - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
   - verify/LibraryChecker/math/enumerative-combinatorics/BellNumber.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/Sharp_P_SubsetSum.test.cpp
+  - verify/LibraryChecker/math/enumerative-combinatorics/StirlingNumberoftheSecondKind.test.cpp
 documentation_of: math/fps/FormalPowerSeries.hpp
 layout: document
 title: Formal Power Series

@@ -141,27 +141,26 @@ data:
     \ w);\n      } else {\n        pathseg.set(ind[v], w);\n        pathrseg.set(indr(u),\
     \ w);\n      }\n    } else {\n      if (parent[v] == u) {\n        dist_top_p[v]\
     \ = w;\n      } else {\n        dist_top_p[u] = w;\n      }\n    }\n  }\n\n  void\
-    \ set_node(int u, S x) {\n    nodeseg.set(ind[u], nodeseg.get(ind[u]) + x);\n\
-    \    noderseg.set(indrn(u), noderseg.get(indrn(u)) + x);\n  }\n\n  // path i ->\
-    \ j\n  void apply_edge(int i, int j, G x) {\n    while (1) {\n      if (top[i]\
-    \ == top[j]) {\n        if (depth[i] > depth[j]) {\n          pathrseg.apply(indr(i)\
-    \ + 1, indr(j) + 1, x);\n          pathseg.apply(ind[j] + 1, ind[i] + 1, x);\n\
-    \        } else {\n          pathseg.apply(ind[i] + 1, ind[j] + 1, x);\n     \
-    \     pathrseg.apply(indr(j) + 1, indr(i) + 1, x);\n        }\n        break;\n\
-    \      }\n      if (depth[top[i]] > depth[top[j]]) {\n        pathrseg.apply(indr(i)\
-    \ + 1, indr(top[i]) + 1, x);\n        pathseg.apply(ind[top[i]] + 1, ind[i] +\
-    \ 1, x);\n        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n    \
-    \    i = parent[top[i]];\n      } else {\n        pathseg.apply(ind[top[j]] +\
-    \ 1, ind[j] + 1, x);\n        pathrseg.apply(indr(j) + 1, indr(top[j]) + 1, x);\n\
-    \        dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n        j = parent[top[j]];\n\
-    \      }\n    }\n  }\n\n  // path i -> j\n  void apply_node(int i, int j, F x)\
-    \ {\n    while (1) {\n      if (top[i] == top[j]) {\n        if (depth[i] > depth[j])\
-    \ {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n          nodeseg.apply(ind[j],\
-    \ ind[i] + 1, x);\n        } else {\n          nodeseg.apply(ind[i], ind[j] +\
-    \ 1, x);\n          noderseg.apply(indrn(j), indrn(i) + 1, x);\n        }\n  \
-    \      break;\n      }\n      if (depth[top[i]] > depth[top[j]]) {\n        noderseg.apply(indrn(i),\
-    \ indrn(top[i]) + 1, x);\n        nodeseg.apply(ind[top[i]], ind[i] + 1, x);\n\
-    \        i = parent[top[i]];\n      } else {\n        nodeseg.apply(ind[top[j]],\
+    \ set_node(int u, S x) {\n    nodeseg.set(ind[u], x);\n    noderseg.set(indrn(u),\
+    \ x);\n  }\n\n  // path i -> j\n  void apply_edge(int i, int j, G x) {\n    while\
+    \ (1) {\n      if (top[i] == top[j]) {\n        if (depth[i] > depth[j]) {\n \
+    \         pathrseg.apply(indr(i) + 1, indr(j) + 1, x);\n          pathseg.apply(ind[j]\
+    \ + 1, ind[i] + 1, x);\n        } else {\n          pathseg.apply(ind[i] + 1,\
+    \ ind[j] + 1, x);\n          pathrseg.apply(indr(j) + 1, indr(i) + 1, x);\n  \
+    \      }\n        break;\n      }\n      if (depth[top[i]] > depth[top[j]]) {\n\
+    \        pathrseg.apply(indr(i) + 1, indr(top[i]) + 1, x);\n        pathseg.apply(ind[top[i]]\
+    \ + 1, ind[i] + 1, x);\n        dist_top_p[top[i]] = mappingt(x, dist_top_p[top[i]]);\n\
+    \        i = parent[top[i]];\n      } else {\n        pathseg.apply(ind[top[j]]\
+    \ + 1, ind[j] + 1, x);\n        pathrseg.apply(indr(j) + 1, indr(top[j]) + 1,\
+    \ x);\n        dist_top_p[top[j]] = mappingt(x, dist_top_p[top[j]]);\n       \
+    \ j = parent[top[j]];\n      }\n    }\n  }\n\n  // path i -> j\n  void apply_node(int\
+    \ i, int j, F x) {\n    while (1) {\n      if (top[i] == top[j]) {\n        if\
+    \ (depth[i] > depth[j]) {\n          noderseg.apply(indrn(i), indrn(j) + 1, x);\n\
+    \          nodeseg.apply(ind[j], ind[i] + 1, x);\n        } else {\n         \
+    \ nodeseg.apply(ind[i], ind[j] + 1, x);\n          noderseg.apply(indrn(j), indrn(i)\
+    \ + 1, x);\n        }\n        break;\n      }\n      if (depth[top[i]] > depth[top[j]])\
+    \ {\n        noderseg.apply(indrn(i), indrn(top[i]) + 1, x);\n        nodeseg.apply(ind[top[i]],\
+    \ ind[i] + 1, x);\n        i = parent[top[i]];\n      } else {\n        nodeseg.apply(ind[top[j]],\
     \ ind[j] + 1, x);\n        noderseg.apply(indrn(j), indrn(top[j]) + 1, x);\n \
     \       j = parent[top[j]];\n      }\n    }\n  }\n};\n#line 8 \"verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp\"\
     \n\nusing F = long long;\nstruct S {\n  long long val;\n  int siz;\n};\n\nS op(S\
@@ -200,7 +199,7 @@ data:
   isVerificationFile: true
   path: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2026-07-11 15:05:54+09:00'
+  timestamp: '2026-07-17 19:08:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/AizuOnlineJudge/graph/tree/GRL_5_E.test.cpp

@@ -171,8 +171,8 @@ data:
   isVerificationFile: false
   path: math/fps/BostanMori.hpp
   requiredBy:
-  - math/fps/NthTerm.hpp
   - math/fps/NthTermFind.hpp
+  - math/fps/NthTerm.hpp
   timestamp: '2026-05-19 16:52:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

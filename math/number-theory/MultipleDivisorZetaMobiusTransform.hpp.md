@@ -59,8 +59,8 @@ data:
   isVerificationFile: false
   path: math/number-theory/MultipleDivisorZetaMobiusTransform.hpp
   requiredBy:
-  - math/number-theory/LCMConvolution.hpp
   - math/number-theory/GCDConvolution.hpp
+  - math/number-theory/LCMConvolution.hpp
   timestamp: '2026-04-18 20:38:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

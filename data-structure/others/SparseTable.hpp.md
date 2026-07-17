@@ -50,8 +50,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/LibraryChecker/data-structure/others/StaticRMQ.test.cpp
-  - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
   - verify/LibraryChecker/tree/LowestCommonAncestor.test.cpp
+  - verify/LibraryChecker/tree/VertexAddSubtreeSum.test.cpp
 documentation_of: data-structure/others/SparseTable.hpp
 layout: document
 title: Sparse Table

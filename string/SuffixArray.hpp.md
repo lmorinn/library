@@ -157,10 +157,10 @@ data:
   timestamp: '2024-09-26 13:24:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
+  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
   - verify/LibraryChecker/string/SuffixArray.test.cpp
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
-  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
-  - verify/AizuOnlineJudge/string/ALDS1_14_D.test.cpp
 documentation_of: string/SuffixArray.hpp
 layout: document
 title: Suffix Array
