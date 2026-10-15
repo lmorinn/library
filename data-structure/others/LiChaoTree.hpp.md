@@ -100,8 +100,8 @@ data:
   timestamp: '2025-09-23 18:49:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
   - verify/LibraryChecker/data-structure/others/LineAddGetMin.test.cpp
+  - verify/LibraryChecker/data-structure/others/SegmentAddGetMin.test.cpp
 documentation_of: data-structure/others/LiChaoTree.hpp
 layout: document
 title: Li Chao Tree (min)

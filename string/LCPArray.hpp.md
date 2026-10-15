@@ -102,8 +102,8 @@ data:
   timestamp: '2025-12-14 23:58:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
   - verify/LibraryChecker/string/LongestCommonSubstring.test.cpp
+  - verify/LibraryChecker/string/NumberofSubstrings2.test.cpp
 documentation_of: string/LCPArray.hpp
 layout: document
 title: LCP Array
