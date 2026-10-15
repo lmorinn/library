@@ -1047,3 +1047,4 @@ data:
 layout: toppage
 ---
 [![lmori](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Flmori)](https://atcoder.jp/users/lmori)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://github.com/lmorinn/library/blob/main/LICENSE)
